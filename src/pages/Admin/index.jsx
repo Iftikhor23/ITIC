@@ -3,18 +3,19 @@ import AdminNavbar from "../../components/AdminNavbar";
 import AdminSidebar from "../../components/AdminSidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 import Loader from "../../components/Loader";
+import { Wrapper } from "./styled";
 
 const Admin = () => {
   return (
-    <div>
+    <Wrapper>
       <AdminNavbar />
-      <div className="FlexBoxAdmin">
+      <Wrapper.FlexBoxAdmin>
         <AdminSidebar />
         <Loader>
           <Outlet />
         </Loader>
-      </div>
-    </div>
+      </Wrapper.FlexBoxAdmin>
+    </Wrapper>
   );
 };
 
