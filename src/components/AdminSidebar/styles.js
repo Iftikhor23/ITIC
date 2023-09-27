@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 200px;
-  width: 240px;
-  height: 100vh;
+  width: 310px;
+  gap: 33px;
   background-color: #fff;
-  padding: 69px 16px 200px 24px;
-  color: red;
+  padding-top: 20px;
+  border-right: 1px solid #d9d9d9;
+  background: #fff;
 `;
 
 Container.SideWrap = styled.div`
@@ -43,20 +43,33 @@ Container.Title = styled.h3`
   letter-spacing: 0;
   line-height: 24.5px;
 `;
-
-Container.LogOut = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  img {
-    width: 16px;
-  }
-  p {
-    color: #051313;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 15.9px;
-    white-space: nowrap;
-  }
+Container.Flex = styled.div`
+	
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 12px 40px;
+	cursor: ${({ disable }) => (disable ? 'not-allowed' : 'pointer')};
+	opacity: ${({ disable }) => (disable ? '0.5' : '1')};
+	background: ${({ active }) => active && '#f4f7f4'};
+	border-radius: 100px;
+	p {
+		color: ${({ active }) => active && '#37a67e'};
+	}
+	svg {
+		path {
+			fill: ${({ active }) => active && '#37a67e'};
+		}
+	}
+	&:hover {
+		background-color: ${({ disable }) => !disable && '#f4f7f4'};
+		/* p {
+			color: ${({ disable }) => !disable && '#37a67e'};
+		} */
+		/* svg {
+			path {
+				fill: ${({ disable }) => !disable && '#37a67e'};
+			}
+		} */
+	}
 `;

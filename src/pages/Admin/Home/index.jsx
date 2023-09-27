@@ -3,7 +3,7 @@ import PeriodButton from '../../../components/PeriodButton';
 import {Wrapper} from './styles'
 import StatCard from '../../../components/StatCard/StatCard';
 
-function Home() {
+function AdminHome() {
     const [active, setActive] = useState("daily");
   return (
     <Wrapper>
@@ -39,4 +39,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default AdminHome;

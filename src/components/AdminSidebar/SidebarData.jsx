@@ -1,3 +1,4 @@
+import AdminHome from "../../pages/Admin/Home";
 import {
   CaseIcon,
   PartnersIcon,
@@ -10,45 +11,61 @@ import {
 
 export const Data = [
   {
+    id: 8,
+    title: "Home",
+    icon: <TestimonialICon/>,
+    path: '/admin/home',
+    hidden: false,
+    component: <AdminHome/>
+  },
+  {
     id: 1,
     title: "Case studies",
     icon: <CaseIcon />,
-    // component: <Cases />,
+    path: '/admin/case',
+    hidden: false,
   },
   {
     id: 2,
     title: "Resume requests",
     icon: <ResumeIcon/>,
-    // component: <Resume />,
+    path: '/admin/resume',
+    hidden: false,
   },
   {
     id: 3,
     title: "Call requests",
     icon: <CallIcon/>,
-    // component: <CallRequest />,
+    path: '/admin/req',
+    hidden: false,
   },
   {
     id: 4,
     title: "Vacancies",
     icon: <VacancyIcon/>,
-    // component: <Vacancies />,
+    path: '/admin/vacancies',
+    hidden: false,
   },
   {
     id: 5,
     title: "Team",
     icon: <TeamIcon/>,
-    // component: <Team />,
+    path: '/admin/team',
+    hidden: false,
   },
   {
     id: 6,
     title: "Partners",
     icon: <PartnersIcon/>,
-    // component: <Partners />,
+    path: '/admin/partners',
+    hidden: false,
   },
   {
     id: 7,
     title: "Testomonirals",
     icon: <TestimonialICon/>,
-    // component: <Testimonials />,
+    path: '/admin/testimonials',
+    hidden: false,
   },
+ 
 ];
