@@ -1,5 +1,3 @@
-import CallRequest from "../../pages/Admin/CallRequest/CallRequest";
-import Cases from "../../pages/Admin/Cases/Cases";
 import AdminHome from "../../pages/Admin/Home";
 import Partners from "../../pages/Admin/Partners/Partners";
 import Resume from "../../pages/Admin/Resume/Resume";
@@ -82,4 +80,3 @@ export const Data = [
     component: <Testimonials />,
   },
 ];
-// sgchadhdsfhvj
