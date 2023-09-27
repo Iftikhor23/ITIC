@@ -21,9 +21,8 @@ import AllCases from './pages/AllCases/AllCases'
 // import Testimonials from "./pages/Testimonials/Testimonials";
 import Pages from './pages/index';
 import AllVacancies from "./pages/AllVacancies/AllVacancies";
-import Home from "./pages/Home/Home";
-import DeleteModal from "./components/DeleteModal/DeleteModal";
 import Sidebar from './components/AdminSidebar/Sidebar';
+import Home from "./pages/Admin/Home";
 
 function App() {
   return (
@@ -32,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/allCases" element={<AllCases/>}/>
           <Route path="/allVacancies" element={<AllVacancies/>}/>
-          <Route path="/" element={<Sidebar/>}/>
+          <Route path="/" element={<Home/>}/>
         </Routes>
       </BrowserRouter>
     </>
