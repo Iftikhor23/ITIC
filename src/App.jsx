@@ -24,6 +24,7 @@ import AllVacancies from "./pages/AllVacancies/AllVacancies";
 import Home from "./pages/Home/Home";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
 import Sidebar from './components/AdminSidebar/Sidebar';
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
         <Routes>
           <Route path="/allCases" element={<AllCases/>}/>
           <Route path="/allVacancies" element={<AllVacancies/>}/>
-          <Route path="/" element={<Sidebar/>}/>
+          <Route path="/admin" element={<Admin/>}/>
+          <Route path="/" element={<Pages/>}/>
         </Routes>
       </BrowserRouter>
     </>

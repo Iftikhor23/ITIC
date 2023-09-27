@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 310px;
   gap: 36px;
-  width: 240px;
   height: 100vh;
   background-color: #fff;
   padding: 69px 16px 200px 24px;
-  color: red;
+  border-right: 1px solid #d9d9d9;
+  background: #fff;
 `;
 
 Container.List = styled.li`
@@ -28,7 +29,6 @@ Container.List = styled.li`
         transition: 0.7s;
       }
     }
-
   }
 `;
 
@@ -38,4 +38,34 @@ Container.Title = styled.h3`
   font-weight: 500;
   letter-spacing: 0;
   line-height: 24.5px;
+`;
+Container.Flex = styled.div`
+	
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 12px 40px;
+	cursor: ${({ disable }) => (disable ? 'not-allowed' : 'pointer')};
+	opacity: ${({ disable }) => (disable ? '0.5' : '1')};
+	background: ${({ active }) => active && '#f4f7f4'};
+	border-radius: 100px;
+	p {
+		color: ${({ active }) => active && '#37a67e'};
+	}
+	svg {
+		path {
+			fill: ${({ active }) => active && '#37a67e'};
+		}
+	}
+	&:hover {
+		background-color: ${({ disable }) => !disable && '#f4f7f4'};
+		/* p {
+			color: ${({ disable }) => !disable && '#37a67e'};
+		} */
+		/* svg {
+			path {
+				fill: ${({ disable }) => !disable && '#37a67e'};
+			}
+		} */
+	}
 `;
