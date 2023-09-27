@@ -1,3 +1,4 @@
+import AdminHome from "../../pages/Admin/Home";
 import {
   CaseIcon,
   PartnersIcon,
@@ -9,6 +10,14 @@ import {
 } from "../GenericIcons/genericIcons";
 
 export const Data = [
+  {
+    id: 8,
+    title: "Home",
+    icon: <TestimonialICon/>,
+    path: '/admin/home',
+    hidden: false,
+    component: <AdminHome/>
+  },
   {
     id: 1,
     title: "Case studies",
@@ -58,4 +67,5 @@ export const Data = [
     path: '/admin/testimonials',
     hidden: false,
   },
+ 
 ];

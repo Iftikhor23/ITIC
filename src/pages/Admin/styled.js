@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+<<<<<<< HEAD
+  width: 100%;
+  height: 100%;
+`;
+=======
 	width: 100%;
 	height: 100%;
 	div {
@@ -36,3 +41,4 @@ export const Wrapper = styled.div`
 		}
 	}
 `;
+>>>>>>> 28cfa7e498cb1615a3cf06030542a5b9f928b508

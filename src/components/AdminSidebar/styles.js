@@ -4,12 +4,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 310px;
-  gap: 36px;
-  height: 100vh;
+  gap: 33px;
   background-color: #fff;
-  padding: 69px 16px 200px 24px;
+  padding-top: 20px;
   border-right: 1px solid #d9d9d9;
   background: #fff;
+`;
+
+Container.SideWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 `;
 
 Container.List = styled.li`
@@ -25,7 +30,6 @@ Container.List = styled.li`
     svg {
       path {
         fill: rgba(0, 146, 153, 1);
-        stroke: rgba(0, 146, 153, 1);
         transition: 0.7s;
       }
     }
