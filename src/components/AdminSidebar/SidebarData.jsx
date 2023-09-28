@@ -1,9 +1,11 @@
+import CallRequest from "../../pages/Admin/CallRequest/CallRequest";
 import AdminHome from "../../pages/Admin/Home";
 import Partners from "../../pages/Admin/Partners/Partners";
 import Resume from "../../pages/Admin/Resume/Resume";
 import Team from "../../pages/Admin/Team/Team";
 import Testimonials from "../../pages/Admin/Testimonials/Testimonials";
 import Vacancies from "../../pages/Admin/Vacancies/Vacancies";
+import Cases from "../../pages/Admin/Cases/Cases";
 import {
   CaseIcon,
   PartnersIcon,

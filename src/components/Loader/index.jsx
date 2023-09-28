@@ -1,9 +1,6 @@
-import React from 'react'
-
-const Loader = () => {
-  return (
-    <div>Loading ....</div>
-  )
-}
+import React, { Suspense } from 'react';
+ const Loader = ({ children }) => {
+	return <Suspense fallback={<div>...loading</div>}>{children}</Suspense>;
+};
 
 export default Loader
