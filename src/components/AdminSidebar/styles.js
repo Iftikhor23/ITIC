@@ -4,9 +4,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 310px;
-  gap: 33px;
+  height: 100vh;
+  gap: 21px;
   background-color: #fff;
-  padding-top: 20px;
+  padding: 20px 10px;
   border-right: 1px solid #d9d9d9;
   background: #fff;
 `;
