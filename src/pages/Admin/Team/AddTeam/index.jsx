@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import { Wrapper } from "./styles";
-import Cancel from "../../../../components/Reusable/CancelButton/Cancel";
+import Button from "../../../../components/ButtonComb/Button";
+import Cancel from "../../../../components/CancelButton/Cancel";
 import uploadIcon from "../../../../assets/icons/uploadCloud.svg";
 import AdminInput from "../../../../components/Reusable/AdminInput";
-import Button from "../../../../components/Reusable/ButtonComb/Button";
 
-function AddCase() {
+function AddTeam() {
   const inputRef = useRef(null);
   const [image, setImage] = useState("");
 
@@ -21,7 +21,7 @@ function AddCase() {
   return (
     <Wrapper>
       <Wrapper.Wrap>
-        <Wrapper.Title>Add Case</Wrapper.Title>
+        <Wrapper.Title>Add Member</Wrapper.Title>
         <Wrapper.Nav>
           <Cancel />
           <Button
@@ -53,14 +53,17 @@ function AddCase() {
             onChange={handleImageChange}
             style={{ display: "none" }}
           />
-          <Wrapper.Flex>
-            <AdminInput label={"Project name"} placeholder={"Project name"} />
-            <AdminInput label={"Project type"} placeholder={"Project type"} />
-          </Wrapper.Flex>
+          <Wrapper.WrapTable>
+            <Wrapper.Flex>
+              <AdminInput label={"Enter name"} placeholder={"Name"} />
+              <AdminInput label={"Enter surname"} placeholder={"Surname"} />
+            </Wrapper.Flex>
+            <AdminInput label={"Position"} placeholder={"Enter position"} />
+          </Wrapper.WrapTable>
         </Wrapper.InputTable>
       </Wrapper.Wrap>
     </Wrapper>
   );
 }
 
-export default AddCase;
+export default AddTeam;
