@@ -24,7 +24,7 @@ export const Data = [
     id: 1,
     title: "Home",
     icon: <TestimonialICon />,
-    path: "/admin/home",
+    path: "/admin",
     hidden: false,
     component: <AdminHome />,
   },
