@@ -8,6 +8,7 @@ function Input({
   placeholderColor,
   type,
   width,
+  height,
   prefix,
   onChange,
 }) {
@@ -32,7 +33,7 @@ function Input({
   return (
     <Container>
       <Container.Label>{label}</Container.Label>
-      <Container.Wrap width={width}>
+      <Container.Wrap width={width} height={height}>
         <Container.Prefix>{prefix}</Container.Prefix>
         <Container.Input
           type={type}
