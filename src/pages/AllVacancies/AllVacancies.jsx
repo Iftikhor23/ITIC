@@ -1,4 +1,3 @@
-import Button from "../../components/ButtonComb/Button";
 import Job from "../../components/Jobs/Job";
 import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
 import { Container } from "./styles";
@@ -6,6 +5,7 @@ import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import JobModal from "../../components/JobModal/JobModal";
+import Button from "../../components/Reusable/ButtonComb/Button";
 
 function AllVacancies() {
   const [showModal, setShowModal] = useState(false);

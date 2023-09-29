@@ -12,6 +12,7 @@ const Header = () => {
 export const column = [
   {
     headerName: "Cover",
+    
     flex: 0.5,
   },
 
@@ -26,7 +27,6 @@ export const column = [
   },
   {
     headerName: "Link",
-    // cellRenderer: RendererStatus,
     flex: 0.5,
   },
   {

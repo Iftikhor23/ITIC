@@ -17,7 +17,7 @@ import {
   ResumeIcon,
   CallIcon,
   TestimonialICon,
-} from "../GenericIcons/genericIcons";
+} from "../Reusable/GenericIcons/genericIcons";
 
 export const Data = [
   {
