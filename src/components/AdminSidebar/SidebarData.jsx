@@ -1,11 +1,14 @@
 import CallRequest from "../../pages/Admin/CallRequest/CallRequest";
+import Cases from "../../pages/Admin/Cases";
 import AdminHome from "../../pages/Admin/Home";
 import Partners from "../../pages/Admin/Partners/Partners";
 import Resume from "../../pages/Admin/Resume/Resume";
 import Team from "../../pages/Admin/Team/Team";
 import Testimonials from "../../pages/Admin/Testimonials/Testimonials";
 import Vacancies from "../../pages/Admin/Vacancies/Vacancies";
-import Cases from "../../pages/Admin/Cases/Cases";
+import AddCase from "../../pages/Admin/Cases/AddCases";
+
+
 import {
   CaseIcon,
   PartnersIcon,
@@ -18,7 +21,7 @@ import {
 
 export const Data = [
   {
-    id: 8,
+    id: 1,
     title: "Home",
     icon: <TestimonialICon />,
     path: "/admin/home",
@@ -26,7 +29,7 @@ export const Data = [
     component: <AdminHome />,
   },
   {
-    id: 1,
+    id: 2,
     title: "Case studies",
     icon: <CaseIcon />,
     path: "/admin/case",
@@ -34,7 +37,7 @@ export const Data = [
     component: <Cases />,
   },
   {
-    id: 2,
+    id: 3,
     title: "Resume requests",
     icon: <ResumeIcon />,
     path: "/admin/resume",
@@ -42,7 +45,7 @@ export const Data = [
     component: <Resume />,
   },
   {
-    id: 3,
+    id: 4,
     title: "Call requests",
     icon: <CallIcon />,
     path: "/admin/req",
@@ -50,7 +53,7 @@ export const Data = [
     component: <CallRequest />,
   },
   {
-    id: 4,
+    id: 5,
     title: "Vacancies",
     icon: <VacancyIcon />,
     path: "/admin/vacancies",
@@ -58,7 +61,7 @@ export const Data = [
     component: <Vacancies />,
   },
   {
-    id: 5,
+    id: 6,
     title: "Team",
     icon: <TeamIcon />,
     path: "/admin/team",
@@ -66,7 +69,7 @@ export const Data = [
     component: <Team />,
   },
   {
-    id: 6,
+    id: 7,
     title: "Partners",
     icon: <PartnersIcon />,
     path: "/admin/partners",
@@ -74,11 +77,17 @@ export const Data = [
     component: <Partners />,
   },
   {
-    id: 7,
+    id: 8,
     title: "Testomonirals",
     icon: <TestimonialICon />,
     path: "/admin/testimonials",
     hidden: false,
     component: <Testimonials />,
+  },
+  {
+    id: 9,
+    path: "/admin/case/add",
+    hidden: true,
+    component: <AddCase />,
   },
 ];

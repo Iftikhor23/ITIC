@@ -9,7 +9,7 @@ Container.Wrap = styled.div`
     display: flex;
     align-items: center;
     background-color: #ffffff0d;
-    height: 60px;
+    height: ${({height}) => (height ? height : "60px")};
     width: ${({width}) => width ? width : "310px"};
     &:focus-within{
         border-bottom: 1px solid #ffffff;
