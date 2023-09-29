@@ -37,8 +37,8 @@ Wrapper.InputTable = styled.div`
     align-items: flex-start;
     gap: 24px;
     .imageInputWrap{
-        width: 311px;
-        height: 188px;
+        width: 209px;
+        height: 240px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -58,5 +58,11 @@ Wrapper.InputTable = styled.div`
 Wrapper.Flex = styled.div`
     display: flex;
     align-items: center;
+    gap: 24px;
+`;
+
+Wrapper.WrapTable = styled.div`
+    display: flex;
+    flex-direction: column;
     gap: 24px;
 `;

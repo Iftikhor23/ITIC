@@ -7,6 +7,7 @@ import Team from "../../pages/Admin/Team/Team";
 import Testimonials from "../../pages/Admin/Testimonials/Testimonials";
 import Vacancies from "../../pages/Admin/Vacancies/Vacancies";
 import AddCase from "../../pages/Admin/Cases/AddCases";
+import AddTeam from "../../pages/Admin/Team/AddTeam";
 
 
 import {
@@ -18,6 +19,7 @@ import {
   CallIcon,
   TestimonialICon,
 } from "../GenericIcons/genericIcons";
+
 
 export const Data = [
   {
@@ -89,5 +91,11 @@ export const Data = [
     path: "/admin/case/add",
     hidden: true,
     component: <AddCase />,
+  },
+  {
+    id: 10,
+    path: "/admin/team/add",
+    hidden: true,
+    component: <AddTeam />,
   },
 ];
