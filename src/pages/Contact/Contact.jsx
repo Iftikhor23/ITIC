@@ -3,7 +3,7 @@ import { HeadingOne } from "../../styled/styles";
 import { Container } from "./styles";
 import FormModal from "../../components/Modal/FormModal";
 import { useState } from "react";
-import Button from "../../components/ButtonComb/Button";
+import Button from "../../components/Reusable/ButtonComb/Button";
 
 function Contact() {
   const [showModal, setShowModal] = useState(false);

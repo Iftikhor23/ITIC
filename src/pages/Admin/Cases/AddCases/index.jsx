@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { Wrapper } from "./styles";
-import Button from "../../../../components/ButtonComb/Button";
-import Cancel from "../../../../components/CancelButton/Cancel";
+import Cancel from "../../../../components/Reusable/CancelButton/Cancel";
 import uploadIcon from "../../../../assets/icons/uploadCloud.svg";
 import AdminInput from "../../../../components/Reusable/AdminInput";
+import Button from "../../../../components/Reusable/ButtonComb/Button";
 
 function AddCase() {
   const inputRef = useRef(null);

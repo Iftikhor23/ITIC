@@ -2,9 +2,9 @@ import employees from "../../assets/employees.svg";
 import { Container } from "./styles";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import homepicture from "../../assets/homepicture.svg";
-import Button from "../../components/ButtonComb/Button";
 import FormModal from "../../components/Modal/FormModal";
 import { useState } from "react";
+import Button from "../../components/Reusable/ButtonComb/Button";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
