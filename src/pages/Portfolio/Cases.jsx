@@ -1,11 +1,11 @@
 import { Container } from "./styles";
-import Button from "../../components/ButtonComb/Button";
 import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
 import caseOne from "../../assets/case1.svg";
 import caseTwo from "../../assets/case2.svg";
 import caseThree from "../../assets/case3.svg";
 import CaseComp from "../../components/PortfolioCase/CaseComp";
 import { Link } from "react-router-dom";
+import Button from "../../components/Reusable/ButtonComb/Button";
 
 function Cases() {
   return (

@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 import closeIcon from "../../assets/icons/close.svg";
 import Input from "../InputComponent/Input";
-import Button from "../ButtonComb/Button";
+import Button from "../Reusable/ButtonComb/Button";
 
 function FormModal({ isVisible, onClose }) {
   if (!isVisible) return null;

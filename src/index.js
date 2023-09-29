@@ -6,7 +6,7 @@ import MainContexProvider from "./context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <MainContexProvider>
-    <App />
-  </MainContexProvider>
+      <MainContexProvider>
+        <App />
+      </MainContexProvider>
 );

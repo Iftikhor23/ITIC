@@ -1,8 +1,7 @@
 import { Container } from "./styles";
 import closeIcon from "../../assets/icons/close.svg";
-// import uploadIcon from '../../assets/icons/upload-cloud.svg';
 import Input from "../InputComponent/Input";
-import Button from "../ButtonComb/Button";
+import Button from "../Reusable/ButtonComb/Button";
 
 function JobModal({ isVisible, onClose }) {
   if (!isVisible) return null;
