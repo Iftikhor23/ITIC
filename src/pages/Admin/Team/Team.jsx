@@ -1,9 +1,9 @@
 import { Wrapper } from "./styles";
-import Button from "../../../components/ButtonComb/Button";
 import { column } from './header';
 import Table from "../../../components/Reusable/CustomTable";
 import AdminSearch from "../../../components/AminSearch";
 import { useNavigate } from "react-router-dom";
+import Button from "../../../components/Reusable/ButtonComb/Button";
 
 const  Team = () => {
   const navigate = useNavigate();
