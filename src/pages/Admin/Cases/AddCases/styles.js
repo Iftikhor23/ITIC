@@ -57,6 +57,12 @@ Wrapper.InputTable = styled.div`
 
 Wrapper.Flex = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 24px;
+    .top{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
 `;
