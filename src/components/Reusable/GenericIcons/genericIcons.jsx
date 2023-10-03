@@ -6,6 +6,11 @@ import { ReactComponent as Vacancy } from "../../../assets/icons/bag.svg";
 import { ReactComponent as Resume } from "../../../assets/icons/u_user.svg";
 import { ReactComponent as Call } from "../../../assets/icons/forwaded-call.svg";
 import { ReactComponent as Testimonials } from "../../../assets/icons/menu.svg";
+import { ReactComponent as ErorIcon } from "../../../assets/icons/error.svg";
+import { ReactComponent as Success } from "../../../assets/icons/Success.svg";
+import { ReactComponent as WarnIcons } from "../../../assets/icons/warn.svg";
+import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
+import { ReactComponent as Edit } from "../../../assets/icons/trash.svg";
 
 const CaseIcon = styled(PlusCircle)`
   path {
@@ -51,6 +56,29 @@ const TestimonialICon = styled(Testimonials)`
     fill: ${({ color }) => color && color};
   }
 `;
+const SuccessIcon = styled(Success)`
+	width: 30px;
+	height: 30px;
+`;
+const WarnIcon = styled(WarnIcons)`
+	width: 30px;
+	height: 30px;
+`;
+
+const ErrorsIcon = styled(ErorIcon)`
+ width: 30px;
+	height: 30px;
+`;
+const TrasIcon = styled(TrashIcon)`
+ width: 20px;
+	height: 20px;
+  cursor: pointer;
+`;
+const PenIcon = styled(Edit)`
+ width: 20px;
+	height: 20px;
+  cursor: pointer;
+`;
 
 export {
   TestimonialICon,
@@ -60,4 +88,9 @@ export {
   TeamIcon,
   PartnersIcon,
   CaseIcon,
+  ErrorsIcon,
+  SuccessIcon,
+  WarnIcon,
+  TrasIcon,
+  PenIcon
 };
