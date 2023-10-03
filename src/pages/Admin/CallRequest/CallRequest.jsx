@@ -1,12 +1,23 @@
-import { useCallReqContext } from "../../../context/CallReqContext"
+import { Wrapper } from "./styles";
+import { column } from './header';
+import Table from "../../../components/Reusable/CustomTable";
+import AdminSearch from "../../../components/AminSearch";
 
-function CallRequest() {
+const  CallReq = () => {
 
-  const [{calldata},dispatch] = useCallReqContext()
-  
   return (
-    <div>CallRequest</div>
-  )
+    <Wrapper>
+      <Wrapper.Wrap>
+        <Wrapper.Header>Call Requests</Wrapper.Header>
+        <Wrapper.Nav>
+          <AdminSearch/>
+        </Wrapper.Nav>
+        <Wrapper.WrapTable>
+          <Table column={column} />
+        </Wrapper.WrapTable>
+      </Wrapper.Wrap>
+    </Wrapper>
+  );
 }
 
-export default CallRequest
+export default CallReq;

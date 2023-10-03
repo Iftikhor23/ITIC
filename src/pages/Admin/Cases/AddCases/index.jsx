@@ -1,9 +1,10 @@
 import { useRef, useState } from "react";
 import { Wrapper } from "./styles";
-import Cancel from "../../../../components/Reusable/CancelButton/Cancel";
 import uploadIcon from "../../../../assets/icons/uploadCloud.svg";
 import AdminInput from "../../../../components/Reusable/AdminInput";
 import Button from "../../../../components/Reusable/ButtonComb/Button";
+import TagInput from "../../../../components/TagsInput";
+import RegularButton from "../../../../components/Reusable/RegularButton";
 
 function AddCase() {
   const inputRef = useRef(null);
@@ -23,7 +24,7 @@ function AddCase() {
       <Wrapper.Wrap>
         <Wrapper.Title>Add Case</Wrapper.Title>
         <Wrapper.Nav>
-          <Cancel />
+          <RegularButton title={"Cancel"}/>
           <Button
             btnheight="42px"
             btnwidth="135px"
@@ -54,8 +55,11 @@ function AddCase() {
             style={{ display: "none" }}
           />
           <Wrapper.Flex>
-            <AdminInput label={"Project name"} placeholder={"Project name"} />
-            <AdminInput label={"Project type"} placeholder={"Project type"} />
+            <div className="top">
+              <AdminInput label={"Project name"} placeholder={"Project name"} />
+              <AdminInput label={"Project type"} placeholder={"Project type"} />
+            </div>
+            <TagInput />
           </Wrapper.Flex>
         </Wrapper.InputTable>
       </Wrapper.Wrap>

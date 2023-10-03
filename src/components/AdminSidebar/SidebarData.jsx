@@ -80,7 +80,7 @@ export const Data = [
   },
   {
     id: 8,
-    title: "Testomonirals",
+    title: "Testomonials",
     icon: <TestimonialICon />,
     path: "/admin/testimonials",
     hidden: false,

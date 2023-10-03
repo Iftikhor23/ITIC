@@ -5,8 +5,8 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #f5f5f5;
-  width: 93px;
-  height: 42px;
+  width: ${({btnwidth}) => (btnwidth ? btnwidth : "93px")};
+  height: ${({btnheight}) => (btnheight ? btnheight : "42px")};
   color: rgba(5, 19, 19, 1);
   font-size: 14px;
   font-weight: 500;
