@@ -14,7 +14,7 @@ const ActionRenderer = ({ data }) => {
 		try {
 			const res = await request.get('admin/directions/all');
 			dispatch({
-				type: 'setDirections',
+				type: 'setCase',
 				payload: res?.data?.data,
 			});
 		} catch (error) {
@@ -43,7 +43,7 @@ const ActionRenderer = ({ data }) => {
 	const deleteFunc = async () => {
 		Popup({
 			title: 'Do you want to delete this direction ?',
-			isConfirmedFunction: () => deleteF(),
+				isConfirmedFunction: () => deleteF(),
 			showCancelButton: true,
 			type: 'question',
 		});
@@ -70,7 +70,6 @@ const ActionRenderer = ({ data }) => {
 export const column = [
   {
     headerName: "Cover",
-	cellRender: ActionRenderer,
     flex: 0.5,
   },
 

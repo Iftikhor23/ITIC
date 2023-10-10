@@ -10,7 +10,7 @@ import { ReactComponent as ErorIcon } from "../../../assets/icons/error.svg";
 import { ReactComponent as Success } from "../../../assets/icons/Success.svg";
 import { ReactComponent as WarnIcons } from "../../../assets/icons/warn.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
-import { ReactComponent as Edit } from "../../../assets/icons/trash.svg";
+import { ReactComponent as Edit } from "../../../assets/icons/edit.svg";
 import { ReactComponent as Home } from "../../../assets/icons/home.svg";
 
 const HomeIcon = styled(Home)`

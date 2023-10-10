@@ -4,13 +4,14 @@ export const initialState = {
         date:'',
 	},
 	selected: {},
-	prtnersdata: [],
+	search:[],
+	partnersdata: [],
 };
 
 export const reducer = (state, action) => {
 	switch (action.type) {
-		case 'setTeam':
-			return { ...state, prtnersdata: action.payload };
+		case 'setPartner':
+			return { ...state, partnersdata: action.payload };
 		case 'setSearch':
 			return { ...state, search: action.payload };
 		case 'setSelectedPartners':
