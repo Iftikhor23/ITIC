@@ -16,7 +16,6 @@ function AddCase() {
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
-    console.log(file);
     setImage(event.target.files[0]);
   };
   return (

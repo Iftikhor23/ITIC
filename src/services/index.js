@@ -2,16 +2,16 @@ import axios from 'axios';
 
 const request = axios.create({
 	baseURL: process.env.REACT_APP_BASE_URL,
-
+	
 	headers: {
 		common: {
 			Authorization:
 				window.location.pathname?.search('admin') > 0
 					? localStorage.getItem('tokenAdmin')
-						? 'Bearer ' + localStorage.getItem('tokenAdmin')
+						? 'Basic ' + localStorage.getItem('tokenAdmin')
 						: null
 					: localStorage.getItem('token')
-					? 'Bearer ' + localStorage.getItem('token')
+					? 'Basic ' + localStorage.getItem('token')
 					: null,
 		},
 	},
@@ -23,10 +23,10 @@ request.interceptors.request.use(
 		const token =
 			window.location.pathname?.search('admin') > 0
 				? localStorage.getItem('tokenAdmin')
-					? 'Bearer ' + localStorage.getItem('tokenAdmin')
+					? 'Basic ' + localStorage.getItem('tokenAdmin')
 					: null
 				: localStorage.getItem('token')
-				? 'Bearer ' + localStorage.getItem('token')
+				? 'Basic ' + localStorage.getItem('token')
 				: null;
 		config.headers['Authorization'] = `${token}`;
 
@@ -47,24 +47,25 @@ request.interceptors.response.use(
 		return response;
 	},
 	(err) => {
-		if (err?.response?.status === 401 || err?.response?.status === 403) {
-			if (
-				window.location.pathname !== '/signin' &&
-				window.location.pathname !== '/' &&
-				window.location.pathname !== '/register' &&
-				window.location.pathname?.search('admin/sign-in') < 0 &&
-				window.location.pathname?.search('reset') < 0 &&
-				window.location.pathname?.search('verify') < 0
-			) {
-				window.location.pathname?.search('admin') > 0
-					? (window.location.pathname = '/admin/sign-in')
-					: (window.location.pathname = '/signin');
-			} else {
-				return Promise.reject(err);
-			}
-		} else {
-			return Promise.reject(err);
-		}
+		// if (err?.response?.status === 401 || err?.response?.status === 403) {
+		// 	if (
+		// 		window.location.pathname !== '/signin' &&
+		// 		window.location.pathname !== '/' &&
+		// 		window.location.pathname !== '/register' &&
+		// 		window.location.pathname?.search('admin/sign-in') < 0 &&
+		// 		window.location.pathname?.search('reset') < 0 &&
+		// 		window.location.pathname?.search('verify') < 0
+		// 	) {
+		// 		window.location.pathname?.search('admin') > 0
+		// 			? (window.location.pathname = '/admin/sign-in')
+		// 			: (window.location.pathname = '/signin');
+		// 	} else {
+		// 		return Promise.reject(err);
+		// 	}
+		// } else {
+		// 	return Promise.reject(err);
+		// }
+		return "errore"
 	},
 );
 
