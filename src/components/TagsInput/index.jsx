@@ -3,7 +3,7 @@ import closeTag from "../../assets/icons/tagClose.svg";
 import { Container } from "./styles";
 
 function TagInput() {
-  const [tags, setTags] = useState(["apple", "kiwi"]);
+  const [tags, setTags] = useState([]);
 
   const removeTags = indexToRemove => {
     setTags(tags.filter((_, index) => index !== indexToRemove)); 

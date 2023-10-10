@@ -16,9 +16,10 @@ Container.CasesWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     width: 918px;
-    height: 1920px;
+    height: 100%;
     overflow: scroll;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    overflow-y: scroll;
     gap: 60px;
     &::-webkit-scrollbar{
         width: 0;

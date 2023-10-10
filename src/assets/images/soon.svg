@@ -1,0 +1,18 @@
+<svg width="131" height="70" viewBox="0 0 131 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector 768" filter="url(#filter0_b_483_8455)">
+<path d="M1 11.9816V68.0004C1.43927 69.7666 2.64727 68.7363 3.19636 68.0004C7.1498 57.4038 12.7139 54.3865 15.0018 54.2025H115.443C127.084 53.3194 129.994 46.6597 129.994 43.4402V19.1562C130.214 6.35196 124.046 1.86321 120.934 1.21938C95.5847 1.03541 22.5792 0.777849 13.3545 1.21938C4.12981 1.6609 1.27454 8.57816 1 11.9816Z" fill="#00CDC2" fill-opacity="0.1"/>
+<path d="M1 11.9816V68.0004C1.43927 69.7666 2.64727 68.7363 3.19636 68.0004C7.1498 57.4038 12.7139 54.3865 15.0018 54.2025H115.443C127.084 53.3194 129.994 46.6597 129.994 43.4402V19.1562C130.214 6.35196 124.046 1.86321 120.934 1.21938C95.5847 1.03541 22.5792 0.777849 13.3545 1.21938C4.12981 1.6609 1.27454 8.57816 1 11.9816Z" stroke="url(#paint0_linear_483_8455)"/>
+</g>
+<defs>
+<filter id="filter0_b_483_8455" x="-43.5" y="-43.5244" width="218" height="157" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="22"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_483_8455"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_483_8455" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_483_8455" x1="11.5" y1="8.47559" x2="65.5" y2="68.9756" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00CDC2"/>
+<stop offset="1" stop-color="#00CDC2" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

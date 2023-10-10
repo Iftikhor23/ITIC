@@ -24,7 +24,7 @@ function AdminSidebar() {
               key={i}
               disable={disable ? 1 : 0}
             >
-              {icon} <Container.Title>{title}</Container.Title>
+              {icon} <Container.Title active={url === path ? 1 : 0}>{title}</Container.Title>
             </Container.Flex>
           )
       )}

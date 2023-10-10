@@ -12,7 +12,7 @@ import Contact from "../pages/Contact/Contact";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import logo from "../assets/itLogo.svg";
+import logo from "../assets/images/itLogo.svg";
 import Footer from "../components/Footer/Footer";
 import SidebarButton from "../components/SidebarButton/sidebarButton";
 

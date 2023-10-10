@@ -1,7 +1,7 @@
 import React from 'react'
 import { AdminNav } from './styled'
-import logo from '../../assets/adminlogo.svg'
-import adminuser from '../../assets/adminuser.svg'
+import logo from '../../assets/images/adminlogo.svg'
+import adminuser from '../../assets/images/adminuser.svg'
 
 const AdminNavbar = () => {
   return (

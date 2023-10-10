@@ -11,6 +11,13 @@ import { ReactComponent as Success } from "../../../assets/icons/Success.svg";
 import { ReactComponent as WarnIcons } from "../../../assets/icons/warn.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 import { ReactComponent as Edit } from "../../../assets/icons/trash.svg";
+import { ReactComponent as Home } from "../../../assets/icons/home.svg";
+
+const HomeIcon = styled(Home)`
+  path {
+    fill: ${({ color }) => color && color};
+  }
+`;
 
 const CaseIcon = styled(PlusCircle)`
   path {
@@ -57,30 +64,31 @@ const TestimonialICon = styled(Testimonials)`
   }
 `;
 const SuccessIcon = styled(Success)`
-	width: 30px;
-	height: 30px;
+  width: 30px;
+  height: 30px;
 `;
 const WarnIcon = styled(WarnIcons)`
-	width: 30px;
-	height: 30px;
+  width: 30px;
+  height: 30px;
 `;
 
 const ErrorsIcon = styled(ErorIcon)`
- width: 30px;
-	height: 30px;
+  width: 30px;
+  height: 30px;
 `;
 const TrasIcon = styled(TrashIcon)`
- width: 20px;
-	height: 20px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 `;
 const PenIcon = styled(Edit)`
- width: 20px;
-	height: 20px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 `;
 
 export {
+  HomeIcon,
   TestimonialICon,
   CallIcon,
   ResumeIcon,
@@ -92,5 +100,5 @@ export {
   SuccessIcon,
   WarnIcon,
   TrasIcon,
-  PenIcon
+  PenIcon,
 };

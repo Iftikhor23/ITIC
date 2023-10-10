@@ -8,7 +8,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     border: 1px #d9d9d9 dashed;
-    border-radius: 20px;
+    border-radius: ${({br}) => (br ? br : "20px")};
   }
   .imageInput {
     display: none;
