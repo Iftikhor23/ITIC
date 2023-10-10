@@ -40,3 +40,15 @@ Container.Title = styled.h3`
   line-height: normal;
   white-space: nowrap;
 `;
+Container.Flex = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 8px;
+  .blogImgRen {
+		width: 69px;
+		height: 44px;
+		border-radius: 6px;
+		border: 1px solid #eee;
+		object-fit: cover;
+	}
+`;

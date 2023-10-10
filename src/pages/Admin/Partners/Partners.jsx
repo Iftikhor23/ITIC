@@ -1,12 +1,36 @@
 import { Wrapper } from "./styles";
-import { column } from './header';
 import Table from "../../../components/Reusable/CustomTable";
 import Button from "../../../components/Reusable/ButtonComb/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddPartner from "./AddPartner/index";
+import { column } from "./header";
+import { useLocation } from "react-router-dom";
+import request from "../../../services";
+import { usePartnersContext } from "../../../context/PartnersContext";
 
-const  Partners = () => {
-  const[showModal, setShowModal] = useState(false);
+const Partners = () => {
+  const { search } = useLocation();
+  const [{ partnersdata }, dispatch] = usePartnersContext();
+  const [showModal, setShowModal] = useState(false);
+
+  
+  const getPartners = async () => {
+    try {
+      const res = await request.get(`admin/partner/all`);
+      dispatch({
+        type: "setPartner",
+        payload: res?.data?.data,
+      });
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
+  useEffect(() => {
+    getPartners();
+  }, []);
+  console.log("partnersdata: ",partnersdata);
+
   return (
     <Wrapper>
       <Wrapper.Wrap>
@@ -24,12 +48,12 @@ const  Partners = () => {
           />
         </Wrapper.Nav>
         <Wrapper.WrapTable>
-          <Table column={column} />
+          <Table column={column} rowData={partnersdata} />
         </Wrapper.WrapTable>
       </Wrapper.Wrap>
-      <AddPartner isVisible={showModal} onClose={() => setShowModal(false)}/>
+      <AddPartner isVisible={showModal} onClose={() => setShowModal(false)} />
     </Wrapper>
   );
-}
+};
 
 export default Partners;

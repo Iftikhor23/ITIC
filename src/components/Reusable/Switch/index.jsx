@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from './style';
-const GenericSwitch = ({
+
+const Switch = ({
 	disabled,
 	onClick,
 	size,
@@ -44,4 +45,4 @@ const GenericSwitch = ({
 	);
 };
 
-export default GenericSwitch;
+export default Switch;
