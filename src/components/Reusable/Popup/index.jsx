@@ -1,7 +1,7 @@
 import './style.css';
-import Question from '../../../assets/popup_question.png';
-import Error from '../../../assets/popup_error.png';
-import Info from '../../../assets/popup_info.png';
+import Question from '../../../assets/images/popup_question.png';
+import Error from '../../../assets/images/popup_error.png';
+import Info from '../../../assets/images/popup_info.png';
 import Swal from 'sweetalert2';
 const Popup = ({
 	title,

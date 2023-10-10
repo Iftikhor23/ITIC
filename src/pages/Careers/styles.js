@@ -13,6 +13,7 @@ export const Container = styled.div`
 Container.Wrapper = styled.div`
   display: flex;
   align-items: center;
+  gap: 50px;
 `;
 
 Container.Text = styled.div``;

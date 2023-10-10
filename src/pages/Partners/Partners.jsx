@@ -1,10 +1,10 @@
 import { Container } from "./styles";
 import { HeadingOne, Paragraph } from "../../styled/styles";
-import itPark from "../../assets/itPark.svg";
-import finTech from "../../assets/fintech.svg";
-import derc from "../../assets/derc.svg";
-import tatu from "../../assets/tatu.svg";
-import ministry from "../../assets/ministry.svg";
+import itPark from "../../assets/images/itPark.svg";
+import finTech from "../../assets/images/fintech.svg";
+import derc from "../../assets/images/derc.svg";
+import tatu from "../../assets/images/tatu.svg";
+import ministry from "../../assets/images/ministry.svg";
 function Partners() {
   return (
     <Container>

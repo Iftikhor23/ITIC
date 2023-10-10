@@ -1,4 +1,4 @@
-import bubble from "../../assets/bubble.svg";
+import bubble from "../../assets/images/bubble.svg";
 import { HeadingOne } from "../../styled/styles";
 import { Container } from "./styles";
 import FormModal from "../../components/Modal/FormModal";
@@ -48,7 +48,6 @@ function Contact() {
       <Container.FooterWrapper>
         <p>©2023 all rights reserved</p>
         <p>Developed by: OOO IT Investment center</p>
-        <p>Designed by: Shaxriyor</p>
       </Container.FooterWrapper>
       <Container.Gradient></Container.Gradient>
       <Container.Bubble>

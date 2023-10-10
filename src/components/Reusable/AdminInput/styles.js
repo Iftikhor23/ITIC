@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 21px 24px 20px 24px;
+  gap: 18px;
 `;
 
 Wrapper.Input = styled.input`
@@ -40,6 +41,15 @@ Wrapper.Label = styled.p`
   padding-bottom: 8px;
   color: #000000;
   font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+`;
+
+Container.Prefix = styled.div`
+  color: #000000;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;

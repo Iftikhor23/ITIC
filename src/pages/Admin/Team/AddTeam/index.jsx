@@ -4,6 +4,7 @@ import uploadIcon from "../../../../assets/icons/uploadCloud.svg";
 import AdminInput from "../../../../components/Reusable/AdminInput";
 import Button from "../../../../components/Reusable/ButtonComb/Button";
 import RegularButton from "../../../../components/Reusable/RegularButton";
+import { useNavigate } from "react-router-dom";
 
 function AddTeam() {
   const inputRef = useRef(null);
@@ -17,12 +18,20 @@ function AddTeam() {
     const file = event.target.files[0];
     setImage(event.target.files[0]);
   };
+
+  const navigate = useNavigate();
+  const handleNav = () => {
+    navigate("/admin/team");
+  };
+
   return (
     <Wrapper>
       <Wrapper.Wrap>
         <Wrapper.Title>Add Member</Wrapper.Title>
         <Wrapper.Nav>
-          <RegularButton title={"Cancel"} />
+          <div onClick={handleNav}>
+            <RegularButton title={"Cancel"} />
+          </div>
           <Button
             btnheight="42px"
             btnwidth="135px"

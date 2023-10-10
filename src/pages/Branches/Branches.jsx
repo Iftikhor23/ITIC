@@ -1,6 +1,6 @@
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import { Container } from "./styles";
-import world from "../../assets/world.svg";
+import world from "../../assets/images/world.svg";
 
 function Branches() {
   return (

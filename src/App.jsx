@@ -4,6 +4,7 @@ import Pages from "./pages/index";
 import AllVacancies from "./pages/AllVacancies/AllVacancies";
 import Admin from "./pages/Admin";
 import { Data } from "./components/AdminSidebar/SidebarData";
+import AdminSign from "./pages/AdminSign";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/allCases" element={<AllCases />} />
+          <Route path="/sign" element={<AdminSign/>}/>
           <Route path="/allVacancies" element={<AllVacancies />} />
           <Route path="/" element={<Pages />} />
           <Route path="/admin" element={<Admin />}>

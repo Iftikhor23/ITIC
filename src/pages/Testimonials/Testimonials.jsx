@@ -8,10 +8,10 @@ import {
 } from "../../styled/styles";
 
 import {Container} from './styles'
-import testimonial1 from "../../assets/testimonial1.svg";
-import testimonial2 from "../../assets/testimonial2.svg";
-import testimonial3 from "../../assets/testimonial3.svg";
-import testimonial4 from "../../assets/testimonial4.svg";
+import testimonial1 from "../../assets/images/testimonial1.svg";
+import testimonial2 from "../../assets/images/testimonial2.svg";
+import testimonial3 from "../../assets/images/testimonial3.svg";
+import testimonial4 from "../../assets/images/testimonial4.svg";
 
 
 const Data = [

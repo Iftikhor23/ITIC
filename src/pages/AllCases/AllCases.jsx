@@ -1,10 +1,10 @@
 import CaseComp from "../../components/PortfolioCase/CaseComp";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import { Container } from "./styles";
-import caseFour from "../../assets/case4.svg";
-import caseFive from "../../assets/case5.svg";
-import caseSix from "../../assets/case6.svg";
-import caseSeven from "../../assets/case7.svg";
+import caseFour from "../../assets/images/case4.svg";
+import caseFive from "../../assets/images/case5.svg";
+import caseSix from "../../assets/images/case6.svg";
+import caseSeven from "../../assets/images/case7.svg";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";

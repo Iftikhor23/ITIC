@@ -1,10 +1,10 @@
-import person1 from "../../assets/worker1.svg";
-import person2 from "../../assets/worker2.svg";
-import person3 from "../../assets/worker3.svg";
-import person4 from "../../assets/worker4.svg";
-import person5 from "../../assets/worker5.svg";
-import person6 from "../../assets/worker6.svg";
-import person7 from "../../assets/worker7.svg";
+import person1 from "../../assets/images/worker1.svg";
+import person2 from "../../assets/images/worker2.svg";
+import person3 from "../../assets/images/worker3.svg";
+import person4 from "../../assets/images/worker4.svg";
+import person5 from "../../assets/images/worker5.svg";
+import person6 from "../../assets/images/worker6.svg";
+import person7 from "../../assets/images/worker7.svg";
 import { Container } from "./styles";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 

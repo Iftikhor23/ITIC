@@ -1,7 +1,7 @@
-import category1 from "../../assets/dir1.svg";
-import category2 from "../../assets/dir2.svg";
-import category3 from "../../assets/dir3.svg";
-import category4 from "../../assets/dir4.svg";
+import category1 from "../../assets/images/dir1.svg";
+import category2 from "../../assets/images/dir2.svg";
+import category3 from "../../assets/images/dir3.svg";
+import category4 from "../../assets/images/dir4.svg";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import { Container } from "./styles";
 

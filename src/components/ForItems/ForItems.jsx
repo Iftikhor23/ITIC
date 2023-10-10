@@ -1,6 +1,6 @@
-import globe from "../../assets/globe.svg";
-import building from "../../assets/building.svg";
-import freelancer from "../../assets/freelancer.svg";
+import globe from "../../assets/images/globe.svg";
+import building from "../../assets/images/building.svg";
+import freelancer from "../../assets/images/freelancer.svg";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import { Container } from "./styles";
 

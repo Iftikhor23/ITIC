@@ -8,9 +8,13 @@ import Testimonials from "../../pages/Admin/Testimonials/Testimonials";
 import Vacancies from "../../pages/Admin/Vacancies/Vacancies";
 import AddCase from "../../pages/Admin/Cases/AddCases";
 import AddTeam from "../../pages/Admin/Team/AddTeam";
+import AddVacancies from '../../pages/Admin/Vacancies/AddVacancies'
+import AddTestimonials from "../../pages/Admin/Testimonials/AddTestimonials";
+
 
 
 import {
+  HomeIcon,
   CaseIcon,
   PartnersIcon,
   TeamIcon,
@@ -25,7 +29,7 @@ export const Data = [
   {
     id: 1,
     title: "Home",
-    icon: <TestimonialICon />,
+    icon: <HomeIcon />,
     path: "/admin",
     hidden: false,
     component: <AdminHome />,
@@ -98,4 +102,16 @@ export const Data = [
     hidden: true,
     component: <AddTeam />,
   },
+  {
+    id: 11,
+    path: "/admin/vacancies/add",
+    hidden: true,
+    component: <AddVacancies/>
+  },
+  {
+    id:12,
+    path: "/admin/testimonials/add",
+    hidden: true,
+    component: <AddTestimonials/>
+  }
 ];

@@ -15,7 +15,7 @@ function ImageUpload(props) {
     setImage(event.target.files[0]);
   };
   return (
-    <Container inputheight={props.inputheight} inputwidth = {props.inputwidth}>
+    <Container inputheight={props.inputheight} inputwidth = {props.inputwidth} br={props.br}>
       <div
         className="imageInputWrap"
         style={{

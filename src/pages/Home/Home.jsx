@@ -1,7 +1,7 @@
-import employees from "../../assets/employees.svg";
+import employees from "../../assets/images/employees.svg";
 import { Container } from "./styles";
 import { HeadingOne, Paragraph } from "../../styled/styles";
-import homepicture from "../../assets/homepicture.svg";
+import homepicture from "../../assets/images/homepicture.svg";
 import FormModal from "../../components/Modal/FormModal";
 import { useState } from "react";
 import Button from "../../components/Reusable/ButtonComb/Button";
@@ -45,7 +45,7 @@ function Home() {
             alt="home background"
           />
         </Container.MidWrap>
-      <Container.Gradient></Container.Gradient>
+      {/* <Container.Gradient></Container.Gradient> */}
       <FormModal isVisible={showModal} onClose={() => setShowModal(false)} />
     </Container>
   );
