@@ -1,21 +1,24 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import closeTag from "../../assets/icons/tagClose.svg";
 import { Container } from "./styles";
 
-function TagInput() {
-  const [tags, setTags] = useState([]);
+function TagInput({ tags, setTags }) {
+  const [inputValue, setInputValue] = useState("");
 
-  const removeTags = indexToRemove => {
-    setTags(tags.filter((_, index) => index !== indexToRemove)); 
-  }
+  const removeTags = (indexToRemove) => {
+    const newTags = [...tags];
+    newTags.splice(indexToRemove, 1);
+    setTags(newTags);
+  };
 
-  const addTags = event => {
-    if(event.target.value !== ""){
-        setTags([...tags, event.target.value]);
-        event.target.value = "";
+  const addTags = (event) => {
+    if (event.key === "Enter" && inputValue.trim() !== "") {
+      const newTags = [...tags, inputValue.trim()];
+      setTags(newTags);
+      setInputValue("");
     }
   };
-  console.log(tags);
+
   return (
     <Container>
       <div className="tagsInput">
@@ -23,11 +26,22 @@ function TagInput() {
           {tags.map((tag, index) => (
             <li key={index} className="tag">
               <span>{tag}</span>
-              <img src={closeTag} alt="close icon" onClick={() => removeTags(index)} style={{cursor: "pointer"}}/>
+              <img
+                src={closeTag}
+                alt="close icon"
+                onClick={() => removeTags(index)}
+                style={{ cursor: "pointer" }}
+              />
             </li>
           ))}
         </ul>
-        <input type="text" placeholder="Add tags" onKeyUp={e => e.key === "Enter" ? addTags(e) : null} />
+        <input
+          type="text"
+          placeholder="Add tags"
+          onKeyUp={(e) => addTags(e)}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
       </div>
     </Container>
   );

@@ -1,9 +1,9 @@
 export const initialState = {
 	userData: {
 		projectName: '',
-		projectType: '',
+		client: '',
+		tags: [],
         link: '',
-		coverImg:'',
 	},
 	selected: {},
 	casedata: [],
