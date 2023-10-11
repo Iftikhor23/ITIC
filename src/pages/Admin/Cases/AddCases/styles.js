@@ -65,4 +65,15 @@ Wrapper.Flex = styled.div`
         align-items: center;
         gap: 24px;
     }
+    .top1{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 226px;
+    }
+`;
+ export const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
