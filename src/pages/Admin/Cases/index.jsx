@@ -24,9 +24,7 @@ const  Cases = () => {
     }
   };
 
-  useEffect(() => {
-    getPartners();
-  }, []);
+
   const searchHandle = async (e) => {
     const searchValue = e.target.value;
     try {
