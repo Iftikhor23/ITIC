@@ -1,25 +1,65 @@
 import styled from "styled-components";
+import background from "../../assets/images/bacslice.png";
 
 export const Container = styled.div`
-  background-color: #051c2c;
+  background: url(${background});
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 130px;
-  padding-top: 140px;
   position: relative;
 `;
 
 Container.MidWrap = styled.div`
   display: flex;
   align-items: center;
+  .chart {
+    position: relative;
+    bottom: -180px;
+    width: 620px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .lilChart {
+      position: absolute;
+      left: -26px;
+      z-index: 99;
+      width: 280px;
+      height: 500px;
+      bottom: 0;
+    }
+    .midChart {
+      position: absolute;
+      left: 182px;
+      bottom: 0;
+      width: 224px;
+      z-index: 20;
+      height: 350px;
+    }
+    .bigChart {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 354px;
+      height: 600px;
+    }
+    .upTrade {
+      position: absolute;
+      top: -22px;
+      left: 119px;
+      z-index: 20;
+    }
+  }
 `;
 
 Container.Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 140px;
+  margin-left: 130px;
 `;
 
 Container.ScrollIcon = styled.div`
@@ -39,14 +79,4 @@ Container.ScrollIcon = styled.div`
 Container.TextWrap = styled.div`
   display: flex;
   gap: 14px;
-`;
-
-Container.Gradient = styled.div`
-  background-color: #00cdc2;
-  border-radius: 601.5px/389px;
-  filter: blur(243px);
-  height: 778px;
-  position: fixed;
-  width: 882px;
-  top: 472px;
 `;

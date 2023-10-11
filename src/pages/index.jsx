@@ -35,7 +35,7 @@ function Pages() {
         scrollTrigger: {
           trigger: triggerRef.current,
           start: "top top",
-          end: "bottom -1999%",
+          end: "bottom -2999%",
           scrub: 1,
           pin: true,
           // markers: true

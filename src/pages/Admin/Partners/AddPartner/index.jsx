@@ -52,7 +52,7 @@ function AddPartner({ isVisible, onClose }) {
   };
 
   const saveImage = async () => {
-    if(idOfAttachmentId && urlFormData){
+    if(true){
       try {
         const res = await request.post(
           "admin/partner",

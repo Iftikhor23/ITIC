@@ -1,12 +1,12 @@
 import { Container, Wrapper } from "./styles";
 
-function AdminInput({ label, placeholder, prefix }) {
+function AdminInput({ label, placeholder, prefix, lbcolor }) {
   return (
     <Container>
-      <Wrapper.Label>{label}</Wrapper.Label>
+      <Wrapper.Label lbcolor={lbcolor}>{label}</Wrapper.Label>
       <Wrapper>
         <Container.Prefix>{prefix}</Container.Prefix>
-        <Wrapper.Input placeholder={placeholder} />
+        <Wrapper.Input placeholder={placeholder} lbcolor={lbcolor}/>
       </Wrapper>
     </Container>
   );
