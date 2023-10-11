@@ -28,8 +28,7 @@ const Partners = () => {
 
   useEffect(() => {
     getPartners();
-  }, []);
-  console.log("partnersdata: ",partnersdata);
+  }, [partnersdata]);
 
   return (
     <Wrapper>

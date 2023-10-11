@@ -8,10 +8,8 @@ import Testimonials from "../../pages/Admin/Testimonials/Testimonials";
 import Vacancies from "../../pages/Admin/Vacancies/Vacancies";
 import AddCase from "../../pages/Admin/Cases/AddCases";
 import AddTeam from "../../pages/Admin/Team/AddTeam";
-import AddVacancies from '../../pages/Admin/Vacancies/AddVacancies'
+import AddVacancies from "../../pages/Admin/Vacancies/AddVacancies";
 import AddTestimonials from "../../pages/Admin/Testimonials/AddTestimonials";
-
-
 
 import {
   HomeIcon,
@@ -23,7 +21,6 @@ import {
   CallIcon,
   TestimonialICon,
 } from "../Reusable/GenericIcons/genericIcons";
-
 
 export const Data = [
   {
@@ -97,6 +94,12 @@ export const Data = [
     component: <AddCase />,
   },
   {
+    id: 71,
+    path: "/admin/case/edite/:id",
+    hidden: true,
+    component: <AddCase />,
+  },
+  {
     id: 10,
     path: "/admin/team/add",
     hidden: true,
@@ -106,12 +109,12 @@ export const Data = [
     id: 11,
     path: "/admin/vacancies/add",
     hidden: true,
-    component: <AddVacancies/>
+    component: <AddVacancies />,
   },
   {
-    id:12,
+    id: 12,
     path: "/admin/testimonials/add",
     hidden: true,
-    component: <AddTestimonials/>
-  }
+    component: <AddTestimonials />,
+  },
 ];
