@@ -3,6 +3,7 @@ import { column } from './header';
 import Table from "../../../components/Reusable/CustomTable";
 import Button from "../../../components/Reusable/ButtonComb/Button";
 import { useNavigate } from "react-router-dom";
+import AdminSearch from '../../../components/AminSearch';
 
 const  Vacancies = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const  Vacancies = () => {
       <Wrapper.Wrap>
         <Wrapper.Header>Vacancies</Wrapper.Header>
         <Wrapper.Nav>
+          <AdminSearch/>
           <Button
             btnheight="42px"
             btnwidth="107px"

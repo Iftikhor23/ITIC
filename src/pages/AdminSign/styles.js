@@ -1,22 +1,15 @@
 import styled from "styled-components";
+import background from "../../assets/images/signBack.png";
 
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #051c2c;
+  background: url(${background});
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  .gradient {
-    background-color: #00cdc2;
-    height: 700px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 700px;
-    border-radius: 616.5px/503.5px;
-    filter: blur(300px);
-  }
 `;
 
 Container.Wrapper = styled.div`
@@ -31,4 +24,15 @@ Container.Wrapper = styled.div`
   z-index: 1;
 `;
 
-Container.Header = styled.div``;
+Container.Header = styled.div`
+text-align: center;
+  .headerText {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 22px;
+    white-space: nowrap;
+    margin-top: 30px;
+  }
+`;

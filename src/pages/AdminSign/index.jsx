@@ -9,9 +9,10 @@ function AdminSign() {
       <Container.Wrapper>
         <Container.Header>
           <img src={logo} alt="logo" />
+          <p className="headerText">Build Your Future With Us</p>
         </Container.Header>
-        <AdminInput label={"Email"} placeholder={"Enter email"} />
-        <AdminInput label={"Password"} placeholder={"Enter password"} />
+        <AdminInput label={"Email"} placeholder={"Enter email"} lbcolor={"#fff"}/>
+        <AdminInput label={"Password"} placeholder={"Enter password"} lbcolor={"#fff"}/>
         <ButtonComb
           btnheight="60px"
           btnwidth="200px"
@@ -22,7 +23,6 @@ function AdminSign() {
           iconSize="24px"
         />
       </Container.Wrapper>
-      <div className="gradient"></div>
     </Container>
   );
 }

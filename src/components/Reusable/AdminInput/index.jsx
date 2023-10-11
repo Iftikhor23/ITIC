@@ -10,7 +10,7 @@ function AdminInput({ label, placeholder, prefix, onChange,value}) {
 
   return (
     <Container>
-      <Wrapper.Label>{label}</Wrapper.Label>
+      <Wrapper.Label lbcolor={lbcolor}>{label}</Wrapper.Label>
       <Wrapper>
         <Container.Prefix>{prefix}</Container.Prefix>
         <Wrapper.Input

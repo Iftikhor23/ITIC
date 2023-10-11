@@ -1,6 +1,10 @@
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import { Container } from "./styles";
+import { Fade } from "react-reveal";
 import world from "../../assets/images/world.svg";
+import soon from "../../assets/images/soon.png";
+import uzbekistan from "../../assets/images/uzb.png";
+import singapore from "../../assets/images/singapore.png";
 
 function Branches() {
   return (
@@ -18,10 +22,14 @@ function Branches() {
 
         <div className="image">
           <img src={world} alt="world map" width={"1304px"} height={"643px"} />
+          <Fade clear>
+            <img className="soonUsa" src={soon} alt="location" />
+          </Fade>
+          <img className="soonBra" src={soon} alt="location" />
+          <img className="uzbLoc" src={uzbekistan} alt="location" />
+          <img className="sinLoc" src={singapore} alt="location" />
         </div>
       </Container.Wrapper>
-      {/* <Container.GradientOne></Container.GradientOne>
-      <Container.GradientTwo></Container.GradientTwo> */}
     </Container>
   );
 }

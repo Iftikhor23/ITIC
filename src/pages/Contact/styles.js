@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import background from '../../assets/images/contactBack.png'
 
 export const Container = styled.div`
   display: flex;
@@ -6,9 +7,11 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  background-color: #051c2c;
   padding: 100px 0px 32px 115px;
   position: relative;
+  background: url(${background});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 Container.BtnWrapper = styled.div`
@@ -83,6 +86,19 @@ Container.Bubble = styled.div`
     right: 0;
     object-fit: cover;
     position: fixed;
-    bottom: 0;
+    bottom: -20px;
     width: 699px;
+    animation: wabble 2s linear infinite;
+
+    @keyframes wabble {
+      0%{
+        transform: translateY(-5px);
+      }
+      50%{
+        transform: translateY(-30px);
+      }
+      100%{
+        transform: translateY(-5px);
+      }
+    }
 `;
