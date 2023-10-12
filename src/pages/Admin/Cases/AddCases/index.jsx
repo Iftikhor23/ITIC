@@ -113,12 +113,12 @@ const AddCase = () => {
                 isActive: state?.isActive,
               },
             },
-            navigate('/admin/case'),
+            navigate("/admin/case"),
             Toast({
               type: "success",
               message: "Saved",
             })
-            );
+          );
         } catch (error) {
           console.error("Saqlashda xatolik yuz berdi:", error);
         }
@@ -128,13 +128,27 @@ const AddCase = () => {
     }
   };
 
+  const getPartners = async () => {
+    try {
+      const res = await request.get(`admin/case/get/all/info`);
+      dispatch({
+        type: "setCase",
+        payload: res?.data?.data,
+      });
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
+  console.log(state, "bu state");
+
   return (
     <Wrapper>
       <Wrapper.Wrap>
         <Wrapper.Title>Add Case</Wrapper.Title>
         <Wrapper.Nav>
           <div onClick={() => navigate("/admin/case")}>
-            <RegularButton title={"Cancel"} />
+            <RegularButton title={"Cancel"}  />
           </div>
           <Button
             btnheight="42px"
@@ -172,27 +186,30 @@ const AddCase = () => {
               <AdminInput
                 label={"Project name"}
                 placeholder={"Project name"}
-                onChange={(newValue) =>
-                  setState({ ...state, projectName: newValue })
-                }
                 value={state?.projectName}
+                onChange={(e) => {
+                  setState({ ...state, projectName: e.target.value });
+                }}
               />
+
               <AdminInput
                 label={"Client"}
                 placeholder={"Client"}
-                onChange={(newValue) =>
-                  setState({ ...state, client: newValue })
-                }
                 value={state?.client}
+                onChange={(e) => {
+                  setState({ ...state, client: e.target.value });
+                }}
               />
             </div>
             <div className="top1">
               <AdminInput
                 label={"Project link"}
                 placeholder={"Project link"}
-                onChange={(newValue) => setState({ ...state, link: newValue })}
                 value={state?.link}
-              />
+                onChange={(e) => {
+                  setState({ ...state, link: e.target.value });
+                }}
+              />  
               <Flex>
                 <Switch
                   onClick={(v) => setState({ ...state, isActive: v })}
