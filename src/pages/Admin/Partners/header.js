@@ -7,92 +7,104 @@ import Toast from "../../../components/Reusable/Toast";
 import { usePartnersContext } from "../../../context/useContext";
 import request from "../../../services";
 import { Wrapper } from "./styles";
-import { useNavigate } from "react-router-dom";
 import Switch from "../../../components/Reusable/Switch";
 import AddPartner from "./AddPartner";
 import { useEffect, useState } from "react";
 
 const ActionRenderer = ({ data }) => {
-	const [{ selected }, dispatch] = usePartnersContext();
-	const [isModalVisible, setIsModalVisible] = useState(false);
-	const [state, setState] = useState({
-	  partnerPhotoUrl: selected?.partnerPhotoUrl || null,
-	  attachmentId: selected?.attachmentId || "",
-	  isActive: selected?.isActive || false,
-	});
-  
-	const getPartners = async () => {
-	  try {
-		const res = await request.get(`admin/partner/all`);
-		dispatch({
-		  type: "setPartner",
-		  payload: res?.data?.data,
-		});
-	  } catch (error) {
-		console.error("Error", error);
-	  }
-	};
-  
-	const handleCloseModal = () => {
-	  setIsModalVisible(false);
-	};
-  
-	const deleteF = async () => {
-	  try {
-		const res = await request.delete(`admin/partner/${data?.id}`);
-		Toast({
-		  type: "success",
-		  message: "Deleted !",
-		});
-	  } catch (error) {
-		Swal.fire(error?.response?.data?.resultMsg);
-	  }
-	};
-  
-	const deleteFunc = async () => {
-	  Swal.fire({
-		title: "Do you want to delete this direction ?",
-		showCancelButton: true,
-		confirmButtonText: "Yes",
-		cancelButtonText: "No",
-	  }).then((result) => {
-		if (result.isConfirmed) {
-		  deleteF();
-		}
-	  });
-	};
-  
-	const editFunc = () => {
-		dispatch({
-		  type: "setSelectedPartners",
-		  payload: data,
-		});
-		setIsModalVisible(true);
-		setState({
-		  partnerPhotoUrl: data?.partnerPhotoUrl || null,
-		  attachmentId: data?.attachmentId || "",
-		  isActive: data?.isActive || false,
-		});
-	  };
-  
-	return (
-	  <Wrapper.Flex>
-		<Wrapper.Box onClick={deleteFunc}>
-		  <TrasIcon />
-		</Wrapper.Box>
-		<Wrapper.Box onClick={editFunc}>
-		  <PenIcon />
-		</Wrapper.Box>
-		{isModalVisible && (
-		  <AddPartner
-			isVisible={isModalVisible}
-			onClose={handleCloseModal}
-			initialValues={state}
-		  />
-		)}
-	  </Wrapper.Flex>
-	);
+  const [{ selected }, dispatch] = usePartnersContext();
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [state, setState] = useState({
+    partnerPhotoUrl: selected?.partnerPhotoUrl || null,
+    attachmentId: selected?.attachmentId || "",
+    isActive: selected?.isActive || false,
+  });
+
+  const getPartners = async () => {
+    try {
+      const res = await request.get(`admin/partner/all`);
+      dispatch({
+        type: "setPartner",
+        payload: res?.data?.data,
+      });
+    } catch (error) {
+      console.error("Error", error);
+    }
   };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+  };
+
+  const deleteF = async () => {
+    try {
+      const res = await request.delete(`admin/partner/${data?.id}`);
+      getPartners();
+      Toast({
+        type: "success",
+        message: "Deleted !",
+      });
+    } catch (error) {
+      Swal.fire(error?.response?.data?.resultMsg);
+    }
+  };
+
+  const deleteFunc = async () => {
+    Swal.fire({
+      title: "Do you want to delete this direction ?",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteF();
+      }
+    });
+  };
+
+  const editFunc = () => {
+    dispatch({
+      type: "setSelectedPartners",
+      payload: data,
+    });
+    setIsModalVisible(true);
+    setState({
+      partnerPhotoUrl: data?.partnerPhotoUrl || null,
+      attachmentId: data?.attachmentId || "",
+      isActive: data?.isActive || false,
+    });
+	const getPartners = async () => {
+		try {
+		  const res = await request.get(`admin/partner/all`);
+		  dispatch({
+			type: "setPartner",
+			payload: res?.data?.data,
+		  });
+		} catch (error) {
+		  console.error("Error", error);
+		}
+	  };
+	  getPartners()
+  };
+
+  return (
+    <Wrapper.Flex>
+      <Wrapper.Box onClick={deleteFunc}>
+        <TrasIcon />
+      </Wrapper.Box>
+      <Wrapper.Box onClick={editFunc}>
+        <PenIcon />
+      </Wrapper.Box>
+      {isModalVisible && (
+        <AddPartner
+          isVisible={isModalVisible}
+          onClose={handleCloseModal}
+          initialValues={state}
+        />
+      )}
+    </Wrapper.Flex>
+  );
+};
 
 const RendererStatus = ({ data }) => {
   const statusChange = async (v) => {
@@ -105,9 +117,9 @@ const RendererStatus = ({ data }) => {
         transactionTime: "2023-08-14T15:43:01.8152087",
       });
       Toast({
-        type: "success",
-        message: "Changed",
-      });
+		  type: "success",
+		  message: "Changed",
+		});
     } catch (error) {
       Swal.fire(error?.response?.data?.resultMsg);
     }

@@ -7,9 +7,9 @@ export const Container = styled.div`
     flex-wrap: wrap;
     min-height: 60px;
     width: 634px;
-    padding: 9px;
+    padding: 15px 15px;
     border: 1px solid #e1e1e1;
-    border-radius: 1000px;
+    border-radius: 10px;
     gap: 6px;
   }
 

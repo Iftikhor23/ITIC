@@ -3,13 +3,29 @@ import { column } from './header';
 import Table from "../../../components/Reusable/CustomTable";
 import Button from "../../../components/Reusable/ButtonComb/Button";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import request from "../../../services";
+import { useVacanciesContext } from "../../../context/VacanciesContext";
 import AdminSearch from '../../../components/AminSearch';
 
 const  Vacancies = () => {
   const navigate = useNavigate();
-  const handleNav = () => {
-    navigate("/admin/vacancies/add");
+  const [{vacanciesdata},dispatch] = useVacanciesContext();
+  const getPartners = async () => {
+    try {
+      const res = await request.get(`admin/vacancy/all`);
+      dispatch({
+        type: "setVacancies",
+        payload: res?.data?.data,
+      });
+    } catch (error) {
+      console.error("Error", error);
+    }
   };
+  useEffect(()=>{
+    getPartners()
+  },[])
+
   return (
     <Wrapper>
       <Wrapper.Wrap>
@@ -24,11 +40,11 @@ const  Vacancies = () => {
             aHeight="42px"
             aWidth="42px"
             iconSize="24px"
-            onClick={handleNav}
+            onClick={() => navigate("/admin/vacancies/add")}
           />
         </Wrapper.Nav>
         <Wrapper.WrapTable>
-          <Table column={column} />
+          <Table column={column} rowData={vacanciesdata} />
         </Wrapper.WrapTable>
       </Wrapper.Wrap>
     </Wrapper>

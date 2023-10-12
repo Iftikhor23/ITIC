@@ -45,9 +45,9 @@ Container.Btn = styled.div`
 
 Container.Items = styled.div`
   position: absolute;
+  z-index: 100;
   top: 110%;
-  padding: 15px;
-  background-color: #fff;
+  background-color: #ccc;
   cursor: pointer;
   width: 305px;
   height: 100%;
@@ -55,6 +55,7 @@ Container.Items = styled.div`
 
 Container.Item = styled.div`
   padding: 10px;
+  background-color: #ccc;
   &:hover {
     background-color: #fafafa;
   }
