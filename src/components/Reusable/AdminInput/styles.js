@@ -39,7 +39,7 @@ Wrapper.Input = styled.input`
 Wrapper.Label = styled.p`
   padding-left: 24px;
   padding-bottom: 8px;
-  color: #000000;
+  color: ${({lbcolor}) => (lbcolor ? lbcolor : "#000000")};
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0;

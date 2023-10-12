@@ -8,7 +8,7 @@ export const Container = styled.div`
     width: 2382px;
     height: 100vh;
     overflow: hidden;
-    gap: 40px;
+    gap: 205px;
 `;
 
 Container.CasesWrapper = styled.div`
@@ -18,12 +18,10 @@ Container.CasesWrapper = styled.div`
     width: 918px;
     height: 100%;
     overflow: scroll;
-    /* overflow-x: hidden; */
     overflow-y: scroll;
     gap: 60px;
     &::-webkit-scrollbar{
         width: 0;
-    }
-`;
+    }`;
 
 

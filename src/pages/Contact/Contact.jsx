@@ -49,7 +49,6 @@ function Contact() {
         <p>©2023 all rights reserved</p>
         <p>Developed by: OOO IT Investment center</p>
       </Container.FooterWrapper>
-      <Container.Gradient></Container.Gradient>
       <Container.Bubble>
         <img src={bubble} alt="bubble"/>
       </Container.Bubble>

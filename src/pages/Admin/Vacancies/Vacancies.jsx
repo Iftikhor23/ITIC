@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import request from "../../../services";
 import { useVacanciesContext } from "../../../context/VacanciesContext";
+import AdminSearch from '../../../components/AminSearch';
 
 const  Vacancies = () => {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ const  Vacancies = () => {
       <Wrapper.Wrap>
         <Wrapper.Header>Vacancies</Wrapper.Header>
         <Wrapper.Nav>
+          <AdminSearch/>
           <Button
             btnheight="42px"
             btnwidth="107px"

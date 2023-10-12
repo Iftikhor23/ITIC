@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import bacground from '../../assets/images/branch.png';
 
 export const Container = styled.div`
   width: 180vw;
   height: 100vh;
-  background-color: #051c2c;
+  background: url(${bacground});
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,31 +18,33 @@ Container.Wrapper = styled.div`
   align-items: center;
   gap: 271px;
   z-index: 1;
+  .image{
+    position: relative;
+    .soonUsa{
+      position: absolute;
+      left: 252px;
+    top: 195px;
+
+    }
+    .soonBra{
+      position: absolute;
+      left: 421px;
+    bottom: 184px;
+    
+    }
+    .uzbLoc{
+      position: absolute;
+      top: 182px;
+    right: 332px;
+    }
+    .sinLoc{
+      position: absolute;
+      top: 293px;
+    right: 200px;
+    }
+  }
 `;
 
 Container.Text = styled.div`
   z-index: 1;
-`;
-
-Container.GradientOne = styled.svg`
-  background-color: #00cdc2;
-  border-radius: 1233px;
-  filter: blur(300px);
-  height: 600px;
-  width: 1000px;
-  left: 0;
-  position: absolute;
-  bottom: 0;
-`;
-
-Container.GradientTwo = styled.svg`
-    background-color: #00cdc2;
-    border-radius: 1017px;
-    filter: blur(300px);
-    height: 600px;
-    width: 817px;
-    right: -900;
-    position: absolute;
-    bottom: 0;
-    overflow: hidden;
 `;

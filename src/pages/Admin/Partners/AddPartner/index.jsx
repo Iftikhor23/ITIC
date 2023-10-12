@@ -57,6 +57,17 @@ function AddPartner({ isVisible, onClose }) {
   };
 
   const saveImage = async () => {
+<<<<<<< HEAD
+    if(true){
+      try {
+        const res = await request.post(
+          "admin/partner",
+          {
+            data: {
+              partnerPhotoUrl: urlFormData,
+              attachmentId: idOfAttachmentId,
+              isActive: state?.isActive,
+=======
     if(!selected?.id){
       console.log('idhladi');
       if (idOfAttachmentId && urlFormData) {
@@ -69,6 +80,7 @@ function AddPartner({ isVisible, onClose }) {
                 attachmentId: idOfAttachmentId,
                 isActive: state?.isActive,
               },
+>>>>>>> f5c909a8076267f7131ae17745f5cb1aaa44c913
             },
             Toast({
               type: "success",
