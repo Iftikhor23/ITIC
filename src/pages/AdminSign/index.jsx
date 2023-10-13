@@ -1,67 +1,80 @@
+import React, { useState } from "react";
 import { Container } from "./styles";
 import AdminInput from "../../components/Reusable/AdminInput";
 import logo from "../../assets/images/itLogo.svg";
 import ButtonComb from "../../components/Reusable/ButtonComb/Button";
-import request from "../../services";
-import { useRef, useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
+import show from "../../assets/icons/show.png";
+import hide from "../../assets/icons/hide.png";
 function AdminSign() {
-  const userRef = useRef();
-  const errRef = useRef();
+  const [showPassword, setShowPassword] = useState(false);
+  const [loginError, setLoginError] = useState(false);
 
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-  const [errMsg, setErrMsg] = useState();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    useRef.current.focus();
-  }, []);
+  function encodeBase64(str) {
+    return btoa(str);
+  }
 
-  useEffect(() => {
-    setErrMsg("");
-  }, [user, password]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.elements.login.value;
+    const password = e.target.elements.password.value;
+
+    if (name === "root123" && password === "root123") {
+      localStorage.setItem("tokenAdmin", encodeBase64(name + ":" + password));
+      navigate("/admin");
+    } else {
+      setLoginError(true);
+    }
+  };
 
   return (
     <Container>
-      <Container.Wrapper>
-        <p
-          ref={errRef}
-          className={errMsg ? "errmsg" : "offscreen"}
-          aria-live="assertive"
-        >
-          {errMsg}
-        </p>
+      <form className="forms" onSubmit={handleSubmit}>
         <Container.Header>
           <img src={logo} alt="logo" />
           <p className="headerText">Build Your Future With Us</p>
         </Container.Header>
-        <AdminInput
-          label={"Email"}
-          placeholder={"Enter email"}
-          ref={userRef}
-          onChange={(e) => setUser(e.target.value)}
-          value={user}
-          required
-        />
+        <div className="inputBox">
+          <label htmlFor="login">Enter Login</label>
+          <div className="inputField">
+            <input
+              id="login"
+              type="text"
+              className="adminLog"
+              name="login"
+              label={"Login"}
+              placeholder={"Enter Login"}
+            />
+          </div>
+        </div>
+        <div className="inputBox">
+          <label htmlFor="password">Enter Password</label>
+          <div className="inputField">
+            <input
+              id="password"
+              type={showPassword ? "text" : "password"}
+              className="adminLog"
+              name="password"
+              label={"Password"}
+              placeholder={"Enter password"}
+            />
+            <img
+              src={showPassword ? `${show}` : `${hide}`}
+              alt="eye icon"
+              onClick={() => setShowPassword(!showPassword)}
+            />
+          </div>
+        </div>
 
-        <AdminInput
-          label={"Password"}
-          placeholder={"Enter password"}
-          ref={userRef}
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          required
-        />
-        <ButtonComb
-          btnheight="60px"
-          btnwidth="200px"
-          title="Sign In"
-          fontSize="20px"
-          aHeight="60px"
-          aWidth="60px"
-          iconSize="24px"
-        />
-      </Container.Wrapper>
+        <button className="submitBtn" type="submit">
+          Sign In
+        </button>
+        {loginError && (
+          <p className="errorText">Incorrect login or password.</p>
+        )}
+      </form>
     </Container>
   );
 }

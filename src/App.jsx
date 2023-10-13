@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/allCases" element={<AllCases />} />
-          <Route path="/sign" element={<AdminSign/>}/>
+          <Route path="/admin/sign-in" element={<AdminSign/>}/>
           <Route path="/allVacancies" element={<AllVacancies />} />
           <Route path="/" element={<Pages />} />
           <Route path="/admin" element={<Admin />}>

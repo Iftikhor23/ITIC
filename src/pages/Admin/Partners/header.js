@@ -32,7 +32,10 @@ const ActionRenderer = ({ data }) => {
 		console.error("Error", error);
 	  }
 	};
-  
+	useEffect(() => {
+		getPartners();
+	  }, []);
+	  
 	const handleCloseModal = () => {
 	  setIsModalVisible(false);
 	};
