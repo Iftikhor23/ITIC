@@ -17,8 +17,9 @@ Container.MidWrap = styled.div`
   display: flex;
   align-items: center;
   .chart {
-    position: relative;
-    bottom: -180px;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
     width: 620px;
     height: 100%;
     display: flex;
@@ -48,8 +49,8 @@ Container.MidWrap = styled.div`
     }
     .upTrade {
       position: absolute;
-      top: -22px;
-      left: 119px;
+      top: 160px;
+      left: 115px;
       z-index: 20;
     }
   }

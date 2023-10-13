@@ -55,3 +55,7 @@ Container.Prefix = styled.div`
   line-height: normal;
   white-space: nowrap;
 `;
+
+Container.Suffix = styled.div`
+  
+`;

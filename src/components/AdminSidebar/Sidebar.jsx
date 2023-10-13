@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Data } from "./SidebarData";
 import { Container } from "./styles";
 import { useEffect, useState } from "react";
+import logOut from '../../assets/icons/log-out.svg';
 
 function AdminSidebar() {
   const navigate = useNavigate();
@@ -11,7 +12,10 @@ function AdminSidebar() {
   useEffect(() => {
     setUrl(location.pathname);
   }, [location.pathname]);
-
+const handleLogOut = () => {
+  localStorage.removeItem("tokenAdmin");
+    navigate("/admin/sign-in");
+}
   return (
     <Container>
       {Data?.map(
@@ -28,6 +32,10 @@ function AdminSidebar() {
             </Container.Flex>
           )
       )}
+      <button className="logOut" onClick={handleLogOut}>
+      <img src={logOut} alt="log out icon"/>
+            log out
+      </button>
     </Container>
   );
 }

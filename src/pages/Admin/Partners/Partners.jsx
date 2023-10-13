@@ -31,6 +31,9 @@ const Partners = () => {
     getPartners();
   }, []);
 
+
+  console.log(partnersdata);
+
   return (
     <Wrapper>
       <Wrapper.Wrap>

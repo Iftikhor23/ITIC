@@ -1,7 +1,7 @@
 import { Container, Wrapper } from "./styles";
 import { useState } from 'react'; 
 
-function AdminInput({ label, placeholder, prefix, onChange,value}) {
+function AdminInput({ label, placeholder, prefix, onChange,value, suffix, type}) {
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (newValue) => {
     setInputValue(newValue);
@@ -10,14 +10,17 @@ function AdminInput({ label, placeholder, prefix, onChange,value}) {
 
   return (
     <Container>
-      <Wrapper.Label lbcolor={lbcolor}>{label}</Wrapper.Label>
+      <Wrapper.Label >{label}</Wrapper.Label>
       <Wrapper>
         <Container.Prefix>{prefix}</Container.Prefix>
         <Wrapper.Input
           placeholder={placeholder}
           value={value} 
           onChange={handleInputChange} 
+          type={type}
+      
         />
+        <Container.Suffix>{suffix}</Container.Suffix>
       </Wrapper>
     </Container>
   );
