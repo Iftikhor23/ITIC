@@ -25,10 +25,12 @@ const Partners = () => {
       console.error("Error", error);
     }
   };
+  console.log(partnersdata);
 
   useEffect(() => {
     getPartners();
   }, []);
+
 
   console.log(partnersdata);
 

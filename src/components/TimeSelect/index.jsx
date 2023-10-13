@@ -2,7 +2,7 @@ import { Wrapper } from "./styles";
 import arrow from "../../assets/icons/angle-down.svg";
 import { useState } from "react";
 
-function TimeSelect() {
+function TimeSelect({ defaultStartTime, defaultEndTime, onTimeChange }) {
   const [isActive, setIsActive] = useState(false);
 
   const TimeData = [
@@ -107,29 +107,35 @@ function TimeSelect() {
     <Wrapper>
       <Wrapper.Header>Time</Wrapper.Header>
       <Wrapper.Wrap>
-          <Wrapper.Pre>From</Wrapper.Pre>
-        <Wrapper.Select>
-          {TimeData.map((item) => (
-        <option key={item.id} value={item.id}>
-          {item.id}
-        </option>
-      ))}
+        <Wrapper.Pre>From</Wrapper.Pre>
+          <Wrapper.Select
+            value={defaultStartTime}
+            onChange={(e) => onTimeChange("start", e.target.value)}
+          >
+            {TimeData.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.id}
+              </option>
+            ))}
+          </Wrapper.Select>
           <Wrapper.Suf>
             <img src={arrow} alt="arrow icon" />
           </Wrapper.Suf>
-        </Wrapper.Select>
 
         <Wrapper.Pre>To</Wrapper.Pre>
-        <Wrapper.Select>
-          {TimeData.map((item) => (
-        <option key={item.id} value={item.id}>
-          {item.id}
-        </option>
-      ))}
+          <Wrapper.Select
+            value={defaultEndTime}
+            onChange={(e) => onTimeChange("end", e.target.value)}
+          >
+            {TimeData.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.id}
+              </option>
+            ))}
+          </Wrapper.Select>
           <Wrapper.Suf>
             <img src={arrow} alt="arrow icon" />
           </Wrapper.Suf>
-        </Wrapper.Select>
       </Wrapper.Wrap>
     </Wrapper>
   );
