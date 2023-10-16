@@ -10,7 +10,7 @@ const  CallReq = () => {
       <Wrapper.Wrap>
         <Wrapper.Header>Call Requests</Wrapper.Header>
         <Wrapper.Nav>
-          <AdminSearch/>
+          <AdminSearch placeholder={"Search"}/>
         </Wrapper.Nav>
         <Wrapper.WrapTable>
           <Table column={column} />

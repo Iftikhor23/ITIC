@@ -31,7 +31,7 @@ const  Vacancies = () => {
       <Wrapper.Wrap>
         <Wrapper.Header>Vacancies</Wrapper.Header>
         <Wrapper.Nav>
-          <AdminSearch/>
+          <AdminSearch placeholder={"Search"}/>
           <Button
             btnheight="42px"
             btnwidth="107px"

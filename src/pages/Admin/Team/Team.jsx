@@ -16,7 +16,7 @@ const  Team = () => {
       <Wrapper.Wrap>
         <Wrapper.Header>Team</Wrapper.Header>
         <Wrapper.Nav>
-          <AdminSearch/>
+          <AdminSearch placeholder={"Search"}/>
           <Button
             btnheight="42px"
             btnwidth="107px"
