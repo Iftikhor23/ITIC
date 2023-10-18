@@ -12,11 +12,17 @@ import { ReactComponent as WarnIcons } from "../../../assets/icons/warn.svg";
 import { ReactComponent as TrashIcon } from "../../../assets/icons/trash.svg";
 import { ReactComponent as Edit } from "../../../assets/icons/edit.svg";
 import { ReactComponent as Home } from "../../../assets/icons/home.svg";
+import { ReactComponent as ArrowLeft } from "../../../assets/icons/arrowLeft.svg";
 
 const HomeIcon = styled(Home)`
   path {
     fill: ${({ color }) => color && color};
   }
+`;
+const ArrowLeftIcon = styled(ArrowLeft)`
+	width: ${({ width }) => (width ? width : '25px')};
+	height: ${({ height }) => (height ? height : '25px')};
+	cursor: pointer;
 `;
 
 const CaseIcon = styled(PlusCircle)`
@@ -101,4 +107,5 @@ export {
   WarnIcon,
   TrasIcon,
   PenIcon,
+  ArrowLeftIcon
 };

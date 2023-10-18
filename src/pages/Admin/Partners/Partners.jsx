@@ -4,35 +4,39 @@ import Button from "../../../components/Reusable/ButtonComb/Button";
 import { useEffect, useState } from "react";
 import AddPartner from "./AddPartner/index";
 import { column } from "./header";
-import { useLocation } from "react-router-dom";
 import request from "../../../services";
 import { usePartnersContext } from "../../../context/PartnersContext";
+import loadingIcon from "../../../assets/icons/loading.svg";
+import Pagination from "../../../components/Reusable/Pagination";
+import useSearch from "../../../services/Search";
+import { useLocation } from "react-router-dom";
 
 const Partners = () => {
-  const { search } = useLocation();
+  const query = useSearch();
+  const [pagination, setPagination] = useState({});
   const [{ partnersdata }, dispatch] = usePartnersContext();
+  const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const { search } = useLocation();
 
-  
   const getPartners = async () => {
     try {
-      const res = await request.get(`admin/partner/all`);
+      const res = await request.get(`admin/partner${search || ''}`);
+      setPagination(res?.data?.pagination);
       dispatch({
         type: "setPartner",
         payload: res?.data?.data,
       });
+      setLoading(false);
     } catch (error) {
       console.error("Error", error);
+      setLoading(false);
     }
   };
-  console.log(partnersdata);
 
   useEffect(() => {
     getPartners();
-  }, []);
-
-
-  console.log(partnersdata);
+  }, [search]);
 
   return (
     <Wrapper>
@@ -51,8 +55,20 @@ const Partners = () => {
           />
         </Wrapper.Nav>
         <Wrapper.WrapTable>
-          <Table column={column} rowData={partnersdata} />
+          {loading ? (
+            <Wrapper.Loading>
+              <Wrapper.LoadingBox>
+                <img src={loadingIcon} />
+              </Wrapper.LoadingBox>
+            </Wrapper.Loading>
+          ) : (
+            <Table column={column} rowData={partnersdata} />
+          )}
         </Wrapper.WrapTable>
+        <Pagination
+          current={Number(query.get("page")) || 0}
+          SizeAll={pagination?.totalPages || 1}
+        />
       </Wrapper.Wrap>
       <AddPartner isVisible={showModal} onClose={() => setShowModal(false)} />
     </Wrapper>

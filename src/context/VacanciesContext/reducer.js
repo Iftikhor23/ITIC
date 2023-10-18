@@ -19,7 +19,7 @@ export const reducer = (state, action) => {
 			return { ...state, vacanciesdata: action.payload };
 		case 'setSearch':
 			return { ...state, search: action.payload };
-		case 'setSelectedCall':
+		case 'setSelectedVacansi':
 			return { ...state, selected: action.payload };
 		default:
 			return state;

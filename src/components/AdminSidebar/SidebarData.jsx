@@ -64,12 +64,36 @@ export const Data = [
     component: <Vacancies />,
   },
   {
+    id: 11,
+    path: "/admin/vacancies/add",
+    hidden: true,
+    component: <AddVacancies />,
+  },
+  {
+    id: 75,
+    path: "/admin/vacancies/edite/:id",
+    hidden: true,
+    component: <AddVacancies />,
+  },
+  {
     id: 6,
     title: "Team",
     icon: <TeamIcon />,
     path: "/admin/team",
     hidden: false,
     component: <Team />,
+  },
+  {
+    id: 10,
+    path: "/admin/team/add",
+    hidden: true,
+    component: <AddTeam />,
+  },
+  {
+    id: 19,
+    path: "/admin/team/edit/:id",
+    hidden: true,
+    component: <AddTeam />,
   },
   {
     id: 7,
@@ -88,6 +112,17 @@ export const Data = [
     component: <Testimonials />,
   },
   {
+    id: 18,
+    path: "/admin/testimonials/add",
+    hidden: true,
+    component: <AddTestimonials />,
+  },{
+    id: 20,
+    path: "/admin/testimonials/edite/:id",
+    hidden: true,
+    component: <AddTestimonials />,
+  },
+  {
     id: 9,
     path: "/admin/case/add",
     hidden: true,
@@ -98,23 +133,5 @@ export const Data = [
     path: "/admin/case/edite/:id",
     hidden: true,
     component: <AddCase />,
-  },
-  {
-    id: 10,
-    path: "/admin/team/add",
-    hidden: true,
-    component: <AddTeam />,
-  },
-  {
-    id: 11,
-    path: "/admin/vacancies/add",
-    hidden: true,
-    component: <AddVacancies />,
-  },
-  {
-    id: 12,
-    path: "/admin/testimonials/add",
-    hidden: true,
-    component: <AddTestimonials />,
-  },
+  }
 ];

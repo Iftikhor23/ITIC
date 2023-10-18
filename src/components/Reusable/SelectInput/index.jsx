@@ -2,13 +2,13 @@ import { Container } from "./styles";
 import arrow from "../../../assets/icons/angle-down.svg";
 import { useState } from "react";
 
-function SelectInput({ selectedValue, setSelected, options }) {
+function SelectInput({ selectedValue, setSelected, options,value}) {
   const [isActive, setIsActive] = useState(false);
 
   const handleItemClick = (optionValue) => {
     setSelected(optionValue);
     setIsActive(false);
-  };
+  };  
 
   return (
     <Container>
