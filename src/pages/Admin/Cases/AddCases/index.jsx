@@ -99,26 +99,27 @@ const AddCase = () => {
     } else {
       if (idOfAttachmentId && urlFormData) {
         try {
-          const res = await request.put(
-            `admin/case/edite`,
-            {
-              data: {
-                id: selected?.id,
-                projectName: state?.projectName,
-                client: state?.client,
-                tagsList: state?.tags,
-                link: state?.link,
-                casePhotoUrl: urlFormData,
-                attachmentId: idOfAttachmentId,
-                isActive: state?.isActive,
-              },
+          const res = await request.put(`admin/case/edite`, {
+            data: {
+              id: selected?.id,
+              projectName: state?.projectName,
+              client: state?.client,
+              tagsList: state?.tags,
+              link: state?.link,
+              casePhotoUrl: urlFormData,
+              attachmentId: idOfAttachmentId,
+              isActive: state?.isActive,
             },
-            navigate("/admin/case"),
-            Toast({
-              type: "success",
-              message: "Saved",
-            })
-          );
+          });
+          navigate("/admin/case");
+          Toast({
+            type: "success",
+            message: "Saved",
+          });
+          dispatch({
+            type: "setSelectedCase",
+            payload: {},
+          });
         } catch (error) {
           console.error("Saqlashda xatolik yuz berdi:", error);
         }
@@ -128,27 +129,13 @@ const AddCase = () => {
     }
   };
 
-  const getPartners = async () => {
-    try {
-      const res = await request.get(`admin/case/get/all/info`);
-      dispatch({
-        type: "setCase",
-        payload: res?.data?.data,
-      });
-    } catch (error) {
-      console.error("Error", error);
-    }
-  };
-
-  console.log(state, "bu state");
-
   return (
     <Wrapper>
       <Wrapper.Wrap>
         <Wrapper.Title>Add Case</Wrapper.Title>
         <Wrapper.Nav>
           <div onClick={() => navigate("/admin/case")}>
-            <RegularButton title={"Cancel"}  />
+            <RegularButton title={"Cancel"} />
           </div>
           <Button
             btnheight="42px"
@@ -209,7 +196,7 @@ const AddCase = () => {
                 onChange={(e) => {
                   setState({ ...state, link: e.target.value });
                 }}
-              />  
+              />
               <Flex>
                 <Switch
                   onClick={(v) => setState({ ...state, isActive: v })}

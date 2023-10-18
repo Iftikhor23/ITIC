@@ -1,22 +1,21 @@
 import styled from "styled-components";
 import uploadIcon from "../../../../assets/icons/uploadCloud.svg";
 
-
 export const Wrapper = styled.div`
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 `;
 
 Wrapper.Wrap = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
 `;
 
 Wrapper.Title = styled.h3`
-     color: #051313;
+  color: #051313;
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 0;
@@ -24,28 +23,50 @@ Wrapper.Title = styled.h3`
 `;
 
 Wrapper.Nav = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    justify-content: end;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: end;
 `;
 
-
 Wrapper.InputTable = styled.div`
-    width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  .imageInputWrap {
+    width: 110px;
+    height: 110px;
     display: flex;
-    align-items: flex-start;
-    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1000px;
+    border: 1px dashed #d9d9d9;
+    cursor: pointer;
+  }
+  .imageInput {
+    display: none;
+  }
+  & > .fileName {
+    margin-left: 1%;
+    font-size: 25px;
+  }
+  .imgSize {
+    width: 110px;
+    height: 110px;
+    border-radius: 1000px;
+  }
 `;
 
 Wrapper.Flex = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 `;
 
 Wrapper.WrapTable = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
 `;

@@ -10,22 +10,26 @@ import Swal from "sweetalert2";
 
 function AddPartner({ isVisible, onClose }) {
   const [{ selected }, dispatch] = usePartnersContext();
-  const [urlFormData, setUrlFormData] = useState(selected?.partnerPhotoUrl || "");
-  const [idOfAttachmentId, setIdOfAttachmentId] = useState(selected?.attachmentId || "");
+  const [urlFormData, setUrlFormData] = useState(
+    selected?.partnerPhotoUrl || ""
+  );
+  const [idOfAttachmentId, setIdOfAttachmentId] = useState(
+    selected?.attachmentId || ""
+  );
   const [state, setState] = useState({
     partnerPhotoUrl: selected?.partnerPhotoUrl || null,
     attachmentId: selected?.attachmentId || "",
     isActive: selected?.isActive || false,
   });
-  useEffect(() => {
-    if (selected) {
-      setState({
-        partnerPhotoUrl: selected.partnerPhotoUrl || null,
-        attachmentId: selected.attachmentId || "",
-        isActive: selected.isActive || false,
-      });
-    }
-  }, [selected]);
+  // useEffect(() => {
+  //   if (selected) {
+  //     setState({
+  //       partnerPhotoUrl: selected.partnerPhotoUrl || null,
+  //       attachmentId: selected.attachmentId || "",
+  //       isActive: selected.isActive || false,
+  //     });
+  //   }
+  // }, [selected]);
 
   if (!isVisible) return null;
   const handleCLose = (e) => {
@@ -57,49 +61,56 @@ function AddPartner({ isVisible, onClose }) {
   };
 
   const saveImage = async () => {
-    if(!selected?.id){
-      console.log('idhladi');
+    if (!selected?.id) {
       if (idOfAttachmentId && urlFormData) {
         try {
-          const res = await request.post(
-            `admin/partner`, 
-            {
-              data: {
-                partnerPhotoUrl: urlFormData,
-                attachmentId: idOfAttachmentId,
-                isActive: state?.isActive,
-              },
+          const res = await request.post(`admin/partner`, {
+            data: {
+              partnerPhotoUrl: urlFormData,
+              attachmentId: idOfAttachmentId,
+              isActive: state?.isActive,
             },
-            Toast({
-              type: "success",
-              message: "Saved",
-            })
-          );
+          });
+
+          Toast({
+            type: "success",
+            message: "Saved",
+          });
+
+          setState({
+            partnerPhotoUrl: "",
+            attachmentId: "",
+            isActive: false,
+          });
+
           onClose();
+          getPartners();
         } catch (error) {
           console.error("Saqlashda xatolik yuz berdi:", error);
         }
       } else {
         Swal.fire("Avval rasmni kiriting iltimos !");
       }
-    }else{
+    } else {
       if (idOfAttachmentId && urlFormData) {
         try {
-          const res = await request.put(
-            `admin/partner`, 
-            {
-              data: {
-                id:selected?.id,
-                partnerPhotoUrl: urlFormData,
-                attachmentId: idOfAttachmentId,
-                isActive: state?.isActive,
-              },
+          const res = await request.put(`admin/partner`, {
+            data: {
+              id: selected?.id,
+              partnerPhotoUrl: urlFormData,
+              attachmentId: idOfAttachmentId,
+              isActive: state?.isActive,
             },
-            Toast({
-              type: "success",
-              message: "Saved",
-            })
-          );
+          });
+          Toast({
+            type: "success",
+            message: "Saved",
+          });
+          dispatch({
+            type: "setSelectedPartners",
+            payload: {},
+          });
+          getPartners();
           onClose();
         } catch (error) {
           console.error("Saqlashda xatolik yuz berdi:", error);
@@ -108,10 +119,20 @@ function AddPartner({ isVisible, onClose }) {
         Swal.fire("Avval rasmni kiriting iltimos !");
       }
     }
-    
   };
-  
-  
+
+  const getPartners = async () => {
+    try {
+      const res = await request.get(`admin/partner/all`);
+      dispatch({
+        type: "setPartner",
+        payload: res?.data?.data,
+      });
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
   return (
     <Container onClick={handleCLose} id="container">
       <Container.Wrapper>

@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const ActionRenderer = ({ data }) => {
+  
   const navigate = useNavigate()
   const [,dispatch] = useCaseContext();
   const getPartners = async () => {
@@ -75,6 +76,7 @@ const ActionRenderer = ({ data }) => {
   );
 };
 const RendererStatus = ({ data }) => {
+  
   const statusChange = async (v) => {
     try {
       const res = await request.put("admin/case", {

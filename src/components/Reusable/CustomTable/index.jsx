@@ -4,7 +4,7 @@ import Cell from './Cell';
 import Loading from '../Loading';
 import noData from '../../../assets/icons/nodata.svg'
 
-const Table = ({ column, rowData, clickRow, loading }) => {
+const Table = ({ column, rowData, clickRow, loading}) => {
 	const clickRowFunction = () => {
 		clickRow && clickRow();
 	};
