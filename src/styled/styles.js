@@ -21,6 +21,18 @@ export const HeadingOne = styled.h1`
       background-position: 1600px 0;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 42px;
+  }
+
+  @media only screen and (max-width: 840px) {
+    font-size: 42px;
+  }
+
+  @media only screen and (max-width: 653px) {
+    font-size: 42px;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -28,6 +40,11 @@ export const Paragraph = styled.p`
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
   width: ${({ width }) => (width ? width : "376px")};
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 376px;
+  }
 `;
 
 export const TextWrap = styled.div`

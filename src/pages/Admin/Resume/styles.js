@@ -90,6 +90,8 @@ Wrapper.BoxIcon = styled.div`
   border: 1px solid
     ${({ type }) =>
       type === "comment" ? "#EEE" : type === "close" ? "#FF5151" : "#37A67E"};
+        background-repeat: no-repeat;
+  background-position: center;
 `;
 
 Wrapper.Comment = styled.div`
@@ -109,6 +111,7 @@ Wrapper.Comment = styled.div`
   top: 37px;
   color: #000;
   transition: 0.5s ease;
+
 `;
 Wrapper.Loading = styled.div`
   height: 72vh;
@@ -135,3 +138,5 @@ Wrapper.Box = styled.div`
   justify-content: center;
   animation: rotate 1s linear infinite;
 `;
+// mijijjuju
+// mkmkmkmkmkmkm
