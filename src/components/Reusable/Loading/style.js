@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
 	position: fixed;
-	height: 100%;
-	width: 100%;
+	height: inherit;
+	width: inherit;
 	transition: background-color 300ms ease-in-out;
 	z-index: 9;
 	top: 0;
@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 `;
+
 Wrapper.Box = styled.div`
 	@keyframes rotate {
 		from {

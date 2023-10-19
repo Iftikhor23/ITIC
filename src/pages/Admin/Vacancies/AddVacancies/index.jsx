@@ -21,7 +21,7 @@ function AddTeam() {
     title: selected?.title || "",
     positionLevel: selected?.positionLevel || "",
     location: selected?.location || "",
-    employmentType: selected?.employmentType || "",
+    employmentType: selected?.employmentType || "ONLINE",
     salary: selected?.salary || "",
     fromTime: selected?.fromTime || "19:00",
     toTime: selected?.toTime || "10:00",
@@ -76,7 +76,7 @@ function AddTeam() {
                 title: state?.title || "",
                 positionLevel: state?.positionLevel || "",
                 location: state?.location || "",
-                employmentType:state?.employmentType || "",
+                employmentType: state?.employmentType || "",
                 salary: state?.salary || "",
                 fromTime: state?.fromTime || "19:00",
                 toTime: state?.toTime || "10:00",
@@ -96,7 +96,7 @@ function AddTeam() {
         Swal.fire("Avval to'ldirish maydonchalarini to'ldiring, iltimos!");
       }
     } else {
-      if (state?.title && state?.isActive) {
+      if (state?.title && state?.positionLevel) {
         try {
           const res = await request.put(
             "admin/vacancy",
@@ -111,12 +111,16 @@ function AddTeam() {
                 toTime: state?.toTime || "10:00",
                 isActive: state?.isActive || false,
               },
-            },
+            });
+            navigate("/admin/vacancies");
             Toast({
               type: "success",
               message: "Saved",
-            })
-          );
+            });
+            dispatch({
+              type: "setSelectedVacansi",
+              payload: {},
+            });
         } catch (error) {
           console.error("Saqlashda xatolik yuz berdi:", error);
         }
@@ -126,6 +130,7 @@ function AddTeam() {
     }
   };
   console.log(state);
+
   return (
     <Wrapper>
       <Wrapper.Wrap>
@@ -154,10 +159,10 @@ function AddTeam() {
                 onChange={(e) => {
                   setState({ ...state, title: e.target.value });
                 }}
+                value={state?.title}
               />
-
               <SelectInput
-                selectedValue={selecteds1}
+                selectedValue={state?.positionLevel || selecteds1}
                 setSelected={(selectedValue) => {
                   setSelecteds1(selectedValue);
                   setState((prevState) => ({
@@ -170,7 +175,7 @@ function AddTeam() {
             </Wrapper.Flex>
             <Wrapper.Flex>
               <SelectInput
-                selectedValue={selecteds2}
+                selectedValue={state?.location || selecteds2}
                 setSelected={(seletedValue) => {
                   setSelecteds2(seletedValue);
                   setState((prevState) => ({
@@ -181,11 +186,11 @@ function AddTeam() {
                 options={regions}
               />
               <Toggle
-                active={state.employmentType === "online"} // "employmentType" "online" bo'lsa true, aks holda false
+                active={state.employmentType}
                 onClick={(isActive) => {
                   setState({
                     ...state,
-                    employmentType: isActive ? "online" : "offline",
+                    employmentType: isActive,
                   });
                 }}
               />
@@ -194,6 +199,7 @@ function AddTeam() {
               <TimeSelect
                 defaultStartTime={state?.fromTime}
                 onTimeChange={handleTimeChange}
+                defaultEndTime={handleTimeChange}
               />
               <AdminInput
                 prefix={"UZS |"}
@@ -202,6 +208,7 @@ function AddTeam() {
                 onChange={(e) => {
                   setState({ ...state, salary: e.target.value });
                 }}
+                value={state?.salary}
               />
               <Switch
                 onClick={(v) => setState({ ...state, isActive: v })}

@@ -54,10 +54,10 @@ const ActionRenderer = ({ data }) => {
 
   const editFunc = () => {
     dispatch({
-      type: "setSelectedCase",
+      type: "setSelectedVacansi",
       payload: data,
     });
-    navigate(`/admin/vacancy/edite/:${data?.id}`)
+    navigate(`/admin/vacancies/edite/:${data?.id}`)
   };
 
   useEffect(()=>{

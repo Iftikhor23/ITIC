@@ -5,12 +5,16 @@ import AdminSearch from "../../../components/AminSearch";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../components/Reusable/ButtonComb/Button";
 import request from "../../../services";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCaseContext } from "../../../context/CaseContext";
+import loadingIcon from "../../../assets/icons/loading.svg";
+
 
 const Cases = () => {
   const navigate = useNavigate();
   const [{ casedata, search }, dispatch] = useCaseContext();
+  const [loading, setLoading] = useState(true);
+
 
   const getPartners = async () => {
     try {
@@ -19,8 +23,10 @@ const Cases = () => {
         type: "setCase",
         payload: res?.data?.data,
       });
+      setLoading(false)
     } catch (error) {
       console.error("Error", error);
+      setLoading(false)
     }
   };
 useEffect(()=>{
@@ -63,10 +69,16 @@ useEffect(()=>{
           />
         </Wrapper.Nav>
         <Wrapper.WrapTable>
+          {loading ? 
+           <Wrapper.Loading>
+           <Wrapper.LoadingBox>
+             <img src={loadingIcon} />
+           </Wrapper.LoadingBox>
+         </Wrapper.Loading> : 
           <Table
             column={column}
             rowData={search.length > 0 ? search : casedata}
-          />
+          />}
         </Wrapper.WrapTable>
       </Wrapper.Wrap>
     </Wrapper>

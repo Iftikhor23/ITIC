@@ -67,3 +67,28 @@ Wrapper.Flex = styled.div`
 		object-fit: cover;
 	}
 `;
+Wrapper.Loading = styled.div`
+  height: 72vh;
+  width: 100%;
+  transition: background-color 300ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+Wrapper.LoadingBox = styled.div`
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotate 1s linear infinite;
+`;
