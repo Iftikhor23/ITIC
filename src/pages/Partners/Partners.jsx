@@ -5,7 +5,31 @@ import finTech from "../../assets/images/fintech.svg";
 import derc from "../../assets/images/derc.svg";
 import tatu from "../../assets/images/tatu.svg";
 import ministry from "../../assets/images/ministry.svg";
-function Partners() {
+import { useEffect, useState } from "react";
+import request from "../../services";
+
+
+const Partners = () => {
+  const [partners, setPartners] = useState([])
+  const [loading, setLoading] = useState(true);
+
+
+
+  const getCallReq = async () => {
+    try {
+      setLoading(true);
+      const res = await request.get(`public/partner`);
+      setPartners(res?.data?.data); 
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getCallReq();
+  }, []);
+
   return (
     <Container>
       <Container.TextWrap>
@@ -15,21 +39,13 @@ function Partners() {
         </Paragraph>
       </Container.TextWrap>
       <Container.ImgWrap>
-        <Container.Img>
-          <img src={itPark} alt="it park logo" />
-        </Container.Img>
-        <Container.Img>
-          <img src={derc} alt="derc logo" />
-        </Container.Img>
-        <Container.Img>
-          <img src={ministry} alt="ministry logo" />
-        </Container.Img>
-        <Container.Img>
-          <img src={finTech} alt="fintech logo" />
-        </Container.Img>
-        <Container.Img>
-          <img src={tatu} alt="tuit logo" />
-        </Container.Img>
+        {partners?.map((items, index) => {
+          return (
+          <Container.Img key={index}>
+            <img className="partners-img" src={items?.partnerPhotoUrl} alt="partners  logo" />
+          </Container.Img>
+          )
+        })}
       </Container.ImgWrap>
     </Container>
   );

@@ -17,6 +17,7 @@ AdminNav.AdminBox = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 `;
 AdminNav.Text = styled.p`
   color: #051313;

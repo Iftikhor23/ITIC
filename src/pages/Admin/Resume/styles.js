@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
 
 Wrapper.Wrap = styled.div`
   width: 100%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -30,21 +31,16 @@ Wrapper.Nav = styled.div`
 `;
 
 Wrapper.WrapTable = styled.div`
-  width: 100%;
-  height: 95%;
-`;
-Wrapper.Flex = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  .CVlink {
-    color: #009299;
-    text-overflow: ellipsis;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
+	width: 100%;
+	height: 67vh;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #888;
+		height: 40px;
+	}
 `;
 Wrapper.FaqtitleBox = styled.div`
   display: flex;
@@ -134,4 +130,16 @@ Wrapper.Box = styled.div`
   align-items: center;
   justify-content: center;
   animation: rotate 1s linear infinite;
+`;
+Wrapper.Flex = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 8px;
+  .blogImgRen {
+		width: 69px;
+		height: 44px;
+		border-radius: 6px;
+		border: 1px solid #eee;
+		object-fit: cover;
+	}
 `;

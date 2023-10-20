@@ -8,16 +8,23 @@ import request from "../../../services";
 import { useVacanciesContext } from "../../../context/VacanciesContext";
 import AdminSearch from "../../../components/AminSearch";
 import loadingIcon from "../../../assets/icons/loading.svg";
+import useSearch from "../../../services/Search";
+import { useLocation } from "react-router-dom";
+import Pagination from "../../../components/Reusable/Pagination";
+
 
 
 const Vacancies = () => {
   const navigate = useNavigate();
-  const [{ search, vacanciesdata }, dispatch] = useVacanciesContext();
+  const [{vacanciesdata }, dispatch] = useVacanciesContext();
   const [loading, setLoading] = useState(true);
+  const [pagination, setPagination] = useState({});
+  const query = useSearch();
+  const { search } = useLocation();
 
   const getPartners = async () => {
     try {
-      const res = await request.get(`admin/vacancy/all`);
+      const res = await request.get(`admin/vacancy${search || ''}`);
       dispatch({
         type: "setVacancies",
         payload: res?.data?.data,
@@ -30,7 +37,7 @@ const Vacancies = () => {
   };
   useEffect(() => {
     getPartners();
-  }, []);
+  }, [search]);
   const searchHandle = async (e) => {
     const searchValue = e.target.value;
     try {
@@ -75,6 +82,10 @@ const Vacancies = () => {
             <Table column={column} rowData={vacanciesdata} />
           )}
         </Wrapper.WrapTable>
+        <Pagination
+          current={Number(query.get("page")) || 0}
+          SizeAll={pagination?.totalPages || 1}
+        />
       </Wrapper.Wrap>
     </Wrapper>
   );
