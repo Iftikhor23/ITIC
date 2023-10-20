@@ -12,7 +12,7 @@ export const initialState = {
 	},
 	selected: {},
 	resumedata: [],
-	search: [],
+	searchData: [],
 };
 
 export const reducer = (state, action) => {
@@ -20,7 +20,7 @@ export const reducer = (state, action) => {
 		case 'setResume':
 			return { ...state, resumedata: action.payload };
 		case 'setSearch':
-			return { ...state, search: action.payload };
+			return { ...state, searchData: action.payload };
 		case 'setSelectedResume':
 			return { ...state, selected: action.payload };
 		default:

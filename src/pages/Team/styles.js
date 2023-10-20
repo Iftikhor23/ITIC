@@ -22,6 +22,11 @@ Container.Images = styled.div`
   align-items: center;
   gap: 16px;
   text-align: center;
+  .image-teams{
+    width: 310px;
+    height: 360px;
+    border-radius: 30px;
+  }
 `;
 
 Container.Name = styled.h1`

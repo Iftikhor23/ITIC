@@ -6,19 +6,25 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../../components/Reusable/ButtonComb/Button";
 import request from "../../../services";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useCaseContext } from "../../../context/CaseContext";
 import loadingIcon from "../../../assets/icons/loading.svg";
+import useSearch from "../../../services/Search";
+import Pagination from "../../../components/Reusable/Pagination";
 
 
 const Cases = () => {
   const navigate = useNavigate();
-  const [{ casedata, search }, dispatch] = useCaseContext();
+  const query = useSearch();
+  const { search } = useLocation();
+  const [{ casedata, searchData }, dispatch] = useCaseContext();
+  const [pagination, setPagination] = useState({})
   const [loading, setLoading] = useState(true);
 
 
   const getPartners = async () => {
     try {
-      const res = await request.get(`admin/case/get/all/info`);
+      const res = await request.get(`admin/case/get/all/info${search || ""}`);
       dispatch({
         type: "setCase",
         payload: res?.data?.data,
@@ -31,7 +37,7 @@ const Cases = () => {
   };
 useEffect(()=>{
   getPartners()
-},[])
+},[search])
 
   const searchHandle = async (e) => {
     const searchValue = e.target.value;
@@ -77,9 +83,13 @@ useEffect(()=>{
          </Wrapper.Loading> : 
           <Table
             column={column}
-            rowData={search.length > 0 ? search : casedata}
+            rowData={searchData.length > 0 ? searchData : casedata}
           />}
         </Wrapper.WrapTable>
+        <Pagination
+          current={Number(query.get("page")) || 0}
+          SizeAll={pagination?.totalPages || 1}
+        />
       </Wrapper.Wrap>
     </Wrapper>
   );

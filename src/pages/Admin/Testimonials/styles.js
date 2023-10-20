@@ -7,12 +7,12 @@ export const Wrapper = styled.div`
 
 Wrapper.Wrap = styled.div`
   width: 100%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   padding: 20px;
   gap: 24px;
 `;
-
 Wrapper.Header = styled.p`
   color: #000000;
   font-size: 24px;
@@ -43,8 +43,16 @@ Wrapper.Box = styled.div`
 `;
 
 Wrapper.WrapTable = styled.div`
-  width: 100%;
-  height: 95%;
+	width: 100%;
+	height: 67vh;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #888;
+		height: 40px;
+	}
 `;
 Wrapper.Flex = styled.div`
   display: flex;

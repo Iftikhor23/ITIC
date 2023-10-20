@@ -8,7 +8,7 @@ export const initialState = {
 	},
 	selected: {},
 	teamdata: [],
-	search: [],
+	searchData: [],
 };
 
 export const reducer = (state, action) => {
@@ -16,7 +16,7 @@ export const reducer = (state, action) => {
 		case 'setTeam':
 			return { ...state, teamdata: action.payload };
 		case 'setSearch':
-			return { ...state, search: action.payload };
+			return { ...state, searchData: action.payload };
 		case 'setSelectedTeam':
 			return { ...state, selected: action.payload };
 		default:

@@ -1,71 +1,55 @@
-import {FiArrowRight} from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import { useState } from "react";
 import "./Job.css";
 import JobModal from "../JobModal/JobModal";
-
-const Data = [
-  {
-    id: 1,
-    title: "Frontend Developer",
-    level: "Junior/Middle",
-    location: "Tashkent/Uzbekistan",
-    workHours: "Full Time 9:00-18:00",
-    salary: "Negotiable",
-    uploadedDate: "June 6",
-  },
-  {
-    id: 2,
-    title: "Backend Developer",
-    level: "Junior/Middle",
-    location: "Tashkent/Uzbekistan",
-    workHours: "Full Time 9:00-18:00",
-    salary: "Negotiable",
-    uploadedDate: "June 6",
-  },
-  {
-    id: 3,
-    title: "Flutter Developer",
-    level: "Junior/Middle",
-    location: "Tashkent/Uzbekistan",
-    workHours: "Full Time 9:00-18:00",
-    salary: "negotiable",
-    uploadedDate: "June 6",
-  },
-  {
-    id: 4,
-    title: "UI/UX Designer",
-    level: "Junior/Middle",
-    location: "Tashkent/Uzbekistan",
-    workHours: "Full Time 9:00-18:00",
-    salary: "negotiable",
-    uploadedDate: "June 6",
-  },
-];
+import { useEffect } from "react";
+import request from "../../services";
 
 function Job() {
+  const [selectedJobTitle, setSelectedJobTitle] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [testomonial, setTestomonial] = useState([])
+  const [loading, setLoading] = useState(true);
 
-  const[showModal, setShowModal] = useState(false);
+  const getCallReq = async () => {
+    try {
+      setLoading(true);
+      const res = await request.get(`public/vacancy`);
+      setTestomonial(res?.data?.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getCallReq();
+  }, []);
+  // console.log(testomonial, 'bu vacancy  ');
 
   return (
     <div className="container">
-      {Data.map(
-        ({ id, title, level, location, workHours, salary, uploadedDate }) => {
+      {testomonial.slice(0,4)?.map(
+        (items, index) => {
           return (
-            <div key={id} className="jobBox">
+            <div key={index} className="jobBox">
               <div className="upperPart">
                 <div className="jobTitle">
-                  <h3>{title}</h3>
-                  <p>{level}</p>
+                  <h3>{items?.title
+                  }</h3>
+                  <p>{items?.positionLevel}</p>
                 </div>
                 <div className="description">
-                  <p>{location}</p>
-                  <p>{workHours}</p>
-                  <p>Salary: {salary}</p>
+                  <p>{items?.location}</p>
+                  <p>{items?.employmentType}</p>
+                  <p>Salary: {items?.salary}</p>
                 </div>
               </div>
               <div className="bottomPart">
-                <p>{uploadedDate}</p>
-                <div className="arrow" onClick={() => setShowModal(true)}>
+                <p>{`from: ${items?.fromTime}, to: ${items?.toTime}`}</p>
+                <div className="arrow"  onClick={() => {
+                  setSelectedJobTitle(items?.title);
+                  setShowModal(true)}}>
                   <FiArrowRight size={"25px"} />
                 </div>
               </div>
@@ -73,7 +57,7 @@ function Job() {
           );
         }
       )}
-      <JobModal isVisible={showModal} onClose={() => setShowModal(false)}/>
+      <JobModal isVisible={showModal} onClose={() => setShowModal(false)}   selectedJobTitle={selectedJobTitle}/>
     </div>
   );
 }

@@ -12,11 +12,11 @@ import useSearch from "../../../services/Search";
 import { useLocation } from "react-router-dom";
 
 const Partners = () => {
-  const query = useSearch();
-  const [pagination, setPagination] = useState({});
   const [{ partnersdata }, dispatch] = usePartnersContext();
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [pagination, setPagination] = useState({});
+  const query = useSearch();
   const { search } = useLocation();
 
   const getPartners = async () => {

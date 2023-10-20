@@ -8,6 +8,10 @@ export const Container = styled.div`
     background-color: #fff;
     align-items: center;
     justify-content: center;
+    .partners-img {
+        width: 243px;
+        height: 80px;
+    }
 `;
 
 Container.TextWrap = styled.div`

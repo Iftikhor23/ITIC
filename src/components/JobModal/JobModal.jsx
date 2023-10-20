@@ -1,9 +1,10 @@
+import React from "react";
 import { Container } from "./styles";
 import closeIcon from "../../assets/icons/close.svg";
 import Input from "../InputComponent/Input";
 import Button from "../Reusable/ButtonComb/Button";
 
-function JobModal({ isVisible, onClose }) {
+function JobModal({ isVisible, onClose, selectedJobTitle }) {
   if (!isVisible) return null;
 
   const handleClose = (e) => {
@@ -14,7 +15,7 @@ function JobModal({ isVisible, onClose }) {
     <Container onClick={handleClose} id="container">
       <Container.Wrapper>
         <Container.Header>
-          <Container.Text>Apply on postion Ux Ui design</Container.Text>
+          <Container.Text>Apply on position {selectedJobTitle}</Container.Text>
           <img
             src={closeIcon}
             style={{ cursor: "pointer" }}
@@ -49,16 +50,15 @@ function JobModal({ isVisible, onClose }) {
             />
           </Container.Group>
           <Container.Group>
-            <Input label={"Job Position"} />
+            <Input label={"Job Position"} value={selectedJobTitle} readOnly />
             <div className="fileInput">
               <Input
-                style={{opacity: 0}}
+                style={{ opacity: 0 }}
                 label={"Attach Your Resume/CV"}
                 placeholder={"Upload from files"}
                 type={"file"}
               />
             </div>
-            
           </Container.Group>
 
           <Input
@@ -67,7 +67,7 @@ function JobModal({ isVisible, onClose }) {
             type={"text"}
             width={"652px"}
           />
-          <Button title="Submit" fontSize="24px" iconSize="24px"/>
+          <Button title="Submit" fontSize="24px" iconSize="24px" />
         </Container.Form>
       </Container.Wrapper>
     </Container>

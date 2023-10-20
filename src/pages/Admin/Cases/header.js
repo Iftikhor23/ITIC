@@ -106,6 +106,7 @@ const RendererStatus = ({ data }) => {
   );
 };
 const RendererPhoto = ({ data }) => {
+  
   return (
     <Wrapper.Flex>
       <img

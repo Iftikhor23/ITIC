@@ -12,6 +12,9 @@ import testimonial1 from "../../assets/images/testimonial1.svg";
 import testimonial2 from "../../assets/images/testimonial2.svg";
 import testimonial3 from "../../assets/images/testimonial3.svg";
 import testimonial4 from "../../assets/images/testimonial4.svg";
+import { useState } from "react";
+import { useEffect } from "react";
+import request from "../../services";
 
 const Data = [
   {
@@ -49,6 +52,7 @@ const Data = [
 ];
 
 function Testimonials() {
+
   return (
     <Container>
       <TextWrap>

@@ -7,7 +7,7 @@ export const initialState = {
 	},
 	selected: {},
 	casedata: [],
-	search: [],
+	searchData: [],
 };
 
 export const reducer = (state, action) => {
@@ -15,7 +15,7 @@ export const reducer = (state, action) => {
 		case 'setCase':
 			return { ...state, casedata: action.payload };
 		case 'setSearch':
-			return { ...state, search: action.payload };
+			return { ...state, searchData: action.payload };
 		case 'setSelectedCase':
 			return { ...state, selected: action.payload };
 		default:
