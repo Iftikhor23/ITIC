@@ -1,15 +1,20 @@
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { useState } from "react";
 import "./Job.css";
 import JobModal from "../JobModal/JobModal";
 import { useEffect } from "react";
 import request from "../../services";
+import { Link } from "react-router-dom";
+import { Container } from "../../pages/Careers/styles";
 
 function Job() {
+
+
   const [selectedJobTitle, setSelectedJobTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [testomonial, setTestomonial] = useState([])
   const [loading, setLoading] = useState(true);
+  const [url, setUrl] = useState("");
 
   const getCallReq = async () => {
     try {
@@ -25,7 +30,9 @@ function Job() {
   useEffect(() => {
     getCallReq();
   }, []);
-  // console.log(testomonial, 'bu vacancy  ');
+  
+  useEffect(() => setUrl(window.location.pathname), [window.location.pathname]);
+
 
   return (
     <div className="container">
@@ -57,9 +64,23 @@ function Job() {
           );
         }
       )}
+     {url !== "/allVacancies" && <Link to={"/allVacancies"}>
+        <Container.SeeAll>
+          <Container.ArrowText>
+            See All
+            <br /> Vacancies
+          </Container.ArrowText>
+          <Container.ArrowWrap>
+            <Container.Arrow>
+              <FiArrowUpRight size={"25px"} />
+            </Container.Arrow>
+          </Container.ArrowWrap>
+        </Container.SeeAll>
+      </Link>}
       <JobModal isVisible={showModal} onClose={() => setShowModal(false)}   selectedJobTitle={selectedJobTitle}/>
     </div>
   );
 }
 
 export default Job;
+//something
