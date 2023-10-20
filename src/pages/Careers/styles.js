@@ -8,19 +8,34 @@ export const Container = styled.div`
   height: 100vh;
   justify-content: center;
   position: relative;
+
+  @media screen and (max-width: 840px) {
+    width: 100%;
+    height: fit-content;
+  }
 `;
 
 Container.Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
+
+  @media screen and (max-width: 840px) {
+    flex-direction: column;
+  }
 `;
 
 Container.Text = styled.div``;
 
 Container.Vacancies = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+
+  @media screen and (max-width: 840px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 Container.SeeAll = styled.div`
@@ -58,25 +73,3 @@ Container.ArrowText = styled.h3`
   font-weight: 500;
   line-height: 27px;
 `;
-
-// .container .vacancies .seeAll .arrowContainer{
-//     display: flex;
-//     justify-content: end;
-// }
-
-// .container .vacancies .seeAll .arrow {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 50px;
-//   width: 50px;
-//   border-radius: 50%;
-//   background-color: #fff;
-//   color: #00cdc2;
-// }
-
-// .container .vacancies .seeAll .text h3 {
-//   font-size: 24px;
-//   font-weight: 400;
-//   color: #fff;
-// }

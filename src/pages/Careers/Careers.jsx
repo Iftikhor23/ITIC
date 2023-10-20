@@ -46,19 +46,6 @@ function Careers() {
         </Container.Text>
         <Container.Vacancies>
           <Job />
-          <Link to={"/allVacancies"}>
-            <Container.SeeAll>
-              <Container.ArrowText>
-                See All
-                <br /> Vacancies
-              </Container.ArrowText>
-              <Container.ArrowWrap>
-                <Container.Arrow>
-                  <FiArrowUpRight size={"25px"} />
-                </Container.Arrow>
-              </Container.ArrowWrap>
-            </Container.SeeAll>
-          </Link>
         </Container.Vacancies>
       </Container.Wrapper>
     </Container>

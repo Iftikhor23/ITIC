@@ -99,6 +99,8 @@ Wrapper.BoxIcon = styled.div`
   border: 1px solid
     ${({ type }) =>
       type === "comment" ? "#EEE" : type === "close" ? "#FF5151" : "#37A67E"};
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 Wrapper.Comment = styled.div`

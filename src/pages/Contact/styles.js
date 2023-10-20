@@ -70,23 +70,12 @@ Container.FooterWrapper = styled.div`
   /* z-index: 100; */
 `;
 
-Container.Gradient = styled.div`
-  background-color: #00cdc2;
-  /* border-radius: 1233px; */
-  filter: blur(300px);
-  height: 600px;
-  width: 685px;
-  right: 0;
-  position: absolute;
-  bottom: 0;
-`;
-
 Container.Bubble = styled.div`
     height: 614px;
-    right: 0;
+    right: -763px;
     object-fit: cover;
-    position: fixed;
-    bottom: -20px;
+    position: relative;
+    bottom: 400px;
     width: 699px;
     animation: wabble 2s linear infinite;
 
