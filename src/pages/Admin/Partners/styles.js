@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 Wrapper.Wrap = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -32,7 +32,7 @@ Wrapper.Nav = styled.div`
 
 Wrapper.WrapTable = styled.div`
 	width: 100%;
-	height: 60vh;
+	height: 67vh;
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
 		width: 4px;

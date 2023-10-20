@@ -9,9 +9,31 @@ import lilChart from "../../assets/images/lilChart.svg";
 import middle from "../../assets/images/mid.svg";
 import bigChart from "../../assets/images/big.svg";
 import up from '../../assets/images/uptrade.svg';
+import request from "../../services";
+import { useEffect } from "react";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [callData, setCallData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+
+  const getCallReq = async () => {
+    try {
+      setLoading(true);
+      const res = await request.get(`public/employee`);
+      setCallData(res?.data?.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getCallReq();
+  }, []);
+  
+  const lengthData = callData.length
   return (
     <Container>
       <Container.MidWrap>
@@ -39,12 +61,35 @@ function Home() {
             Connect with growing workforce and companies in the field of
             software development and animation to ensure quality and competitive
           </Paragraph>
-          <img
-            src={employees}
-            alt="company employees"
-            width={"335px"}
-            style={{ marginTop: "33px", zIndex: 1 }}
-          />
+          <Container.TeamBox className="image-class">
+            <>
+              {callData.slice(0, 5).map((items, index) => {
+                const topPosition = index * 0;
+                const leftPosition = index * 50;
+                const zindex = 5 - index;
+                return (
+                  <img
+                    key={index}
+                    className="employee-image"
+                    src={items?.employeePhotoUrl}
+                    alt="company employees"
+                    width={"80px"}
+                    style={{
+                      marginTop: "33px",
+                      zIndex: `${zindex}`,
+                      top: `${topPosition}px`,
+                      left: `${leftPosition}px`,
+                      borderRadius: "80px",
+                      border: "5px solid #04545C",
+                    }}
+                  />
+                );
+              })}
+              <div className="lastrounded">
+                <span>{lengthData}+</span>
+              </div>
+            </>
+          </Container.TeamBox>
         </Container.Wrapper>
         <div className="chart">
           <Bounce bottom>

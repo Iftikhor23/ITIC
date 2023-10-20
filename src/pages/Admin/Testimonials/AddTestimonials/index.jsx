@@ -68,7 +68,6 @@ function AddTestimonials() {
         state?.surname &&
         state?.content &&
         state?.companyName &&
-        state?.testomonialPhotoUrl &&
         state?.attachmentId 
       ) {
         try {
@@ -115,8 +114,7 @@ function AddTestimonials() {
         state?.content &&
         state?.companyName &&
         state?.testomonialPhotoUrl &&
-        state?.attachmentId &&
-        state?.isActive
+        state?.attachmentId
       ) {
         try {
           const res = await request.put(
@@ -133,22 +131,16 @@ function AddTestimonials() {
                 isActive: state?.isActive,
               },
             },
-            navigate("/admin/team"),
+            navigate("/admin/testimonials"),
             Toast({
               type: "success",
               message: "Saved",
             })
             );
-          setState({
-            ...state,
-            firstName: "",
-            lastName: "",
-            position: "",
-            attachmentId: "",
-            employeePhotoUrl: "",
-            client: "",
-            isActive: false,
-          });
+            dispatch({
+              type: "setSelectedTestomonirals",
+              payload: {},
+            });
         } catch (error) {
           console.error("Saqlashda xatolik yuz berdi:", error);
         }

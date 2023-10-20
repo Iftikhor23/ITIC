@@ -39,6 +39,7 @@ function Input({
           type={type}
           placeholder={placeholder}
           placeholderColor={placeholderColor}
+          value={value}
         />
       </Container.Wrap>
     </Container>

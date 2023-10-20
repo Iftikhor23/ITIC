@@ -8,16 +8,25 @@ import { useTeamContext } from "../../../context/TeamContext";
 import request from "../../../services";
 import { useEffect, useState } from "react";
 import loadingIcon from "../../../assets/icons/loading.svg";
+import Pagination from "../../../components/Reusable/Pagination";
+import useSearch from "../../../services/Search";
+import { useLocation } from "react-router-dom";
+
 
 
 const Team = () => {
   const navigate = useNavigate();
-  const [{ teamdata, search }, dispatch] = useTeamContext();
+  const [{ teamdata, searchData }, dispatch] = useTeamContext();
   const [loading, setLoading] = useState(true);
+  const [pagination, setPagination] = useState({});
+  const query = useSearch();
+  const { search } = useLocation();
 
   const getEmployee = async () => {
     try {
-      const res = await request.get(`admin/employee/all`);
+      const res = await request.get(`admin/employee${search || ''}`);
+      setPagination(res?.data?.pagination);
+
       dispatch({
         type: "setTeam",
         payload: res?.data?.data,
@@ -29,7 +38,7 @@ const Team = () => {
   };
   useEffect(() => {
     getEmployee();
-  }, []);
+  }, [search]);
   const searchHandle = async (e) => {
     const searchValue = e.target.value;
     try {
@@ -74,10 +83,14 @@ const Team = () => {
           ) : (
             <Table
               column={column}
-              rowData={search.length > 0 ? search : teamdata}
+              rowData={searchData.length > 0 ? searchData : teamdata}
             />
           )}
         </Wrapper.WrapTable>
+        <Pagination
+          current={Number(query.get("page")) || 0}
+          SizeAll={pagination?.totalPages || 1}
+        />
       </Wrapper.Wrap>
     </Wrapper>
   );

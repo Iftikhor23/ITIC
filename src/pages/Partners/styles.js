@@ -1,25 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  gap: 97px;
-  width: 110vw;
-  height: 100vh;
-  background-color: #fff;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 840px) {
-    width: 100%;
-    height: fit-content;
-    flex-direction: column;
-    gap: 23px;
-    align-items: flex-start;
-  }
-
-  @media screen and (max-width: 840px) {
-    gap: 0px;
-  }
+    display: flex;
+    gap: 97px;
+    width: 110vw;
+    height: 100vh;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    .partners-img {
+        width: 243px;
+        height: 80px;
+    }
 `;
 
 Container.TextWrap = styled.div`

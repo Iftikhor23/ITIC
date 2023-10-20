@@ -7,14 +7,21 @@ import request from "../../../services";
 import { useResumeContext } from "../../../context/ResumeContext";
 import { useEffect, useState } from "react";
 import loadingIcon from "../../../assets/icons/loading.svg";
+import Pagination from "../../../components/Reusable/Pagination";
+import useSearch from "../../../services/Search";
+import { useLocation } from "react-router-dom";
 
 const Resume = () => {
-  const [{ resumedata, search}, dispatch] = useResumeContext();
+  const [{ resumedata, searchData}, dispatch] = useResumeContext();
   const [loading, setLoading] = useState(true);
+  const [pagination, setPagination] = useState({});
+  const query = useSearch();
+  const { search } = useLocation();
+  
 
   const getResume = async () => {
     try {
-      const res = await request.get(`admin/resume/all`);
+      const res = await request.get(`admin/resume/all${search || ''}`);
       dispatch({
         type: "setResume",
         payload: res?.data?.data,
@@ -25,26 +32,26 @@ const Resume = () => {
       setLoading(false);
     }
   };
-  useEffect(() => {
-    getResume();
-  }, []);
-
+  
   const handleSearch = async (e)  => {
-      try {
-        const res = await request.get(`admin/resume/search?fullName=${e.target.value}`);
-        dispatch({
-          type: "setSearch",
-          payload: res?.data?.data,
-        });
+    try {
+      const res = await request.get(`admin/resume/search?fullName=${e.target.value}`);
+      dispatch({
+        type: "setSearch",
+        payload: res?.data?.data,
+      });
         setLoading(false);
       } catch (error) {
         console.error("Error", error);
         setLoading(false);
       }
-  }
-  
-  return (
-    <Wrapper>
+    }
+    
+    useEffect(() => {
+      getResume();
+    }, [search]);
+    return (
+      <Wrapper>
       <Wrapper.Wrap>
         <Wrapper.Header>Resumes</Wrapper.Header>
         <Wrapper.Nav>
@@ -68,9 +75,13 @@ const Resume = () => {
             </Wrapper.Box>
           </Wrapper.Loading>
           ) : (
-            <Table column={column} rowData={search.length > 0 ? search : resumedata} />
+            <Table column={column} rowData={searchData.length > 0 ? searchData : resumedata} />
           )}
         </Wrapper.WrapTable>
+        <Pagination
+          current={Number(query.get("page")) || 0}
+          SizeAll={pagination?.totalPages || 1}
+        />
       </Wrapper.Wrap>
     </Wrapper>
   );

@@ -49,19 +49,10 @@ Container.Images = styled.div`
   align-items: center;
   gap: 16px;
   text-align: center;
-
-  @media screen and (max-width: 840px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 653px) {
-    .personBox {
-      img {
-        height: 210px;
-        width: 173px;
-      }
-    }
+  .image-teams{
+    width: 310px;
+    height: 360px;
+    border-radius: 30px;
   }
 `;
 
@@ -76,3 +67,5 @@ Container.Job = styled.p`
   font-size: 16px;
   font-weight: 400;
 `;
+
+//fjbeorf
