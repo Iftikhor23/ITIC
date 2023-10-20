@@ -23,30 +23,33 @@ function Pages() {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const pin = gsap.fromTo(
-      sectionRef.current,
-      {
-        translateX: 0,
-      },
-      {
-        translateX: "-1621vw",
-        ease: "none",
-        duration: 1,
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top top",
-          end: "bottom -2999%",
-          scrub: 1,
-          pin: true,
-          // markers: true
+    if (triggerRef.current?.offsetWidth >= 840) {
+      const pin = gsap.fromTo(
+        sectionRef.current,
+        {
+          translateX: 0,
         },
-      }
-    );
-
-    return () => {
-      pin.kill();
-    };
+        {
+          translateX: "-1621vw",
+          ease: "none",
+          duration: 1,
+          scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top top",
+            end: "bottom -2999%",
+            scrub: 1,
+            pin: true,
+            // markers: true
+          },
+        }
+      );
+      return () => {
+        pin.kill();
+      };
+    }
   }, []);
+
+  console.log(triggerRef.current?.offsetWidth);
 
   return (
     <div style={{ position: "relative" }}>
@@ -54,7 +57,7 @@ function Pages() {
       <div className="footer">
         <Footer />
       </div>
-      <div style={{position: "fixed", zIndex: "19"}}>
+      <div style={{ position: "fixed", zIndex: "19" }}>
         <SidebarButton />
       </div>
       <div className="scrollSectionOuter">
@@ -69,7 +72,7 @@ function Pages() {
             <Branches />
             <Partners />
             <Testimonials />
-            <Careers/>
+            <Careers />
             <Contact />
           </div>
         </div>

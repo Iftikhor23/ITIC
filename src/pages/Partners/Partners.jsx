@@ -3,7 +3,7 @@ import { HeadingOne, Paragraph } from "../../styled/styles";
 import itPark from "../../assets/images/itPark.svg";
 import finTech from "../../assets/images/fintech.svg";
 import derc from "../../assets/images/derc.svg";
-import tatu from "../../assets/images/tatu.svg";
+import uzum from "../../assets/images/uzum.svg";
 import ministry from "../../assets/images/ministry.svg";
 function Partners() {
   return (
@@ -16,19 +16,19 @@ function Partners() {
       </Container.TextWrap>
       <Container.ImgWrap>
         <Container.Img>
-          <img src={itPark} alt="it park logo" />
+          <img className="partnerLogo" src={itPark} alt="it park logo" />
         </Container.Img>
         <Container.Img>
-          <img src={derc} alt="derc logo" />
+          <img className="partnerLogo" src={derc} alt="derc logo" />
         </Container.Img>
         <Container.Img>
-          <img src={ministry} alt="ministry logo" />
+          <img className="partnerLogo" src={ministry} alt="ministry logo" />
         </Container.Img>
         <Container.Img>
-          <img src={finTech} alt="fintech logo" />
+          <img className="partnerLogo" src={finTech} alt="fintech logo" />
         </Container.Img>
         <Container.Img>
-          <img src={tatu} alt="tuit logo" />
+          <img className="partnerLogo" src={uzum} alt="tuit logo" width={"243px"}/>
         </Container.Img>
       </Container.ImgWrap>
     </Container>

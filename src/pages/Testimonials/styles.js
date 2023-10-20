@@ -8,6 +8,12 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   gap: 201px;
+
+  @media screen and (max-width: 840px) {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+  }
 `;
 
 Container.TestiBox = styled.div`
@@ -23,6 +29,7 @@ Container.TestiBox = styled.div`
     background: linear-gradient(to right, rgb(255, 978, 255) 0%, rgba(255, 423, 75, 0) 200%);
     background-color: #6c9f9e;
   }
+
 `;
 
 Container.TestiBoxTwo = styled.div`
@@ -38,11 +45,11 @@ Container.TestiBoxTwo = styled.div`
     background: linear-gradient(to left, rgb(255, 978, 255) 0%, rgba(255, 423, 75, 0) 200%);
     background-color: #6c9f9e;
   }
+
 `;
 
 Container.Carousel = styled.div`
     background: radial-gradient(circle, rgba(109, 160, 157, 1) 10%, #fff 80%);
-    /* background: rgba(109, 160, 157, 0.6); */
     display: flex;
     gap: 5.5px;
 `;

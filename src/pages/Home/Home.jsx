@@ -60,6 +60,7 @@ function Home() {
             <img className="upTrade" src={up} alt="up arrow" />
           </Bounce>
         </div>
+        
       </Container.MidWrap>
       <FormModal isVisible={showModal} onClose={() => setShowModal(false)} />
     </Container>

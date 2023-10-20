@@ -21,7 +21,7 @@ function Branches() {
         </Container.Text>
 
         <div className="image">
-          <img src={world} alt="world map" width={"1304px"} height={"643px"} />
+          <img className="worldImage" src={world} alt="world map" width={"1304px"} height={"643px"} />
           <Fade clear>
             <img className="soonUsa" src={soon} alt="location" />
           </Fade>

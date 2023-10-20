@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: #051c2c;
@@ -9,12 +9,39 @@ export const Container = styled.div`
   justify-content: center;
   padding: 270px 182px 209px 182px;
   overflow: hidden;
+
+  @media screen and (max-width: 840px) {
+    height: fit-content;
+    width: 100%;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 653px) {
+    
+  }
 `;
 
 Container.Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 45px;
+
+  @media screen and (max-width: 840px) {
+    flex-direction: column;
+    .text {
+      margin-left: -180px;
+    }
+  }
+
+  @media screen and (max-width: 653px) {
+    .text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+    }
+  }
 `;
 
 Container.Images = styled.div`
@@ -22,6 +49,20 @@ Container.Images = styled.div`
   align-items: center;
   gap: 16px;
   text-align: center;
+
+  @media screen and (max-width: 840px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 653px) {
+    .personBox {
+      img {
+        height: 210px;
+        width: 173px;
+      }
+    }
+  }
 `;
 
 Container.Name = styled.h1`
@@ -34,4 +75,4 @@ Container.Job = styled.p`
   color: #fff;
   font-size: 16px;
   font-weight: 400;
-`
+`;

@@ -10,19 +10,17 @@ import Button from "../../components/Reusable/ButtonComb/Button";
 function Cases() {
   return (
     <Container>
-      <TextWrap>
+      <div className="textWrapper">
         <HeadingOne>Case Studies</HeadingOne>
         <Paragraph>
           Become a member of a freelancer's poo l and work on creative projects
         </Paragraph>
         <Link to={"/allCases"}>
-          <Button
-            title="See all"
-            iconSize="30px"
-            btnwidth="159px"
-          />
+          <div className="respDesk">
+            <Button title="See all" iconSize="30px" btnwidth="159px" />
+          </div>
         </Link>
-      </TextWrap>
+      </div>
       <Container.CasesWrapper>
         <CaseComp
           imageSrc={caseOne}
@@ -40,6 +38,12 @@ function Cases() {
           paragraph={"Design direction, Ux Ui design"}
         />
       </Container.CasesWrapper>
+      <div className="response">
+        <Button title="See all" iconSize="30px" btnwidth="159px" />
+      </div>
+      <div className="mobile">
+      <Button title="See all" iconSize="24px" btnwidth="159px" />
+      </div>
     </Container>
   );
 }

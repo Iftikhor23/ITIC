@@ -18,6 +18,11 @@ Container.ModalWrapper = styled.div`
     height: ${({btnHeight}) => (btnHeight ? btnHeight : "65px")};
     background-color: #00cdc2;
     color: #fff;
+    @media screen and (max-width: 653px) {
+      height: 44px;
+      width: 114px;
+      font-size: 16px;
+    }
 `;
 
 Container.ArrowWrapper = styled.div`
@@ -28,5 +33,10 @@ Container.ArrowWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 653px) {
+      height: 44px;
+      width: 44px;
+    }
 `;
 

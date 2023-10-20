@@ -16,6 +16,10 @@ export const Container = styled.div`
 Container.MidWrap = styled.div`
   display: flex;
   align-items: center;
+  .chartParent{
+    position: relative;
+  }
+
   .chart {
     position: absolute;
     bottom: 20px;

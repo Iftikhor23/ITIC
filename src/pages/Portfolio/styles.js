@@ -10,10 +10,48 @@ export const Container = styled.div`
   overflow: hidden;
   gap: 205px;
 
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 13px;
+    @media screen and (max-width: 840px) {
+      margin-left: -330px;
+      gap: 5px;
+    }
+
+    @media screen and (max-width: 653px) {
+      align-items: center;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .response {
+    display: none;
+    @media screen and (max-width: 840px) {
+      display: block;
+      margin-top: -50px;
+    }
+
+    @media screen and (max-width: 653px) {
+      display: none;
+    }
+  }
+
+  .mobile{
+    margin-top: -70px;
+  }
+
   @media screen and (max-width: 840px) {
     height: fit-content;
     width: 100%;
     flex-direction: column;
+    gap: 51px;
+
+    .respDesk {
+      display: none;
+    }
   }
 `;
 
@@ -32,5 +70,6 @@ Container.CasesWrapper = styled.div`
 
   @media screen and (max-width: 840px) {
     width: fit-content;
+    gap: 1px;
   }
 `;

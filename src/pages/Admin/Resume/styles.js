@@ -138,5 +138,3 @@ Wrapper.Box = styled.div`
   justify-content: center;
   animation: rotate 1s linear infinite;
 `;
-// mijijjuju
-// mkmkmkmkmkmkm

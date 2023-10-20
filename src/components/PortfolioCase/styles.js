@@ -9,6 +9,12 @@ export const Container = styled.div`
 
     @media screen and (max-width: 840px) {
         width: 728px;
+        height: 550px;
+    }
+
+    @media screen and (max-width: 653px) {
+        width: 355px;
+        height: 330px;
     }
 `;
 
@@ -32,6 +38,14 @@ Container.Title = styled.h2`
     font-weight: 500;
     letter-spacing: 0;
     line-height: normal;
+
+    @media screen and (max-width: 840px) {
+        font-size: 32px;
+    }
+
+    @media screen and (max-width: 653px) {
+        font-size: 16px;
+    }
 `;
 
 Container.Parag = styled.p`
@@ -42,6 +56,10 @@ Container.Parag = styled.p`
     letter-spacing: 0;
     line-height: normal;
     opacity: 0.67;
+
+    @media screen and (max-width: 653px) {
+        font-size: 12px;
+    }
 `;
 
 Container.Button = styled.div`
@@ -57,4 +75,9 @@ Container.Button = styled.div`
         transition: 0.7s;
     }
     cursor: pointer;
+
+    @media screen and (max-width: 653px) {
+       width: 30px;
+       height: 30px;
+    }
 `;

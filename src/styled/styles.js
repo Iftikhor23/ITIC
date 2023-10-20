@@ -75,6 +75,17 @@ export const ScrollAnimationOne = styled.div`
       transform: translateY(-100%);
     }
   }
+
+  /* @media screen and (max-width: 840px) {
+    @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  } */
 `;
 
 export const ScrollAnimationTwo = styled.div`
@@ -91,4 +102,15 @@ export const ScrollAnimationTwo = styled.div`
       transform: translateY(0%);
     }
   }
+
+  /* @media screen and (max-width: 840px) {
+    @keyframes scroll {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  } */
 `;

@@ -1,7 +1,9 @@
-import {FiArrowRight} from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { useState } from "react";
 import "./Job.css";
 import JobModal from "../JobModal/JobModal";
+import { Container } from "../../pages/Careers/styles";
+import { Link } from "react-router-dom";
 
 const Data = [
   {
@@ -43,8 +45,7 @@ const Data = [
 ];
 
 function Job() {
-
-  const[showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="container">
@@ -73,7 +74,21 @@ function Job() {
           );
         }
       )}
-      <JobModal isVisible={showModal} onClose={() => setShowModal(false)}/>
+      <Link to={"/allVacancies"}>
+        <Container.SeeAll>
+          <Container.ArrowText>
+            See All
+            <br /> Vacancies
+          </Container.ArrowText>
+          <Container.ArrowWrap>
+            <Container.Arrow>
+              <FiArrowUpRight size={"25px"} />
+            </Container.Arrow>
+          </Container.ArrowWrap>
+        </Container.SeeAll>
+      </Link>
+
+      <JobModal isVisible={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 }
