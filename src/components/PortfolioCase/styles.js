@@ -6,6 +6,10 @@ export const Container = styled.div`
     gap: 28px;
     width: 918px;
     height: 600px;
+
+    @media screen and (max-width: 840px) {
+        width: 728px;
+    }
 `;
 
 Container.Desc = styled.div`

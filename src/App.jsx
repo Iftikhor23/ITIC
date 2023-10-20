@@ -5,6 +5,8 @@ import AllVacancies from "./pages/AllVacancies/AllVacancies";
 import Admin from "./pages/Admin";
 import { Data } from "./components/AdminSidebar/SidebarData";
 import AdminSign from "./pages/AdminSign";
+import Cases from "./pages/Portfolio/Cases";
+
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
           <Route path="/allCases" element={<AllCases />} />
           <Route path="/admin/sign-in" element={<AdminSign/>}/>
           <Route path="/allVacancies" element={<AllVacancies />} />
-          <Route path="/" element={<Pages />} />
+          <Route path="/" element={<Cases />} />
           <Route path="/admin" element={<Admin />}>
             {Data?.map(({ path, component }, i) => (
               <Route exact path={path} element={component} key={i} />

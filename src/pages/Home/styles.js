@@ -81,6 +81,7 @@ Container.MidWrap = styled.div`
       width: 280px;
       height: 500px;
       bottom: 0;
+      user-select: none;
     }
     .midChart {
       position: absolute;
@@ -89,6 +90,7 @@ Container.MidWrap = styled.div`
       width: 224px;
       z-index: 20;
       height: 350px;
+      user-select: none;
     }
     .bigChart {
       position: absolute;
@@ -96,12 +98,14 @@ Container.MidWrap = styled.div`
       bottom: 0;
       width: 354px;
       height: 600px;
+      user-select: none;
     }
     .upTrade {
       position: absolute;
       top: 160px;
       left: 115px;
       z-index: 20;
+      user-select: none;
     }
   }
 `;
