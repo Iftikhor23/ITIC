@@ -6,8 +6,28 @@ import caseThree from "../../assets/images/case3.svg";
 import CaseComp from "../../components/PortfolioCase/CaseComp";
 import { Link } from "react-router-dom";
 import Button from "../../components/Reusable/ButtonComb/Button";
+import { useEffect, useState } from "react";
+import request from "../../services";
 
 function Cases() {
+  const [cases, setCases] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getCallReq = async () => {
+    try {
+      setLoading(true);
+      const res = await request.get(`public/case`);
+      setCases(res?.data?.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getCallReq();
+  }, []);
+  console.log(cases, "fbnjbnjgnbj");
   return (
     <Container>
       <div className="textWrapper">
@@ -22,27 +42,20 @@ function Cases() {
         </Link>
       </div>
       <Container.CasesWrapper>
-        <CaseComp
-          imageSrc={caseOne}
-          title={"Real estate Chrorium development"}
-          paragraph={"Design direction, Ux Ui design"}
-        />
-        <CaseComp
-          imageSrc={caseTwo}
-          title={"Real estate Chrorium development"}
-          paragraph={"Design direction, Ux Ui design"}
-        />
-        <CaseComp
-          imageSrc={caseThree}
-          title={"Real estate Chrorium development"}
-          paragraph={"Design direction, Ux Ui design"}
-        />
+        {cases?.map((items, index) => (
+          <CaseComp
+            imageSrc={items?.casePhotoUrl}
+            title={items?.title}
+            paragraph={items?.tagsList}
+            to={items?.link}
+          />
+        ))}
       </Container.CasesWrapper>
       <div className="response">
         <Button title="See all" iconSize="30px" btnwidth="159px" />
       </div>
       <div className="mobile">
-      <Button title="See all" iconSize="24px" btnwidth="159px" />
+        <Button title="See all" iconSize="24px" btnwidth="159px" />
       </div>
     </Container>
   );
