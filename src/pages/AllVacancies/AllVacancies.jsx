@@ -1,11 +1,11 @@
-import Job from "../../components/Jobs/Job";
-import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
-import { Container } from "./styles";
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import JobModal from "../../components/JobModal/JobModal";
 import Button from "../../components/Reusable/ButtonComb/Button";
+import Job from "../../components/Jobs/Job";
+import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
+import { Container } from "./styles";
 
 function AllVacancies() {
   const [showModal, setShowModal] = useState(false);
@@ -40,6 +40,14 @@ function AllVacancies() {
     };
   }, []);
 
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="scrollSectionOuter">
       <div ref={triggerRef}>
@@ -61,7 +69,7 @@ function AllVacancies() {
                 If you haven't found any suitable opening vacancies, you can
                 register your interest here.
               </Container.Text>
-              <div onCLick={() => setShowModal(true)}>
+              <div onClick={handleOpenModal}>
                 <Button
                   title="Send my resume"
                   fontSize="16px"
@@ -76,7 +84,7 @@ function AllVacancies() {
           </div>
         </Container>
       </div>
-      <JobModal isVisible={showModal} onClose={() => setShowModal(false)} />
+      {showModal && <JobModal isVisible={true} onClose={handleCloseModal} />}
     </div>
   );
 }

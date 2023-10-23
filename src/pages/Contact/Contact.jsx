@@ -14,7 +14,6 @@ function Contact() {
           Let's talk about your project
           <br /> and feel free to ask, we have
         </HeadingOne>
-        <div onClick={() => setShowModal(true)}>
           <Button
             title="free consultation"
             fontSize="56px"
@@ -23,8 +22,8 @@ function Contact() {
             aWidth="85px"
             aHeight="85px"
             iconSize="34px"
+            onClick={() => setShowModal(true)}
           />
-        </div>
       </div>
       <Container.InfoWrapper>
         <Container.PhoneAndEmail>
