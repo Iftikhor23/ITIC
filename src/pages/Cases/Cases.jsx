@@ -44,9 +44,10 @@ function Cases() {
       <Container.CasesWrapper>
         {cases?.map((items, index) => (
           <CaseComp
+            tag={items?.tagsList}
             imageSrc={items?.casePhotoUrl}
-            title={items?.title}
-            paragraph={items?.tagsList}
+            title={items?.client}
+            paragraph={items?.projectName}
             to={items?.link}
           />
         ))}

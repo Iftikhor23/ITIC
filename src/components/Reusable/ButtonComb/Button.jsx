@@ -1,4 +1,4 @@
-import {FiArrowUpRight} from 'react-icons/fi';
+import { FiArrowUpRight } from "react-icons/fi";
 import { Container } from "./styles";
 
 function Button(props) {
@@ -7,8 +7,8 @@ function Button(props) {
       <div>
         <Container.ModalWrapper
           fontSize={props.fontSize}
-          btnWidth={props.btnwidth}
-          btnHeight={props.btnheight}
+          btnwidth={props.btnwidth}
+          btnheight={props.btnheight}
         >
           {props.title}
         </Container.ModalWrapper>

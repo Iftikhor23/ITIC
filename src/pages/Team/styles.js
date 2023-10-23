@@ -52,6 +52,7 @@ Container.Images = styled.div`
     width: 310px;
     height: 360px;
     border-radius: 30px;
+    object-fit: cover;
   }
 `;
 
