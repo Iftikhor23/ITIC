@@ -31,7 +31,7 @@ function Careers() {
   useEffect(() => {
     getCallReq();
   }, []);
-  console.log(testomonial, 'bu vacancy  ');
+ 
   return (
     <Container id="vacancies" ref={careerRef}>
       <Container.Wrapper>
