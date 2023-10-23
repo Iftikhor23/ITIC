@@ -14,8 +14,8 @@ Container.ModalWrapper = styled.div`
     font-size: ${({fontSize}) => (fontSize ? fontSize : "24px")};
     font-weight: 500;
     border: none;
-    width: ${({btnWidth}) => (btnWidth ? btnWidth : "165px") };
-    height: ${({btnHeight}) => (btnHeight ? btnHeight : "65px")};
+    width: ${({btnwidth}) => (btnwidth ? btnwidth : "165px") };
+    height: ${({btnheight}) => (btnheight ? btnheight : "65px")};
     background-color: #00cdc2;
     color: #fff;
     @media screen and (max-width: 653px) {

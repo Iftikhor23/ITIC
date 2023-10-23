@@ -4,32 +4,32 @@ import { Link } from "react-router-dom";
 import request from "../../services";
 import { useEffect, useState } from "react";
 
-function CaseComp({ imageSrc, title, paragraph,to}) {
+function CaseComp({ imageSrc, title, paragraph, to, tag }) {
   const [testomonial, setTestomonial] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getCallReq = async () => {
-    try {
-      setLoading(true);
-      const res = await request.get(`public/vacancy`);
-      setTestomonial(res?.data?.data);
-      setLoading(false);
-    } catch (error) {
-      console.error("Error", error);
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    getCallReq();
-  }, []);
-  
+  const newTags = tag?.length > 0 && tag.map(v=>v);
+  console.log(newTags, "newTags");
   return (
     <Container>
-      <img src={imageSrc} alt="case" />
+      <div className="imageWrap">
+        <img className="caseImage" src={imageSrc} alt="case" />
+        <div className="tagWrap">
+          {tag && Array.isArray(tag) ? (
+            tag.map((tags, id) => (
+              <span className="tag" key={id}>
+                {tags}
+              </span>
+            ))
+          ) : (
+            <span className="tag">No tags available</span>
+          )}
+        </div>
+      </div>
       <Container.Desc>
         <Container.Info>
-          <Container.Title>{title}</Container.Title>
           <Container.Parag>{paragraph}</Container.Parag>
+          <Container.Title>{title}</Container.Title>
         </Container.Info>
         <Link to={to} target={"_blank"}>
           <Container.Button>

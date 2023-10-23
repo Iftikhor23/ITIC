@@ -11,6 +11,7 @@ export const Container = styled.div`
     .partners-img {
         width: 243px;
         height: 80px;
+        object-fit: cover;
     }
 `;
 
