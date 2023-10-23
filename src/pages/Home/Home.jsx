@@ -33,7 +33,7 @@ function Home() {
     getCallReq();
   }, []);
   
-  const lengthData = callData.length
+
   return (
     <Container>
       <Container.MidWrap>
@@ -86,7 +86,7 @@ function Home() {
                 );
               })}
               <div className="lastrounded">
-                <span>{lengthData}+</span>
+                <span>{callData.length}+</span>
               </div>
             </>
           </Container.TeamBox>

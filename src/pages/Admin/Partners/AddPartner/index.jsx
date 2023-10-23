@@ -21,15 +21,15 @@ function AddPartner({ isVisible, onClose }) {
     attachmentId: selected?.attachmentId || "",
     isActive: selected?.isActive || false,
   });
-  // useEffect(() => {
-  //   if (selected) {
-  //     setState({
-  //       partnerPhotoUrl: selected.partnerPhotoUrl || null,
-  //       attachmentId: selected.attachmentId || "",
-  //       isActive: selected.isActive || false,
-  //     });
-  //   }
-  // }, [selected]);
+  useEffect(() => {
+    if (selected) {
+      setState({
+        partnerPhotoUrl: selected.partnerPhotoUrl || null,
+        attachmentId: selected.attachmentId || "",
+        isActive: selected.isActive || false,
+      });
+    }
+  }, [selected]);
 
   if (!isVisible) return null;
   const handleCLose = (e) => {
@@ -64,12 +64,12 @@ function AddPartner({ isVisible, onClose }) {
     if (!selected?.id) {
       if (idOfAttachmentId && urlFormData) {
         try {
-          const res = await request.post(`admin/partner`, {
-            data: {
+          const res = await request.post(`admin/partner`,    {
+            data:{
               partnerPhotoUrl: urlFormData,
               attachmentId: idOfAttachmentId,
               isActive: state?.isActive,
-            },
+            }
           });
 
           Toast({
