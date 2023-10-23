@@ -27,7 +27,6 @@ function Cases() {
   useEffect(() => {
     getCallReq();
   }, []);
-  console.log(cases, "fbnjbnjgnbj");
   return (
     <Container>
       <div className="textWrapper">
