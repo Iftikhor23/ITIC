@@ -39,7 +39,6 @@ function Pages() {
             end: "bottom -2999%",
             scrub: 1,
             pin: true,
-            // markers: true
           },
         }
       );

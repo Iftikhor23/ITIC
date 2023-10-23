@@ -70,12 +70,13 @@ Container.FooterWrapper = styled.div`
   /* z-index: 100; */
 `;
 
+
 Container.Bubble = styled.div`
     height: 614px;
-    right: -763px;
+    right: 0;
     object-fit: cover;
-    position: relative;
-    bottom: 400px;
+    position: fixed;
+    bottom: -20px;
     width: 699px;
     animation: wabble 2s linear infinite;
 

@@ -7,7 +7,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 270px 182px 209px 182px;
   overflow: hidden;
 
   @media screen and (max-width: 840px) {

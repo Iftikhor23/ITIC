@@ -41,6 +41,10 @@ export const Container = styled.div`
 
   .mobile{
     margin-top: -70px;
+    display: none;
+    @media screen and (max-width: 653px) {
+      display: block;
+    }
   }
 
   @media screen and (max-width: 840px) {

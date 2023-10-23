@@ -24,14 +24,10 @@ function FormModal({ isVisible, onClose }) {
         <Container.Form>
           <Container.Group>
             <Input
-              label={"First Name"}
-              placeholder={"Enter First Name"}
+              label={"Full Name"}
+              placeholder={"Enter Full Name"}
               type={"text"}
-            />
-            <Input
-              label={"Last Name"}
-              placeholder={"Enter Last Name"}
-              type={"text"}
+              width={"652px"}
             />
           </Container.Group>
           <Container.Group>
@@ -54,7 +50,7 @@ function FormModal({ isVisible, onClose }) {
             type={"text"}
             width={"652px"}
           />
-          <Button title="Submit" fontSize="24px" iconSize="24px"/>
+          <Button title="Submit" fontSize="24px" iconSize="24px" />
         </Container.Form>
       </Container.Wrapper>
     </Container>
