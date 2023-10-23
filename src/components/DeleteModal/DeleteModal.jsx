@@ -1,5 +1,6 @@
-import Button from "../ButtonComb/Button";
+// import Button from "../ButtonComb/Button";
 import Cancel from "../CancelButton/Cancel";
+import Button from "../Reusable/ButtonComb/Button";
 import { Container } from "./styles";
 import sureDelete from '../../assets/sureDelete.svg';
 

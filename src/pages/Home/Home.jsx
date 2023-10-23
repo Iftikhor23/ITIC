@@ -95,13 +95,13 @@ function Home() {
           <Bounce bottom>
             <img className="lilChart" src={lilChart} alt="chart" />
           </Bounce>
-          <Bounce bottom delay="150">
+          <Bounce bottom delay={150}>
             <img className="midChart" src={middle} alt="chart" />
           </Bounce>
-          <Bounce bottom delay="100">
+          <Bounce bottom delay={100}>
             <img className="bigChart" src={bigChart} alt="chart" />
           </Bounce>
-          <Bounce top delay="400">
+          <Bounce top delay={400}>
             <img className="upTrade" src={up} alt="up arrow" />
           </Bounce>
         </div>
