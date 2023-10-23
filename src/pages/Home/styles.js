@@ -13,17 +13,17 @@ export const Container = styled.div`
   position: relative;
 `;
 Container.TeamBox = styled.div`
-display: flex;
-    width: 335px;
-    position: relative;
-    .employee-image{
+  display: flex;
+  width: 335px;
+  position: relative;
+  .employee-image {
     width: 80px;
     height: 80px;
     border-radius: 80px;
     position: absolute;
     border: 5px solid transparent;
   }
-  .lastrounded{
+  .lastrounded {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -35,7 +35,7 @@ display: flex;
     margin-top: 33px;
   }
   .lastrounded > span {
-    color: #061F2F;
+    color: #061f2f;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -43,30 +43,30 @@ display: flex;
     margin-right: 8px;
   }
   .loading-skeleton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 33px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 33px;
+  }
 
-.skeleton-image {
-  width: 85px;
-  height: 85px;
-  border-radius: 80px;
-  border: 5px solid #04545C;
-  background-color: #e0e0e0;
-  margin-right: 10px;
-}
+  .skeleton-image {
+    width: 85px;
+    height: 85px;
+    border-radius: 80px;
+    border: 5px solid #04545c;
+    background-color: #e0e0e0;
+    margin-right: 10px;
+  }
 
-.skeleton-image:last-child {
-  margin-right: 0;
-}
+  .skeleton-image:last-child {
+    margin-right: 0;
+  }
 `;
 
 Container.MidWrap = styled.div`
   display: flex;
   align-items: center;
-  .chartParent{
+  .chartParent {
     position: relative;
   }
 

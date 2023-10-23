@@ -1,25 +1,23 @@
-import React from "react";
 import { Container } from "./styles";
 import closeIcon from "../../assets/icons/close.svg";
 import Input from "../InputComponent/Input";
 import Button from "../Reusable/ButtonComb/Button";
 
-function JobModal({ isVisible, onClose, selectedJobTitle }) {
+function FormModal({ isVisible, onClose }) {
   if (!isVisible) return null;
 
   const handleClose = (e) => {
-    if (e.target.id === "container" || e.target.id === "wrapper") onClose();
+    if (e.target.id === "wrapper") onClose();
   };
-
   return (
-    <Container onClick={handleClose} id="container">
+    <Container onClick={handleClose} id="wrapper">
       <Container.Wrapper>
         <Container.Header>
-          <Container.Text>Apply on position {selectedJobTitle}</Container.Text>
+          <Container.Text>Get Free Consultation</Container.Text>
           <img
             src={closeIcon}
-            style={{ cursor: "pointer" }}
             onClick={() => onClose()}
+            style={{ cursor: "pointer" }}
             alt="close icon"
           />
         </Container.Header>
@@ -29,36 +27,21 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
               label={"Full Name"}
               placeholder={"Enter Full Name"}
               type={"text"}
-            />
-            <Input
-              label={"Phone Number"}
-              placeholder={"Enter Phone Number"}
-              type={"number"}
-              prefix={"+998"}
+              width={"652px"}
             />
           </Container.Group>
           <Container.Group>
             <Input
-              label={"LinkedIn Profile Link"}
-              placeholder={"Enter LinkedIn Profile Link"}
-              type={"text"}
+              label={"Phone Number"}
+              placeholder={"Enter Phone Number"}
+              type={"tel"}
+              prefix={"+998"}
             />
             <Input
               label={"Email Address"}
               placeholder={"Enter Email Address"}
               type={"email"}
             />
-          </Container.Group>
-          <Container.Group>
-            <Input label={"Job Position"} value={selectedJobTitle} readOnly />
-            <div className="fileInput">
-              <Input
-                style={{ opacity: 0 }}
-                label={"Attach Your Resume/CV"}
-                placeholder={"Upload from files"}
-                type={"file"}
-              />
-            </div>
           </Container.Group>
 
           <Input
@@ -74,4 +57,4 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
   );
 }
 
-export default JobModal;
+export default FormModal;

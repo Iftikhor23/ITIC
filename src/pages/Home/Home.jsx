@@ -108,7 +108,9 @@ function Home() {
         </div>
         
       </Container.MidWrap>
-      <FormModal isVisible={showModal} onClose={() => setShowModal(false)} />
+      <FormModal isVisible={showModal} onClose={() => setShowModal(false)} >
+       
+      </FormModal>
     </Container>
   );
 }
