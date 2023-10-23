@@ -1,10 +1,5 @@
 import { Container } from "./styles";
 import { HeadingOne, Paragraph } from "../../styled/styles";
-import itPark from "../../assets/images/itPark.svg";
-import finTech from "../../assets/images/fintech.svg";
-import derc from "../../assets/images/derc.svg";
-import uzum from "../../assets/images/uzum.svg";
-import ministry from "../../assets/images/ministry.svg";
 import { useEffect, useState } from "react";
 import request from "../../services";
 
