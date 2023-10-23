@@ -14,50 +14,7 @@ import { HeadingOne, Paragraph } from "../../styled/styles";
 const  Employees =  () =>  {
   const [teamData, setTeamData] = useState([])
 const [loading, setLoading] = useState(true);
-  const Data = [
-    {
-      id: 1,
-      image: person1,
-      pName: "Ariana Grande",
-      job: "Head Recruiter",
-    },
-    {
-      id: 2,
-      image: person2,
-      pName: "Kendrick Lamar",
-      job: "Head Recruiter",
-    },
-    {
-      id: 3,
-      image: person3,
-      pName: "Dave Chappelle",
-      job: "Product Manager",
-    },
-    {
-      id: 4,
-      image: person4,
-      pName: "Nicki Minaj",
-      job: "Human Recources",
-    },
-    {
-      id: 5,
-      image: person5,
-      pName: "Marshall Mathers",
-      job: "Project Manager",
-    },
-    {
-      id: 6,
-      image: person6,
-      pName: "Missie Elliot",
-      job: "Web Developer",
-    },
-    {
-      id: 7,
-      image: person7,
-      pName: "Kevin Hart",
-      job: "Web Designer",
-    },
-  ];
+ 
   
   const getCallReq = async () => {
     try {
@@ -86,7 +43,7 @@ const [loading, setLoading] = useState(true);
           </Paragraph>
         </div>
         <Container.Images>
-          {teamData.map((items,id) => {
+          {teamData.slice(0,7)?.map((items,id) => {
             return (
               <div key={id}>
                 <div className="personBox">

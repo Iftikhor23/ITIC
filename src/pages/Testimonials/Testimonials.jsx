@@ -8,50 +8,30 @@ import {
 } from "../../styled/styles";
 
 import { Container } from "./styles";
-import testimonial1 from "../../assets/images/testimonial1.svg";
-import testimonial2 from "../../assets/images/testimonial2.svg";
-import testimonial3 from "../../assets/images/testimonial3.svg";
-import testimonial4 from "../../assets/images/testimonial4.svg";
 import { useState } from "react";
 import { useEffect } from "react";
 import request from "../../services";
 
-const Data = [
-  {
-    id: 1,
-    image: testimonial1,
-    tName: "G'olib Jamolov",
-    companyName: "Najot Ta'lim",
-    comment:
-      "IT Investment Centre satisfied all of my requests as I wanted. Really Cool",
-  },
-  {
-    id: 2,
-    image: testimonial2,
-    tName: "Otabek Orziyev",
-    companyName: "PDP University",
-    comment:
-      "IT Investment Centre satisfied all of my requests as I wanted. Really Cool",
-  },
-  {
-    id: 3,
-    image: testimonial3,
-    tName: "Sherzod Jabborov",
-    companyName: "Acharya University",
-    comment:
-      "IT Investment Centre satisfied all of my requests as I wanted. Really Cool",
-  },
-  {
-    id: 4,
-    image: testimonial4,
-    tName: "Durbek Asadov",
-    companyName: "Uzum",
-    comment:
-      "IT Investment Centre satisfied all of my requests as I wanted. Really Cool",
-  },
-];
+
 
 function Testimonials() {
+  const [teamData, setTeamData] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  const getCallReq = async () => {
+    try {
+      setLoading(true);
+      const res = await request.get(`public/testomonial`);
+      setTeamData(res?.data?.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getCallReq();
+  }, []);
 
   return (
     <Container>
@@ -64,33 +44,33 @@ function Testimonials() {
       <Container.Carousel>
         <Wrapper>
           <ScrollAnimationOne>
-            {Data.map(({ id, image, tName, companyName, comment }) => {
+            {teamData?.map((items, id) => {
               return (
                 <Container.TestiBox key={id}>
                   <Container.Above>
-                    <img src={image} alt="client" />
+                    <img src={items?.testomonialPhotoUrl} alt="client" />
                     <div>
-                      <h3>{tName}</h3>
-                      <p>{companyName}</p>
+                      <h3>{items?.content}</h3>
+                      <p>{items?.companyName}</p>
                     </div>
                   </Container.Above>
-                  <div>{comment}</div>
+                  {/* <div>{comment}</div> */}
                 </Container.TestiBox>
               );
             })}
           </ScrollAnimationOne>
           <ScrollAnimationOne>
-            {Data.map(({ id, image, tName, companyName, comment }) => {
+          {teamData?.map((items, id) => {
               return (
                 <Container.TestiBox key={id}>
                   <Container.Above>
-                    <img src={image} alt="client" />
+                    <img src={items?.testomonialPhotoUrl} alt="client" />
                     <div>
-                      <h3>{tName}</h3>
-                      <p>{companyName}</p>
+                      <h3>{items?.content}</h3>
+                      <p>{items?.companyName}</p>
                     </div>
                   </Container.Above>
-                  <div>{comment}</div>
+                  {/* <div>{comment}</div> */}
                 </Container.TestiBox>
               );
             })}
@@ -98,34 +78,34 @@ function Testimonials() {
         </Wrapper>
         <Wrapper>
           <ScrollAnimationTwo>
-            {Data.map(({ id, image, tName, companyName, comment }) => {
+          {teamData?.map((items, id) => {
               return (
-                <Container.TestiBoxTwo key={id}>
+                <Container.TestiBox key={id}>
                   <Container.Above>
-                    <img src={image} alt="client" />
+                    <img src={items?.testomonialPhotoUrl} alt="client" />
                     <div>
-                      <h3>{tName}</h3>
-                      <p>{companyName}</p>
+                      <h3>{items?.content}</h3>
+                      <p>{items?.companyName}</p>
                     </div>
                   </Container.Above>
-                  <div>{comment}</div>
-                </Container.TestiBoxTwo>
+                  <div>{items?.companyName}</div>
+                </Container.TestiBox>
               );
             })}
           </ScrollAnimationTwo>
           <ScrollAnimationTwo>
-            {Data.map(({ id, image, tName, companyName, comment }) => {
+          {teamData?.map((items, id) => {
               return (
-                <Container.TestiBoxTwo key={id}>
+                <Container.TestiBox key={id}>
                   <Container.Above>
-                    <img src={image} alt="client" />
+                    <img src={items?.testomonialPhotoUrl} alt="client" />
                     <div>
-                      <h3>{tName}</h3>
-                      <p>{companyName}</p>
+                      <h3>{items?.surname}  {items?.name}</h3>
+                      <p>{items?.companyName}</p>
                     </div>
                   </Container.Above>
-                  <div>{comment}</div>
-                </Container.TestiBoxTwo>
+                  {/* <div>{comment}</div> */}
+                </Container.TestiBox>
               );
             })}
           </ScrollAnimationTwo>

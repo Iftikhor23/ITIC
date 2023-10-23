@@ -22,6 +22,7 @@ function CaseComp({ imageSrc, title, paragraph,to}) {
   useEffect(() => {
     getCallReq();
   }, []);
+  
   return (
     <Container>
       <img src={imageSrc} alt="case" />
