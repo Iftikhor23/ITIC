@@ -81,6 +81,7 @@ function Home() {
                       left: `${leftPosition}px`,
                       borderRadius: "80px",
                       border: "5px solid #04545C",
+                      objectFit: "cover",
                     }}
                   />
                 );

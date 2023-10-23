@@ -1,11 +1,4 @@
 import { useEffect, useState } from "react";
-import person1 from "../../assets/images/worker1.png";
-import person2 from "../../assets/images/worker2.png";
-import person3 from "../../assets/images/worker3.png";
-import person4 from "../../assets/images/worker4.png";
-import person5 from "../../assets/images/worker5.png";
-import person6 from "../../assets/images/worker6.png";
-import person7 from "../../assets/images/worker7.png";
 import request from "../../services";
 import { Container } from "./styles";
 import { HeadingOne, Paragraph } from "../../styled/styles";

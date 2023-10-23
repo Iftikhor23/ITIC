@@ -42,7 +42,11 @@ Container.Input = styled.input`
     &::placeholder{
         color: ${({placeholderColor}) => (placeholderColor ? placeholderColor : "rgba(255, 255, 255, 0.4)")};
     }
-    
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
 `;
 
 Container.Prefix = styled.div`
