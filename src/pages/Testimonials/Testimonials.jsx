@@ -48,13 +48,13 @@ function Testimonials() {
               return (
                 <Container.TestiBox key={id}>
                   <Container.Above>
-                    <img src={items?.testomonialPhotoUrl} alt="client" />
+                    <img className="testiImg" src={items?.testomonialPhotoUrl} alt="client" />
                     <div>
-                      <h3>{items?.content}</h3>
+                      <h3>{items?.name} {items?.surname}</h3>
                       <p>{items?.companyName}</p>
                     </div>
                   </Container.Above>
-                  {/* <div>{comment}</div> */}
+                  <div>{items?.content}</div>
                 </Container.TestiBox>
               );
             })}
@@ -64,13 +64,13 @@ function Testimonials() {
               return (
                 <Container.TestiBox key={id}>
                   <Container.Above>
-                    <img src={items?.testomonialPhotoUrl} alt="client" />
+                    <img className="testiImg" src={items?.testomonialPhotoUrl} alt="client" />
                     <div>
-                      <h3>{items?.content}</h3>
+                      <h3>{items?.name} {items?.surname}</h3>
                       <p>{items?.companyName}</p>
                     </div>
                   </Container.Above>
-                  {/* <div>{comment}</div> */}
+                  <div>{items?.content}</div>
                 </Container.TestiBox>
               );
             })}
@@ -82,13 +82,13 @@ function Testimonials() {
               return (
                 <Container.TestiBox key={id}>
                   <Container.Above>
-                    <img src={items?.testomonialPhotoUrl} alt="client" />
+                    <img className="testiImg" src={items?.testomonialPhotoUrl} alt="client" />
                     <div>
-                      <h3>{items?.content}</h3>
+                      <h3>{items?.name} {items?.surname}</h3>
                       <p>{items?.companyName}</p>
                     </div>
                   </Container.Above>
-                  <div>{items?.companyName}</div>
+                  <div>{items?.content}</div>
                 </Container.TestiBox>
               );
             })}
@@ -98,13 +98,13 @@ function Testimonials() {
               return (
                 <Container.TestiBox key={id}>
                   <Container.Above>
-                    <img src={items?.testomonialPhotoUrl} alt="client" />
+                    <img className="testiImg" src={items?.testomonialPhotoUrl} alt="client" />
                     <div>
-                      <h3>{items?.surname}  {items?.name}</h3>
+                      <h3>{items?.name} {items?.surname}</h3>
                       <p>{items?.companyName}</p>
                     </div>
                   </Container.Above>
-                  {/* <div>{comment}</div> */}
+                  <div>{items?.content}</div>
                 </Container.TestiBox>
               );
             })}

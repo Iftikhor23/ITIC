@@ -1,15 +1,15 @@
 import CaseComp from "../../components/PortfolioCase/CaseComp";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import { Container } from "./styles";
-import caseFour from "../../assets/images/case4.svg";
-import caseFive from "../../assets/images/case5.svg";
-import caseSix from "../../assets/images/case6.svg";
-import caseSeven from "../../assets/images/case7.svg";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import request from "../../services";
 
 function AllCases() {
+  const [cases, setCases] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
@@ -22,7 +22,7 @@ function AllCases() {
         translateX: 0,
       },
       {
-        translateX: "-190vw",
+        translateX: "-350vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -40,6 +40,21 @@ function AllCases() {
     };
   }, []);
 
+  const getCallReq = async () => {
+    try {
+      setLoading(true);
+      const res = await request.get(`public/case`);
+      setCases(res?.data?.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getCallReq();
+  }, []);
+
   return (
     <div className="scrollSectionOuter">
       <div ref={triggerRef}>
@@ -52,26 +67,15 @@ function AllCases() {
             </Paragraph>
           </div>
           <Container.Cases>
-            <CaseComp
-              imageSrc={caseFour}
-              title={"Real estate Chrorium development"}
-              paragraph={"Design direction, Ux Ui design"}
-            />
-            <CaseComp
-              imageSrc={caseFive}
-              title={"Real estate Chrorium development"}
-              paragraph={"Design direction, Ux Ui design"}
-            />
-            <CaseComp
-              imageSrc={caseSix}
-              title={"Real estate Chrorium development"}
-              paragraph={"Design direction, Ux Ui design"}
-            />
-            <CaseComp
-              imageSrc={caseSeven}
-              title={"Real estate Chrorium development"}
-              paragraph={"Design direction, Ux Ui design"}
-            />
+            {cases?.map((items, index) => (
+              <CaseComp
+                tag={items?.tagsList}
+                imageSrc={items?.casePhotoUrl}
+                title={items?.client}
+                paragraph={items?.projectName}
+                to={items?.link}
+              />
+            ))}
           </Container.Cases>
         </Container>
       </div>

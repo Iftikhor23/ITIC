@@ -33,7 +33,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
             <Input
               label={"Phone Number"}
               placeholder={"Enter Phone Number"}
-              type={"tel"}
+              type={"number"}
               prefix={"+998"}
             />
           </Container.Group>

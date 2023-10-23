@@ -22,7 +22,7 @@ function AllVacancies() {
         translateX: 0,
       },
       {
-        translateX: "-1482px",
+        translateX: "-200vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -69,7 +69,6 @@ function AllVacancies() {
                 If you haven't found any suitable opening vacancies, you can
                 register your interest here.
               </Container.Text>
-              <div onClick={handleOpenModal}>
                 <Button
                   title="Send my resume"
                   fontSize="16px"
@@ -78,8 +77,8 @@ function AllVacancies() {
                   aWidth="45px"
                   aHeight="45px"
                   iconSize="24px"
+                  onCLick={() => setShowModal(true)}
                 />
-              </div>
             </Container.NoAvaivable>
           </div>
         </Container>

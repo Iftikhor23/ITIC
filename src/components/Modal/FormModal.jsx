@@ -82,7 +82,7 @@ function FormModal({ isVisible, onClose }) {
             <Input
               label={"Phone Number"}
               placeholder={"Enter Phone Number"}
-              type={"tel"}
+              type={"number"}
               prefix={"+998"}
               onChange={(event) =>
                 setGetData({ ...getData, phoneNumber: event.target.value })

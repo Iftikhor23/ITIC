@@ -58,4 +58,11 @@ Container.Above = styled.div`
     display: flex;
     align-items: center;
     gap: 12px;
+
+    .testiImg{
+      height: 60px;
+      width: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
 `;

@@ -21,13 +21,25 @@ function Branches() {
         </Container.Text>
 
         <div className="image">
-          <img className="worldImage" src={world} alt="world map" width={"1304px"} height={"643px"} />
-          <Fade clear>
+          <img
+            className="worldImage"
+            src={world}
+            alt="world map"
+            width={"1304px"}
+            height={"643px"}
+          />
+          <Fade top delay={1000}>
             <img className="soonUsa" src={soon} alt="location" />
           </Fade>
-          <img className="soonBra" src={soon} alt="location" />
-          <img className="uzbLoc" src={uzbekistan} alt="location" />
-          <img className="sinLoc" src={singapore} alt="location" />
+          <Fade top delay={1500}>
+            <img className="soonBra" src={soon} alt="location" />
+          </Fade>
+          <Fade top delay={100}>
+            <img className="uzbLoc" src={uzbekistan} alt="location" />
+          </Fade>
+          <Fade top delay={550}>
+            <img className="sinLoc" src={singapore} alt="location" />
+          </Fade>
         </div>
       </Container.Wrapper>
     </Container>
