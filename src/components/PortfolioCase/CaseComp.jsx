@@ -1,8 +1,29 @@
 import { Container } from "./styles";
 import buttonIcon from "../../assets/icons/u_angle-right.svg";
 import { Link } from "react-router-dom";
+import request from "../../services";
+import { useEffect, useState } from "react";
 
 function CaseComp({ imageSrc, title, paragraph }) {
+
+  const [testomonial, setTestomonial] = useState([])
+  const [loading, setLoading] = useState(true);
+
+
+  const getCallReq = async () => {
+    try {
+      setLoading(true);
+      const res = await request.get(`public/vacancy`);
+      setTestomonial(res?.data?.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getCallReq();
+  }, []);
   return (
     <Container>
       <img src={imageSrc} alt="case" />

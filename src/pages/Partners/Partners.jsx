@@ -34,7 +34,7 @@ const Partners = () => {
         </Paragraph>
       </Container.TextWrap>
       <Container.ImgWrap>
-        {partners?.map((items, index) => {
+        {partners.slice(0,6)?.map((items, index) => {
           return (
           <Container.Img key={index}>
             <img className="partners-img" src={items?.partnerPhotoUrl} alt="partners  logo" />

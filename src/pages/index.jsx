@@ -2,7 +2,7 @@ import Home from "./Home/Home";
 import For from "./For/For";
 import About from "./About/About";
 import Directions from "../pages/Directions/Directions";
-import Cases from "../pages/Portfolio/Cases";
+import Cases from "../pages/Cases/Cases";
 import Employees from "../pages/Team/Employees";
 import Branches from "../pages/Branches/Branches";
 import Partners from "../pages/Partners/Partners";
@@ -24,6 +24,8 @@ function Pages() {
 
   useEffect(() => {
     if (triggerRef.current?.offsetWidth >= 840) {
+      gsap.registerPlugin(ScrollTrigger);
+  
       const pin = gsap.fromTo(
         sectionRef.current,
         {
@@ -42,13 +44,13 @@ function Pages() {
           },
         }
       );
+  
       return () => {
         pin.kill();
       };
+    window.location.reload();
     }
-  }, []);
-
-  console.log(triggerRef.current?.offsetWidth);
+  }, [triggerRef.current?.offsetWidth]);
 
   return (
     <div style={{ position: "relative" }}>
