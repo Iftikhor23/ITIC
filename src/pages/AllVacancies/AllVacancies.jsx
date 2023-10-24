@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import JobModal from "../../components/JobModal/JobModal";
+import JobModal from "../../components/JobModal copy/JobModal";
 import Button from "../../components/Reusable/ButtonComb/Button";
 import Job from "../../components/Jobs/Job";
 import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
@@ -69,16 +69,16 @@ function AllVacancies() {
                 If you haven't found any suitable opening vacancies, you can
                 register your interest here.
               </Container.Text>
-                <Button
-                  title="Send my resume"
-                  fontSize="16px"
-                  btnwidth="170px"
-                  btnheight="45px"
-                  aWidth="45px"
-                  aHeight="45px"
-                  iconSize="24px"
-                  onCLick={() => setShowModal(true)}
-                />
+              <Button
+                title="Send my resume"
+                fontSize="16px"
+                btnwidth="170px"
+                btnheight="45px"
+                aWidth="45px"
+                aHeight="45px"
+                iconSize="24px"
+                onClick={handleOpenModal}
+              />
             </Container.NoAvaivable>
           </div>
         </Container>

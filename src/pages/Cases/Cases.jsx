@@ -24,6 +24,7 @@ function Cases() {
   useEffect(() => {
     getCallReq();
   }, []);
+  
   return (
     <Container>
       <div className="textWrapper">
@@ -38,7 +39,7 @@ function Cases() {
         </Link>
       </div>
       <Container.CasesWrapper>
-        {cases?.map((items, index) => (
+        {cases.slice(0,3)?.map((items, index) => (
           <CaseComp
             tag={items?.tagsList}
             imageSrc={items?.casePhotoUrl}

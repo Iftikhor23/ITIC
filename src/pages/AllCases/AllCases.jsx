@@ -69,6 +69,7 @@ function AllCases() {
           <Container.Cases>
             {cases?.map((items, index) => (
               <CaseComp
+               key={index}
                 tag={items?.tagsList}
                 imageSrc={items?.casePhotoUrl}
                 title={items?.client}
