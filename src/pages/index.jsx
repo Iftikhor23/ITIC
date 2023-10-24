@@ -20,23 +20,24 @@ function Pages() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
-  gsap.registerPlugin(ScrollTrigger);
-
   useEffect(() => {
-    if (triggerRef.current?.offsetWidth >= 840) {
-      gsap.registerPlugin(ScrollTrigger);
-  
-      const pin = gsap.fromTo(
-        sectionRef.current,
+    gsap.registerPlugin(ScrollTrigger);
+
+    const triggerElement = triggerRef.current;
+    const sectionElement = sectionRef.current;
+
+    if (triggerElement?.offsetWidth >= 840) {
+      const pinX = gsap.fromTo(
+        sectionElement,
         {
-          translateX: 0,
+          x: 0,
         },
         {
-          translateX: "-1621vw",
+          x: '-1621vw',
           ease: "none",
           duration: 1,
           scrollTrigger: {
-            trigger: triggerRef.current,
+            trigger: triggerElement,
             start: "top top",
             end: "bottom -2999%",
             scrub: 1,
@@ -44,11 +45,13 @@ function Pages() {
           },
         }
       );
-  
       return () => {
-        pin.kill();
+        pinX.kill();
       };
-    window.location.reload();
+    } else {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        trigger.kill();
+      });
     }
   }, [triggerRef.current?.offsetWidth]);
 
