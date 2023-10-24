@@ -7,6 +7,7 @@ import request from "../../services";
 import { Link } from "react-router-dom";
 import { Container } from "../../pages/Careers/styles";
 
+
 function Job() {
   const [selectedJobTitle, setSelectedJobTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
