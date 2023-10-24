@@ -53,7 +53,7 @@ function FormModal({ isVisible, onClose }) {
     Swal.fire("Fill in all the data fields");
   }}
 
-  console.log(getData);
+  
   return (
     <Container onClick={handleClose} id="wrapper">
       <Container.Wrapper>

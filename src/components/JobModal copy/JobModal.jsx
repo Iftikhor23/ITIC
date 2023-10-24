@@ -12,7 +12,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
   const [getData, setGetData] = useState({
     fullName: "",
     linkedinLink: "",
-    phoneNumber: '+998',
+    phoneNumber: "+998",
     email: "",
     position: "",
     comment: "",
@@ -72,15 +72,13 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
         setGetData({
           fullName: "",
           linkedinLink: "",
-          phoneNumber: '+998',
+          phoneNumber: "+998",
           email: "",
           position: "",
           comment: "",
           userCVUrl: "",
           attachmentId: "",
         });
-
-        onClose();
       } catch (error) {
         Swal.fire("There is a problem with the Internet or with the server");
         console.error("Saqlashda xatolik yuz berdi:", error);
@@ -89,13 +87,12 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
       Swal.fire("Fill in all the data fields");
     }
   };
-  
- 
+  console.log(getData)
   return (
     <Container onClick={handleClose} id="container">
       <Container.Wrapper>
         <Container.Header>
-          <Container.Text>Apply on position {selectedJobTitle}</Container.Text>
+          <Container.Text>Apply on position</Container.Text>
           <img
             src={closeIcon}
             style={{ cursor: "pointer" }}
@@ -142,7 +139,13 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
             />
           </Container.Group>
           <Container.Group>
-            <Input label={"Job Position"} value={selectedJobTitle} readOnly />
+            <Input
+              label={"Job Position"}
+              placeholder={"Enter Position"}
+              onChange={(e) =>
+                setGetData({ ...getData, position: e.target.value })
+              }
+            />
             <div className="fileInput">
               <Input
                 style={{ opacity: 0 }}
