@@ -6,8 +6,16 @@ export const Container = styled.div`
   gap: 28px;
   width: 918px;
   height: 600px;
+  align-items: center;
+
+  @media screen and (max-width: 840px) {
+    height: fit-content;
+    align-items: flex-start;
+  }
+
   .imageWrap {
     position: relative;
+    width: fit-content;
 
     .tagWrap {
       position: absolute;
@@ -30,16 +38,18 @@ export const Container = styled.div`
     width: 918px;
     border-radius: 50px;
     object-fit: cover;
-  }
 
-  @media screen and (max-width: 840px) {
-    width: 728px;
-    height: 550px;
-  }
+    @media screen and (max-width: 840px) {
+      width: 728px;
+      height: 401px;
+      object-fit: fill;
+    }
 
-  @media screen and (max-width: 653px) {
-    width: 355px;
-    height: 330px;
+    @media screen and (max-width: 653px) {
+      width: 355px;
+      height: 330px;
+      object-fit: fill;
+    }
   }
 `;
 

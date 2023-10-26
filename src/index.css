@@ -24,6 +24,10 @@
   top: 46px;
   z-index: 9;
   cursor: pointer;
+
+  @media screen and (max-width: 840px) {
+    left: 20px;
+  }
 }
 
 .footer {
@@ -31,6 +35,20 @@
   left: 50px;
   bottom: 46px;
   z-index: 10;
+  height: 0;
+  width: 0;
+
+  @media screen and (max-width: 840px){
+    top: 60px;
+    left: 200px;
+  }
+}
+
+.sidebarButton{
+  @media screen and (max-width: 840px) {
+    top: -240px;
+    left: 655px;
+  }
 }
 
 .scrollSectionOuter {

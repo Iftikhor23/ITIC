@@ -7,8 +7,7 @@ import { HeadingOne, Paragraph } from "../../styled/styles";
 const  Employees =  () =>  {
   const [teamData, setTeamData] = useState([])
 const [loading, setLoading] = useState(true);
- 
-  
+
   const getCallReq = async () => {
     try {
       setLoading(true);
@@ -41,8 +40,8 @@ const [loading, setLoading] = useState(true);
               <div key={id}>
                 <div className="personBox">
                   <img className="image-teams" src={items?.employeePhotoUrl} alt="employee" />
-                  <Container.Name>{items?.lastName}</Container.Name>
-                  <Container.Job>{items?.firstName}</Container.Job>
+                  <Container.Name>{items?.lastName} {items?.firstName}</Container.Name>
+                  <Container.Job>{items?.position}</Container.Job>
                 </div>
               </div>
             );

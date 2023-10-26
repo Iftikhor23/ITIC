@@ -25,7 +25,7 @@ function JobModal({ isVisible, onClose }) {
     if (e.target.id === "container" || e.target.id === "wrapper") onClose();
   };
 
-  const uploadCV = async (e) => {
+  const  uploadCV = async (e) => {
     const file = e.target.files[0];
     try {
       const formData = new FormData();

@@ -16,7 +16,6 @@ export const Container = styled.div`
     align-items: start;
     gap: 13px;
     @media screen and (max-width: 840px) {
-      margin-left: -330px;
       gap: 5px;
     }
 
@@ -31,7 +30,6 @@ export const Container = styled.div`
     display: none;
     @media screen and (max-width: 840px) {
       display: block;
-      margin-top: -50px;
     }
 
     @media screen and (max-width: 653px) {
@@ -52,10 +50,17 @@ export const Container = styled.div`
     width: 100%;
     flex-direction: column;
     gap: 51px;
+    overflow: scroll;
+    align-items: flex-start;
+    padding-left: 20px;
 
     .respDesk {
       display: none;
     }
+  }
+
+  @media screen and (max-width: 653px) {
+    padding-left: 40px;
   }
 `;
 
@@ -74,6 +79,9 @@ Container.CasesWrapper = styled.div`
 
   @media screen and (max-width: 840px) {
     width: fit-content;
-    gap: 1px;
+    gap: 33px;
+    overflow: hidden;
+  overflow-y: hidden;
+
   }
 `;

@@ -11,7 +11,13 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+
+  @media screen and (max-width: 840px) {
+    height: 1300px;
+  }
 `;
+
+
 Container.TeamBox = styled.div`
   display: flex;
   width: 335px;
@@ -66,18 +72,21 @@ Container.TeamBox = styled.div`
 Container.MidWrap = styled.div`
   display: flex;
   align-items: center;
-  .chartParent {
-    position: relative;
-  }
+  width: 100%;
+  height: 100%;
 
   .chart {
     position: absolute;
     bottom: 20px;
     right: 50px;
     width: 620px;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 840px) {
+        bottom: 222px;
+      }
     .lilChart {
       position: absolute;
       left: -26px;
@@ -86,6 +95,10 @@ Container.MidWrap = styled.div`
       height: 500px;
       bottom: 0;
       user-select: none;
+
+      @media screen and (max-width: 840px) {
+        left: -153px;
+      }
     }
     .midChart {
       position: absolute;
@@ -95,6 +108,10 @@ Container.MidWrap = styled.div`
       z-index: 20;
       height: 350px;
       user-select: none;
+
+      @media screen and (max-width: 840px) {
+        left: 97px;
+      }
     }
     .bigChart {
       position: absolute;
@@ -105,20 +122,35 @@ Container.MidWrap = styled.div`
       user-select: none;
     }
     .upTrade {
-      position: absolute;
-      top: 160px;
+      position: relative;
+      top: -238px;
       left: 115px;
       z-index: 20;
       user-select: none;
+
+      @media screen and (max-width: 840px) {
+        top: -242px;
+        left: 24px;
+      }
     }
+  }
+
+  @media screen and (max-width: 840px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
 Container.Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 140px;
+  /* margin-top: 100px; */
   margin-left: 130px;
+
+  @media screen and (max-width: 840px) {
+    margin-left: 0;
+    margin-top: 130px;
+  }
 `;
 
 Container.ScrollIcon = styled.div`
