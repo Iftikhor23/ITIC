@@ -1,4 +1,3 @@
-import employees from "../../assets/images/employees.svg";
 import { Container } from "./styles";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import FormModal from "../../components/Modal/FormModal";
@@ -8,7 +7,7 @@ import { Bounce } from "react-reveal";
 import lilChart from "../../assets/images/lilChart.svg";
 import middle from "../../assets/images/mid.svg";
 import bigChart from "../../assets/images/big.svg";
-import up from '../../assets/images/uptrade.svg';
+import up from "../../assets/images/uptrade.svg";
 import request from "../../services";
 import { useEffect } from "react";
 
@@ -16,7 +15,6 @@ function Home() {
   const [showModal, setShowModal] = useState(false);
   const [callData, setCallData] = useState([]);
   const [loading, setLoading] = useState(true);
-
 
   const getCallReq = async () => {
     try {
@@ -32,7 +30,6 @@ function Home() {
   useEffect(() => {
     getCallReq();
   }, []);
-  
 
   return (
     <Container>
@@ -106,11 +103,12 @@ function Home() {
             <img className="upTrade" src={up} alt="up arrow" />
           </Bounce>
         </div>
-        
       </Container.MidWrap>
-      <FormModal isVisible={showModal} onClose={() => setShowModal(false)} >
-       
-      </FormModal>
+      
+      <FormModal
+        isVisible={showModal}
+        onClose={() => setShowModal(false)}
+      ></FormModal>
     </Container>
   );
 }

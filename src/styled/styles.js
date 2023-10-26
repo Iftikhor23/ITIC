@@ -27,7 +27,7 @@ export const HeadingOne = styled.h1`
   }
 
   @media only screen and (max-width: 840px) {
-    font-size: 42px;
+    font-size: 56px;
   }
 
   @media only screen and (max-width: 653px) {

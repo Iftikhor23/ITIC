@@ -28,7 +28,6 @@ Container.Wrapper = styled.div`
   @media screen and (max-width: 840px) {
     flex-direction: column;
     .text {
-      margin-left: -180px;
     }
   }
 
@@ -53,6 +52,11 @@ Container.Images = styled.div`
     height: 360px;
     border-radius: 30px;
     object-fit: cover;
+  }
+
+  @media screen and (max-width: 840px) {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 

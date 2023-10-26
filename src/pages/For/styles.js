@@ -8,11 +8,11 @@ export const Container = styled.div`
   width: 230vw;
   height: 100vh;
 
-  @media only screen and (max-width: 768px) {
+  /* @media only screen and (max-width: 768px) {
     height: fit-content;
     width: 100%;
     padding: 29px 15px;
-  }
+  } */
 
   @media only screen and (max-width: 375px) {
     height: fit-content;
@@ -24,6 +24,8 @@ export const Container = styled.div`
     height: fit-content;
     width: 100%;
     padding: 29px 15px;
+
+    justify-content: flex-start;
   }
 `;
 

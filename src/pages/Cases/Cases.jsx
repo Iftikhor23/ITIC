@@ -2,7 +2,7 @@ import { Container } from "./styles";
 import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
 import CaseComp from "../../components/PortfolioCase/CaseComp";
 import { Link } from "react-router-dom";
-import Button from "../../components/Reusable/ButtonComb/Button";
+import Button from "../../components/ButtonCase/Button";
 import { useEffect, useState } from "react";
 import request from "../../services";
 
@@ -24,7 +24,7 @@ function Cases() {
   useEffect(() => {
     getCallReq();
   }, []);
-  
+
   return (
     <Container>
       <div className="textWrapper">
@@ -39,7 +39,7 @@ function Cases() {
         </Link>
       </div>
       <Container.CasesWrapper>
-        {cases.slice(0,3)?.map((items, index) => (
+        {cases.slice(0, 3)?.map((items, index) => (
           <CaseComp
             tag={items?.tagsList}
             imageSrc={items?.casePhotoUrl}
@@ -49,12 +49,16 @@ function Cases() {
           />
         ))}
       </Container.CasesWrapper>
-      <div className="response">
-        <Button title="See all" iconSize="30px" btnwidth="159px" />
-      </div>
-      <div className="mobile">
-        <Button title="See all" iconSize="24px" btnwidth="159px" />
-      </div>
+      <Link to={"/allCases"}>
+        <div className="response">
+          <Button title="See all" iconSize="30px" btnwidth="159px" />
+        </div>
+      </Link>
+      <Link to={"/allCases"}>
+        <div className="mobile">
+          <Button title="See all" iconSize="24px" btnwidth="159px" />
+        </div>
+      </Link>
     </Container>
   );
 }

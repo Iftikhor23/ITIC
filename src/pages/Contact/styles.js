@@ -12,6 +12,11 @@ export const Container = styled.div`
   background: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
+
+  /* @media screen and (max-width: 840px) {
+    height: 1024px;
+    width: 100%;
+  } */
 `;
 
 Container.BtnWrapper = styled.div`
@@ -90,5 +95,9 @@ Container.Bubble = styled.div`
       100%{
         transform: translateY(-5px);
       }
+    }
+
+    @media screen and (max-width: 840px) {
+      position: absolute;
     }
 `;

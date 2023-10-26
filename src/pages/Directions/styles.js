@@ -14,10 +14,9 @@ export const Container = styled.div`
     height: fit-content;
     width: 100%;
     flex-direction: column;
-    gap: 49px;
-    padding: 40px;
-    .textBox{
-    }
+    align-items: flex-start;
+    gap: 80px;
+    padding: 40px
   }
 `;
 
@@ -32,8 +31,6 @@ Container.Categories = styled.div`
 
   @media screen and (max-width: 840px) {
     flex-direction: column;
-    /* .catImage {
-        width: 688px;
-    } */
+    padding-left: 50px;
   }
 `;
