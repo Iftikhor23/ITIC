@@ -1,14 +1,13 @@
+import React from "react";
 import { Container } from "./styles";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import globe from "../../assets/images/globe.png";
 import building from "../../assets/images/building.svg";
 import freelancer from "../../assets/images/freelancer.svg";
-
-function For() {
+const For=()=> {
   return (
-    <Container>
+    <Container id="services">
       <Container.Wrapper>
-
         <Container.Box>
           <Container.Text>
             <Container.Number>01</Container.Number>
@@ -22,7 +21,7 @@ function For() {
           <img className="forImage" src={globe} alt="for" />
         </Container.Box>
 
-        <Container.Box>
+        <Container.Box >
           <Container.Text>
             <Container.Number>02</Container.Number>
             <HeadingOne>IT Companies</HeadingOne>

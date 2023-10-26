@@ -26,7 +26,7 @@ function Cases() {
   }, []);
 
   return (
-    <Container>
+    <Container id="cases">
       <div className="textWrapper">
         <HeadingOne>Case Studies</HeadingOne>
         <Paragraph>
@@ -41,6 +41,7 @@ function Cases() {
       <Container.CasesWrapper>
         {cases.slice(0, 3)?.map((items, index) => (
           <CaseComp
+          key={index}
             tag={items?.tagsList}
             imageSrc={items?.casePhotoUrl}
             title={items?.client}

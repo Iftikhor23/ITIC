@@ -15,6 +15,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import logo from "../assets/images/itLogo.svg";
 import Footer from "../components/Footer/Footer";
 import SidebarButton from "../components/SidebarButton/sidebarButton";
+import { Link } from "react-router-dom";
 
 function Pages() {
   const sectionRef = useRef(null);
@@ -33,7 +34,7 @@ function Pages() {
           x: 0,
         },
         {
-          x: '-1621vw',
+          x: "-1621vw",
           ease: "none",
           duration: 1,
           scrollTrigger: {
@@ -47,37 +48,64 @@ function Pages() {
       );
       return () => {
         pinX.kill();
+        window.location.reload();
+        console.log("ishladi ");
       };
     } else {
       ScrollTrigger.getAll().forEach((trigger) => {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth]);
+  }, [triggerRef.current?.offsetWidth >= 840]);
+
+  //   = (id) => {
+  //   console.log(id);
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     const yOffset = element.getBoundingClientRect().top + window.pageYOffset;
+  //     console.log(yOffset);
+  //     window.scroll({
+  //       top: yOffset,
+  //       behavior: 'smooth', 
+  //     });
+  //   }
+  // };
+  const  scrollToElement =(id)=>{
+
+    const violation = document.getElementById(id); 
+    window.scrollTo({
+      top:violation.offsetTop,
+      behavior:"smooth"
+  });
+  };
+  
+  
 
   return (
     <div style={{ position: "relative" }}>
-      <img className="logo" src={logo} alt="company logo" />
+      <Link to="/">
+        <img className="logo" src={logo} alt="company logo" />
+      </Link>
       <div className="footer">
         <Footer />
       </div>
-      <div className="sidebarButton" style={{ position: "fixed", zIndex: "19" }}>
-        <SidebarButton />
+      <div style={{ position: "fixed", zIndex: "19" }}>
+        <SidebarButton scrollToElement={scrollToElement} />
       </div>
       <div className="scrollSectionOuter">
         <div ref={triggerRef}>
           <div ref={sectionRef} className="scrollSectionInner">
-            <Home />
-            <For />
+            <Home/>
+            <For/>
             <About />
-            <Directions />
-            <Cases />
-            <Employees />
-            <Branches />
-            <Partners />
-            <Testimonials />
-            <Careers />
-            <Contact />
+            <Directions/>
+            <Cases/>
+            <Employees/>
+            <Branches/>
+            <Partners/>
+            <Testimonials/>
+            <Careers/>
+            <Contact/>
           </div>
         </div>
       </div>

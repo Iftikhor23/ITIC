@@ -8,7 +8,7 @@ import { useState } from "react";
 import Toast from "../Reusable/Toast";
 import Swal from "sweetalert2";
 
-function JobModal({ isVisible, onClose, selectedJobTitle }) {
+function JobModal({ isVisible, onClose }) {
   const [getData, setGetData] = useState({
     fullName: "",
     linkedinLink: "",
@@ -36,8 +36,9 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
           "Content-Type": "multipart/form-data",
         },
       });
+      console.log(resData, "dvnjsfnvjhv hsbvjbdshbvhasfvhb");
 
-      const { fileUrl, id } = resData.data.data;
+      const { fileUrl, id } = resData?.data?.data;
       setGetData({ ...getData, userCVUrl: fileUrl, attachmentId: id });
       Toast({
         type: "success",
@@ -56,9 +57,8 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
             fullName: getData.fullName,
             linkedinLink: getData.linkedinLink,
             phoneNumber: `+998${getData.phoneNumber}`,
-
             email: getData.email,
-            position: selectedJobTitle,
+            position: getData.position,
             comment: getData.comment,
             userCVUrl: getData.userCVUrl,
             attachmentId: getData.attachmentId,

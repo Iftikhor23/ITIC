@@ -17,6 +17,11 @@
     width: 100%;
     height: 2px;
 }
+.burgerBlack{
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+}
 
 .menu{
     width: 845px;

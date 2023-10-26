@@ -23,7 +23,7 @@ const [loading, setLoading] = useState(true);
     getCallReq();
   }, []);
   return (
-    <Container>
+    <Container id="our-team">
       <Container.Wrapper>
         <div className="text">
           <HeadingOne>
