@@ -25,6 +25,7 @@ const Vacancies = () => {
   const getPartners = async () => {
     try {
       const res = await request.get(`admin/vacancy${search || ''}`);
+      setPagination(res?.data?.pagination)
       dispatch({
         type: "setVacancies",
         payload: res?.data?.data,

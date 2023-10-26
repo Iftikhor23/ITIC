@@ -31,16 +31,16 @@ Wrapper.Nav = styled.div`
 `;
 
 Wrapper.WrapTable = styled.div`
-	width: 100%;
-	height: 67vh;
-	overflow-y: scroll;
-	&::-webkit-scrollbar {
-		width: 4px;
-	}
-	&::-webkit-scrollbar-thumb {
-		background: #888;
-		height: 40px;
-	}
+  width: 100%;
+  height: 67vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    height: 40px;
+  }
 `;
 Wrapper.FaqtitleBox = styled.div`
   display: flex;
@@ -49,12 +49,11 @@ Wrapper.FaqtitleBox = styled.div`
   padding: 30px 0 19px 0;
 
   .faqtitle {
-    color: #000;
     font-family: SF Pro "Display";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
   }
   .faqdesc {
     color: #000;
@@ -86,7 +85,7 @@ Wrapper.BoxIcon = styled.div`
   border: 1px solid
     ${({ type }) =>
       type === "comment" ? "#EEE" : type === "close" ? "#FF5151" : "#37A67E"};
-        background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
 `;
 
@@ -107,7 +106,6 @@ Wrapper.Comment = styled.div`
   top: 37px;
   color: #000;
   transition: 0.5s ease;
-
 `;
 Wrapper.Loading = styled.div`
   height: 72vh;
@@ -135,14 +133,14 @@ Wrapper.Box = styled.div`
   animation: rotate 1s linear infinite;
 `;
 Wrapper.Flex = styled.div`
-	display: flex;
-	align-items: center;
-	gap: 8px;
-  .blogImgRen {
-		width: 69px;
-		height: 44px;
-		border-radius: 6px;
-		border: 1px solid #eee;
-		object-fit: cover;
-	}
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  .faqtitle {
+    font-family: SF Pro "Display";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+  }
 `;
