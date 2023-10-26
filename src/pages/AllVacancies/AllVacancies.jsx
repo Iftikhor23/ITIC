@@ -6,6 +6,9 @@ import Button from "../../components/Reusable/ButtonComb/Button";
 import Job from "../../components/Jobs/Job";
 import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
 import { Container } from "./styles";
+import logo from "../../assets/images/itLogo.svg";
+import SidebarButton from "../../components/SidebarButton/sidebarButton";
+import { Link } from "react-router-dom";
 
 function AllVacancies() {
   const [showModal, setShowModal] = useState(false);
@@ -51,7 +54,11 @@ function AllVacancies() {
   return (
     <div className="scrollSectionOuter">
       <div ref={triggerRef}>
+      <Link to='/'>
+      <img className="logo" src={logo} alt="company logo" />
+      </Link>
         <Container ref={sectionRef}>
+          <SidebarButton/>
           <TextWrap>
             <HeadingOne>
               Careers at IT

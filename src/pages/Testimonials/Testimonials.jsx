@@ -34,7 +34,7 @@ function Testimonials() {
   }, []);
 
   return (
-    <Container>
+    <Container id="testomonials">
       <TextWrap>
         <HeadingOne>Testimonials</HeadingOne>
         <Paragraph color="#121212">

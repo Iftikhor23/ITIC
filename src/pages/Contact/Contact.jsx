@@ -8,7 +8,7 @@ import Button from "../../components/Reusable/ButtonComb/Button";
 function Contact() {
   const [showModal, setShowModal] = useState(false);
   return (
-    <Container>
+    <Container id="contact-us">
       <div>
         <HeadingOne>
           Let's talk about your project
