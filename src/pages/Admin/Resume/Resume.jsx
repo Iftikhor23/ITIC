@@ -21,7 +21,8 @@ const Resume = () => {
 
   const getResume = async () => {
     try {
-      const res = await request.get(`admin/resume/all${search || ''}`);
+      const res = await request.get(`admin/resume${search || ''}`);
+      setPagination(res?.data?.pagination)
       dispatch({
         type: "setResume",
         payload: res?.data?.data,
@@ -32,6 +33,7 @@ const Resume = () => {
       setLoading(false);
     }
   };
+console.log(pagination, "nfvjfdhvfrejn");
   
   const handleSearch = async (e)  => {
     try {

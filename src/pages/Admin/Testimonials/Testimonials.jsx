@@ -35,7 +35,6 @@ const Testimonials = () => {
   useEffect(() => {
     getTestomonial();
   }, [search]);
-console.log(pagination, "nfvjfdhvfrejn");
   return (
     <Wrapper>
       <Wrapper.Wrap>

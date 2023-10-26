@@ -2,14 +2,6 @@ import { useState } from "react";
 import { Wrapper } from "./styles";
 import message from "../../../assets/icons/comment.svg";
 
-
-const RendererrCV = ({ data }) => {
-  return (
-    <Wrapper.Flex>
-      <a className="CVlink" href={data?.userCVUrl}>Link CV</a>
-    </Wrapper.Flex>
-  );
-};
 const RendererName = ({ data }) => {
   return (
     <Wrapper.Flex>
@@ -18,28 +10,10 @@ const RendererName = ({ data }) => {
   );
 };
 
-const RendererLinkedin = ({ data }) => {
-  return (
-    <Wrapper.FaqtitleBox>
-      <a href={data?.linkedinLink} className="CVlink">
-        Linkedin
-      </a>
-    </Wrapper.FaqtitleBox>
-  );
-};
-
 const RendererPhoneNumber = ({ data }) => {
   return (
     <Wrapper.FaqtitleBox>
       <h3 className="casetitle-link">{data?.phoneNumber}</h3>
-    </Wrapper.FaqtitleBox>
-  );
-};
-
-const RendererPosition = ({ data }) => {
-  return (
-    <Wrapper.FaqtitleBox>
-      <h4 className="faqtitle">{data?.position}</h4>
     </Wrapper.FaqtitleBox>
   );
 };

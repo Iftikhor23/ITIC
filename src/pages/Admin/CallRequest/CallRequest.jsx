@@ -20,7 +20,8 @@ const CallReq = () => {
 
   const getCallReq = async () => {
     try {
-      const res = await request.get(`admin/call-request/all${search || ""}`);
+      const res = await request.get(`admin/call-request${search || ""}`);
+      setPagination(res?.data?.pagination)
       setCallData(res?.data?.data);
       setLoading(false);
     } catch (error) {

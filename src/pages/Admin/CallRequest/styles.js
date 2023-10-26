@@ -31,24 +31,24 @@ Wrapper.Nav = styled.div`
 `;
 
 Wrapper.WrapTable = styled.div`
-	width: 100%;
-	height: 67vh;
-	overflow-y: scroll;
-	&::-webkit-scrollbar {
-		width: 4px;
-	}
-	&::-webkit-scrollbar-thumb {
-		background: #888;
-		height: 40px;
-	}
+  width: 100%;
+  height: 67vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    height: 40px;
+  }
 `;
 Wrapper.Flex = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  .CVlink {
-    color: #009299;
-    text-overflow: ellipsis;
+  .faqtitle {
+    color: #051313;
+    font-family: SF Pro "Display";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -62,11 +62,11 @@ Wrapper.FaqtitleBox = styled.div`
   padding: 30px 0 19px 0;
 
   .faqtitle {
-    color: #000;
+    color: #051313;
     font-family: SF Pro "Display";
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     line-height: normal;
   }
   .faqdesc {
