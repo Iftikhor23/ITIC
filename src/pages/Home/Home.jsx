@@ -35,7 +35,7 @@ function Home() {
   
 
   return (
-    <Container>
+    <Container id="home">
       <Container.MidWrap>
         <Container.Wrapper>
           <Bounce bottom>
