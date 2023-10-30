@@ -5,6 +5,11 @@ import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import request from "../../services";
+import SidebarButton from "../../components/SidebarButton/sidebarButton";
+import { Link } from "react-router-dom";
+import logo from "../../assets/images/itLogo.svg";
+
+
 
 function AllCases() {
   const [cases, setCases] = useState([]);
@@ -59,7 +64,11 @@ function AllCases() {
     <div className="scrollSectionOuter">
       <div ref={triggerRef}>
         <Container ref={sectionRef}>
+        <Link to='/'>
+      <img className="logo" src={logo} alt="company logo" />
+      </Link>
           <div>
+          <SidebarButton/>
             <HeadingOne>Case studies</HeadingOne>
             <Paragraph>
               Become a member of a freelancer's pool and work on creative

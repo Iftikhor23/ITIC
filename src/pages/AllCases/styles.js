@@ -6,7 +6,7 @@ export const Container = styled.div`
     justify-content: center;
     width: 450vw;
     height: 100vh;
-    background-color:#051C2C;
+    background-color: #051C2C;
     gap: 89px;
 `;
 

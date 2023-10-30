@@ -26,7 +26,7 @@ const Partners = () => {
   }, []);
 
   return (
-    <Container id="partners">
+    <Container id="our-partners">
       <Container.TextWrap>
         <HeadingOne>Our Partners</HeadingOne>
         <Paragraph color="#121212">

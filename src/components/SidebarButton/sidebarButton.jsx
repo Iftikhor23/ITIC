@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "./styles.css";
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
 const pages = [
   { id: "about", path: "About" },
   { id: "services", path: "Services" },
   { id: "case-studies", path: "Case studies" },
   { id: "our-time", path: "Our team" },
+  { id: "direction", path: "Direction" },
   { id: "our-partners", path: "Our partners" },
+  { id: "branches", path: "Branches" },
   { id: "testomonials", path: "Testomonials" },
   { id: "careers", path: "Careers" },
   { id: "contact-us", path: "Contact Us" },
@@ -17,7 +20,6 @@ function SidebarButton({ scrollToElement }) {
   const [burgerLine, setBurgerLine] = useState("burgerBar unclicked");
   const [menuClass, setMenuCLass] = useState("menu hidden");
   const [isMenuCLicked, setIsMenuCLicked] = useState(false);
-
 
   useEffect(() => {
     if (window.location.pathname === "/allVacancies") {
@@ -53,14 +55,14 @@ function SidebarButton({ scrollToElement }) {
         <ul className="routes">
           {pages.map((page) => (
             <li
-              id={page.id}
-              key={page.id}
               onClick={() => {
-                updateMenu();
                 scrollToElement(page.id);
+                updateMenu();
               }}
             >
-              {page.path}
+              <Link to={`#${page.id}`} key={page.id}>
+                {page.path}
+              </Link>
             </li>
           ))}
         </ul>

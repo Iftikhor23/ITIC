@@ -8,6 +8,8 @@ import Toast from "../Reusable/Toast";
 import Swal from "sweetalert2";
 
 function FormModal({ isVisible, onClose }) {
+
+  const [checknumber, setCheckNumber]=useState(false)
   const [getData, setGetData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -20,14 +22,12 @@ function FormModal({ isVisible, onClose }) {
     if (e.target.id === "wrapper") onClose();
   };
   const saveData = async () => {
-    if(getData?.fullName && 
-      getData?.phoneNumber && 
-      getData?.email){
+    if (getData?.fullName && getData?.phoneNumber && getData?.email) {
       try {
         const res = await request.post(`public/call-request`, {
           data: {
             fullName: getData?.fullName,
-            phoneNumber: getData?.phoneNumber,
+            phoneNumber: `+998${getData?.phoneNumber}`,
             email: getData?.email,
             comment: getData?.comment,
           },
@@ -36,24 +36,24 @@ function FormModal({ isVisible, onClose }) {
           type: "success",
           message: "Saved",
         });
-  
+
         setGetData({
           fullName: "",
           phoneNumber: "",
           email: "",
           comment: "",
         });
-  
+
         onClose();
       } catch (error) {
         Swal.fire("There is a problem with the Internet or with the server");
         console.error("Saqlashda xatolik yuz berdi:", error);
       }
-  }else{
-    Swal.fire("Fill in all the data fields");
-  }}
+    } else {
+      Swal.fire("Fill in all the data fields");
+    }
+  };
 
-  
   return (
     <Container onClick={handleClose} id="wrapper">
       <Container.Wrapper>
@@ -84,10 +84,18 @@ function FormModal({ isVisible, onClose }) {
               placeholder={"Enter Phone Number"}
               type={"number"}
               prefix={"+998"}
-              onChange={(event) =>
-                setGetData({ ...getData, phoneNumber: event.target.value })
-              }
+              onChange={(event) => {
+                const inputPhoneNumber = event.target.value;
+                if (/^\d{0,7}$/.test(inputPhoneNumber)) {
+                  setGetData({ ...getData, phoneNumber: inputPhoneNumber })
+                } else {
+                  setCheckNumber(true);
+                }
+              }}
+              disab
+              max={setGetData?.phoneNumber}
             />
+
             <Input
               label={"Email Address"}
               placeholder={"Enter Email Address"}
