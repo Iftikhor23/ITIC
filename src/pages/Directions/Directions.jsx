@@ -7,7 +7,7 @@ import { Container } from "./styles";
 
 function Directions() {
   return (
-    <Container>
+    <Container id="direction">
         <div className="textBox">
           <HeadingOne>Main Directions</HeadingOne>
           <Paragraph>

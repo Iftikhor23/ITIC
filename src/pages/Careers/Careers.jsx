@@ -35,7 +35,7 @@ function Careers() {
   }, []);
  
   return (
-    <Container id="careers" ref={careerRef}>
+    <Container ref={careerRef} id="careers">
       <Container.Wrapper>
         <Container.Text>
           <HeadingOne>

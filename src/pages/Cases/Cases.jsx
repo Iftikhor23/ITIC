@@ -26,7 +26,7 @@ function Cases() {
   }, []);
 
   return (
-    <Container id="cases">
+    <Container id="case-studies" >
       <div className="textWrapper">
         <HeadingOne>Case Studies</HeadingOne>
         <Paragraph>

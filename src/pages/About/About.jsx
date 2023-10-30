@@ -3,7 +3,7 @@ import { Container } from "./styles.js";
 
 function About() {
   return (
-    <Container>
+    <Container id="about">
       <Container.Wrapper>
         <HeadingOne>About Us</HeadingOne>
         <Container.Data>
