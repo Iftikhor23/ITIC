@@ -129,7 +129,7 @@ const RendererContext = ({ data }) => {
 const RendererLink = ({ data }) => {
 	return (
 		<Wrapper.FaqtitleBox>
-			<a href={data?.link} target="blank" className="casetitle-link">{data?.link}</a>
+			<a href={data?.link} target="blank" className="casetitle-link">{data?.link.slice(0,20)}...</a>
 		</Wrapper.FaqtitleBox>
 	);
 };

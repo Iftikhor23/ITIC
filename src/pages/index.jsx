@@ -34,7 +34,7 @@ function Pages() {
           x: 0,
         },
         {
-          x: "-1621vw",
+          x: "-1590vw",
           ease: "none",
           duration: 1,
           scrollTrigger: {
@@ -58,28 +58,18 @@ function Pages() {
     }
   }, [triggerRef.current?.offsetWidth >= 840]);
 
-  //   = (id) => {
-  //   console.log(id);
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     const yOffset = element.getBoundingClientRect().top + window.pageYOffset;
-  //     console.log(yOffset);
-  //     window.scroll({
-  //       top: yOffset,
-  //       behavior: 'smooth', 
-  //     });
-  //   }
-  // };
-  const  scrollToElement =(id)=>{
-
-    const violation = document.getElementById(id); 
-    window.scrollTo({
-      top:violation.offsetTop,
-      behavior:"smooth"
-  });
+  const scrollToElement = (id) => {
+    const elementRef = document.getElementById(id);
+    if (elementRef) {
+      const element = elementRef.getBoundingClientRect();
+      window.scrollTo({
+        top: element.top + window.screen,
+        left: element.left + window.screen,
+        behavior: "smooth",
+      });
+    }
   };
-  
-  
+
 
   return (
     <div style={{ position: "relative" }}>
@@ -96,16 +86,16 @@ function Pages() {
         <div ref={triggerRef}>
           <div ref={sectionRef} className="scrollSectionInner">
             <Home/>
-            <For/>
+            <For />
             <About />
-            <Directions/>
-            <Cases/>
+            <Directions />
+            <Cases />
             <Employees/>
-            <Branches/>
-            <Partners/>
-            <Testimonials/>
+            <Branches />
+            <Partners />
+            <Testimonials />
             <Careers/>
-            <Contact/>
+            <Contact />
           </div>
         </div>
       </div>

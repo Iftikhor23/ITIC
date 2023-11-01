@@ -11,6 +11,7 @@ function Input({
   height,
   prefix,
   onChange,
+  max
 }) {
 
 
@@ -41,6 +42,7 @@ function Input({
           placeholderColor={placeholderColor}
           value={value} 
           onChange={onChange}
+          max={max}
         />
       </Container.Wrap>
     </Container>

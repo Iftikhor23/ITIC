@@ -8,10 +8,10 @@ function StatCard() {
       <Container.Wrapper>
         <Container.Title>Visits</Container.Title>
         <Container.Trending>
-          <Container.Nums>4 8667</Container.Nums>
+          <Container.Nums>0</Container.Nums>
           <Container.Bottom>
             <img src={trendingUp} alt="stat icon" />
-            <Container.TrendNum>+45%</Container.TrendNum>
+            <Container.TrendNum>+0%</Container.TrendNum>
           </Container.Bottom>
         </Container.Trending>
       </Container.Wrapper>

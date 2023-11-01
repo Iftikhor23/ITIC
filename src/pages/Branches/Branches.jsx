@@ -8,7 +8,7 @@ import singapore from "../../assets/images/singapore.png";
 
 function Branches() {
   return (
-    <Container>
+    <Container id="branches">
       <Container.Wrapper>
         <Container.Text>
           <HeadingOne>

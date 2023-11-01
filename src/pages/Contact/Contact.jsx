@@ -8,7 +8,7 @@ import Button from "../../components/ButtonCont/Button";
 function Contact() {
   const [showModal, setShowModal] = useState(false);
   return (
-    <Container id="contact-us">
+    <Container id="contact-us" >
       <div>
         <HeadingOne>
           Let's talk about your project

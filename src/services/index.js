@@ -47,25 +47,24 @@ request.interceptors.response.use(
 		return response;
 	},
 	(err) => {
-		// if (err?.response?.status === 401 || err?.response?.status === 403) {
-		// 	if (
-		// 		window.location.pathname !== '/signin' &&
-		// 		window.location.pathname !== '/' &&
-		// 		window.location.pathname !== '/register' &&
-		// 		window.location.pathname?.search('admin/sign-in') < 0 &&
-		// 		window.location.pathname?.search('reset') < 0 &&
-		// 		window.location.pathname?.search('verify') < 0
-		// 	) {
-		// 		window.location.pathname?.search('admin') > 0
-		// 			? (window.location.pathname = '/admin/sign-in')
-		// 			: (window.location.pathname = '/signin');
-		// 	} else {
-		// 		return Promise.reject(err);
-		// 	}
-		// } else {
-		// 	return Promise.reject(err);
-		// }
-		return ""
+		if (err?.response?.status === 401 || err?.response?.status === 403) {
+			if (
+				window.location.pathname !== '/signin' &&
+				window.location.pathname !== '/' &&
+				window.location.pathname !== '/register' &&
+				window.location.pathname?.search('admin/sign-in') < 0 &&
+				window.location.pathname?.search('reset') < 0 &&
+				window.location.pathname?.search('verify') < 0
+			) {
+				window.location.pathname?.search('admin') > 0
+					? (window.location.pathname = '/admin/sign-in')
+					: (window.location.pathname = '/signin');
+			} else {
+				return Promise.reject(err);
+			}
+		} else {
+			return Promise.reject(err);
+		}
 	},
 );
 
