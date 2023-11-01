@@ -36,7 +36,7 @@ function Home() {
       <Container.MidWrap>
         <Container.Wrapper>
           <Bounce bottom>
-            <HeadingOne>Solutions to elevate</HeadingOne>
+            <HeadingOne width={'728px'}>Solutions to elevate</HeadingOne>
           </Bounce>
           <Container.TextWrap>
             <Bounce bottom>

@@ -1,11 +1,11 @@
 import { HeadingOne } from "../../styled/styles.js";
-import { Container } from "./styles.js";
+import { Container, HeadingAbout } from "./styles.js";
 
 function About() {
   return (
     <Container id="about">
       <Container.Wrapper>
-        <HeadingOne>About Us</HeadingOne>
+        <HeadingAbout>About Us</HeadingAbout>
         <Container.Data>
           <Container.Paragraph>
             Providing intermediary services and connecting companies and
