@@ -34,7 +34,7 @@ function Pages() {
           x: 0,
         },
         {
-          x: "-1590vw",
+          x: "-1400vw",
           ease: "none",
           duration: 1,
           scrollTrigger: {
@@ -65,6 +65,8 @@ function Pages() {
       window.scrollTo({
         top: element.top + window.screen,
         left: element.left + window.screen,
+        rigth: element.right + window.screen,
+        bottom: element.right + window.screen,
         behavior: "smooth",
       });
     }
@@ -79,22 +81,22 @@ function Pages() {
       <div className="footer">
         <Footer />
       </div>
-      <div className="sidebarButton">
-        <SidebarButton scrollToElement={scrollToElement} />
+      <div style={{ position: "fixed", zIndex: "19" }}>
+        <SidebarButton scrollToElement={scrollToElement } />
       </div>
       <div className="scrollSectionOuter">
         <div ref={triggerRef}>
           <div ref={sectionRef} className="scrollSectionInner">
-            <Home/>
+            <Home />
             <For />
             <About />
             <Directions />
             <Cases />
-            <Employees/>
+            <Employees />
             <Branches />
             <Partners />
             <Testimonials />
-            <Careers/>
+            <Careers />
             <Contact />
           </div>
         </div>

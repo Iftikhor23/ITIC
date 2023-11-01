@@ -4,6 +4,8 @@ export const HeadingOne = styled.h1`
   font-size: 72px;
   font-weight: 500;
   margin: 5px;
+  width: 100%;
+  max-width: ${({width}) => (width ? width : '100%')};
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
   -webkit-background-clip: text;
