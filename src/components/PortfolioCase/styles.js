@@ -11,6 +11,12 @@ export const Container = styled.div`
   @media screen and (max-width: 840px) {
     height: fit-content;
     align-items: flex-start;
+    width: 728px;
+  }
+
+  @media screen and (max-width: 653px) {
+    width: 355px;
+    gap: 16px;
   }
 
   .imageWrap {
@@ -47,8 +53,9 @@ export const Container = styled.div`
 
     @media screen and (max-width: 653px) {
       width: 355px;
-      height: 330px;
-      object-fit: fill;
+      height: 197px;
+      object-fit: cover;
+      border-radius: 20px;
     }
   }
 `;
@@ -56,15 +63,21 @@ export const Container = styled.div`
 Container.Desc = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 107px;
-  width: 691x;
+  width: 100%;
+
+  
 `;
 
 Container.Info = styled.div`
   display: flex;
   flex-direction: column;
   gap: 9px;
+
+  @media screen and (max-width: 653px){
+    gap: 4px;
+  }
 `;
 
 Container.Title = styled.h2`

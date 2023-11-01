@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { useEffect } from "react";
-import { gsap } from "gsap";
 const pages = [
   { id: "about", path: "About" },
   { id: "services", path: "Services" },

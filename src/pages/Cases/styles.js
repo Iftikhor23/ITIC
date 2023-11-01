@@ -46,13 +46,12 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 840px) {
-    height: fit-content;
-    width: 100%;
+    height: 2040px;
+    width: 98%;
     flex-direction: column;
     gap: 51px;
     overflow: scroll;
-    align-items: flex-start;
-    padding-left: 20px;
+    align-items: center;
 
     .respDesk {
       display: none;
@@ -60,7 +59,9 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    padding-left: 40px;
+    width: 50%;
+    align-items: center;
+    height: 1230px;
   }
 `;
 

@@ -3,7 +3,7 @@ import { HeadingOne } from "../../styled/styles";
 import { Container } from "./styles";
 import FormModal from "../../components/Modal/FormModal";
 import { useState } from "react";
-import Button from "../../components/Reusable/ButtonComb/Button";
+import Button from "../../components/ButtonCont/Button";
 
 function Contact() {
   const [showModal, setShowModal] = useState(false);
@@ -49,7 +49,7 @@ function Contact() {
         <p>Developed by: OOO IT Investment center</p>
       </Container.FooterWrapper>
       <Container.Bubble>
-        <img src={bubble} alt="bubble"/>
+        <img className="bubble" src={bubble} alt="bubble"/>
       </Container.Bubble>
       <FormModal isVisible={showModal} onClose={() => setShowModal(false)} />
     </Container>

@@ -89,7 +89,7 @@ function Pages() {
       <div className="footer">
         <Footer />
       </div>
-      <div style={{ position: "fixed", zIndex: "19" }}>
+      <div className="sidebarButton">
         <SidebarButton scrollToElement={scrollToElement} />
       </div>
       <div className="scrollSectionOuter">

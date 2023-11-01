@@ -10,13 +10,13 @@ export const Container = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 840px) {
-    height: fit-content;
     width: 100%;
-    padding: 0;
+    height: 2100px;
+    justify-content: center;
   }
 
   @media screen and (max-width: 653px) {
-    
+    height: 1430px;
   }
 `;
 
@@ -27,12 +27,13 @@ Container.Wrapper = styled.div`
 
   @media screen and (max-width: 840px) {
     flex-direction: column;
+    width: 100%;
     .text {
     }
   }
 
   @media screen and (max-width: 653px) {
-    .text{
+    .text {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -47,16 +48,25 @@ Container.Images = styled.div`
   align-items: center;
   gap: 16px;
   text-align: center;
-  .image-teams{
+  .image-teams {
     width: 310px;
     height: 360px;
     border-radius: 30px;
     object-fit: cover;
+
+    @media screen and (max-width: 653px) {
+      height: 210px;
+      width: 173px;
+    }
   }
 
   @media screen and (max-width: 840px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 653px) {
     flex-wrap: wrap;
-    justify-content: center;
   }
 `;
 
@@ -64,12 +74,20 @@ Container.Name = styled.h1`
   color: #fff;
   font-size: 20px;
   font-weight: 700;
+
+  @media screen and (max-width: 653px) {
+    font-size: 14px;
+  }
 `;
 
 Container.Job = styled.p`
   color: #fff;
   font-size: 16px;
   font-weight: 400;
+
+  @media screen and (max-width: 653px) {
+    font-size: 12px;
+  }
 `;
 
 //fjbeorf

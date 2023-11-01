@@ -8,24 +8,18 @@ export const Container = styled.div`
   width: 230vw;
   height: 100vh;
 
-  /* @media only screen and (max-width: 768px) {
-    height: fit-content;
-    width: 100%;
-    padding: 29px 15px;
-  } */
-
-  @media only screen and (max-width: 375px) {
-    height: fit-content;
-    width: 100%;
-    padding: 29px 3px;
-  }
+  
 
   @media only screen and (max-width: 840px) {
-    height: fit-content;
+    height: 1580px;
     width: 100%;
-    padding: 29px 15px;
+    justify-content: center;
+  }
 
-    justify-content: flex-start;
+  @media only screen and (max-width: 653px) {
+    justify-content: center;
+    width: 100%;
+    height: 1765px;
   }
 `;
 
@@ -36,14 +30,13 @@ Container.Wrapper = styled.div`
   width: fit-content;
   justify-content: center;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 840px) {
     display: flex;
     flex-direction: column;
   }
 
-  @media only screen and (max-width: 840px) {
-    display: flex;
-    flex-direction: column;
+  @media screen and (max-width: 653px) {
+    gap: 190px;
   }
 `;
 
@@ -52,40 +45,57 @@ Container.Box = styled.div`
   align-items: center;
   gap: 148px;
   .forImage {
-    @media only screen and (max-width: 768px) {
-      height: 251px;
-      width: 263px;
-    }
 
     @media only screen and (max-width: 840px) {
       height: 251px;
       width: 263px;
+      .globe{
+        width: 213px;
+      height: 203px;
+      }
     }
-  }
-  @media screen and (max-width: 376px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  @media screen and (max-width: 426px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
   @media screen and (max-width: 653px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    .forImgGlobe{
+      width: 213px;
+      height: 203px;
+    }
+
+    .buildingImg{
+      width: 116px;
+      height: 131px;
+    }
+
+    .personImg{
+      width: 164;
+      height: 130;
+    }
   }
 
   @media screen and (max-width: 840px) {
     display: flex;
     align-items: center;
     gap: 33px;
+
+    .forImgGlobe{
+      width: 263px;
+      height: 251px;
+    }
+
+    .buildingImg{
+      width: 160px;
+      height: 181px;
+    }
+
+    .personImg{
+      width: 196;
+      height: 155;
+    }
   }
 `;
 
@@ -101,14 +111,18 @@ Container.Number = styled.div`
   font-weight: 500;
   margin-bottom: 28px;
 
-  @media only screen and (max-width: 768px) {
-    width: 108px;
-    height: 68px;
-  }
+
 
   @media only screen and (max-width: 840px) {
     width: 108px;
     height: 68px;
+    margin: 0;
+  }
+  @media only screen and (max-width: 653px) {
+    width: 105px;
+    height: 55px;
+    margin:0;
+    font-size: 48px;
   }
 `;
 
