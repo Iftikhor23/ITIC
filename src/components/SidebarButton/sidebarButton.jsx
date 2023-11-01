@@ -56,13 +56,14 @@ function SidebarButton({ scrollToElement }) {
           {pages.map((page) => (
             <li
               onClick={() => {
-                scrollToElement(page.id);
+                scrollToElement(page?.id);
                 updateMenu();
               }}
+             
             >
-              <Link to={`#${page.id}`} key={page.id}>
+              <a href={`#${page.id}`} key={page.id}   data-target={`${page?.id}`}>
                 {page.path}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

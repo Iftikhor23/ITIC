@@ -1,19 +1,25 @@
 import styled from "styled-components";
+import bgImg1 from "../../assets/images/aboutBgImage.svg";
+import bgImg2 from "../../assets/images/aboutBgImg2.svg";
 
 export const Container = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   background-color: #050919;
-  width: 2382px;
+  background-image:  url(${bgImg1});
+  background-position: calc(50% - 683px) calc(50% - 40px);
+  background-repeat: no-repeat;
+  padding-left: 1200px;
   height: 100vh;
   overflow: hidden;
-  gap: 205px;
+  gap: 400px;
 
   .textWrapper {
     display: flex;
     flex-direction: column;
     align-items: start;
+    width: 440px;
     gap: 13px;
     @media screen and (max-width: 840px) {
       gap: 5px;
