@@ -3,12 +3,12 @@ import { Container } from "./styles";
 function Footer() {
   return (
     <Container>
-        <Container.Link>En | Ru</Container.Link>
-      <Container.Link>Telegram</Container.Link>
-      <Container.Link>Instagram</Container.Link>
-      <Container.Link>Facebook</Container.Link>
-      <Container.Link>LinkedIn</Container.Link>
-      <Container.Link>+90 123-45-67</Container.Link>
+      <a className="link">En | Ru</a>
+      <a className="link">Telegram</a>
+      <a className="link">Instagram</a>
+      <a className="link">Facebook</a>
+      <a className="link">LinkedIn</a>
+      <a className="link">+90 123-45-67</a>
     </Container>
   );
 }

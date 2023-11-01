@@ -10,8 +10,13 @@ export const Container = styled.div`
   position: relative;
 
   @media screen and (max-width: 840px) {
-    width: 100%;
-    height: fit-content;
+    width: 98%;
+    height: 1730px;
+  }
+
+  @media screen and (max-width: 653px) {
+    width: 50%;
+    height:880px;
   }
 `;
 

@@ -5,7 +5,6 @@ import request from "../../services";
 import { useEffect, useState } from "react";
 
 function CaseComp({ imageSrc, title, paragraph, to, tag }) {
-  const [testomonial, setTestomonial] = useState([]);
   const [loading, setLoading] = useState(true);
   const newTags = tag?.length > 0 && tag.map((v) => v);
   return (

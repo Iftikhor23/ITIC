@@ -1,6 +1,16 @@
 .container {
   display: flex;
   gap: 16px;
+
+  @media screen and (max-width: 840px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 653px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .container .jobBox {

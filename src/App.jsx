@@ -5,7 +5,8 @@ import AllVacancies from "./pages/AllVacancies/AllVacancies";
 import Admin from "./pages/Admin";
 import { Data } from "./components/AdminSidebar/SidebarData";
 import AdminSign from "./pages/AdminSign";
-import Employees from "./pages/Team/Employees";
+import Contact from "./pages/Contact/Contact";
+import Testimonials from "./pages/Testimonials/Testimonials";
 
 
 function App() {

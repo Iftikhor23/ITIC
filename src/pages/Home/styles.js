@@ -17,7 +17,6 @@ export const Container = styled.div`
   }
 `;
 
-
 Container.TeamBox = styled.div`
   display: flex;
   width: 335px;
@@ -85,8 +84,8 @@ Container.MidWrap = styled.div`
     align-items: center;
 
     @media screen and (max-width: 840px) {
-        bottom: 222px;
-      }
+      bottom: 222px;
+    }
     .lilChart {
       position: absolute;
       left: -26px;
@@ -98,6 +97,10 @@ Container.MidWrap = styled.div`
 
       @media screen and (max-width: 840px) {
         left: -153px;
+      }
+      @media screen and (max-width: 653px){
+        width: 132px;
+        left: 222px;
       }
     }
     .midChart {
@@ -112,6 +115,11 @@ Container.MidWrap = styled.div`
       @media screen and (max-width: 840px) {
         left: 97px;
       }
+
+      @media screen and (max-width: 653px) {
+        width: 154px;
+        left: 340px;
+      }
     }
     .bigChart {
       position: absolute;
@@ -120,6 +128,11 @@ Container.MidWrap = styled.div`
       width: 354px;
       height: 600px;
       user-select: none;
+
+      @media screen and (max-width: 653px) {
+        width: 228px;
+        right: -60px;
+      }
     }
     .upTrade {
       position: relative;
@@ -131,6 +144,11 @@ Container.MidWrap = styled.div`
       @media screen and (max-width: 840px) {
         top: -242px;
         left: 24px;
+      }
+
+      @media screen and (max-width: 653px) {
+        width: 227px;
+        left: 291px;
       }
     }
   }
@@ -144,7 +162,6 @@ Container.MidWrap = styled.div`
 Container.Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* margin-top: 100px; */
   margin-left: 130px;
 
   @media screen and (max-width: 840px) {
