@@ -110,14 +110,21 @@ function JobModal({ isVisible, onClose }) {
                 setGetData({ ...getData, fullName: e.target.value })
               }
             />
-            <Input
+             <Input
               label={"Phone Number"}
               placeholder={"Enter Phone Number"}
               type={"number"}
               prefix={"+998"}
-              onChange={(e) =>
-                setGetData({ ...getData, phoneNumber: e.target.value })
-              }
+              onKeyPress={(event) => {
+                if (event.target.value.length === 7) {
+                  event.preventDefault();
+                }
+              }}
+              onChange={(event) => {
+                if (event.target.value.length <= 7) {
+                  setGetData({ ...getData, phoneNumber: event.target.value });
+                }
+              }}
             />
           </Container.Group>
           <Container.Group>
