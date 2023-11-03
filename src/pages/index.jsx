@@ -34,7 +34,7 @@ function Pages() {
           x: 0,
         },
         {
-          x: "-1400vw",
+          x: "-1593vw",
           ease: "none",
           duration: 1,
           scrollTrigger: {

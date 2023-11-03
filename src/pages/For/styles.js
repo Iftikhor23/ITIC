@@ -33,6 +33,7 @@ Container.Wrapper = styled.div`
   @media only screen and (max-width: 840px) {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   @media screen and (max-width: 653px) {
