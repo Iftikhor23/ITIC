@@ -18,7 +18,7 @@ const For=()=> {
               competitive price of the final product
             </Paragraph>
           </Container.Text>
-          <img className="forImage" src={globe} alt="for" />
+          <img className="forImgGlobe" src={globe} alt="for" />
         </Container.Box>
 
         <Container.Box >
@@ -30,7 +30,7 @@ const For=()=> {
               with our assistance and generate revenue
             </Paragraph>
           </Container.Text>
-          <img className="forImage" src={building} alt="for" />
+          <img className="buildingImg" src={building} alt="for" />
         </Container.Box>
 
         <Container.Box>
@@ -39,7 +39,7 @@ const For=()=> {
             <HeadingOne>Freelancers</HeadingOne>
             <Paragraph width="495px">Become a member of a freelancer's pool and work on creative projects</Paragraph>
           </Container.Text>
-          <img className="forImage" src={freelancer} alt="for" />
+          <img className="personImg" src={freelancer} alt="for" />
         </Container.Box>
 
       </Container.Wrapper>

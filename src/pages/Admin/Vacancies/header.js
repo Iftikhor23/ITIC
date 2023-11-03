@@ -113,7 +113,7 @@ const RendererTitle = ({ data }) => {
 const RendererSalary = ({ data }) => {
 	return (
 		<Wrapper.FaqtitleBox>
-			<h2 className="faqtitle">{data?.salary} so'm</h2>
+			<h2 className="faqtitle">{data?.salary} USD</h2>
 		</Wrapper.FaqtitleBox>
 	);
 };

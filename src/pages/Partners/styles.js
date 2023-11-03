@@ -13,6 +13,20 @@ export const Container = styled.div`
         width: 243px;
         height: 80px;
         object-fit: cover;
+        @media screen and (max-width: 840px) {
+      width: 128px;
+      height: 42px;
+    }
+    }
+
+    @media screen and (max-width: 840px) {
+      flex-direction: column;
+      width: 100vw;
+      height: 580px;
+    }
+
+    @media screen and (max-width: 653px) {
+      height: 660px;
     }
 `;
 
@@ -38,6 +52,7 @@ Container.ImgWrap = styled.div`
     gap: 13px;
     width: 100%;
     height: 100%;
+    justify-content: center;
   }
 `;
 

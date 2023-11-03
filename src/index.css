@@ -20,6 +20,7 @@ body{
   background-color: #051C2C;
 }
 
+
 .logo {
   width: 112px;
   position: fixed;
@@ -31,6 +32,10 @@ body{
   @media screen and (max-width: 840px) {
     left: 20px;
   }
+
+  @media screen and (max-width: 653px) {
+    width: 73px;
+  }
 }
 
 .footer {
@@ -40,18 +45,11 @@ body{
   z-index: 10;
   height: 0;
   width: 0;
-
-  @media screen and (max-width: 840px){
-    top: 60px;
-    left: 200px;
-  }
 }
 
-.sidebarButton{
-  @media screen and (max-width: 840px) {
-    top: -240px;
-    left: 655px;
-  }
+.sidebarButton {
+  position: fixed;
+  z-index: 19;
 }
 
 .scrollSectionOuter {
@@ -71,5 +69,25 @@ body{
     flex-direction: column;
     height: auto;
   }
+
+  .footer {
+    top: 60px;
+    left: 200px;
+  }
+
+  .sidebarButton {
+    top: -240px;
+    left: 655px;
+  }
 }
 
+@media screen and (max-width: 653px) {
+  .footer {
+    top: 57px;
+    left: 179px;
+  }
+  .sidebarButton {
+    top: -246px;
+    left: 324px;
+  }
+}

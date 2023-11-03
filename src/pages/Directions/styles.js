@@ -16,10 +16,10 @@ export const Container = styled.div`
     max-width: 528px;
   }
   @media screen and (max-width: 840px) {
-    height: fit-content;
-    width: 100%;
+    height: 2530px;
+    width: 98%;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 80px;
     padding: 40px;
   }
@@ -31,11 +31,13 @@ Container.Categories = styled.div`
   gap: 68px;
   .catImage {
     width: 100%;
+    @media screen and (max-width: 653px) {
+      width: 355px;
+    }
   }
 
   @media screen and (max-width: 840px) {
     flex-direction: column;
-    padding-left: 50px;
   }
 `;
 export const HeadingDirection = styled.h1`

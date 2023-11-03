@@ -16,16 +16,15 @@ export const Container = styled.div`
   padding-left: 287px;
 
   @media screen and (max-width: 840px) {
-    height: fit-content;
+    height: 645px;
     width: 100%;
     justify-content: flex-start;
     padding: 40px;
   }
 
   @media screen and (max-width: 653px) {
-    height: fit-content;
-    width: 100%;
-    padding: 24px;
+    height: 610px;
+    width: 50%;
     justify-content: center;
   }
 `;

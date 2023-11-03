@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
 import Job from "../../components/Jobs/Job";
 import { HeadingOne, Paragraph } from "../../styled/styles";
 import { Container } from "./styles";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import request from "../../services";
 

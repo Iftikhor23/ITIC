@@ -12,8 +12,12 @@ export const Container = styled.div`
 
   @media screen and (max-width: 840px) {
     width: 100%;
-    height: fit-content;
+    height: 860px;
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 653px) {
+    height: 740px;
   }
 `;
 
@@ -30,7 +34,10 @@ Container.TestiBox = styled.div`
     background: linear-gradient(to right, rgb(255, 978, 255) 0%, rgba(255, 423, 75, 0) 200%);
     background-color: #6c9f9e;
   }
-
+@media screen and (max-width: 653px) {
+  width: 355px;
+  height: 210px;
+}
 `;
 
 Container.TestiBoxTwo = styled.div`
