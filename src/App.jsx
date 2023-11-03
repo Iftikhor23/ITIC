@@ -7,6 +7,7 @@ import { Data } from "./components/AdminSidebar/SidebarData";
 import AdminSign from "./pages/AdminSign";
 import Contact from "./pages/Contact/Contact";
 import Testimonials from "./pages/Testimonials/Testimonials";
+import Home from "./pages/Home/Home";
 
 
 function App() {

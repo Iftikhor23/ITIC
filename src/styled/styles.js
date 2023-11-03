@@ -14,6 +14,12 @@ export const HeadingOne = styled.h1`
   -webkit-text-fill-color: transparent;
   background-size: 500% auto;
   animation: textShine 2s linear infinite;
+  span{
+    display: none;
+    @media only screen and (max-width: 653px) {
+    display: block;
+  }
+  }
 
   @keyframes textShine {
     0% {
@@ -24,50 +30,20 @@ export const HeadingOne = styled.h1`
     }
   }
 
-  @media only screen and (max-width: 768px) {
-    font-size: 42px;
-  }
-
   @media only screen and (max-width: 840px) {
     font-size: 42px;
   }
 
   @media only screen and (max-width: 653px) {
+    width: 288px;
     font-size: 42px;
+    text-align: center;
   }
 `;
 
-export const HeadingOneHome = styled.h1`
-  font-size: 72px;
-  font-weight: 500;
-  margin: 5px;
-  background: -webkit-linear-gradient(left, black, #fff, black);
-  background-size: 1600px 200px;
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* text-fill-color: transparent; */
-  -webkit-text-fill-color: transparent;
-  background-size: 500% auto;
-  animation: textShine 2s linear infinite;
-
-  @keyframes textShine {
-    0% {
-      background-position: 0 1600px;
-    }
-    100% {
-      background-position: 1600px 0;
-    }
-  }
 
 
-  @media only screen and (max-width: 840px) {
-    font-size: 56px;
-  }
 
-  @media only screen and (max-width: 653px) {
-    font-size: 42px;
-  }
-`;
 
 export const Paragraph = styled.p`
   font-size: 16px;

@@ -1,6 +1,5 @@
 import bubble from "../../assets/images/bubble.svg";
-import { HeadingOne } from "../../styled/styles";
-import { Container } from "./styles";
+import { Container, HeadingOne } from "./styles";
 import FormModal from "../../components/Modal/FormModal";
 import { useState } from "react";
 import Button from "../../components/ButtonCont/Button";
@@ -9,7 +8,7 @@ function Contact() {
   const [showModal, setShowModal] = useState(false);
   return (
     <Container id="contact-us" >
-      <div>
+      <div className="headWrap">
         <HeadingOne>
           Let's talk about your project
           <br /> and feel free to ask, we have
@@ -36,7 +35,7 @@ function Contact() {
             <Container.Info>info@itic.uz</Container.Info>
           </div>
         </Container.PhoneAndEmail>
-        <div>
+        <div className="address">
           <Container.Label>Address:</Container.Label>
           <Container.Info>
             Tepamasjid, 4, Olimlar, Tashkent 100041

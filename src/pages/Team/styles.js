@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: #051c2c;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 230vw;
   height: 100vh;
   display: flex;
@@ -10,7 +12,7 @@ export const Container = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 840px) {
-    width: 100%;
+    width: 100vw;
     height: 2100px;
     justify-content: center;
   }

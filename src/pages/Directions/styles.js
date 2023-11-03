@@ -17,11 +17,15 @@ export const Container = styled.div`
   }
   @media screen and (max-width: 840px) {
     height: 2530px;
-    width: 98%;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
     gap: 80px;
     padding: 40px;
+  }
+
+  @media screen and (max-width: 653px) {
+    height: 1830px;
   }
 `;
 

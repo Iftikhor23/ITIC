@@ -12,13 +12,13 @@ export const Container = styled.div`
 
   @media only screen and (max-width: 840px) {
     height: 1580px;
-    width: 100%;
+    width: 100vw;
     justify-content: center;
   }
 
   @media only screen and (max-width: 653px) {
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: 1765px;
   }
 `;
@@ -44,17 +44,28 @@ Container.Box = styled.div`
   display: flex;
   align-items: center;
   gap: 148px;
-  .forImage {
 
-    @media only screen and (max-width: 840px) {
-      height: 251px;
+  @media screen and (max-width: 840px) {
+    display: flex;
+    align-items: center;
+    gap: 33px;
+
+    .forImgGlobe{
       width: 263px;
-      .globe{
-        width: 213px;
-      height: 203px;
-      }
+      height: 251px;
+    }
+
+    .buildingImg{
+      width: 160px;
+      height: 181px;
+    }
+
+    .personImg{
+      width: 196;
+      height: 155;
     }
   }
+
   @media screen and (max-width: 653px) {
     display: flex;
     flex-direction: column;
@@ -77,26 +88,7 @@ Container.Box = styled.div`
     }
   }
 
-  @media screen and (max-width: 840px) {
-    display: flex;
-    align-items: center;
-    gap: 33px;
-
-    .forImgGlobe{
-      width: 263px;
-      height: 251px;
-    }
-
-    .buildingImg{
-      width: 160px;
-      height: 181px;
-    }
-
-    .personImg{
-      width: 196;
-      height: 155;
-    }
-  }
+ 
 `;
 
 Container.Number = styled.div`

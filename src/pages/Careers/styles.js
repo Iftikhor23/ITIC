@@ -10,12 +10,11 @@ export const Container = styled.div`
   background-color: #fff;
 
   @media screen and (max-width: 840px) {
-    width: 98%;
+    width: 100vw;
     height: 1730px;
   }
 
   @media screen and (max-width: 653px) {
-    width: 50%;
     height:880px;
   }
 `;

@@ -53,11 +53,12 @@ export const Container = styled.div`
 
   @media screen and (max-width: 840px) {
     height: 2040px;
-    width: 98%;
+    width: 100vw;
     flex-direction: column;
     gap: 51px;
-    overflow: scroll;
     align-items: center;
+    padding:0;
+    flex-wrap: nowrap;
 
     .respDesk {
       display: none;
@@ -65,7 +66,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    width: 50%;
+    width: 100vw;
     align-items: center;
     height: 1230px;
   }

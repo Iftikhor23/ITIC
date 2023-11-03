@@ -1,5 +1,5 @@
-import { Container } from "./styles";
-import { HeadingOne, Paragraph } from "../../styled/styles";
+import { Container, HeadingOneHome, Your } from "./styles";
+import { Paragraph } from "./styles";
 import FormModal from "../../components/Modal/FormModal";
 import { useState } from "react";
 import Button from "../../components/Reusable/ButtonComb/Button";
@@ -36,11 +36,11 @@ function Home() {
       <Container.MidWrap>
         <Container.Wrapper>
           <Bounce bottom>
-            <HeadingOne width={'728px'}>Solutions to elevate</HeadingOne>
+            <HeadingOneHome width={'728px'}>Solutions to elevate <span>your</span></HeadingOneHome>
           </Bounce>
           <Container.TextWrap>
             <Bounce bottom>
-              <HeadingOne>your</HeadingOne>
+              <Your>your</Your>
             </Bounce>
             <div onClick={() => setShowModal(true)}>
               <Button
