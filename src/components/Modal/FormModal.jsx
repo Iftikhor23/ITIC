@@ -84,16 +84,16 @@ function FormModal({ isVisible, onClose }) {
               placeholder={"Enter Phone Number"}
               type={"number"}
               prefix={"+998"}
-              onChange={(event) => {
-                const inputPhoneNumber = event.target.value;
-                if (/^\d{0,7}$/.test(inputPhoneNumber)) {
-                  setGetData({ ...getData, phoneNumber: inputPhoneNumber })
-                } else {
-                  setCheckNumber(true);
+              onKeyPress={(event) => {
+                if (event.target.value.length === 7) {
+                  event.preventDefault();
                 }
               }}
-              disab
-              max={setGetData?.phoneNumber}
+              onChange={(event) => {
+                if (event.target.value.length <= 7) {
+                  setGetData({ ...getData, phoneNumber: event.target.value });
+                }
+              }}
             />
 
             <Input

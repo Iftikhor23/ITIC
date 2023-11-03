@@ -11,25 +11,19 @@ function Input({
   height,
   prefix,
   onChange,
-  max
+  max,
+  onKeyPress
 }) {
 
-
-  const [inputFields, setInputFields] = useState({
-    fName: "",
-    lName: "",
-    phoneNum: null,
-    email: "",
-    comment: "",
-  });
-
-  const handleChange = (e) => {
-    setInputFields({ ...inputFields, [e.target.name]: e.target.value });
+  const handleKeyPress = (event) => {
+    if (typeof onKeyPress === "function") {
+      onKeyPress(event);
+    }
+    if (event.target.value.length === 7) {
+      event.preventDefault();
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <Container>
@@ -43,6 +37,7 @@ function Input({
           value={value} 
           onChange={onChange}
           max={max}
+          onKeyPress={handleKeyPress} 
         />
       </Container.Wrap>
     </Container>

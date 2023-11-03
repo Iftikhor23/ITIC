@@ -8,6 +8,7 @@ export const Container = styled.div`
     background-color: #fff;
     align-items: center;
     justify-content: center;
+    margin-right: -1px;
     .partners-img {
         width: 243px;
         height: 80px;
