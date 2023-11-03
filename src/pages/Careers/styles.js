@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #fff;
   display: flex;
   align-items: center;
-  width: 170vw;
-  height: 100vh;
   justify-content: center;
   position: relative;
+  width: 170vw;
+  height: 100vh;
+  background-color: #fff;
 
   @media screen and (max-width: 840px) {
     width: 100%;
