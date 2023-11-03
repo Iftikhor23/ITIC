@@ -6,7 +6,8 @@ import { useEffect } from "react";
 import request from "../../services";
 import { Link } from "react-router-dom";
 import { Container } from "../../pages/Careers/styles";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 function Job() {
   const [selectedJobTitle, setSelectedJobTitle] = useState("");
@@ -33,89 +34,130 @@ function Job() {
   useEffect(() => setUrl(window.location.pathname), [window.location.pathname]);
 
   return (
-    <div className="container">
-      {url !== "/allVacancies"
-        ? (testomonial.slice(0, 4)?.map((items, index) => {
+    <>
+      <div className="container">
+        {url !== "/allVacancies"
+          ? testomonial.slice(0, 4)?.map((items, index) => {
+              return (
+                <div key={index} className="jobBox">
+                  <div className="upperPart">
+                    <div className="jobTitle">
+                      <h3>{items?.title}</h3>
+                      <p>{items?.positionLevel}</p>
+                    </div>
+                    <div className="description">
+                      <p>{items?.location}</p>
+                      <p>{items?.employmentType}</p>
+                      <p>Salary: {items?.salary}</p>
+                    </div>
+                  </div>
+                  <div className="bottomPart">
+                    <p>{`from: ${items?.fromTime}, to: ${items?.toTime}`}</p>
+                    <div
+                      className="arrow"
+                      onClick={() => {
+                        setSelectedJobTitle(items?.title);
+                        setShowModal(true);
+                      }}
+                    >
+                      <FiArrowRight size={"25px"} />
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          : testomonial?.map((items, index) => {
+              return (
+                <div key={index} className="jobBox">
+                  <div className="upperPart">
+                    <div className="jobTitle">
+                      <h3>{items?.title}</h3>
+                      <p>{items?.positionLevel}</p>
+                    </div>
+                    <div className="description">
+                      <p>{items?.location}</p>
+                      <p>{items?.employmentType}</p>
+                      <p>Salary: {items?.salary}</p>
+                    </div>
+                  </div>
+                  <div className="bottomPart">
+                    <p>{`from: ${items?.fromTime}, to: ${items?.toTime}`}</p>
+                    <div
+                      className="arrow"
+                      onClick={() => {
+                        setSelectedJobTitle(items?.title);
+                        setShowModal(true);
+                      }}
+                    >
+                      <FiArrowRight size={"25px"} />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+        {url !== "/allVacancies" && (
+          <Link to={"/allVacancies"}>
+            <Container.SeeAll>
+              <Container.ArrowText>
+                See All
+                <br /> Vacancies
+              </Container.ArrowText>
+              <Container.ArrowWrap>
+                <Container.Arrow>
+                  <FiArrowUpRight size={"25px"} />
+                </Container.Arrow>
+              </Container.ArrowWrap>
+            </Container.SeeAll>
+          </Link>
+        )}
+        <JobModal
+          isVisible={showModal}
+          onClose={() => setShowModal(false)}
+          selectedJobTitle={selectedJobTitle}
+        />
+      </div>
+      <div className="mblRspnsv">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          pagination={{clickable: true}}
+          navigation
+        >
+          {testomonial.slice(0, 4)?.map((items, index) => {
             return (
-              <div key={index} className="jobBox">
-                <div className="upperPart">
-                  <div className="jobTitle">
-                    <h3>{items?.title}</h3>
-                    <p>{items?.positionLevel}</p>
+              <SwiperSlide key={items.id}>
+                <div key={index} className="jobBox">
+                  <div className="upperPart">
+                    <div className="jobTitle">
+                      <h3>{items?.title}</h3>
+                      <p>{items?.positionLevel}</p>
+                    </div>
+                    <div className="description">
+                      <p>{items?.location}</p>
+                      <p>{items?.employmentType}</p>
+                      <p>Salary: {items?.salary}</p>
+                    </div>
                   </div>
-                  <div className="description">
-                    <p>{items?.location}</p>
-                    <p>{items?.employmentType}</p>
-                    <p>Salary: {items?.salary}</p>
+                  <div className="bottomPart">
+                    <p>{`from: ${items?.fromTime}, to: ${items?.toTime}`}</p>
+                    <div
+                      className="arrow"
+                      onClick={() => {
+                        setSelectedJobTitle(items?.title);
+                        setShowModal(true);
+                      }}
+                    >
+                      <FiArrowRight size={"25px"} />
+                    </div>
                   </div>
                 </div>
-                <div className="bottomPart">
-                  <p>{`from: ${items?.fromTime}, to: ${items?.toTime}`}</p>
-                  <div
-                    className="arrow"
-                    onClick={() => {
-                      setSelectedJobTitle(items?.title);
-                      setShowModal(true);
-                    }}
-                  >
-                    <FiArrowRight size={"25px"} />
-                  </div>
-                </div>
-              </div>
+              </SwiperSlide>
             );
-          }))
-        : (testomonial?.map((items, index) => {
-            return (
-              <div key={index} className="jobBox">
-                <div className="upperPart">
-                  <div className="jobTitle">
-                    <h3>{items?.title}</h3>
-                    <p>{items?.positionLevel}</p>
-                  </div>
-                  <div className="description">
-                    <p>{items?.location}</p>
-                    <p>{items?.employmentType}</p>
-                    <p>Salary: {items?.salary}</p>
-                  </div>
-                </div>
-                <div className="bottomPart">
-                  <p>{`from: ${items?.fromTime}, to: ${items?.toTime}`}</p>
-                  <div
-                    className="arrow"
-                    onClick={() => {
-                      setSelectedJobTitle(items?.title);
-                      setShowModal(true);
-                    }}
-                  >
-                    <FiArrowRight size={"25px"} />
-                  </div>
-                </div>
-              </div>
-            );
-          }))}
-      {url !== "/allVacancies" && (
-        <Link to={"/allVacancies"}>
-          <Container.SeeAll>
-            <Container.ArrowText>
-              See All
-              <br /> Vacancies
-            </Container.ArrowText>
-            <Container.ArrowWrap>
-              <Container.Arrow>
-                <FiArrowUpRight size={"25px"} />
-              </Container.Arrow>
-            </Container.ArrowWrap>
-          </Container.SeeAll>
-        </Link>
-      )}
-      <JobModal
-        isVisible={showModal}
-        onClose={() => setShowModal(false)}
-        selectedJobTitle={selectedJobTitle}
-      />
-    </div>
+          })}
+        </Swiper>
+      </div>
+    </>
   );
 }
 
 export default Job;
-//something

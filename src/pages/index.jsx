@@ -62,6 +62,7 @@ function Pages() {
     const elementRef = document.getElementById(id);
     if (elementRef) {
       const element = elementRef.getBoundingClientRect();
+      console.log(element)
       window.scrollTo({
         top: element.top + window.screen,
         left: element.left + window.screen,
