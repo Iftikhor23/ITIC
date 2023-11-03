@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 115vw;
+  width: 100vw;
   height: 100vh;
   padding: 100px 0px 32px 115px;
   position: relative;
@@ -28,12 +28,14 @@ export const Container = styled.div`
   }
   @media screen and (max-width: 840px) {
     height: 1024px;
+    width: 100vw;
     padding-top: 101px;
     padding-left: 40px;
   }
   @media screen and (max-width: 653px) {
     padding: 0;
     height: 855px;
+    width: 100vw;
   }
 `;
 

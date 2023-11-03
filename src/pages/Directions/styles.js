@@ -3,12 +3,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: #050919;
+  width: 240vw;
   height: 100vh;
   padding:  0 ;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 15px 0 15pz;
+  /* padding: 0 15px 0 15px; */
   gap: 292px;
 
   .textBox{

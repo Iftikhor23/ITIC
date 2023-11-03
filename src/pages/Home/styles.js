@@ -42,6 +42,7 @@ export const HeadingOneHome = styled.h1`
 
   @media only screen and (max-width: 840px) {
     font-size: 56px;
+    width: 608px;
   }
 
   @media only screen and (max-width: 653px) {

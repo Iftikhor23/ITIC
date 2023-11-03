@@ -5,16 +5,13 @@ import bgImg2 from "../../assets/images/aboutBgImg2.svg";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  width: 110vw;
+  width: 100vw;
   height: 100vh;
   background-color: #050919;
   background-image: url(${bgImg2}), url(${bgImg1});
   background-position: calc(50% - 324px) calc(50% - 73px), calc(50% - -678px) calc(50% - 32px);
   background-repeat: no-repeat;
   background-size: 1201px;
-  padding-right: 586px;
-  padding-left: 287px;
-  /* animation: moveBackground 10s linear infinite; */
 
   @media screen and (max-width: 840px) {
     height: 645px;
