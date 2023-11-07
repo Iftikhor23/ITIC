@@ -2,7 +2,7 @@ import { Container } from "./styles";
 import { useState } from "react";
 import closeIcon from "../../assets/icons/close.svg";
 import Input from "../InputComponent/Input";
-import Button from "../Reusable/ButtonComb/Button";
+import Button from "../Reusable/ButtonCombModal/Button";
 import request from "../../services";
 import Toast from "../Reusable/Toast";
 import Swal from "sweetalert2";

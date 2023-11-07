@@ -104,6 +104,7 @@ Container.Wrapper = styled.div`
   
 
   @media screen and (max-width: 840px) {
+    align-items: flex-start;
     flex-direction: column;
     gap: 0px;
   }

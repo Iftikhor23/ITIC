@@ -16,6 +16,32 @@ export const Container = styled.div`
   overflow: hidden;
   gap: 400px;
 
+  .wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 400px;
+
+    @media screen and (max-width: 840px) {
+      height: 2040px;
+      width: fit-content;
+      flex-direction: column;
+      gap: 51px;
+      align-items: flex-start;
+      padding: 0;
+      flex-wrap: nowrap;
+    }
+
+    @media screen and (max-width: 653px) {
+      width: 100vw;
+      align-items: center;
+      height: 1230px;
+    }
+  }
+
   .textWrapper {
     display: flex;
     flex-direction: column;
@@ -24,12 +50,14 @@ export const Container = styled.div`
     gap: 13px;
     @media screen and (max-width: 840px) {
       gap: 5px;
+      padding-left: 20px;
     }
 
     @media screen and (max-width: 653px) {
       align-items: center;
       text-align: center;
       margin: 0;
+      padding: 0;
     }
   }
 
@@ -44,7 +72,7 @@ export const Container = styled.div`
     }
   }
 
-  .mobile{
+  .mobile {
     margin-top: -70px;
     display: none;
     @media screen and (max-width: 653px) {
@@ -58,7 +86,7 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 51px;
     align-items: center;
-    padding:0;
+    padding: 0;
     flex-wrap: nowrap;
 
     .respDesk {
@@ -90,7 +118,6 @@ Container.CasesWrapper = styled.div`
     width: fit-content;
     gap: 33px;
     overflow: hidden;
-  overflow-y: hidden;
-
+    overflow-y: hidden;
   }
 `;

@@ -20,6 +20,16 @@ Container.Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 99;
+
+  @media screen and (max-width: 840px) {
+    height: 695px;
+    width: 728px;
+  }
+
+  @media screen and (max-width: 653px) {
+    height: 1027px;
+    width: 355px;
+  }
 `;
 
 Container.Header = styled.div`
@@ -27,6 +37,10 @@ Container.Header = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 48px 83px 0px 302px;
+
+  @media screen and (max-width: 840px) {
+    padding: 48px 45px 0px 38px;
+  }
 `;
 
 Container.Text = styled.h1`
@@ -42,6 +56,10 @@ Container.Form = styled.div`
   flex-direction: column;
   padding: 46px 157px 201px 157px;
   gap: 24px;
+
+  @media screen and (max-width: 840px) {
+    padding: 44px 38px 55px 38px;
+  }
 `;
 
 Container.Group = styled.div`

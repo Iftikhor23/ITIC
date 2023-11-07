@@ -1,18 +1,23 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
   background-color: #050919;
   width: 240vw;
   height: 100vh;
-  padding:  0 ;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 0 15px 0 15px; */
   gap: 292px;
 
-  .textBox{
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 292px;
+  }
+
+  .textBox {
     width: 100%;
     max-width: 528px;
   }
@@ -22,7 +27,12 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 80px;
-    padding: 40px;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 80px;
+    }
   }
 
   @media screen and (max-width: 653px) {

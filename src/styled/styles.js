@@ -5,7 +5,7 @@ export const HeadingOne = styled.h1`
   font-weight: 500;
   margin: 5px;
   width: 100%;
-  max-width: ${({width}) => (width ? width : '100%')};
+  max-width: ${({ width }) => (width ? width : "100%")};
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
   -webkit-background-clip: text;
@@ -14,11 +14,11 @@ export const HeadingOne = styled.h1`
   -webkit-text-fill-color: transparent;
   background-size: 500% auto;
   animation: textShine 2s linear infinite;
-  span{
+  span {
     display: none;
     @media only screen and (max-width: 653px) {
-    display: block;
-  }
+      display: block;
+    }
   }
 
   @keyframes textShine {
@@ -40,10 +40,6 @@ export const HeadingOne = styled.h1`
     text-align: center;
   }
 `;
-
-
-
-
 
 export const Paragraph = styled.p`
   font-size: 16px;
@@ -68,6 +64,12 @@ export const Wrapper = styled.div`
   height: 100vh;
   overflow: hidden;
   gap: 20px;
+  @media screen and (max-width: 840px) {
+    display: flex;
+    height: fit-content;
+    width: 100vw;
+    gap: 0;
+  }
 `;
 
 export const ScrollAnimationOne = styled.div`
@@ -87,14 +89,16 @@ export const ScrollAnimationOne = styled.div`
   }
 
   @media screen and (max-width: 840px) {
+    animation: scroll 55s linear infinite;
     @keyframes scroll {
-    0% {
-      transform: translateX(0%);
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
+    flex-direction: row;
   }
 `;
 
@@ -114,13 +118,15 @@ export const ScrollAnimationTwo = styled.div`
   }
 
   @media screen and (max-width: 840px) {
-    @keyframes scroll {
-    0% {
-      transform: translateX(-100%);
+    animation: scroll2 55s linear infinite;
+    @keyframes scroll2 {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
     }
-    100% {
-      transform: translateX(0%);
-    }
-  }
+    flex-direction: row;
   }
 `;
