@@ -49,7 +49,6 @@ function Pages() {
       return () => {
         pinX.kill();
         window.location.reload();
-        console.log("ishladi ");
       };
     } else {
       ScrollTrigger.getAll().forEach((trigger) => {
@@ -64,10 +63,7 @@ function Pages() {
       const element = elementRef.getBoundingClientRect();
       console.log(element)
       window.scrollTo({
-        top: element.top + window.screen,
-        left: element.left + window.screen,
-        rigth: element.right + window.screen,
-        bottom: element.right + window.screen,
+        top: element.x + window.pageYOffset,
         behavior: "smooth",
       });
     }

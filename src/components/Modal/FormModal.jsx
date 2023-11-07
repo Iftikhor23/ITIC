@@ -8,8 +8,7 @@ import Toast from "../Reusable/Toast";
 import Swal from "sweetalert2";
 
 function FormModal({ isVisible, onClose }) {
-
-  const [checknumber, setCheckNumber]=useState(false)
+  const [checknumber, setCheckNumber] = useState(false);
   const [getData, setGetData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -21,9 +20,20 @@ function FormModal({ isVisible, onClose }) {
   const handleClose = (e) => {
     if (e.target.id === "wrapper") onClose();
   };
+
+  // ! POST TO SERVER DATA FUNCTION
   const saveData = async () => {
     if (getData?.fullName && getData?.phoneNumber && getData?.email) {
       try {
+        const isValidEmail = validateEmail(getData.email);
+        if (!isValidEmail) {
+          Swal.fire({
+            icon: "error",
+            title: "Noto'g'ri email formati",
+            text: "Noto'g'ri email formati kiritildi",
+          });
+          return;
+        }
         const res = await request.post(`public/call-request`, {
           data: {
             fullName: getData?.fullName,
@@ -52,6 +62,11 @@ function FormModal({ isVisible, onClose }) {
     } else {
       Swal.fire("Fill in all the data fields");
     }
+  };
+  //! CHECK EMAIL FUNCTION
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
   };
 
   return (
@@ -85,12 +100,12 @@ function FormModal({ isVisible, onClose }) {
               type={"number"}
               prefix={"+998"}
               onKeyPress={(event) => {
-                if (event.target.value.length === 7) {
+                if (event.target.value.length === 9) {
                   event.preventDefault();
                 }
               }}
               onChange={(event) => {
-                if (event.target.value.length <= 7) {
+                if (event.target.value.length <= 9) {
                   setGetData({ ...getData, phoneNumber: event.target.value });
                 }
               }}

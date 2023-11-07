@@ -19,10 +19,17 @@ function Input({
     if (typeof onKeyPress === "function") {
       onKeyPress(event);
     }
-    if (event.target.value.length === 7) {
-      event.preventDefault();
+    
+    if (type === "number") {
+      if (
+        (event.which < 48 || event.which > 57) ||
+        (event.target.value.length >= 9)
+      ) {
+        event.preventDefault(); // Blovk qilish
+      }
     }
   };
+  
 
 
   return (
