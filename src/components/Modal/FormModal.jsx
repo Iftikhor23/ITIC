@@ -24,6 +24,15 @@ function FormModal({ isVisible, onClose }) {
   const saveData = async () => {
     if (getData?.fullName && getData?.phoneNumber && getData?.email) {
       try {
+        const isValidEmail = validateEmail(getData.email);
+        if (!isValidEmail) {
+          Swal.fire({
+            icon: "error",
+            title: "Noto'g'ri email formati",
+            text: "Noto'g'ri email formati kiritildi",
+          });
+          return;
+        }
         const res = await request.post(`public/call-request`, {
           data: {
             fullName: getData?.fullName,
@@ -54,6 +63,11 @@ function FormModal({ isVisible, onClose }) {
     }
   };
 
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+  
   return (
     <Container onClick={handleClose} id="wrapper">
       <Container.Wrapper>
@@ -85,12 +99,12 @@ function FormModal({ isVisible, onClose }) {
               type={"number"}
               prefix={"+998"}
               onKeyPress={(event) => {
-                if (event.target.value.length === 7) {
+                if (event.target.value.length === 9) {
                   event.preventDefault();
                 }
               }}
               onChange={(event) => {
-                if (event.target.value.length <= 7) {
+                if (event.target.value.length <= 9) {
                   setGetData({ ...getData, phoneNumber: event.target.value });
                 }
               }}

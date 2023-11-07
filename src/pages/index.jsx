@@ -28,15 +28,17 @@ function Pages() {
     const sectionElement = sectionRef.current;
 
     if (triggerElement?.offsetWidth >= 840) {
+      const scrollWidth = sectionElement.offsetWidth - window.innerWidth;
+      const duration = scrollWidth / 1000; //
       const pinX = gsap.fromTo(
         sectionElement,
         {
           x: 0,
         },
         {
-          x: "-1400vw",
+          x: -scrollWidth,
           ease: "none",
-          duration: 1,
+          duration: duration,
           scrollTrigger: {
             trigger: triggerElement,
             start: "top top",
@@ -49,7 +51,6 @@ function Pages() {
       return () => {
         pinX.kill();
         window.location.reload();
-        console.log("ishladi ");
       };
     } else {
       ScrollTrigger.getAll().forEach((trigger) => {
@@ -58,15 +59,13 @@ function Pages() {
     }
   }, [triggerRef.current?.offsetWidth >= 840]);
 
+
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);
     if (elementRef) {
       const element = elementRef.getBoundingClientRect();
       window.scrollTo({
-        top: element.top + window.screen,
-        left: element.left + window.screen,
-        rigth: element.right + window.screen,
-        bottom: element.right + window.screen,
+        top: element.x + window.pageYOffset,
         behavior: "smooth",
       });
     }

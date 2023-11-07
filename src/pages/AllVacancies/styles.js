@@ -8,6 +8,7 @@ export const Container = styled.div`
     height: 100vh;
     background-color: #fff;
     gap: 50px;
+    position: relative;
 `;
 
 Container.NoAvaivable = styled.div`

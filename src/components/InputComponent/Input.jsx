@@ -14,16 +14,14 @@ function Input({
   max,
   onKeyPress
 }) {
-
   const handleKeyPress = (event) => {
     if (typeof onKeyPress === "function") {
       onKeyPress(event);
     }
-    if (event.target.value.length === 7) {
+    if (type === "number" && event.target.value.length === 9) {
       event.preventDefault();
     }
   };
-
 
   return (
     <Container>

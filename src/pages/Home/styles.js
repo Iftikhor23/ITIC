@@ -71,7 +71,7 @@ Container.TeamBox = styled.div`
 Container.MidWrap = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100%;
 
   .chart {
