@@ -7,7 +7,6 @@ import Job from "../../components/Jobs/Job";
 import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
 import { Container } from "./styles";
 import logo from "../../assets/images/itLogo.svg";
-import SidebarButton from "../../components/SidebarButton/sidebarButton";
 import { Link } from "react-router-dom";
 
 function AllVacancies() {
@@ -54,11 +53,10 @@ function AllVacancies() {
   return (
     <div className="scrollSectionOuter">
       <div ref={triggerRef}>
-      <Link to='/'>
-      <img className="logo" src={logo} alt="company logo" />
-      </Link>
+        <Link to="/">
+          <img className="logo" src={logo} alt="company logo" />
+        </Link>
         <Container ref={sectionRef}>
-          <SidebarButton/>
           <TextWrap>
             <HeadingOne>
               Careers at IT
@@ -87,6 +85,39 @@ function AllVacancies() {
                 onClick={handleOpenModal}
               />
             </Container.NoAvaivable>
+          </div>
+          <div class="boxes">
+            <ul className="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
           </div>
         </Container>
       </div>
