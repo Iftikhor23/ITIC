@@ -24,6 +24,11 @@ Container.Wrapper = styled.div`
     height: 615px;
     width: 727px;
   }
+
+  @media screen and (max-width: 653px) {
+    height: 837px;
+    width: 355px;
+  }
 `;
 
 Container.Header = styled.div`
@@ -33,8 +38,13 @@ Container.Header = styled.div`
   padding: 48px 83px 0px 302px;
 
   @media screen and (max-width: 840px) {
-  padding: 48px 83px 0px 38px;
-    
+    padding: 48px 83px 0px 38px;
+  }
+
+  @media screen and (max-width: 653px) {
+    img{
+      width: 19px;
+    }
   }
 `;
 
@@ -44,6 +54,10 @@ Container.Text = styled.h1`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media screen and (max-width: 653px) {
+    font-size: 24px;
+  }
 `;
 
 Container.Form = styled.div`
@@ -53,12 +67,15 @@ Container.Form = styled.div`
   gap: 24px;
 
   @media screen and (max-width: 840px) {
-  padding: 46px 157px 201px 38px;
-    
+    padding: 46px 157px 201px 38px;
   }
 `;
 
 Container.Group = styled.div`
   display: flex;
   gap: 24px;
+
+  @media screen and (max-width: 653px) {
+    flex-direction: column;
+  }
 `;

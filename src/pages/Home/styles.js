@@ -30,6 +30,13 @@ export const HeadingOneHome = styled.h1`
   background-size: 500% auto;
   animation: textShine 2s linear infinite;
 
+  span {
+    display: none;
+    @media screen and (max-width: 653px) {
+      display: inline-block;
+    }
+  }
+
   @keyframes textShine {
     0% {
       background-position: 0 1600px;
@@ -39,7 +46,6 @@ export const HeadingOneHome = styled.h1`
     }
   }
 
-
   @media only screen and (max-width: 840px) {
     font-size: 56px;
     width: 608px;
@@ -48,6 +54,7 @@ export const HeadingOneHome = styled.h1`
   @media only screen and (max-width: 653px) {
     width: 288px;
     font-size: 42px;
+    text-align: center;
   }
 `;
 
@@ -68,7 +75,7 @@ export const Paragraph = styled.p`
 `;
 
 export const Your = styled.h1`
- font-size: 72px;
+  font-size: 72px;
   font-weight: 500;
   margin: 5px;
   background: -webkit-linear-gradient(left, black, #fff, black);
@@ -88,7 +95,6 @@ export const Your = styled.h1`
       background-position: 1600px 0;
     }
   }
-
 
   @media only screen and (max-width: 840px) {
     font-size: 56px;
@@ -111,7 +117,7 @@ Container.TeamBox = styled.div`
     position: absolute;
     border: 5px solid transparent;
 
-    @media screen and (max-width: 840px) {
+    @media screen and (max-width: 653px) {
       width: 56px;
       height: 56px;
     }
@@ -127,7 +133,7 @@ Container.TeamBox = styled.div`
     margin-left: 240px;
     margin-top: 33px;
 
-    @media screen and (max-width: 840px) {
+    @media screen and (max-width: 653px) {
       width: 56px;
       height: 56px;
     }
@@ -191,7 +197,7 @@ Container.MidWrap = styled.div`
       @media screen and (max-width: 840px) {
         left: -153px;
       }
-      @media screen and (max-width: 653px){
+      @media screen and (max-width: 653px) {
         width: 132px;
         left: 222px;
       }

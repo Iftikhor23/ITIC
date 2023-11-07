@@ -27,7 +27,8 @@ Container.Wrapper = styled.div`
 
   @media screen and (max-width: 840px) {
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
+    align-items: flex-start;
     .text {
     }
   }
