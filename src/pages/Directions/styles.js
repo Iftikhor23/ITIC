@@ -1,27 +1,42 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
   background-color: #050919;
+  width: 240vw;
   height: 100vh;
-  padding:  0 ;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 15px 0 15pz;
   gap: 292px;
 
-  .textBox{
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 292px;
+  }
+
+  .textBox {
     width: 100%;
     max-width: 528px;
   }
   @media screen and (max-width: 840px) {
     height: 2530px;
-    width: 98%;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
     gap: 80px;
-    padding: 40px;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 80px;
+    }
+  }
+
+  @media screen and (max-width: 653px) {
+    height: 1830px;
   }
 `;
 

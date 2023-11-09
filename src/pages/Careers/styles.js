@@ -10,12 +10,11 @@ export const Container = styled.div`
   background: rgba(0, 205, 194, 0.7);
 
   @media screen and (max-width: 840px) {
-    width: 98%;
+    width: 100vw;
     height: 1730px;
   }
 
   @media screen and (max-width: 653px) {
-    width: 50%;
     height:880px;
   }
   .circles{
@@ -37,6 +36,7 @@ export const Container = styled.div`
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
     bottom: -150px;
+    z-index: -1;
     
 }
 
@@ -134,7 +134,7 @@ export const Container = styled.div`
     animation-delay: 0s;
     animation-duration: 22s;
 }.circles li:nth-child(14){
-    left: 75%;
+    left: 15%;
     width: 150px;
     height: 150px;
     animation-delay: 0s;
@@ -152,13 +152,13 @@ export const Container = styled.div`
     animation-delay: 0s;
     animation-duration: 15s;
 }.circles li:nth-child(17){
-    left: 85%;
+    left: 22%;
     width: 100px;
     height: 100px;
     animation-delay: 0s;
     animation-duration: 28s;
 }.circles li:nth-child(18){
-    left: 80%;
+    left: 120%;
     width: 200px;
     height: 200px;
     animation-delay: 0s;
@@ -186,11 +186,12 @@ export const Container = styled.div`
 
 Container.Wrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 50px;
+  justify-content: center;
 
   @media screen and (max-width: 840px) {
     flex-direction: column;
+    width: fit-content;
   }
 `;
 
@@ -217,6 +218,11 @@ Container.SeeAll = styled.div`
   padding: 49px 32px 35px 37px;
   background-color: #00cdc2;
   cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+  }
 `;
 
 Container.ArrowWrap = styled.div`

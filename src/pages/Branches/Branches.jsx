@@ -28,18 +28,25 @@ function Branches() {
             width={"1304px"}
             height={"643px"}
           />
-          <Fade top delay={1000}>
-            <img className="soonUsa" src={soon} alt="location" />
-          </Fade>
-          <Fade top delay={1500}>
-            <img className="soonBra" src={soon} alt="location" />
-          </Fade>
-          <Fade top delay={100}>
-            <img className="uzbLoc" src={uzbekistan} alt="location" />
-          </Fade>
-          <Fade top delay={550}>
-            <img className="sinLoc" src={singapore} alt="location" />
-          </Fade>
+          <img className="soonUsa" src={soon} alt="location" />
+          <p className="positiontext1">
+            Our branch in USA NewYork will be opened in the near future
+          </p>
+
+          <img className="soonBra" src={soon} alt="location" />
+          <p className="positiontext2">
+            Our branch in USA NewYork will be opened in the near future
+          </p>
+
+          <img className="uzbLoc" src={uzbekistan} alt="location" />
+          <p className="positiontext">
+            Our branch in USA NewYork will be opened in the near future
+          </p>
+
+          <img className="sinLoc" src={singapore} alt="location" />
+          <p className="positiontext">
+            Our branch in USA NewYork will be opened in the near future
+          </p>
         </div>
       </Container.Wrapper>
     </Container>

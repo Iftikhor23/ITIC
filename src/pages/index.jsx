@@ -64,6 +64,7 @@ function Pages() {
     const elementRef = document.getElementById(id);
     if (elementRef) {
       const element = elementRef.getBoundingClientRect();
+      console.log(element)
       window.scrollTo({
         top: element.x + window.pageYOffset,
         behavior: "smooth",
@@ -80,7 +81,7 @@ function Pages() {
       <div className="footer">
         <Footer />
       </div>
-      <div style={{ position: "fixed", zIndex: "19" }}>
+      <div className="sideBtn" style={{ position: "fixed", zIndex: "19" }}>
         <SidebarButton scrollToElement={scrollToElement } />
       </div>
       <div className="scrollSectionOuter">

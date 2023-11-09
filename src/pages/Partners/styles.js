@@ -1,33 +1,48 @@
 import styled from "styled-components";
+import parnertBg from '../../assets/images/parnerBg.svg'
 
 export const Container = styled.div`
-    display: flex;
-    gap: 97px;
-    width: 110vw;
-    height: 100vh;
-    background-color: #fff;
-    align-items: center;
-    justify-content: center;
-    margin-right: -1px;
-    .partners-img {
-        width: 243px;
-        height: 80px;
-        object-fit: cover;
-        @media screen and (max-width: 840px) {
+  display: flex;
+  gap: 97px;
+  width: 110vw;
+  height: 100vh;
+  background-image: url(${parnertBg}) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  margin-right: -1px;
+  .partners-img {
+    width: 243px;
+    height: 80px;
+    object-fit: cover;
+    @media screen and (max-width: 840px) {
       width: 128px;
       height: 42px;
     }
-    }
+  }
 
-    @media screen and (max-width: 840px) {
-      flex-direction: column;
-      width: 100vw;
-      height: 580px;
-    }
+  @media screen and (max-width: 840px) {
+    flex-direction: column;
+    width: 100vw;
+    height: 580px;
+  }
 
-    @media screen and (max-width: 653px) {
-      height: 660px;
-    }
+  @media screen and (max-width: 653px) {
+    height: 660px;
+  }
+`;
+
+Container.Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 97px;
+  @media screen and (max-width: 840px) {
+    width: fit-content;
+    flex-direction: column;
+    gap: 43px;
+  }
 `;
 
 Container.TextWrap = styled.div`

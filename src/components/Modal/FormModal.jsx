@@ -2,14 +2,13 @@ import { Container } from "./styles";
 import { useState } from "react";
 import closeIcon from "../../assets/icons/close.svg";
 import Input from "../InputComponent/Input";
-import Button from "../Reusable/ButtonComb/Button";
+import Button from "../Reusable/ButtonCombModal/Button";
 import request from "../../services";
 import Toast from "../Reusable/Toast";
 import Swal from "sweetalert2";
 
 function FormModal({ isVisible, onClose }) {
-
-  const [checknumber, setCheckNumber]=useState(false)
+  const [checknumber, setCheckNumber] = useState(false);
   const [getData, setGetData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -21,6 +20,8 @@ function FormModal({ isVisible, onClose }) {
   const handleClose = (e) => {
     if (e.target.id === "wrapper") onClose();
   };
+
+  // ! POST TO SERVER DATA FUNCTION
   const saveData = async () => {
     if (getData?.fullName && getData?.phoneNumber && getData?.email) {
       try {
@@ -62,6 +63,8 @@ function FormModal({ isVisible, onClose }) {
       Swal.fire("Fill in all the data fields");
     }
   };
+  //! CHECK EMAIL FUNCTION
+ 
 
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

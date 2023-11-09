@@ -6,9 +6,6 @@ export const Container = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  /* background-color: red;
-    opacity: 0.25;
-    backdrop-blur: blur(4px); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,6 +19,16 @@ Container.Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 99;
+
+  @media screen and (max-width: 840px) {
+    height: 615px;
+    width: 727px;
+  }
+
+  @media screen and (max-width: 653px) {
+    height: 837px;
+    width: 355px;
+  }
 `;
 
 Container.Header = styled.div`
@@ -29,6 +36,16 @@ Container.Header = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 48px 83px 0px 302px;
+
+  @media screen and (max-width: 840px) {
+    padding: 48px 83px 0px 38px;
+  }
+
+  @media screen and (max-width: 653px) {
+    img{
+      width: 19px;
+    }
+  }
 `;
 
 Container.Text = styled.h1`
@@ -37,6 +54,10 @@ Container.Text = styled.h1`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media screen and (max-width: 653px) {
+    font-size: 24px;
+  }
 `;
 
 Container.Form = styled.div`
@@ -44,10 +65,17 @@ Container.Form = styled.div`
   flex-direction: column;
   padding: 46px 157px 201px 157px;
   gap: 24px;
+
+  @media screen and (max-width: 840px) {
+    padding: 46px 157px 201px 38px;
+  }
 `;
 
 Container.Group = styled.div`
   display: flex;
   gap: 24px;
-`;
 
+  @media screen and (max-width: 653px) {
+    flex-direction: column;
+  }
+`;

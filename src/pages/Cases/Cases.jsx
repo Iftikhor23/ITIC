@@ -26,40 +26,43 @@ function Cases() {
   }, []);
 
   return (
-    <Container id="case-studies" >
-      <div className="textWrapper">
-      <HeadingOne max-width={'800px'}>Case Studies</HeadingOne>
-        <Paragraph>
-          Become a member of a freelancer's poo l and work on creative projects
-        </Paragraph>
+    <Container id="case-studies">
+      <div className="wrapper">
+        <div className="textWrapper">
+          <HeadingOne max-width={"800px"}>Case Studies</HeadingOne>
+          <Paragraph>
+            Become a member of a freelancer's poo l and work on creative
+            projects
+          </Paragraph>
+          <Link to={"/allCases"}>
+            <div className="respDesk">
+              <Button title="See all" iconSize="30px" btnwidth="159px" />
+            </div>
+          </Link>
+        </div>
+        <Container.CasesWrapper>
+          {cases.slice(0, 3)?.map((items, index) => (
+            <CaseComp
+              key={index}
+              tag={items?.tagsList}
+              imageSrc={items?.casePhotoUrl}
+              title={items?.client}
+              paragraph={items?.projectName}
+              to={items?.link}
+            />
+          ))}
+        </Container.CasesWrapper>
         <Link to={"/allCases"}>
-          <div className="respDesk">
+          <div className="response">
             <Button title="See all" iconSize="30px" btnwidth="159px" />
           </div>
         </Link>
+        <Link to={"/allCases"}>
+          <div className="mobile">
+            <Button title="See all" iconSize="24px" btnwidth="159px" />
+          </div>
+        </Link>
       </div>
-      <Container.CasesWrapper>
-        {cases.slice(0, 3)?.map((items, index) => (
-          <CaseComp
-          key={index}
-            tag={items?.tagsList}
-            imageSrc={items?.casePhotoUrl}
-            title={items?.client}
-            paragraph={items?.projectName}
-            to={items?.link}
-          />
-        ))}
-      </Container.CasesWrapper>
-      <Link to={"/allCases"}>
-        <div className="response">
-          <Button title="See all" iconSize="30px" btnwidth="159px" />
-        </div>
-      </Link>
-      <Link to={"/allCases"}>
-        <div className="mobile">
-          <Button title="See all" iconSize="24px" btnwidth="159px" />
-        </div>
-      </Link>
     </Container>
   );
 }

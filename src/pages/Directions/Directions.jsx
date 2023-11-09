@@ -8,6 +8,7 @@ import { Container, HeadingDirection } from "./styles";
 function Directions() {
   return (
     <Container id="direction">
+      <div className="wrapper">
         <div className="textBox">
           <HeadingDirection>Main Directions</HeadingDirection>
           <Paragraph>
@@ -40,6 +41,7 @@ function Directions() {
             style={{ transform: "rotate(-5deg)" }}
           />
         </Container.Categories>
+      </div>
     </Container>
   );
 }

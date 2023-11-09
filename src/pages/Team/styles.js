@@ -10,7 +10,7 @@ export const Container = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 840px) {
-    width: 100%;
+    width: 100vw;
     height: 2100px;
     justify-content: center;
   }
@@ -27,7 +27,8 @@ Container.Wrapper = styled.div`
 
   @media screen and (max-width: 840px) {
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
+    align-items: flex-start;
     .text {
     }
   }
