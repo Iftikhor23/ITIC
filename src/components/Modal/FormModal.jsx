@@ -64,11 +64,13 @@ function FormModal({ isVisible, onClose }) {
     }
   };
   //! CHECK EMAIL FUNCTION
+ 
+
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
-
+  
   return (
     <Container onClick={handleClose} id="wrapper">
       <Container.Wrapper>

@@ -40,12 +40,35 @@ function Careers() {
             Careers at
             <br /> IT investments Center
           </HeadingOne>
-          <Paragraph color="#121212">
+          <Paragraph color="#fff" >
             Become a member of a freelancer's pool and work on creative projects
           </Paragraph>
         </Container.Text>
-        <Job />
+        <Job/>
       </Container.Wrapper>
+      <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
     </Container>
   );
 }

@@ -29,12 +29,24 @@ function Branches() {
             height={"643px"}
           />
           <img className="soonUsa" src={soon} alt="location" />
+          <p className="positiontext1">
+            Our branch in USA NewYork will be opened in the near future
+          </p>
 
           <img className="soonBra" src={soon} alt="location" />
+          <p className="positiontext2">
+            Our branch in USA NewYork will be opened in the near future
+          </p>
 
           <img className="uzbLoc" src={uzbekistan} alt="location" />
+          <p className="positiontext">
+            Our branch in USA NewYork will be opened in the near future
+          </p>
 
           <img className="sinLoc" src={singapore} alt="location" />
+          <p className="positiontext">
+            Our branch in USA NewYork will be opened in the near future
+          </p>
         </div>
       </Container.Wrapper>
     </Container>

@@ -25,7 +25,7 @@ function JobModal({ isVisible, onClose }) {
     if (e.target.id === "container" || e.target.id === "wrapper") onClose();
   };
 
-  const  uploadCV = async (e) => {
+  const uploadCV = async (e) => {
     const file = e.target.files[0];
     try {
       const formData = new FormData();
@@ -52,6 +52,15 @@ function JobModal({ isVisible, onClose }) {
   const saveData = async () => {
     if (getData?.fullName && getData?.phoneNumber && getData?.email) {
       try {
+        const isValidEmail = validateEmail(getData.email);
+        if (!isValidEmail) {
+          Swal.fire({
+            icon: "error",
+            title: "Noto'g'ri email formati",
+            text: "Noto'g'ri email formati kiritildi",
+          });
+          return;
+        }
         const res = await request.post(`public/resume`, {
           data: {
             fullName: getData.fullName,
@@ -88,8 +97,11 @@ function JobModal({ isVisible, onClose }) {
     }
   };
 
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
 
-  
   return (
     <Container onClick={handleClose} id="container">
       <Container.Wrapper>
@@ -112,18 +124,18 @@ function JobModal({ isVisible, onClose }) {
                 setGetData({ ...getData, fullName: e.target.value })
               }
             />
-             <Input
+            <Input
               label={"Phone Number"}
               placeholder={"Enter Phone Number"}
               type={"number"}
               prefix={"+998"}
               onKeyPress={(event) => {
-                if (event.target.value.length === 7) {
+                if (event.target.value.length === 9) {
                   event.preventDefault();
                 }
               }}
               onChange={(event) => {
-                if (event.target.value.length <= 7) {
+                if (event.target.value.length <= 9) {
                   setGetData({ ...getData, phoneNumber: event.target.value });
                 }
               }}

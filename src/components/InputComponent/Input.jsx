@@ -16,23 +16,15 @@ function Input({
   resHeight,
   conHeight,
 }) {
-
   const handleKeyPress = (event) => {
     if (typeof onKeyPress === "function") {
       onKeyPress(event);
     }
-    
-    if (type === "number") {
-      if (
-        (event.which < 48 || event.which > 57) ||
-        (event.target.value.length >= 9)
-      ) {
-        event.preventDefault(); // Blovk qilish
-      }
+    if (type === "number" && event.target.value.length === 9) {
+      event.preventDefault();
     }
   };
   
-
 
   return (
     <Container conHeight={conHeight}>

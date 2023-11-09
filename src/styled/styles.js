@@ -13,7 +13,7 @@ export const HeadingOne = styled.h1`
   /* text-fill-color: transparent; */
   -webkit-text-fill-color: transparent;
   background-size: 500% auto;
-  animation: textShine 2s linear infinite;
+  animation: textShine 2s linear infinite alternate;
   span {
     display: none;
     @media only screen and (max-width: 653px) {
@@ -42,10 +42,10 @@ export const HeadingOne = styled.h1`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
-  width: ${({ width }) => (width ? width : "376px")};
+  width: ${({ width }) => (width ? width : "476px")};
 
   @media only screen and (max-width: 768px) {
     width: 100%;

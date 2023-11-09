@@ -48,13 +48,53 @@ Container.Wrapper = styled.div`
         top: 118px;
       }
     }
+    .soonUsa:hover + .positiontext1 {
+      display: block;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+
+    .positiontext1 {
+      position: absolute;
+      opacity: 0;
+      left: 250px;
+      top: 111px;
+      padding: 8px 10px;
+      width: 244px;
+      border-radius: 9px;
+      width: 212px;
+      color: #fff;
+      background-image: linear-gradient(#00cdc2, #00cdc200, #00cdc2);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      animation: jumping 2s linear infinite alternate;
+    }
+    .soonBra:hover + .positiontext2 {
+      display: block;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+
+    .positiontext2 {
+      position: absolute;
+      left: 422px;
+      top: 349px;
+      padding: 8px 10px;
+      width: 244px;
+      border-radius: 9px;
+      width: 212px;
+      color: #fff;
+      background-image: linear-gradient(#00cdc2, #00cdc200, #00cdc2);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      animation: jumping 2s linear infinite alternate;
+    }
 
     .soonBra {
       position: absolute;
       left: 421px;
       bottom: 184px;
       animation: jumping 2s linear infinite alternate;
-
 
       @media screen and (max-width: 840px) {
         left: 233px;
@@ -72,7 +112,6 @@ Container.Wrapper = styled.div`
       right: 332px;
       animation: jumping 2s linear infinite alternate;
 
-
       @media screen and (max-width: 840px) {
         right: 128px;
         top: 212px;
@@ -89,7 +128,6 @@ Container.Wrapper = styled.div`
       right: 200px;
       animation: jumping 2s linear infinite alternate;
 
-
       @media screen and (max-width: 840px) {
         top: 272px;
         right: 55px;
@@ -101,7 +139,6 @@ Container.Wrapper = styled.div`
       }
     }
   }
-  
 
   @media screen and (max-width: 840px) {
     align-items: flex-start;
@@ -120,14 +157,14 @@ Container.Wrapper = styled.div`
     }
   }
 
-  /* @keyframes jumping {
+   @keyframes jumping {
     from {
       transform: translateY(20px);
     }
     to {
       transform: translateY(0px);
     }
-  } */
+  } 
 `;
 
 Container.Text = styled.div`
@@ -139,5 +176,3 @@ Container.Text = styled.div`
     align-items: center;
   }
 `;
-
-

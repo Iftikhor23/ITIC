@@ -44,6 +44,7 @@ const Partners = () => {
             );
           })}
         </Container.ImgWrap>
+        
       </Container.Wrapper>
     </Container>
   );

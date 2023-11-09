@@ -12,7 +12,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
   const [getData, setGetData] = useState({
     fullName: "",
     linkedinLink: "",
-    phoneNumber: '+998',
+    phoneNumber: "+998",
     email: "",
     position: "",
     comment: "",
@@ -48,9 +48,20 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
       console.error("Yuklashda xatolik yuz berdi:", error);
     }
   };
+
   const saveData = async () => {
     if (getData?.fullName && getData?.phoneNumber && getData?.email) {
       try {
+        const isValidEmail = validateEmail(getData.email);
+        if (!isValidEmail) {
+          Swal.fire({
+            icon: "error",
+            title: "Noto'g'ri email formati",
+            text: "Noto'g'ri email formati kiritildi",
+          });
+          return;
+        }
+
         const res = await request.post(`public/resume`, {
           data: {
             fullName: getData.fullName,
@@ -72,7 +83,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
         setGetData({
           fullName: "",
           linkedinLink: "",
-          phoneNumber: '+998',
+          phoneNumber: "+998",
           email: "",
           position: "",
           comment: "",
@@ -89,8 +100,12 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
       Swal.fire("Fill in all the data fields");
     }
   };
-  
- 
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
   return (
     <Container onClick={handleClose} id="container">
       <Container.Wrapper>

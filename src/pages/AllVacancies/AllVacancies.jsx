@@ -90,7 +90,7 @@ function AllVacancies() {
                 fontSize="16px"
                 btnwidth="170px"
                 btnheight="45px"
-                aWidth="45px"
+                aWidth="45px" 
                 aHeight="45px"
                 iconSize="24px"
                 onClick={handleOpenModal}

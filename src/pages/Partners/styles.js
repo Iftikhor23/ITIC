@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import parnertBg from '../../assets/images/parnerBg.svg'
 
 export const Container = styled.div`
   display: flex;
   gap: 97px;
   width: 110vw;
   height: 100vh;
+  background-image: url(${parnertBg}) ;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #fff;
   align-items: center;
   justify-content: center;

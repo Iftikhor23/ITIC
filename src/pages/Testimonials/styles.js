@@ -1,14 +1,17 @@
 import styled from "styled-components";
+import testiBack2 from "../../assets/images/liquid-cheese.svg";
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(${testiBack2});
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #fff;
   width: 100vw;
   height: 100vh;
   gap: 201px;
-  margin-right: -1px;
 
   @media screen and (max-width: 840px) {
     width: 100vw;
@@ -89,7 +92,6 @@ Container.TestiBoxTwo = styled.div`
 `;
 
 Container.Carousel = styled.div`
-  background: radial-gradient(circle, rgba(109, 160, 157, 1) 10%, #fff 80%);
   display: flex;
   gap: 5.5px;
   @media screen and (max-width: 840px) {
