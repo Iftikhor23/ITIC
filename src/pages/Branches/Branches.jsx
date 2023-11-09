@@ -39,12 +39,12 @@ function Branches() {
           </p>
 
           <img className="uzbLoc" src={uzbekistan} alt="location" />
-          <p className="positiontext">
+          <p className="positiontext3">
             Our branch in USA NewYork will be opened in the near future
           </p>
 
           <img className="sinLoc" src={singapore} alt="location" />
-          <p className="positiontext">
+          <p className="positiontext4">
             Our branch in USA NewYork will be opened in the near future
           </p>
         </div>
