@@ -25,8 +25,8 @@ Container.ModalWrapper = styled.div`
     width: 288px;
   }
   @media screen and (max-width: 653px) {
-    height: 44px;
-    width: 114px;
+    height: 45px;
+    width: 170px;
     font-size: 16px;
   }
 `;

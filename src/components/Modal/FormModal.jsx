@@ -120,22 +120,25 @@ function FormModal({ isVisible, onClose }) {
               }
             />
           </Container.Group>
-
-          <Input
-            label={"Comment"}
-            placeholder={"Add Comment"}
-            type={"text"}
-            width={"652px"}
-            onChange={(event) =>
-              setGetData({ ...getData, comment: event.target.value })
-            }
-          />
-          <Button
-            onClick={saveData}
-            title="Submit"
-            fontSize="24px"
-            iconSize="24px"
-          />
+          <div className="group">
+            <Input
+            conHeight={"132px"}
+              resHeight={"110px"}
+              label={"Comment"}
+              placeholder={"Add Comment"}
+              type={"text"}
+              width={"652px"}
+              onChange={(event) =>
+                setGetData({ ...getData, comment: event.target.value })
+              }
+            />
+            <Button
+              onClick={saveData}
+              title="Submit"
+              fontSize="24px"
+              iconSize="24px"
+            />
+          </div>
         </Container.Form>
       </Container.Wrapper>
     </Container>

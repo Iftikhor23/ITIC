@@ -2,10 +2,10 @@ import { styled } from "styled-components";
 
 export const Container = styled.div`
   height: 82px;
-  /* width: 310px; */
 
   @media screen and (max-width: 653px) {
     width: 310px;
+    height: ${({conHeight}) => (conHeight)};
   }
 `;
 
@@ -17,6 +17,11 @@ Container.Wrap = styled.div`
   width: ${({ width }) => (width ? width : "310px")};
   &:focus-within {
     border-bottom: 1px solid #ffffff;
+  }
+
+  @media screen and (max-width: 653px) {
+    width: 310px;
+    height: ${({resHeight}) => (resHeight)};
   }
 `;
 
