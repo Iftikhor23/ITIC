@@ -42,6 +42,7 @@ Container.Header = styled.div`
   }
 
   @media screen and (max-width: 653px) {
+    padding: 24px 24px 0px 24px;
     img{
       width: 19px;
     }
@@ -65,9 +66,24 @@ Container.Form = styled.div`
   flex-direction: column;
   padding: 46px 157px 201px 157px;
   gap: 24px;
+  .group{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
   @media screen and (max-width: 840px) {
     padding: 46px 157px 201px 38px;
+  }
+
+  @media screen and (max-width: 653px) {
+    padding: 50px 20px 50px 20px;
+    align-items: center;
+
+    .group{
+      align-items: center;
+      gap: 33px;
+    }
   }
 `;
 

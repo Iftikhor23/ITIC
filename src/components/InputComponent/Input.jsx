@@ -12,7 +12,9 @@ function Input({
   prefix,
   onChange,
   max,
-  onKeyPress
+  onKeyPress,
+  resHeight,
+  conHeight,
 }) {
 
   const handleKeyPress = (event) => {
@@ -33,9 +35,9 @@ function Input({
 
 
   return (
-    <Container>
+    <Container conHeight={conHeight}>
       <Container.Label>{label}</Container.Label>
-      <Container.Wrap width={width} height={height}>
+      <Container.Wrap width={width} height={height} resHeight={resHeight}>
         <Container.Prefix>{prefix}</Container.Prefix>
         <Container.Input
           type={type}

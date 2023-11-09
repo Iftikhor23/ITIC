@@ -11,12 +11,32 @@ export const Container = styled.div`
   background: linear-gradient(to top, #2c5364, #203a43, #0f2027);
   background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027);
 
+  @media screen and (max-width: 840px) {
+    width: 100vw;
+    height: 400vh;
+    background: #fff;
+  }
+
+  @media screen and (max-width: 840px) {
+    flex-direction: column;
+  }
+
+  .wrapper{
+    display: flex;
+    gap: 16px;
+    @media screen and (max-width: 840px) {
+      flex-direction: column;
+    }
+  }
   ul {
     display: block;
     height: inherit;
   }
   ul {
     list-style-type: none;
+    @media screen and (max-width: 840px) {
+      display: none;
+    }
   }
   li:nth-child(1) {
     position: absolute;
@@ -190,6 +210,8 @@ export const Container = styled.div`
   }
   li {
     animation: animate 25s linear 1s infinite;
+    @media screen {
+    }
   }
 
   @keyframes animate {
@@ -213,6 +235,11 @@ Container.NoAvaivable = styled.div`
   height: 412px;
   width: 496px;
   padding: 49px 58px 35px 37px;
+
+  @media screen and (max-width: 653px) {
+    height: 392px;
+    width: 355px;
+  }
 `;
 
 Container.Text = styled.h3`
@@ -222,4 +249,8 @@ Container.Text = styled.h3`
   letter-spacing: 0;
   line-height: 30px;
   width: 401px;
+
+  @media screen and (max-width: 653px) {
+    width: 301px;
+  }
 `;

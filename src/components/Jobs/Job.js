@@ -118,7 +118,6 @@ function Job() {
       </div>
       <div className="mblRspnsv">
         <Swiper
-          spaceBetween={50}
           slidesPerView={1}
           pagination={{clickable: true}}
           navigation
