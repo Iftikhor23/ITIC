@@ -117,14 +117,17 @@ function Job() {
         />
       </div>
       <div className="mblRspnsv">
-        <Swiper
-          slidesPerView={1}
-          pagination={{clickable: true}}
-          navigation
-        >
+        <Swiper slidesPerView={1} pagination={{ clickable: true }}>
           {testomonial.slice(0, 4)?.map((items, index) => {
             return (
-              <SwiperSlide key={items.id}>
+              <SwiperSlide
+                key={items.id}
+                style={{
+                  display: "flex",
+                  alignItems: " center",
+                  justifyContent: "center",
+                }}
+              >
                 <div key={index} className="jobBox">
                   <div className="upperPart">
                     <div className="jobTitle">
