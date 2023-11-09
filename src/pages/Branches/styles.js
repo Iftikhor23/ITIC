@@ -78,7 +78,7 @@ Container.Wrapper = styled.div`
     .positiontext2 {
       position: absolute;
       left: 422px;
-      top: 349px;
+      top: 310px;
       padding: 8px 10px;
       width: 244px;
       border-radius: 9px;
@@ -106,6 +106,20 @@ Container.Wrapper = styled.div`
         bottom: 142px;
       }
     }
+    .positiontext3 {
+      position: absolute;
+      left: 842px;
+    top: 99px;
+      padding: 8px 10px;
+      width: 244px;
+      border-radius: 9px;
+      width: 212px;
+      color: #fff;
+      background-image: linear-gradient(#00cdc2, #00cdc200, #00cdc2);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      animation: jumping 2s linear infinite alternate;
+    }
     .uzbLoc {
       position: absolute;
       top: 182px;
@@ -122,6 +136,24 @@ Container.Wrapper = styled.div`
         top: 117px;
       }
     }
+    .uzbLoc:hover + .positiontext3{
+      opacity: 1;
+    }
+
+    .positiontext4 {
+      position: absolute;
+      left: 973px;
+    top: 211px;
+      padding: 8px 10px;
+      width: 244px;
+      border-radius: 9px;
+      width: 212px;
+      color: #fff;
+      background-image: linear-gradient(#00cdc2, #00cdc200, #00cdc2);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      animation: jumping 2s linear infinite alternate;
+    }
     .sinLoc {
       position: absolute;
       top: 293px;
@@ -137,6 +169,9 @@ Container.Wrapper = styled.div`
         top: 154px;
         right: 10px;
       }
+    }
+    .sinLoc:hover + .positiontext4{
+      opacity: 1;
     }
   }
 
