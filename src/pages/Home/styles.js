@@ -146,24 +146,9 @@ Container.TeamBox = styled.div`
     line-height: normal;
     margin-right: 8px;
   }
-  .loading-skeleton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 33px;
-  }
 
-  .skeleton-image {
-    width: 85px;
-    height: 85px;
-    border-radius: 80px;
-    border: 5px solid #04545c;
-    background-color: #e0e0e0;
-    margin-right: 10px;
-  }
-
-  .skeleton-image:last-child {
-    margin-right: 0;
+  @media screen and (max-width: 653px) {
+    width: 296px;
   }
 `;
 

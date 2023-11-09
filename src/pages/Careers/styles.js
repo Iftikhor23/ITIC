@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height:880px;
+    height: 880px;
   }
   .circles{
     position: absolute;
@@ -195,7 +195,14 @@ Container.Wrapper = styled.div`
   }
 `;
 
-Container.Text = styled.div``;
+Container.Text = styled.div`
+  @media screen and (max-width: 653px) {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
+`;
 
 Container.Vacancies = styled.div`
   display: flex;

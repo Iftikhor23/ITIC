@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import JobModal from "../../components/JobModal copy/JobModal";
-import Button from "../../components/Reusable/ButtonComb/Button";
+import Button from "../../components/ButtonCombVac/Button";
 import Job from "../../components/Jobs/Job";
 import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
 import { Container } from "./styles";
@@ -15,32 +15,43 @@ function AllVacancies() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
-  gsap.registerPlugin(ScrollTrigger);
-
   useEffect(() => {
-    const pin = gsap.fromTo(
-      sectionRef.current,
-      {
-        translateX: 0,
-      },
-      {
-        translateX: "-200vw",
-        ease: "none",
-        duration: 1,
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          pin: true,
-        },
-      }
-    );
+    gsap.registerPlugin(ScrollTrigger);
 
-    return () => {
-      pin.kill();
-    };
-  }, []);
+    const triggerElement = triggerRef.current;
+    const sectionElement = sectionRef.current;
+
+    if (triggerElement?.offsetWidth >= 840) {
+      const scrollWidth = sectionElement.offsetWidth - window.innerWidth;
+      const duration = scrollWidth / 1000; //
+      const pinX = gsap.fromTo(
+        sectionElement,
+        {
+          x: 0,
+        },
+        {
+          x: "-200vw",
+          ease: "none",
+          duration: 1,
+          scrollTrigger: {
+            trigger: triggerElement,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            pin: true,
+          },
+        }
+      );
+      return () => {
+        pinX.kill();
+        window.location.reload();
+      };
+    } else {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        trigger.kill();
+      });
+    }
+  }, [triggerRef.current?.offsetWidth >= 840]);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -67,7 +78,7 @@ function AllVacancies() {
               projects
             </Paragraph>
           </TextWrap>
-          <div style={{ display: "flex", gap: "16px" }}>
+          <div className="wrapper">
             <Job />
             <Container.NoAvaivable>
               <Container.Text>
