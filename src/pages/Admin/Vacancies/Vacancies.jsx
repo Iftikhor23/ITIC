@@ -42,9 +42,9 @@ const Vacancies = () => {
   const searchHandle = async (e) => {
     const searchValue = e.target.value;
     try {
-      const res = await request.get(`admin/vacancy/search?name=${searchValue}`);
+      const res = await request.get(`admin/vacancy/search?title=${searchValue}`);
       dispatch({
-        type: "setSearch",
+        type: "setVacancies",
         payload: res?.data?.data,
       });
     } catch (error) {
