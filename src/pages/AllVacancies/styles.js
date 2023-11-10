@@ -11,17 +11,118 @@ export const Container = styled.div`
   background: linear-gradient(to top, #2c5364, #203a43, #0f2027);
   background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027);
 
-  @media screen and (max-width: 840px) {
-    width: 100vw;
-    height: 400vh;
-    background: #fff;
+  .cntnr {
+    position: relative;
+    display: flex;
+    gap: 16px;
   }
 
+  .cntnr .jobBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 412px;
+    width: 326px;
+    border-radius: 30px;
+    border: 1px solid #dfdfdf;
+    padding: 49px 32px 35px 37px;
+  }
+
+  .cntnr .text {
+    margin-right: 50px;
+  }
+
+  .cntnr .text h1 {
+    color: #121212;
+    font-size: 62px;
+    font-weight: 500;
+  }
+
+  .cntnr .text p {
+    color: #121212;
+    font-size: 18px;
+    opacity: 0.6;
+    font-weight: 400;
+  }
+  .jobBox {
+    background-color: #fff;
+  }
+
+  .jobBox .upperPart .jobTitle h3 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #121212;
+  }
+
+  .jobBox .upperPart .jobTitle p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #121212;
+  }
+
+  .jobBox .upperPart .description {
+    font-size: 18px;
+    font-weight: 400;
+    color: #121212;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .jobBox .bottomPart p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #121212;
+    opacity: 0.3;
+  }
+  .jobBox .bottomPart .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .jobBox .bottomPart .arrow:hover {
+    background-color: #00cdc2;
+    transition: 0.7s;
+    cursor: pointer;
+    rotate: -45deg;
+    color: #fff;
+  }
+
+  .cntnr .jobBox .upperPart {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .cntnr .jobBox .bottomPart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   @media screen and (max-width: 840px) {
+  .cntnr{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+  @media screen and (max-width: 840px) {
+    width: 100vw;
+    height: 100%;
+    background: #fff;
     flex-direction: column;
   }
 
-  .wrapper{
+  @media screen and (max-width: 653px) {
+    height: 100%;
+  }
+
+  .wrapper {
     display: flex;
     gap: 16px;
     @media screen and (max-width: 840px) {
@@ -236,9 +337,10 @@ Container.NoAvaivable = styled.div`
   width: 496px;
   padding: 49px 58px 35px 37px;
 
-  @media screen and (max-width: 653px) {
-    height: 392px;
-    width: 355px;
+  @media screen and (max-width: 840px) {
+    height: 412px;
+    width: 326px;
+    padding: 39px 17px 45px 37px;
   }
 `;
 
@@ -248,7 +350,7 @@ Container.Text = styled.h3`
   font-weight: 500;
   letter-spacing: 0;
   line-height: 30px;
-  width: 401px;
+  width: 301px;
 
   @media screen and (max-width: 653px) {
     width: 301px;

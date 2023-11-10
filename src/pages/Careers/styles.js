@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 880px;
+    height: 1200px;
   }
   .circles {
     position: absolute;
