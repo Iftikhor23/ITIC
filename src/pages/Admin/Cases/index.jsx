@@ -46,7 +46,7 @@ useEffect(()=>{
         `admin/case/search?projectName=${searchValue}`
       );
       dispatch({
-        type: "setSearch",
+        type: "setCase",
         payload: res?.data?.data,
       });
     } catch (error) {
@@ -83,7 +83,7 @@ useEffect(()=>{
          </Wrapper.Loading> : 
           <Table
             column={column}
-            rowData={searchData.length > 0 ? searchData : casedata}
+            rowData={casedata}
           />}
         </Wrapper.WrapTable>
         <Pagination
