@@ -5,8 +5,9 @@
 }
 
 @media screen and (max-width: 840px) {
-  .container{
+  .container {
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -23,7 +24,6 @@
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
-
 
 @media screen and (max-width: 653px) {
   .mblRspnsv {
@@ -43,7 +43,7 @@
   border-radius: 30px;
   border: 1px solid #dfdfdf;
   padding: 49px 32px 35px 37px;
-  background-color: #fff
+  background-color: #fff;
 }
 
 .mblRspnsv .text {
@@ -102,7 +102,7 @@
   opacity: 0.6;
   font-weight: 400;
 }
-.jobBox{
+.jobBox {
   background-color: #fff;
 }
 
@@ -132,7 +132,6 @@
   font-weight: 400;
   color: #121212;
   opacity: 0.3;
-  
 }
 .jobBox .bottomPart .arrow {
   display: flex;

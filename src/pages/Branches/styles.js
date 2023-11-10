@@ -60,7 +60,6 @@ Container.Wrapper = styled.div`
       left: 250px;
       top: 111px;
       padding: 8px 10px;
-      width: 244px;
       border-radius: 9px;
       width: 212px;
       color: #fff;
@@ -68,6 +67,15 @@ Container.Wrapper = styled.div`
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
       animation: jumping 2s linear infinite alternate;
+
+      @media screen and (max-width: 653px) {
+        width: 100px;
+        height: 45px;
+        font-size: 8px;
+        left: 55px;
+        top: 63px;
+        padding: 2px 2px;
+      }
     }
     .soonBra:hover + .positiontext2 {
       display: block;
@@ -80,7 +88,6 @@ Container.Wrapper = styled.div`
       left: 422px;
       top: 310px;
       padding: 8px 10px;
-      width: 244px;
       border-radius: 9px;
       width: 212px;
       color: #fff;
@@ -88,6 +95,15 @@ Container.Wrapper = styled.div`
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
       animation: jumping 2s linear infinite alternate;
+
+      @media screen and (max-width: 653px) {
+        width: 100px;
+        height: 45px;
+        font-size: 8px;
+        left: 105px;
+        top: 223px;
+        padding: 2px 2px;
+      }
     }
 
     .soonBra {
@@ -109,7 +125,7 @@ Container.Wrapper = styled.div`
     .positiontext3 {
       position: absolute;
       left: 842px;
-    top: 99px;
+      top: 99px;
       padding: 8px 10px;
       width: 244px;
       border-radius: 9px;
@@ -119,6 +135,15 @@ Container.Wrapper = styled.div`
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
       animation: jumping 2s linear infinite alternate;
+
+      @media screen and (max-width: 653px) {
+        width: 100px;
+        height: 45px;
+        font-size: 8px;
+        left: 215px;
+        top: 67px;
+        padding: 2px 2px;
+      }
     }
     .uzbLoc {
       position: absolute;
@@ -136,14 +161,14 @@ Container.Wrapper = styled.div`
         top: 117px;
       }
     }
-    .uzbLoc:hover + .positiontext3{
+    .uzbLoc:hover + .positiontext3 {
       opacity: 1;
     }
 
     .positiontext4 {
       position: absolute;
       left: 973px;
-    top: 211px;
+      top: 211px;
       padding: 8px 10px;
       width: 244px;
       border-radius: 9px;
@@ -153,6 +178,15 @@ Container.Wrapper = styled.div`
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
       animation: jumping 2s linear infinite alternate;
+
+      @media screen and (max-width: 653px) {
+        width: 100px;
+        height: 45px;
+        font-size: 8px;
+        left: 255px;
+        top: 204px;
+        padding: 2px 2px;
+      }
     }
     .sinLoc {
       position: absolute;
@@ -170,7 +204,7 @@ Container.Wrapper = styled.div`
         right: 10px;
       }
     }
-    .sinLoc:hover + .positiontext4{
+    .sinLoc:hover + .positiontext4 {
       opacity: 1;
     }
   }
@@ -192,14 +226,14 @@ Container.Wrapper = styled.div`
     }
   }
 
-   @keyframes jumping {
+  @keyframes jumping {
     from {
       transform: translateY(20px);
     }
     to {
       transform: translateY(0px);
     }
-  } 
+  }
 `;
 
 Container.Text = styled.div`

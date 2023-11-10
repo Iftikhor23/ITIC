@@ -3,7 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import JobModal from "../../components/JobModal copy/JobModal";
 import Button from "../../components/ButtonCombVac/Button";
-import Job from "../../components/Jobs/Job";
+import request from "../../services";
+import { FiArrowRight } from "react-icons/fi";
 import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
 import { Container } from "./styles";
 import logo from "../../assets/images/itLogo.svg";
@@ -11,6 +12,27 @@ import { Link } from "react-router-dom";
 
 function AllVacancies() {
   const [showModal, setShowModal] = useState(false);
+  const [selectedJobTitle, setSelectedJobTitle] = useState("");
+  const [testomonial, setTestomonial] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [url, setUrl] = useState("");
+
+  const getCallReq = async () => {
+    try {
+      setLoading(true);
+      const res = await request.get(`public/vacancy`);
+      setTestomonial(res?.data?.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getCallReq();
+  }, []);
+
+  useEffect(() => setUrl(window.location.pathname), [window.location.pathname]);
 
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
@@ -44,7 +66,6 @@ function AllVacancies() {
       );
       return () => {
         pinX.kill();
-        window.location.reload();
       };
     } else {
       ScrollTrigger.getAll().forEach((trigger) => {
@@ -79,23 +100,58 @@ function AllVacancies() {
             </Paragraph>
           </TextWrap>
           <div className="wrapper">
-            <Job />
-            <Container.NoAvaivable>
-              <Container.Text>
-                If you haven't found any suitable opening vacancies, you can
-                register your interest here.
-              </Container.Text>
-              <Button
-                title="Send my resume"
-                fontSize="16px"
-                btnwidth="170px"
-                btnheight="45px"
-                aWidth="45px" 
-                aHeight="45px"
-                iconSize="24px"
-                onClick={handleOpenModal}
+            <div className="cntnr">
+              {testomonial?.map((items, index) => {
+                return (
+                  <div key={index} className="jobBox">
+                    <div className="upperPart">
+                      <div className="jobTitle">
+                        <h3>{items?.title}</h3>
+                        <p>{items?.positionLevel}</p>
+                      </div>
+                      <div className="description">
+                        <p>{items?.location}</p>
+                        <p>{items?.employmentType}</p>
+                        <p>Salary: {items?.salary}</p>
+                      </div>
+                    </div>
+                    <div className="bottomPart">
+                      <p>{`from: ${items?.fromTime}, to: ${items?.toTime}`}</p>
+                      <div
+                        className="arrow"
+                        onClick={() => {
+                          setSelectedJobTitle(items?.title);
+                          setShowModal(true);
+                        }}
+                      >
+                        <FiArrowRight size={"25px"} />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+              <Container.NoAvaivable>
+                <Container.Text>
+                  If you haven't found any suitable opening vacancies, you can
+                  register your interest here.
+                </Container.Text>
+                <Button
+                  title="Send my resume"
+                  fontSize="16px"
+                  btnwidth="170px"
+                  btnheight="45px"
+                  aWidth="45px"
+                  aHeight="45px"
+                  iconSize="24px"
+                  onClick={handleOpenModal}
+                />
+              </Container.NoAvaivable>
+              <JobModal
+                isVisible={showModal}
+                onClose={() => setShowModal(false)}
+                selectedJobTitle={selectedJobTitle}
               />
-            </Container.NoAvaivable>
+            </div>
           </div>
           <div class="boxes">
             <ul className="circles">

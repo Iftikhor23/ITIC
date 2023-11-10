@@ -71,6 +71,7 @@ Container.TestiBox = styled.div`
   @media screen and (max-width: 653px) {
     width: 355px;
     height: 210px;
+    padding: 36px 31px 30px 24px;
   }
 `;
 
