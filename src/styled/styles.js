@@ -36,7 +36,7 @@ export const HeadingOne = styled.h1`
 
   @media only screen and (max-width: 653px) {
     width: 288px;
-    font-size: 42px;
+    font-size: 32px;
     text-align: center;
   }
 `;
@@ -47,9 +47,13 @@ export const Paragraph = styled.p`
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
   width: ${({ width }) => (width ? width : "476px")};
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 840px) {
     width: 100%;
     max-width: 376px;
+  }
+
+  @media only screen and (max-width: 653px) {
+    font-size: 14px;
   }
 `;
 
@@ -58,6 +62,11 @@ export const TextWrap = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 13px;
+
+  @media screen and (max-width: 653px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const Wrapper = styled.div`

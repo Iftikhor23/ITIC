@@ -21,10 +21,6 @@ Container.ModalWrapper = styled.div`
   color: #fff;
 
   @media screen and (max-width: 840px) {
-    height: 77px;
-    width: 288px;
-  }
-  @media screen and (max-width: 653px) {
     height: 45px;
     width: 170px;
     font-size: 16px;
@@ -41,12 +37,7 @@ Container.ArrowWrapper = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 840px) {
-    height: 77px;
-    width: 77px;
-  }
-
-  @media screen and (max-width: 653px) {
-    height: 44px;
-    width: 44px;
+    height: 45px;
+    width: 45px;
   }
 `;
