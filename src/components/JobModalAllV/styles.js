@@ -2,7 +2,7 @@ import styled from "styled-components";
 import upload from "../../assets/icons/upload-cloud.svg";
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
