@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5f5f5;
+  background-color: ${({bgcolor}) => bgcolor || '#f5f5f5'};
   width: ${({btnwidth}) => (btnwidth ? btnwidth : "93px")};
   height: ${({btnheight}) => (btnheight ? btnheight : "42px")};
   color: rgba(5, 19, 19, 1);

@@ -33,8 +33,10 @@ const CallReq = () => {
     const searchValue = e.target.value;
     try {
       const res = await request.get(
-        `admin/employee/search?name=${searchValue}`
+        `admin/call-request/search?fullName=${searchValue}`
         );
+        setCallData(res?.data?.data);
+
       } catch (error) {
         console.error("Error", error);
       }
@@ -42,7 +44,7 @@ const CallReq = () => {
     useEffect(() => {
       getCallReq();
     }, [search]);
-    
+
     return (
       <Wrapper>
       <Wrapper.Wrap>

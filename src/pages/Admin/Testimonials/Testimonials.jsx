@@ -35,6 +35,8 @@ const Testimonials = () => {
   useEffect(() => {
     getTestomonial();
   }, [search]);
+
+  
   return (
     <Wrapper>
       <Wrapper.Wrap>

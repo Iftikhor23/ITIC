@@ -46,7 +46,7 @@ const Team = () => {
         `admin/employee/search?name=${searchValue}`
       );
       dispatch({
-        type: "setSearch",
+        type: "setTeam",
         payload: res?.data?.data,
       });
     } catch (error) {
@@ -83,7 +83,7 @@ const Team = () => {
           ) : (
             <Table
               column={column}
-              rowData={searchData.length > 0 ? searchData : teamdata}
+              rowData={teamdata}
             />
           )}
         </Wrapper.WrapTable>

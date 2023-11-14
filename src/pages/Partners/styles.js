@@ -6,9 +6,6 @@ export const Container = styled.div`
   gap: 97px;
   width: 110vw;
   height: 100vh;
-  background-image: url(${parnertBg}) ;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-color: #fff;
   align-items: center;
   justify-content: center;

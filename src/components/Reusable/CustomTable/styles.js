@@ -55,7 +55,7 @@ Wrapper.Row = styled.div`
   }
   cursor: ${({ click }) => click && "pointer"};
 `;
-Wrapper.Img = styled.div`
+Wrapper.Img = styled.img`
   width: 339.331px;
   height: 231.489px;
   border-radius: 18.593px;
