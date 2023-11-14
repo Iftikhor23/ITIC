@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import JobModal from "../../components/JobModal copy/JobModal";
+import JobModalTwo from "../../components/JobModal copy/JobModal";
+import JobModal from '../../components/JobModalAllV/JobModal';
 import Button from "../../components/ButtonCombVac/Button";
 import request from "../../services";
 import { FiArrowRight } from "react-icons/fi";
@@ -12,6 +13,7 @@ import { Link } from "react-router-dom";
 
 function AllVacancies() {
   const [showModal, setShowModal] = useState(false);
+  const [showModalTwo, setShowModalTwo] = useState(false);
   const [selectedJobTitle, setSelectedJobTitle] = useState("");
   const [testomonial, setTestomonial] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -80,14 +82,6 @@ function AllVacancies() {
     }
   }, [triggerRef.current?.offsetWidth >= 840, totalCasesWidth]);
 
-  const handleOpenModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
 
 
   return (
@@ -151,13 +145,12 @@ function AllVacancies() {
                   aWidth="45px"
                   aHeight="45px"
                   iconSize="24px"
-                  onClick={handleOpenModal}
+                  onClick={() => setShowModalTwo(true)}
                 />
               </Container.NoAvaivable>
-              <JobModal
-                isVisible={showModal}
-                onClose={() => setShowModal(false)}
-                selectedJobTitle={selectedJobTitle}
+              <JobModalTwo
+                isVisible={showModalTwo}
+                onClose={() => setShowModalTwo(false)}
               />
             </div>
           </div>
@@ -196,7 +189,7 @@ function AllVacancies() {
           </div>
         </Container>
       </div>
-      {showModal && <JobModal isVisible={true} onClose={handleCloseModal} />}
+      {showModal && <JobModal isVisible={true} onClose={() => setShowModal(false)} selectedJobTitle={selectedJobTitle}/>}
     </div>
   );
 }
