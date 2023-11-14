@@ -12,6 +12,7 @@ import Toast from "../../../../components/Reusable/Toast";
 import request from "../../../../services";
 import Swal from "sweetalert2";
 import Switch from "../../../../components/Reusable/Switch";
+import Input from "../../../../components/InputComponent/Input";
 
 function AddTeam() {
   const [selecteds1, setSelecteds1] = useState("Choose Level ");
@@ -32,22 +33,22 @@ function AddTeam() {
   //! FOR SELECT DATA
   const options = [
     { id: 0, value: "SENIOR" },
-    { id: 1, value: "Middle" },
-    { id: 2, value: "Junior" },
+    { id: 1, value: "MIDDLE" },
+    { id: 2, value: "JUNIOR" },
   ];
   const regions = [
-    { id: 0, value: "Toshkent" },
+    { id: 0, value: "TOSHKENT" },
     { id: 1, value: "SAMARQAND" },
-    { id: 2, value: "Andijon" },
-    { id: 3, value: "Farg'ona" },
-    { id: 4, value: "Namangan" },
-    { id: 5, value: "Sirdaryo" },
-    { id: 6, value: "Jizzakh" },
-    { id: 7, value: "Xorazm" },
-    { id: 8, value: "Navoiy" },
-    { id: 9, value: "Qashqadaryo" },
-    { id: 10, value: "Surxondaryo" },
-    { id: 11, value: "Karakalpakistan" },
+    { id: 2, value: "ANDIJON" },
+    { id: 3, value: "FARG'ONA" },
+    { id: 4, value: "NAMANAGAN" },
+    { id: 5, value: "SIRDARYO" },
+    { id: 6, value: "JIZZAX" },
+    { id: 7, value: "XORAZM" },
+    { id: 8, value: "NAVOIY" },
+    { id: 9, value: "QASHQADARYO" },
+    { id: 10, value: "SURHONDARYO" },
+    { id: 11, value: "QORAQOLPOG'ISTON" },
   ];
   //! GET SELECT DATA
   const handleTimeChange = (type, value) => {
@@ -77,9 +78,9 @@ function AddTeam() {
                 positionLevel: state?.positionLevel || "",
                 location: state?.location || "",
                 employmentType: state?.employmentType || "",
-                salary: state?.salary || "",
                 fromTime: state?.fromTime || "19:00",
                 toTime: state?.toTime || "10:00",
+                salary: state?.salary || "",
                 isActive: state?.isActive || false,
               },
             },
@@ -90,6 +91,7 @@ function AddTeam() {
           );
           navigate("/admin/vacancies");
         } catch (error) {
+          Swal.fire(error);
           console.error("Saqlashda xatolik yuz berdi:", error);
         }
       } else {
@@ -98,29 +100,27 @@ function AddTeam() {
     } else {
       if (state?.title && state?.positionLevel) {
         try {
-          const res = await request.put(
-            "admin/vacancy",
-            {
-              data: {
-                id: selected?.id,
-                title: state?.title || "",
-                positionLevel: state?.positionLevel || "",
-                location: state?.location || "",
-                salary: state?.salary || "",
-                fromTime: state?.fromTime || "19:00",
-                toTime: state?.toTime || "10:00",
-                isActive: state?.isActive || false,
-              },
-            });
-            navigate("/admin/vacancies");
-            Toast({
-              type: "success",
-              message: "Saved",
-            });
-            dispatch({
-              type: "setSelectedVacansi",
-              payload: {},
-            });
+          const res = await request.put("admin/vacancy", {
+            data: {
+              id: selected?.id,
+              title: state?.title || "",
+              positionLevel: state?.positionLevel || "",
+              location: state?.location || "",
+              salary: state?.salary || "",
+              fromTime: state?.fromTime || "19:00",
+              toTime: state?.toTime || "10:00",
+              isActive: state?.isActive || false,
+            },
+          });
+          navigate("/admin/vacancies");
+          Toast({
+            type: "success",
+            message: "Saved",
+          });
+          dispatch({
+            type: "setSelectedVacansi",
+            payload: {},
+          });
         } catch (error) {
           console.error("Saqlashda xatolik yuz berdi:", error);
         }
@@ -129,8 +129,8 @@ function AddTeam() {
       }
     }
   };
-  console.log(state);
 
+ 
   return (
     <Wrapper>
       <Wrapper.Wrap>
@@ -197,18 +197,19 @@ function AddTeam() {
             </Wrapper.Flex>
             <Wrapper.Flex>
               <TimeSelect
-                defaultStartTime={state?.fromTime}
                 onTimeChange={handleTimeChange}
                 defaultEndTime={handleTimeChange}
+                defaultStartTime={state?.fromTime}
               />
               <AdminInput
-                prefix={"UZS |"}
+                prefix={"USD |"}
                 label={"Salary"}
                 placeholder={"Enter Salary"}
                 onChange={(e) => {
                   setState({ ...state, salary: e.target.value });
                 }}
                 value={state?.salary}
+                type={"number"}
               />
               <Switch
                 onClick={(v) => setState({ ...state, isActive: v })}
