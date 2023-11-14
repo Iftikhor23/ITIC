@@ -34,7 +34,6 @@ function AllVacancies() {
 
   useEffect(() => setUrl(window.location.pathname), []);
 
-
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 

@@ -15,8 +15,10 @@ function AllCases() {
 
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
+ 
+  let totalCasesWidth = cases.length * 63;
 
-  let totalCasesWidth = null
+
 
   if(window.innerWidth > 1535){
      totalCasesWidth = cases.length * 49 + 50;

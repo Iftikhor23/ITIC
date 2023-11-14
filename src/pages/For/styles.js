@@ -63,7 +63,7 @@ export const HeadingOneFor = styled.h1`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
   width: ${({ width }) => (width ? width : "476px")};

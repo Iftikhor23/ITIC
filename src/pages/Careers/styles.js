@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 1200px;
+    height: 890px;
   }
   .circles {
     position: absolute;
@@ -193,6 +193,70 @@ Container.Wrapper = styled.div`
   @media screen and (max-width: 840px) {
     flex-direction: column;
     width: fit-content;
+  }
+  @media screen and (max-width: 653px) {
+    align-items: center;
+  }
+
+  .mblRspnsv {
+    display: none;
+  }
+
+  .mblRspnsv .jobBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 412px;
+    width: 326px;
+    border-radius: 30px;
+    border: 1px solid #dfdfdf;
+    padding: 49px 32px 35px 37px;
+    background-color: #fff;
+  }
+
+  .mblRspnsv .text {
+    margin-right: 50px;
+  }
+
+  .mblRspnsv .text h1 {
+    color: #121212;
+    font-size: 62px;
+    font-weight: 500;
+  }
+
+  .mblRspnsv .text p {
+    color: #121212;
+    font-size: 18px;
+    opacity: 0.6;
+    font-weight: 400;
+  }
+
+  .mblRspnsv .jobBox .upperPart {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .mblRspnsv .jobBox .bottomPart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 653px) {
+    .mblRspnsv {
+      display: block;
+      width: 100vw;
+    }
+    .container {
+      display: none;
+    }
+  }
+  .mobile {
+    display: none;
+    @media screen and (max-width: 653px) {
+      display: inline-block;
+    }
   }
 `;
 

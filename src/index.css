@@ -16,10 +16,9 @@
   scrollbar-width: none;
   gap: none;
 }
-body{
-  background-color: #051C2C;
+body {
+  background-color: #051c2c;
 }
-
 
 .logo {
   width: 112px;
@@ -53,7 +52,8 @@ body{
 }
 
 .scrollSectionOuter {
-    overflow: hidden;
+  overflow: hidden;
+  position: relative;
 }
 
 .scrollSectionInner {
@@ -89,5 +89,14 @@ body{
   .sideBtn {
     top: -246px;
     left: 324px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .footer {
+    left: 126px;
+  }
+  .sideBtn {
+    left: 267px;
   }
 }
