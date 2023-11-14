@@ -32,34 +32,41 @@ function AllVacancies() {
     getCallReq();
   }, []);
 
-  useEffect(() => setUrl(window.location.pathname), [window.location.pathname]);
+  useEffect(() => setUrl(window.location.pathname), []);
+
 
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
+
+  let totalCasesWidth = window.innerWidth > 1535 ? testomonial.length * 23 + 40 : testomonial.length * 33 + 50;
+
+ 
+  console.log(totalCasesWidth)
+
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
 
     if (triggerElement?.offsetWidth >= 840) {
       const scrollWidth = sectionElement.offsetWidth - window.innerWidth;
-      const duration = scrollWidth / 1000; //
+      const duration = scrollWidth / 1000;
       const pinX = gsap.fromTo(
         sectionElement,
         {
           x: 0,
         },
         {
-          x: "-200vw",
+          x: -scrollWidth,
           ease: "none",
-          duration: 1,
+          duration: duration,
           scrollTrigger: {
             trigger: triggerElement,
             start: "top top",
             end: "bottom top",
-            scrub: true,
+            scrub: 1,
             pin: true,
           },
         }
@@ -72,7 +79,7 @@ function AllVacancies() {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth >= 840]);
+  }, [triggerRef.current?.offsetWidth >= 840, totalCasesWidth]);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -82,13 +89,15 @@ function AllVacancies() {
     setShowModal(false);
   };
 
+
+
   return (
     <div className="scrollSectionOuter">
-      <div ref={triggerRef}>
+      <div ref={triggerRef} >
+        <Container ref={sectionRef} style={{width:`${totalCasesWidth}vw`}} >
         <Link to="/">
           <img className="logo" src={logo} alt="company logo" />
         </Link>
-        <Container ref={sectionRef}>
           <TextWrap>
             <HeadingOne>
               Careers at IT
@@ -153,7 +162,7 @@ function AllVacancies() {
               />
             </div>
           </div>
-          <div class="boxes">
+          <div className="boxes">
             <ul className="circles">
               <li></li>
               <li></li>

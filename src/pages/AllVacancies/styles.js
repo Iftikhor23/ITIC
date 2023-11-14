@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 300vw;
   height: 100vh;
   background-color: #fff;
   gap: 50px;
+  
   background: linear-gradient(to top, #2c5364, #203a43, #0f2027);
   background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027);
 

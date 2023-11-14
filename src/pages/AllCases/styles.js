@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 450vw;
   height: 100vh;
+  /* overflow-x: hidden; */
   background-color: #051c2c;
   gap: 89px;
 
