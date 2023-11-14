@@ -9,6 +9,7 @@ import Toast from "../Reusable/Toast";
 import Swal from "sweetalert2";
 
 function JobModal({ isVisible, onClose, selectedJobTitle }) {
+  
   const [getData, setGetData] = useState({
     fullName: "",
     linkedinLink: "",
@@ -157,7 +158,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
             />
           </Container.Group>
           <Container.Group>
-            <Input label={"Job Position"} value={selectedJobTitle} readOnly />
+            <Input label={"Job Position"} value={selectedJobTitle} readonly />
             <div className="fileInput">
               <Input
                 style={{ opacity: 0 }}

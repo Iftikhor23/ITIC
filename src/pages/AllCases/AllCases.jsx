@@ -11,26 +11,29 @@ import logo from "../../assets/images/itLogo.svg";
 function AllCases() {
   const [cases, setCases] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
+ 
+  const totalCasesWidth = cases.length * 63;
+
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
 
     if (triggerElement?.offsetWidth >= 840) {
       const scrollWidth = sectionElement.offsetWidth - window.innerWidth;
-      const duration = scrollWidth / 1000; //
+      const duration = scrollWidth / 1000;
       const pinX = gsap.fromTo(
         sectionElement,
         {
           x: 0,
         },
         {
-          x: "-350vw",
+          x: -scrollWidth,
           ease: "none",
           duration: duration,
           scrollTrigger: {
@@ -70,7 +73,7 @@ function AllCases() {
   return (
     <div className="scrollSectionOuter">
       <div ref={triggerRef}>
-        <Container ref={sectionRef}>
+        <Container ref={sectionRef}  style={{ width: `${totalCasesWidth +   50}vw` }}>
           <Link to="/">
             <img className="logo" src={logo} alt="company logo" />
           </Link>
@@ -82,7 +85,7 @@ function AllCases() {
                 projects
               </Paragraph>
             </div>
-            <Container.Cases>
+            <Container.Cases >
               {cases?.map((items, index) => (
                 <CaseComp
                   key={index}

@@ -37,7 +37,7 @@ Container.Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 48px 83px 0px 302px;
+  padding: 48px 83px 0px 156px;
 
   @media screen and (max-width: 840px) {
     padding: 48px 45px 0px 38px;
