@@ -108,34 +108,34 @@ function TimeSelect({ defaultStartTime, defaultEndTime, onTimeChange }) {
       <Wrapper.Header>Time</Wrapper.Header>
       <Wrapper.Wrap>
         <Wrapper.Pre>From</Wrapper.Pre>
-          <Wrapper.Select
-            value={defaultStartTime}
-            onChange={(e) => onTimeChange("start", e.target.value)}
-          >
-            {TimeData.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.id}
-              </option>
-            ))}
-          </Wrapper.Select>
-          <Wrapper.Suf>
-            <img src={arrow} alt="arrow icon" />
-          </Wrapper.Suf>
+        <Wrapper.Select
+          value={defaultStartTime}
+          onChange={(e) => onTimeChange("start", e.target.value)}
+        >
+          {TimeData.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.id}
+            </option>
+          ))}
+        </Wrapper.Select>
+        <Wrapper.Suf>
+          <img src={arrow} alt="arrow icon" />
+        </Wrapper.Suf>
 
         <Wrapper.Pre>To</Wrapper.Pre>
-          <Wrapper.Select
-            value={defaultEndTime}
-            onChange={(e) => onTimeChange("end", e.target.value)}
-          >
-            {TimeData.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.id}
-              </option>
-            ))}
-          </Wrapper.Select>
-          <Wrapper.Suf>
-            <img src={arrow} alt="arrow icon" />
-          </Wrapper.Suf>
+        <Wrapper.Select
+          value={defaultEndTime}
+          onChange={(e) => onTimeChange("end", e.target.value)}
+        >
+          {TimeData.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.id}
+            </option>
+          ))}
+        </Wrapper.Select>
+        <Wrapper.Suf>
+          <img src={arrow} alt="arrow icon" />
+        </Wrapper.Suf>
       </Wrapper.Wrap>
     </Wrapper>
   );
