@@ -31,13 +31,13 @@ function AddTeam() {
   const navigate = useNavigate();
   //! FOR SELECT DATA
   const options = [
-    { id: 0, value: "Senior" },
+    { id: 0, value: "SENIOR" },
     { id: 1, value: "Middle" },
     { id: 2, value: "Junior" },
   ];
   const regions = [
     { id: 0, value: "Toshkent" },
-    { id: 1, value: "Samarqand" },
+    { id: 1, value: "SAMARQAND" },
     { id: 2, value: "Andijon" },
     { id: 3, value: "Farg'ona" },
     { id: 4, value: "Namangan" },

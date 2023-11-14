@@ -16,7 +16,16 @@ function AllCases() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
  
-  const totalCasesWidth = cases.length * 63;
+  let totalCasesWidth = cases.length * 63;
+
+
+
+  if(window.innerWidth > 1535){
+     totalCasesWidth = cases.length * 49 + 50;
+  }else{
+    totalCasesWidth = cases.length * 63 + 50;
+  }
+ 
 
 
   useEffect(() => {
@@ -70,10 +79,11 @@ function AllCases() {
     getCallReq();
   }, []);
 
+
   return (
     <div className="scrollSectionOuter">
       <div ref={triggerRef}>
-        <Container ref={sectionRef}  style={{ width: `${totalCasesWidth +   50}vw` }}>
+        <Container ref={sectionRef}  style={{ width: `${totalCasesWidth}vw`}}>
           <Link to="/">
             <img className="logo" src={logo} alt="company logo" />
           </Link>

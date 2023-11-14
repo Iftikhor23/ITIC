@@ -72,6 +72,7 @@ Container.Img = styled.div`
   width: 310px;
   height: 150px;
   padding: 35px 33px;
+ 
 
   @media screen and (max-width: 840px) {
     height: 131px;
