@@ -4,7 +4,7 @@ export const HeadingOne = styled.h1`
   font-size: 72px;
   font-weight: 500;
   margin: 5px;
-  width: 100%;
+  width: ${({width}) => (width ? width: "100%")} ;
   max-width: ${({ width }) => (width ? width : "100%")};
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
@@ -42,7 +42,7 @@ export const HeadingOne = styled.h1`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
   width: ${({ width }) => (width ? width : "476px")};

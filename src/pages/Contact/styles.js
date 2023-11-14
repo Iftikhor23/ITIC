@@ -34,8 +34,10 @@ export const Container = styled.div`
   }
   @media screen and (max-width: 653px) {
     padding: 0;
-    height: 855px;
+    height: 862px;
     width: 100vw;
+    justify-content: space-around;
+    align-items: center;
   }
 `;
 
@@ -148,7 +150,13 @@ Container.FooterWrapper = styled.div`
 
   @media screen and (max-width: 840px) {
     position: relative;
-    top: 500px;
+    top: 1px;
+  }
+
+  @media screen and (max-width: 653px) {
+    display: flex;
+    flex-direction: column;
+    /* top: 216px; */
   }
 `;
 

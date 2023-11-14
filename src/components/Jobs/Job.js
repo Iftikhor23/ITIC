@@ -6,9 +6,6 @@ import { useEffect } from "react";
 import request from "../../services";
 import { Link } from "react-router-dom";
 import { Container } from "../../pages/Careers/styles";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Button from "../../components/ButtonCombVac/Button";
-import { NoAvaivable, Text } from "../../pages/AllVacancies/styles";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -90,57 +87,6 @@ function Job() {
           onClose={() => setShowModal(false)}
           selectedJobTitle={selectedJobTitle}
         />
-      </div>
-      <div className="mblRspnsv">
-        <Swiper
-          centeredSlides={true}
-          slidesPerView={1}
-          pagination={{ el: "", clickable: true }}
-          navigation={{
-            nextEl: "simehtin",
-            prevEl: "somehint",
-          }}
-          loop={true}
-        >
-          {testomonial.slice(0, 4)?.map((items, index) => {
-            return (
-              <SwiperSlide
-                key={items.id}
-                style={{
-                  display: "flex",
-                  alignItems: " center",
-                  justifyContent: "center",
-                }}
-              >
-                <div key={index} className="jobBox">
-                  <div className="upperPart">
-                    <div className="jobTitle">
-                      <h3>{items?.title}</h3>
-                      <p>{items?.positionLevel}</p>
-                    </div>
-                    <div className="description">
-                      <p>{items?.location}</p>
-                      <p>{items?.employmentType}</p>
-                      <p>Salary: {items?.salary}</p>
-                    </div>
-                  </div>
-                  <div className="bottomPart">
-                    <p>{`from: ${items?.fromTime}, to: ${items?.toTime}`}</p>
-                    <div
-                      className="arrow"
-                      onClick={() => {
-                        setSelectedJobTitle(items?.title);
-                        setShowModal(true);
-                      }}
-                    >
-                      <FiArrowRight size={"25px"} />
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
       </div>
     </>
   );

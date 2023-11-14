@@ -29,7 +29,7 @@ function Cases() {
     <Container id="case-studies">
       <div className="wrapper">
         <div className="textWrapper">
-          <HeadingOne max-width={"800px"}>Case Studies</HeadingOne>
+          <HeadingOne>Case Studies</HeadingOne>
           <Paragraph>
             Become a member of a freelancer's poo l and work on creative
             projects

@@ -11,9 +11,7 @@
   }
 }
 
-.mblRspnsv {
-  display: none;
-}
+
 
 .jobBox {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -23,56 +21,6 @@
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.6);
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-}
-
-@media screen and (max-width: 653px) {
-  .mblRspnsv {
-    display: block;
-    width: 100vw;
-  }
-  .container {
-    display: none;
-  }
-}
-.mblRspnsv .jobBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 412px;
-  width: 326px;
-  border-radius: 30px;
-  border: 1px solid #dfdfdf;
-  padding: 49px 32px 35px 37px;
-  background-color: #fff;
-}
-
-.mblRspnsv .text {
-  margin-right: 50px;
-}
-
-.mblRspnsv .text h1 {
-  color: #121212;
-  font-size: 62px;
-  font-weight: 500;
-}
-
-.mblRspnsv .text p {
-  color: #121212;
-  font-size: 18px;
-  opacity: 0.6;
-  font-weight: 400;
-}
-
-.mblRspnsv .jobBox .upperPart {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-}
-
-.mblRspnsv .jobBox .bottomPart {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .container .jobBox {

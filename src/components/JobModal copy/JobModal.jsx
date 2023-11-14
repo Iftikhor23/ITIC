@@ -106,7 +106,7 @@ function JobModal({ isVisible, onClose }) {
     <Container onClick={handleClose} id="container">
       <Container.Wrapper>
         <Container.Header>
-          <Container.Text>Apply on position</Container.Text>
+          <Container.Text>Apply on position </Container.Text>
           <img
             src={closeIcon}
             style={{ cursor: "pointer" }}
@@ -174,6 +174,7 @@ function JobModal({ isVisible, onClose }) {
                 placeholder={"Upload from files"}
                 type={"file"}
                 onChange={uploadCV}
+                
               />
             </div>
           </Container.Group>
