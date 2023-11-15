@@ -10,6 +10,7 @@ import bigChart from "../../assets/images/big.svg";
 import up from "../../assets/images/uptrade.svg";
 import request from "../../services";
 import { useEffect } from "react";
+import MainLoading from "../../components/Reusable/MainLoadind";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -33,82 +34,89 @@ function Home() {
 
   return (
     <Container id="home">
-      <Container.MidWrap>
-        <Container.Wrapper>
-          <Bounce bottom>
-            <HeadingOneHome width={'728px'}>Solutions to elevate <span>your</span></HeadingOneHome>
-          </Bounce>
-          <Container.TextWrap>
+      {loading ? (
+        <MainLoading />
+      ) : (
+        <Container.MidWrap>
+          <Container.Wrapper>
             <Bounce bottom>
-              <Your>your</Your>
+              <HeadingOneHome width={"728px"}>
+                Solutions to elevate <span>your</span>
+              </HeadingOneHome>
             </Bounce>
-            <div onClick={() => setShowModal(true)}>
-              <Button
-                title="business"
-                fontSize="56px"
-                btnwidth="298px"
-                btnheight="85px"
-                iconSize="34px"
-                aWidth="85px"
-                aHeight="85px"
-              />
-            </div>
-          </Container.TextWrap>
-          <Paragraph width="546px" style={{ marginTop: "27px" }}>
-            Connect with growing workforce and companies in the field of
-            software development and animation to ensure quality and competitive
-          </Paragraph>
-          <Container.TeamBox className="image-class">
-            <>
-              {callData.slice(0, 5).map((items, index) => {
-                const topPosition = index * 0;
-                const leftPosition = index * 50;
-                const zindex = 5 - index;
-                return (
-                  <img
-                    key={index}
-                    className="employee-image"
-                    src={items?.employeePhotoUrl}
-                    alt="company employees"
-                    width={"80px"}
-                    style={{
-                      marginTop: "33px",
-                      zIndex: `${zindex}`,
-                      top: `${topPosition}px`,
-                      left: `${leftPosition}px`,
-                      borderRadius: "80px",
-                      border: "5px solid #04545C",
-                      objectFit: "cover",
-                    }}
-                  />
-                );
-              })}
-              <div className="lastrounded">
-                <span>{callData.length}+</span>
+            <Container.TextWrap>
+              <Bounce bottom>
+                <Your>your</Your>
+              </Bounce>
+              <div onClick={() => setShowModal(true)}>
+                <Button
+                  title="business"
+                  fontSize="56px"
+                  btnwidth="298px"
+                  btnheight="85px"
+                  iconSize="34px"
+                  aWidth="85px"
+                  aHeight="85px"
+                />
               </div>
-            </>
-          </Container.TeamBox>
-        </Container.Wrapper>
-        <div className="chart">
-          <Bounce bottom>
-            <img className="lilChart" src={lilChart} alt="chart" />
-          </Bounce>
-          <Bounce bottom delay={150}>
-            <img className="midChart" src={middle} alt="chart" />
-          </Bounce>
-          <Bounce bottom delay={100}>
-            <img className="bigChart" src={bigChart} alt="chart" />
-          </Bounce>
-          <Bounce top delay={400}>
-            <img className="upTrade" src={up} alt="up arrow" />
-          </Bounce>
-        </div>
-      </Container.MidWrap>
-      
-      <FormModal
-        isVisible={showModal}
-        onClose={() => setShowModal(false)}
-      ></FormModal>
+            </Container.TextWrap>
+            <Paragraph width="546px" style={{ marginTop: "27px" }}>
+              Connect with growing workforce and companies in the field of
+              software development and animation to ensure quality and
+              competitive
+            </Paragraph>
+            <Container.TeamBox className="image-class">
+              <>
+                {callData.slice(0, 5).map((items, index) => {
+                  const topPosition = index * 0;
+                  const leftPosition = index * 50;
+                  const zindex = 5 - index;
+                  return (
+                    <img
+                      key={index}
+                      className="employee-image"
+                      src={items?.employeePhotoUrl}
+                      alt="company employees"
+                      style={{
+                        marginTop: "33px",
+                        zIndex: `${zindex}`,
+                        top: `${topPosition}px`,
+                        left: `${leftPosition}px`,
+                        borderRadius: "50%",
+                        border: "5px solid #043742",
+                        objectFit: "cover",
+                        width: "80px",
+                        height: "80px",
+                      }}
+                    />
+                  );
+                })}
+                <div className="lastrounded">
+                  <span>{callData.length}+</span>
+                </div>
+              </>
+            </Container.TeamBox>
+          </Container.Wrapper>
+          <div className="chart">
+            <Bounce bottom>
+              <img className="lilChart" src={lilChart} alt="chart" />
+            </Bounce>
+            <Bounce bottom delay={150}>
+              <img className="midChart" src={middle} alt="chart" />
+            </Bounce>
+            <Bounce bottom delay={100}>
+              <img className="bigChart" src={bigChart} alt="chart" />
+            </Bounce>
+            <Bounce top delay={400}>
+              <img className="upTrade" src={up} alt="up arrow" />
+            </Bounce>
+          </div>
+          <FormModal
+            isVisible={showModal}
+            onClose={() => setShowModal(false)}
+          ></FormModal>
+        </Container.MidWrap>
+      )}
     </Container>
   );
 }

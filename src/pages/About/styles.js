@@ -5,6 +5,7 @@ import bgImg2 from "../../assets/images/aboutBgImg2.svg";
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   background-color: #050919;

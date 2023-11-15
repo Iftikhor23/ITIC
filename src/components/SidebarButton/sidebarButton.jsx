@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 const pages = [
+  { id: "home", path: "Home" },
   { id: "about", path: "About" },
   { id: "services", path: "Services" },
   { id: "case-studies", path: "Case studies" },
@@ -61,7 +62,7 @@ function SidebarButton({ scrollToElement }) {
               }}
              
             >
-              <a href={`#${page.id}`} key={page.id}   data-target={`${page?.id}`}>
+              <a className="routes-link" href={`#${page.id}`} key={page.id}   data-target={`${page?.id}`}>
                 {page.path}
               </a>
             </li>

@@ -7,9 +7,7 @@ import request from "../../services";
 import { useState } from "react";
 import Toast from "../Reusable/Toast";
 import Swal from "sweetalert2";
-
 function JobModal({ isVisible, onClose, selectedJobTitle }) {
-  
   const [getData, setGetData] = useState({
     fullName: "",
     linkedinLink: "",
@@ -68,31 +66,38 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
             fullName: getData.fullName,
             linkedinLink: getData.linkedinLink,
             phoneNumber: `+998${getData.phoneNumber}`,
-
             email: getData.email,
             position: selectedJobTitle,
+            resumeType: selectedJobTitle ? 'NON_APPLY' : "APPLY",
             comment: getData.comment,
             userCVUrl: getData.userCVUrl,
             attachmentId: getData.attachmentId,
           },
         });
-        Toast({
-          type: "success",
-          message: "Saved",
-        });
-        onClose();
-        setGetData({
-          fullName: "",
-          linkedinLink: "",
-          phoneNumber: "+998",
-          email: "",
-          position: "",
-          comment: "",
-          userCVUrl: "",
-          attachmentId: "",
-        });
-
-        onClose();
+        console.log(res.status);
+        if (res.status === 200) {
+          Toast({
+            type: "success",
+            message: "Saved",
+          });
+          onClose();
+          setGetData({
+            fullName: "",
+            linkedinLink: "",
+            phoneNumber: "+998",
+            email: "",
+            position: "",
+            comment: "",
+            userCVUrl: "",
+            attachmentId: "",
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Serverda xatolik",
+            text: "So'rovni amalga oshirishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.",
+          });
+        }
       } catch (error) {
         Swal.fire("There is a problem with the Internet or with the server");
         console.error("Saqlashda xatolik yuz berdi:", error);
@@ -106,6 +111,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
+
 
   return (
     <Container onClick={handleClose} id="container">

@@ -10,6 +10,7 @@ import JobModal from "../../components/JobModal/JobModal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FiArrowRight } from "react-icons/fi";
 import { Navigation, Pagination } from "swiper/modules";
+import { gsap } from "gsap";
 
 function Careers() {
   const [testomonial, setTestomonial] = useState([]);
@@ -40,6 +41,8 @@ function Careers() {
     getCallReq();
   }, []);
 
+
+  
   return (
     <Container ref={careerRef} id="careers">
       <Container.Wrapper>
@@ -145,11 +148,7 @@ function Careers() {
         <li></li>
         <li></li>
       </ul>
-      <JobModal
-        isVisible={showModal}
-        onClose={() => setShowModal(false)}
-        selectedJobTitle={selectedJobTitle}
-      />
+      {showModal && <JobModal isVisible={true} onClose={() => setShowModal(false)} selectedJobTitle={selectedJobTitle}/>}
     </Container>
   );
 }

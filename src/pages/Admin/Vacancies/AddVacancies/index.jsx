@@ -30,6 +30,7 @@ function AddTeam() {
   });
 
   const navigate = useNavigate();
+  
   //! FOR SELECT DATA
   const options = [
     { id: 0, value: "SENIOR" },
@@ -40,7 +41,7 @@ function AddTeam() {
     { id: 0, value: "TOSHKENT" },
     { id: 1, value: "SAMARQAND" },
     { id: 2, value: "ANDIJON" },
-    { id: 3, value: "FARG'ONA" },
+    { id: 3, value: "FARGONA" },
     { id: 4, value: "NAMANAGAN" },
     { id: 5, value: "SIRDARYO" },
     { id: 6, value: "JIZZAX" },
@@ -48,7 +49,7 @@ function AddTeam() {
     { id: 8, value: "NAVOIY" },
     { id: 9, value: "QASHQADARYO" },
     { id: 10, value: "SURHONDARYO" },
-    { id: 11, value: "QORAQOLPOG'ISTON" },
+    { id: 11, value: "QORAQOLPOGISTON" },
   ];
   //! GET SELECT DATA
   const handleTimeChange = (type, value) => {
@@ -91,7 +92,7 @@ function AddTeam() {
           );
           navigate("/admin/vacancies");
         } catch (error) {
-          Swal.fire(error);
+          Swal.fire(error.message, );
           console.error("Saqlashda xatolik yuz berdi:", error);
         }
       } else {

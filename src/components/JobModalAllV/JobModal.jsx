@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 
 function JobModal({ isVisible, onClose, selectedJobTitle }) {
   
+  console.log(selectedJobTitle);
   const [getData, setGetData] = useState({
     fullName: "",
     linkedinLink: "",
@@ -62,50 +63,59 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
           });
           return;
         }
-
+  
         const res = await request.post(`public/resume`, {
           data: {
             fullName: getData.fullName,
             linkedinLink: getData.linkedinLink,
             phoneNumber: `+998${getData.phoneNumber}`,
-
             email: getData.email,
             position: selectedJobTitle,
+            resumeType:selectedJobTitle ? "NON_APPLY" : "APPLY",
             comment: getData.comment,
             userCVUrl: getData.userCVUrl,
             attachmentId: getData.attachmentId,
           },
         });
-        Toast({
-          type: "success",
-          message: "Saved",
-        });
-        onClose();
-        setGetData({
-          fullName: "",
-          linkedinLink: "",
-          phoneNumber: "+998",
-          email: "",
-          position: "",
-          comment: "",
-          userCVUrl: "",
-          attachmentId: "",
-        });
-
-        onClose();
+  
+        if (res.status === 200) {
+          Toast({
+            type: "success",
+            message: "Saved",
+          });
+          onClose();
+          setGetData({
+            fullName: "",
+            linkedinLink: "",
+            phoneNumber: "+998",
+            email: "",
+            position: "",
+            comment: "",
+            userCVUrl: "",
+            attachmentId: "",
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Serverda xatolik",
+            text: "So'rovni amalga oshirishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.",
+          });
+        }
       } catch (error) {
-        Swal.fire("There is a problem with the Internet or with the server");
+        Swal.fire("Internet yoki server bilan muammo bor");
         console.error("Saqlashda xatolik yuz berdi:", error);
       }
     } else {
-      Swal.fire("Fill in all the data fields");
+      Swal.fire("Barcha maydonchalarni to'ldiring");
     }
   };
-
+  
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
+
+  console.log(getData);
 
   return (
     <Container onClick={handleClose} id="container">
