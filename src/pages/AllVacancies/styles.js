@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import loadingimg from "../../assets/images/loagingimg.svg";
 
 export const Container = styled.div`
   position: relative;
@@ -342,6 +341,13 @@ Container.NoAvaivable = styled.div`
   height: 412px;
   width: 496px;
   padding: 49px 58px 35px 37px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
 
   @media screen and (max-width: 840px) {
     height: 412px;

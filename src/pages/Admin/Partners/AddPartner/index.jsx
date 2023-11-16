@@ -6,6 +6,7 @@ import request from "../../../../services";
 import Toast from "../../../../components/Reusable/Toast";
 import Switch from "../../../../components/Reusable/Switch";
 import { usePartnersContext } from "../../../../context/PartnersContext";
+import cloudty from '../../../../assets/icons/uploadCloud.svg'
 import Swal from "sweetalert2";
 
 function AddPartner({ isVisible, onClose }) {
@@ -21,6 +22,8 @@ function AddPartner({ isVisible, onClose }) {
     attachmentId: selected?.attachmentId || "",
     isActive: selected?.isActive || false,
   });
+
+
   useEffect(() => {
     if (selected) {
       setState({
@@ -30,6 +33,7 @@ function AddPartner({ isVisible, onClose }) {
       });
     }
   }, [selected]);
+
 
   if (!isVisible) return null;
   const handleCLose = (e) => {
@@ -139,7 +143,7 @@ function AddPartner({ isVisible, onClose }) {
         <div className="flex">
           <Container.Title>Upload a logo image</Container.Title>
           <div className="buttonWrap">
-            <RegularButton title="Cancel" />
+            <RegularButton title="Cancel" onClick={() => onClose()}/>
             <Button
               title="Add partner"
               btnheight="42px"
@@ -157,7 +161,7 @@ function AddPartner({ isVisible, onClose }) {
             className="input-box"
             htmlFor="nimadir"
             style={{
-              backgroundImage: `url(${urlFormData || state?.partnerPhotoUrl})`,
+              backgroundImage: `url(${urlFormData ? urlFormData :  cloudty })`,
               width: "243px",
               height: "116px",
               borderRadius: "20px",

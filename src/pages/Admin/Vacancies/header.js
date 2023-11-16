@@ -13,7 +13,8 @@ import { useVacanciesContext } from "../../../context/VacanciesContext";
 
 const ActionRenderer = ({ data }) => {
   const navigate = useNavigate()
-  const [{vacanciesdata},dispatch] = useVacanciesContext();
+  const [,dispatch] = useVacanciesContext();
+  
   const getPartners = async () => {
     try {
       const res = await request.get(`admin/vacancy/all`);
