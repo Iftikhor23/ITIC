@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import loadingimg from "../../assets/images/loagingimg.svg";
 
 export const Container = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   height: 100vh;
   background-color: #fff;
   gap: 50px;
-  
+
   background: linear-gradient(to top, #2c5364, #203a43, #0f2027);
   background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027);
 
@@ -105,11 +106,11 @@ position: relative;
     justify-content: space-between;
   }
   @media screen and (max-width: 840px) {
-  .cntnr{
-    flex-wrap: wrap;
-    justify-content: center;
+    .cntnr {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
-}
 
   @media screen and (max-width: 840px) {
     width: 100vw;
@@ -323,6 +324,11 @@ position: relative;
       transform: translateY(-2500%) rotate(360deg);
     }
   }
+  .loading {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
 `;
 
 Container.NoAvaivable = styled.div`
@@ -356,3 +362,5 @@ Container.Text = styled.h3`
     width: 301px;
   }
 `;
+
+

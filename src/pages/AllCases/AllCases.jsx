@@ -7,26 +7,22 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import request from "../../services";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/itLogo.svg";
+import MainLoading from "../../components/Reusable/MainLoadind";
 
 function AllCases() {
   const [cases, setCases] = useState([]);
   const [loading, setLoading] = useState(true);
-  
 
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
- 
+
   let totalCasesWidth = cases.length * 63;
 
-
-
-  if(window.innerWidth > 1535){
-     totalCasesWidth = cases.length * 49 + 50;
-  }else{
+  if (window.innerWidth > 1540) {
+    totalCasesWidth = cases.length * 49 + 50;
+  } else {
     totalCasesWidth = cases.length * 63 + 50;
   }
- 
-
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -62,7 +58,7 @@ function AllCases() {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth >= 840]);
+  }, [triggerRef.current?.offsetWidth >= 840,cases,totalCasesWidth]);
 
   const getCallReq = async () => {
     try {
@@ -79,37 +75,40 @@ function AllCases() {
     getCallReq();
   }, []);
 
-
   return (
     <div className="scrollSectionOuter">
-      <div ref={triggerRef}>
-        <Container ref={sectionRef}  style={{ width: `${totalCasesWidth}vw`}}>
-          <Link to="/">
-            <img className="logo" src={logo} alt="company logo" />
-          </Link>
-          <div className="wrapper">
-            <div>
-              <HeadingOne>Case studies</HeadingOne>
-              <Paragraph>
-                Become a member of a freelancer's pool and work on creative
-                projects
-              </Paragraph>
+      {loading ? (
+        <MainLoading />
+      ) : (
+        <div ref={triggerRef}>
+          <Container ref={sectionRef} style={{ width: `${totalCasesWidth}vw` }}>
+            <Link to="/">
+              <img className="logo" src={logo} alt="company logo" />
+            </Link>
+            <div className="wrapper">
+              <div>
+                <HeadingOne>Case studies</HeadingOne>
+                <Paragraph>
+                  Become a member of a freelancer's pool and work on creative
+                  projects
+                </Paragraph>
+              </div>
+              <Container.Cases>
+                {cases?.map((items, index) => (
+                  <CaseComp
+                    key={index}
+                    tag={items?.tagsList}
+                    imageSrc={items?.casePhotoUrl}
+                    title={items?.client}
+                    paragraph={items?.projectName}
+                    to={items?.link}
+                  />
+                ))}
+              </Container.Cases>
             </div>
-            <Container.Cases >
-              {cases?.map((items, index) => (
-                <CaseComp
-                  key={index}
-                  tag={items?.tagsList}
-                  imageSrc={items?.casePhotoUrl}
-                  title={items?.client}
-                  paragraph={items?.projectName}
-                  to={items?.link}
-                />
-              ))}
-            </Container.Cases>
-          </div>
-        </Container>
-      </div>
+          </Container>
+        </div>
+      )}
     </div>
   );
 }

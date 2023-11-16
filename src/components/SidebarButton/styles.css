@@ -41,14 +41,26 @@
   gap: 36px;
 }
 
-.routes li {
+.routes-link {
+  display: inline-block;
+  width: 100%;
   color: #ffffff;
   font-family: "Onest-Regular", Helvetica;
   font-size: 38px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
+  padding-left: 5px;
   cursor: pointer;
+  box-shadow: inset 0 0 0 0 #037778;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  border-radius: 15px;
+
+}
+.routes-link:hover{
+  box-shadow: inset 250px 0 0 0 #037778;
+  color: white;
+  border-radius: 15px;
 }
 
 .hidden {
