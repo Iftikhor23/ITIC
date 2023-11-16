@@ -9,14 +9,14 @@ import { useEffect } from "react";
 import { PenIcon, TrasIcon } from "../../../components/Reusable/GenericIcons/genericIcons";
 
 const ActionRenderer = ({ data }) => {
-  const navigate = useNavigate()
-  const [{teamdata},dispatch] = useTestomoniralsContext();
+  const navigate = useNavigate();
+  const [, dispatch] = useTestomoniralsContext();
 
   const getTestomonial = async () => {
     try {
-      const res = await request.get(`admin/employee/all`);
+      const res = await request.get(`admin/testomonial/all`);
       dispatch({
-        type: "setTeam",
+        type:'setTestomonirals',
         payload: res?.data?.data,
       });
     } catch (error) {
@@ -27,11 +27,11 @@ const ActionRenderer = ({ data }) => {
   const deleteF = async () => {
     try {
       const res = await request.delete(`admin/testomonial/${data?.id}`);
+      getTestomonial();
       Toast({
         type: "success",
         message: "Deleted !",
       });
-      getTestomonial();
     } catch (error) {
       Swal.fire(error?.response?.data?.resultMsg);
     }
@@ -43,26 +43,28 @@ const ActionRenderer = ({ data }) => {
       showCancelButton: true,
       confirmButtonText: "Yes",
       cancelButtonText: "No",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
-        deleteF();
+        await deleteF();
       }
     });
   };
+
   const editFunc = () => {
     dispatch({
       type: "setSelectedTestomonirals",
       payload: data,
     });
-    navigate(`/admin/testimonials/edite/:${data?.id}`)
+    navigate(`/admin/testimonials/edite/:${data?.id}`);
   };
+
   return (
     <Wrapper.Flex>
       <Wrapper.Box onClick={deleteFunc}>
         <TrasIcon />
       </Wrapper.Box>
       <Wrapper.Box onClick={editFunc}>
-        <PenIcon/>
+        <PenIcon />
       </Wrapper.Box>
     </Wrapper.Flex>
   );

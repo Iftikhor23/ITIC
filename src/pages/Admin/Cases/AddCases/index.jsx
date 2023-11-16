@@ -60,7 +60,14 @@ const AddCase = () => {
 
   const saveData = async () => {
     if (!selected?.id) {
-      if (idOfAttachmentId && urlFormData && state?.projectName) {
+      if (
+        idOfAttachmentId 
+        && urlFormData 
+        && state?.projectName
+        && state?.link
+        && state?.tags
+        && state?.client
+        ) {
         try {
           const res = await request.post(
             `admin/case/add`,

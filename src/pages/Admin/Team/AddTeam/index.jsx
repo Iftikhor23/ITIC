@@ -66,6 +66,7 @@ function AddTeam() {
       [fieldName]: value,
     }));
   };
+
   //! POST FUNCTION
   const postFunction = async () => {
     if (!selected?.id) {
@@ -171,7 +172,7 @@ function AddTeam() {
                   alt="upload cloud"
                 />
               ) : (
-                <img src={uploadIcon} alt="upload cloud" />
+                <img  src={uploadIcon} alt="upload cloud" />
               )}
             </div>
           </label>

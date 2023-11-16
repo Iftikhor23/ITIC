@@ -51,8 +51,10 @@ Wrapper.InputTable = styled.div`
     margin-left: 1%;
     font-size: 25px;
   }
-  .imgSize{
-    width: 100%;
+  .imgSize {
+    width: 209px;
+    height: 240px;
+    border-radius: 20px;
   }
 `;
 
