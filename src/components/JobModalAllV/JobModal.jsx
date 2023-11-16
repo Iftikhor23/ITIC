@@ -52,7 +52,16 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
   };
 
   const saveData = async () => {
-    if (getData?.fullName && getData?.phoneNumber && getData?.email) {
+    if (
+      getData?.fullName 
+      && getData?.phoneNumber 
+      && getData?.email 
+      && getData?.comment
+      && getData?.userCVUrl
+      && getData?.attachmentId
+      && getData?.position
+      && getData?.linkedinLink
+      ) {
       try {
         const isValidEmail = validateEmail(getData.email);
         if (!isValidEmail) {

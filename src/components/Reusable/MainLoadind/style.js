@@ -10,9 +10,6 @@ export const Loading = styled.div`
   background-color: #029693;
 
   .loadingrounded {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 200px;
     height: 200px;
     border-radius: 100%;

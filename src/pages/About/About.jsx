@@ -30,8 +30,7 @@ function About() {
           </Container.Numbers>
         </Container.Data>
       </Container.Wrapper>
-      <div className="tech1"></div>
-        <div className="tech2"></div>
+     
     </Container>
   );
 }

@@ -18,7 +18,7 @@ function AllCases() {
 
   let totalCasesWidth = cases.length * 63;
 
-  if (window.innerWidth > 1535) {
+  if (window.innerWidth > 1540) {
     totalCasesWidth = cases.length * 49 + 50;
   } else {
     totalCasesWidth = cases.length * 63 + 50;
@@ -58,7 +58,7 @@ function AllCases() {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth >= 840]);
+  }, [triggerRef.current?.offsetWidth >= 840,cases,totalCasesWidth]);
 
   const getCallReq = async () => {
     try {

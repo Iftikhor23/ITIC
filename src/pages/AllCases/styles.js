@@ -4,7 +4,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   height: 100vh;
-  /* overflow-x: hidden; */
   background-color: #051c2c;
   gap: 89px;
 

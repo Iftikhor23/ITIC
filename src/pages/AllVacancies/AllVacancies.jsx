@@ -44,11 +44,11 @@ function AllVacancies() {
   const triggerRef = useRef(null);
 
   let totalCasesWidth =
-    window.innerWidth > 1535
+    window.innerWidth > 1540
       ? testomonial.length * 23 + 40
       : testomonial.length * 33 + 50;
 
-  console.log(totalCasesWidth);
+ 
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -84,7 +84,7 @@ function AllVacancies() {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth >= 840, totalCasesWidth]);
+  }, [triggerRef.current?.offsetWidth >= 840, totalCasesWidth,testomonial]);
 
   return (
     <div className="scrollSectionOuter">

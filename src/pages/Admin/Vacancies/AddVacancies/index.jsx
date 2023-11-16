@@ -42,14 +42,15 @@ function AddTeam() {
     { id: 1, value: "SAMARQAND" },
     { id: 2, value: "ANDIJON" },
     { id: 3, value: "FARGONA" },
-    { id: 4, value: "NAMANAGAN" },
+    { id: 4, value: "NAMANGAN" },
     { id: 5, value: "SIRDARYO" },
     { id: 6, value: "JIZZAX" },
     { id: 7, value: "XORAZM" },
     { id: 8, value: "NAVOIY" },
     { id: 9, value: "QASHQADARYO" },
-    { id: 10, value: "SURHONDARYO" },
-    { id: 11, value: "QORAQOLPOGISTON" },
+    { id: 10, value: "SURXANDARYO" },
+    { id: 11, value: "BUXORO" },
+    { id: 12, value: "QORAQOLPOQ" },
   ];
   //! GET SELECT DATA
   const handleTimeChange = (type, value) => {
