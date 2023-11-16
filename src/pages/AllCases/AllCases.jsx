@@ -19,10 +19,10 @@ function AllCases() {
   let totalCasesWidth = null
 
   if (window.innerWidth > 1540) {
-    totalCasesWidth = cases.length * 49 + 50;
+    totalCasesWidth = cases?.length * 49 + 50;
   }
    if (window.innerWidth < 1540) {
-    totalCasesWidth = cases.length * 63 + 50;
+    totalCasesWidth = cases?.length * 63 + 50;
   }
   if (window.innerWidth < 840) {
     totalCasesWidth = ''

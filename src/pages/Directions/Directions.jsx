@@ -3,14 +3,14 @@ import category2 from "../../assets/images/dir2.svg";
 import category3 from "../../assets/images/dir3.svg";
 import category4 from "../../assets/images/dir4.svg";
 import { HeadingOne, Paragraph } from "../../styled/styles";
-import { Container, HeadingDirection } from "./styles";
+import { Container } from "./styles";
 
 function Directions() {
   return (
     <Container id="direction">
       <div className="wrapper">
         <div className="textBox">
-          <HeadingDirection>Main Directions</HeadingDirection>
+          <HeadingOne width="538px">Main Directions</HeadingOne>
           <Paragraph>
             Become a member of a freelancer's pool and work on creative projects
           </Paragraph>

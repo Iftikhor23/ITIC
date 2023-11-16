@@ -26,7 +26,7 @@ Container.Wrapper = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 837px;
+    height: 737px;
     width: 355px;
   }
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import testiBack2 from "../../assets/images/liquid-cheese.svg";
 
 export const Container = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,6 @@ position: relative;
   background-color: #fff;
   width: 100vw;
   height: 100vh;
-  gap: 201px;
 
   @media screen and (max-width: 840px) {
     width: 100vw;
@@ -25,7 +24,6 @@ position: relative;
     height: 740px;
     width: 100vw;
   }
-  
 `;
 
 Container.Wrapper = styled.div`
@@ -33,6 +31,11 @@ Container.Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 201px;
+  
+
+  @media screen and (max-width: 1441px) {
+    gap: 70px;
+  }
 
   @media screen and (max-width: 840px) {
     align-items: flex-start;

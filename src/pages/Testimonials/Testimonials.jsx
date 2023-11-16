@@ -35,7 +35,7 @@ function Testimonials() {
       <Container.Wrapper>
         <Container.TextWrap>
           <HeadingOne>Testimonials</HeadingOne>
-          <Paragraph color="#121212">
+          <Paragraph color="#fff">
             Become a member of a freelancer's pool and work on creative projects
           </Paragraph>
         </Container.TextWrap>

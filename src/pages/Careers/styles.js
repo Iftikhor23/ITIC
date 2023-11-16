@@ -207,7 +207,7 @@ Container.Wrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 412px;
-    width: 326px;
+    max-width: 326px;
     border-radius: 30px;
     border: 1px solid #dfdfdf;
     padding: 49px 32px 35px 37px;

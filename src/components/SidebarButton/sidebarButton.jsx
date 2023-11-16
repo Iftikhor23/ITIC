@@ -54,15 +54,20 @@ function SidebarButton({ scrollToElement }) {
       </div>
       <div className={menuClass}>
         <ul className="routes">
-          {pages.map((page) => (
+          {pages.map((page, id) => (
             <li
+            key={id}
               onClick={() => {
                 scrollToElement(page?.id);
                 updateMenu();
               }}
-             
             >
-              <a className="routes-link" href={`#${page.id}`} key={page.id}   data-target={`${page?.id}`}>
+              <a
+                className="routes-link"
+                href={`#${page.id}`}
+                key={page.id}
+                data-target={`${page?.id}`}
+              >
                 {page.path}
               </a>
             </li>

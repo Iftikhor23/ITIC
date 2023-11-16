@@ -15,11 +15,13 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 292px;
+
+    @media screen and (max-width: 1442px) {
+      gap: 50px;
+    }
   }
 
   .textBox {
-    width: 100%;
-    max-width: 528px;
   }
   @media screen and (max-width: 840px) {
     height: 2530px;
@@ -45,7 +47,7 @@ Container.Categories = styled.div`
   align-items: center;
   gap: 68px;
   .catImage {
-    width: 100%;
+    max-width: 499px;
     @media screen and (max-width: 653px) {
       width: 355px;
     }
