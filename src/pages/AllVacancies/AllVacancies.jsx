@@ -43,11 +43,19 @@ function AllVacancies() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
-  let totalCasesWidth =
-    window.innerWidth > 1540
-      ? testomonial.length * 23 + 40
-      : testomonial.length * 33 + 50;
 
+
+      let totalCasesWidth = null
+
+      if (window.innerWidth > 1540) {
+        totalCasesWidth = testomonial.length * 23 + 40;
+      }
+       if (window.innerWidth < 1540) {
+        totalCasesWidth = testomonial.length * 33 + 50;
+      }
+      if (window.innerWidth < 840) {
+        totalCasesWidth = ''
+      }
  
 
   useEffect(() => {

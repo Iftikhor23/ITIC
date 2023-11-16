@@ -16,12 +16,16 @@ function AllCases() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
-  let totalCasesWidth = cases.length * 63;
+  let totalCasesWidth = null
 
   if (window.innerWidth > 1540) {
     totalCasesWidth = cases.length * 49 + 50;
-  } else {
+  }
+   if (window.innerWidth < 1540) {
     totalCasesWidth = cases.length * 63 + 50;
+  }
+  if (window.innerWidth < 840) {
+    totalCasesWidth = ''
   }
 
   useEffect(() => {
@@ -58,7 +62,7 @@ function AllCases() {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth >= 840,cases,totalCasesWidth]);
+  }, [triggerRef.current?.offsetWidth >= 840,cases,]);
 
   const getCallReq = async () => {
     try {
