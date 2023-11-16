@@ -49,7 +49,15 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
   };
 
   const saveData = async () => {
-    if (getData?.fullName && getData?.phoneNumber && getData?.email) {
+    if (
+      getData?.fullName
+       && getData?.phoneNumber 
+       && getData?.email
+       && getData?.userCVUrl
+       && getData?.attachmentId
+       && getData?.comment
+       && getData?.linkedinLink
+       ) {
       try {
         const isValidEmail = validateEmail(getData.email);
         if (!isValidEmail) {
