@@ -5,13 +5,17 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #051c2c;
-  width: 230vw;
+  max-width: 230vw;
   height: 100vh;
+  @media screen and (max-width: 1550px) {
+    padding: 0 100px;
+  }
 
   @media only screen and (max-width: 840px) {
-    height: 1580px;
+    height: 1500px;
     width: 100vw;
     justify-content: center;
+    padding: 0;
   }
 
   @media only screen and (max-width: 653px) {
@@ -51,6 +55,10 @@ export const HeadingOneFor = styled.h1`
     }
   }
 
+  @media screen and (max-width: 1442px) {
+    font-size: 50px;
+  }
+
   @media only screen and (max-width: 840px) {
     font-size: 42px;
   }
@@ -66,7 +74,8 @@ export const Paragraph = styled.p`
   font-size: 16px;
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
-  width: ${({ width }) => (width ? width : "476px")};
+  /* width: ${({ width }) => (width ? width : "476px")}; */
+  max-width: 476px;
 
   @media only screen and (max-width: 840px) {
     width: 100%;
@@ -106,7 +115,7 @@ Container.Box = styled.div`
     gap: 33px;
 
     .forImgGlobe {
-      width: 263px;
+      max-width: 263px;
       height: 251px;
     }
 

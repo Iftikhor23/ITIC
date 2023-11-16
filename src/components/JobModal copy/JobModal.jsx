@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "./styles";
 import closeIcon from "../../assets/icons/close.svg";
 import Input from "../InputComponent/Input";
-import Button from "../Reusable/ButtonComb/Button";
+import Button from "../Reusable/ButtonCombModal/Button";
 import request from "../../services";
 import { useState } from "react";
 import Toast from "../Reusable/Toast";
@@ -174,26 +174,28 @@ function JobModal({ isVisible, onClose }) {
                 placeholder={"Upload from files"}
                 type={"file"}
                 onChange={uploadCV}
-                
               />
             </div>
           </Container.Group>
-
-          <Input
-            label={"Comment"}
-            placeholder={"Add Comment"}
-            type={"text"}
-            width={"652px"}
-            onChange={(e) =>
-              setGetData({ ...getData, comment: e.target.value })
-            }
-          />
-          <Button
-            title="Submit"
-            fontSize="24px"
-            iconSize="24px"
-            onClick={saveData}
-          />
+          <div className="group">
+            <Input
+              conHeight={"132px"}
+              resHeight={"110px"}
+              label={"Comment"}
+              placeholder={"Add Comment"}
+              type={"text"}
+              width={"652px"}
+              onChange={(e) =>
+                setGetData({ ...getData, comment: e.target.value })
+              }
+            />
+            <Button
+              title="Submit"
+              fontSize="24px"
+              iconSize="24px"
+              onClick={saveData}
+            />
+          </div>
         </Container.Form>
       </Container.Wrapper>
     </Container>

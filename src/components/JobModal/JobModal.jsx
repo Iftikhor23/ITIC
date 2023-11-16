@@ -50,14 +50,14 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
 
   const saveData = async () => {
     if (
-      getData?.fullName
-       && getData?.phoneNumber 
-       && getData?.email
-       && getData?.userCVUrl
-       && getData?.attachmentId
-       && getData?.comment
-       && getData?.linkedinLink
-       ) {
+      getData?.fullName &&
+      getData?.phoneNumber &&
+      getData?.email &&
+      getData?.userCVUrl &&
+      getData?.attachmentId &&
+      getData?.comment &&
+      getData?.linkedinLink
+    ) {
       try {
         const isValidEmail = validateEmail(getData.email);
         if (!isValidEmail) {
@@ -76,7 +76,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
             phoneNumber: `+998${getData.phoneNumber}`,
             email: getData.email,
             position: selectedJobTitle,
-            resumeType: selectedJobTitle ? 'NON_APPLY' : "APPLY",
+            resumeType: selectedJobTitle ? "NON_APPLY" : "APPLY",
             comment: getData.comment,
             userCVUrl: getData.userCVUrl,
             attachmentId: getData.attachmentId,
@@ -119,7 +119,6 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
-
 
   return (
     <Container onClick={handleClose} id="container">
@@ -183,22 +182,25 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
               />
             </div>
           </Container.Group>
-
-          <Input
-            label={"Comment"}
-            placeholder={"Add Comment"}
-            type={"text"}
-            width={"652px"}
-            onChange={(e) =>
-              setGetData({ ...getData, comment: e.target.value })
-            }
-          />
-          <Button
-            title="Submit"
-            fontSize="24px"
-            iconSize="24px"
-            onClick={saveData}
-          />
+          <div className="group">
+            <Input
+              conHeight={"132px"}
+              resHeight={"110px"}
+              label={"Comment"}
+              placeholder={"Add Comment"}
+              type={"text"}
+              width={"652px"}
+              onChange={(e) =>
+                setGetData({ ...getData, comment: e.target.value })
+              }
+            />
+            <Button
+              title="Submit"
+              fontSize="24px"
+              iconSize="24px"
+              onClick={saveData}
+            />
+          </div>
         </Container.Form>
       </Container.Wrapper>
     </Container>

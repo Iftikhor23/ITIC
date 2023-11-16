@@ -5,7 +5,7 @@ export const HeadingOne = styled.h1`
   font-weight: 500;
   margin: 5px;
   width: ${({width}) => (width ? width: "100%")} ;
-  max-width: ${({ width }) => (width ? width : "100%")};
+  /* max-width: ${({ width }) => (width ? width : "100%")}; */
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
   -webkit-background-clip: text;
@@ -30,6 +30,10 @@ export const HeadingOne = styled.h1`
     }
   }
 
+  @media screen and (max-width: 1440px) {
+    font-size: 50px;
+  }
+
   @media only screen and (max-width: 840px) {
     font-size: 42px;
   }
@@ -46,6 +50,7 @@ export const Paragraph = styled.p`
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
   width: ${({ width }) => (width ? width : "476px")};
+  max-width: ${({maxWidth}) => (maxWidth ? maxWidth : "354px")};
 
   @media only screen and (max-width: 840px) {
     width: 100%;

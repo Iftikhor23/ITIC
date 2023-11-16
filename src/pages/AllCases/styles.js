@@ -19,6 +19,10 @@ export const Container = styled.div`
       width: fit-content;
       align-items: flex-start;
     }
+
+    @media screen and (max-width: 653px) {
+      align-items: center;
+    }
   }
 
   @media screen and (max-width: 840px) {

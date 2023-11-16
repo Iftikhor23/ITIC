@@ -7,7 +7,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
 
   @media screen and (max-width: 840px) {
     width: 100vw;
@@ -54,18 +53,17 @@ Container.Images = styled.div`
     height: 360px;
     border-radius: 30px;
     object-fit: cover;
-    transition: box-shadow 0.3s ease; 
-}
-
-.image-teams:hover {
-  box-shadow: 0px 0px 10px 10px rgba(253, 254, 255, 0.2);
-}
+    transition: box-shadow 0.3s ease;
 
     @media screen and (max-width: 653px) {
       height: 210px;
       width: 173px;
     }
+  }
 
+  /* .image-teams:hover {
+    box-shadow: 0px 0px 10px 10px rgba(253, 254, 255, 0.2);
+  } */
 
   @media screen and (max-width: 840px) {
     display: grid;

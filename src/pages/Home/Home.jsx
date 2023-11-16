@@ -67,7 +67,7 @@ function Home() {
             </Paragraph>
             <Container.TeamBox className="image-class">
               <>
-                {callData.slice(0, 5).map((items, index) => {
+                {callData?.slice(0, 5).map((items, index) => {
                   const topPosition = index * 0;
                   const leftPosition = index * 50;
                   const zindex = 5 - index;

@@ -44,7 +44,7 @@ Container.Header = styled.div`
   padding: 48px 83px 0px 156px;
 
   @media screen and (max-width: 840px) {
-    padding: 48px 45px 0px 38px;
+    padding: 24px 45px 0px 38px;
   }
 `;
 
@@ -54,6 +54,10 @@ Container.Text = styled.h1`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media screen and (max-width: 653px) {
+    font-size: 24px;
+  }
 `;
 
 Container.Form = styled.div`
@@ -61,9 +65,22 @@ Container.Form = styled.div`
   flex-direction: column;
   padding: 46px 157px 201px 157px;
   gap: 24px;
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
   @media screen and (max-width: 840px) {
     padding: 44px 38px 55px 38px;
+  }
+
+  @media screen and (max-width: 653px) {
+    padding: 44px 23px 55px 23px;
+    .group {
+      align-items: center;
+      gap: 33px;
+    }
   }
 `;
 
@@ -119,5 +136,9 @@ Container.Group = styled.div`
   input[type="file"] {
     opacity: 0;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 653px) {
+    flex-direction: column;
   }
 `;
