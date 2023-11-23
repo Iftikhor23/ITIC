@@ -13,7 +13,7 @@ export const Container = styled.div`
   position: relative;
 
   @media screen and (max-width: 840px) {
-    height: 1300px;
+    height: 1158px;
   }
 `;
 
@@ -132,11 +132,6 @@ Container.TeamBox = styled.div`
     background-color: #fff;
     margin-left: 240px;
     margin-top: 33px;
-
-    @media screen and (max-width: 653px) {
-      width: 56px;
-      height: 56px;
-    }
   }
   .lastrounded > span {
     color: #061f2f;
@@ -148,7 +143,7 @@ Container.TeamBox = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    width: 296px;
+    width: 320px;
   }
 `;
 
