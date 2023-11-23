@@ -167,9 +167,6 @@ Container.MidWrap = styled.div`
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 840px) {
-      bottom: 222px;
-    }
     .lilChart {
       position: absolute;
       left: -26px;

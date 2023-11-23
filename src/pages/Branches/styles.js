@@ -2,7 +2,7 @@ import styled from "styled-components";
 import bacground from "../../assets/images/branch.png";
 
 export const Container = styled.div`
-  width: 180vw;
+  width: 145vw;
   height: 100vh;
   background: url(${bacground});
   background-repeat: no-repeat;
@@ -251,7 +251,7 @@ export const HeadingBranch = styled.h1`
   font-size: 72px;
   font-weight: 500;
   margin: 5px;
-  max-width: 600px;
+  max-width: 881px;
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
   -webkit-background-clip: text;

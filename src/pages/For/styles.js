@@ -5,8 +5,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #051c2c;
-  max-width: 230vw;
+  max-width: 360vw;
   height: 100vh;
+  padding: 0 100px;
+
   @media screen and (max-width: 1550px) {
     padding: 0 100px;
   }
@@ -30,7 +32,6 @@ export const HeadingOneFor = styled.h1`
   font-weight: 500;
   margin: 5px;
   width: 100%;
-  max-width: ${({ width }) => (width ? width : "100%")};
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
   -webkit-background-clip: text;
@@ -74,8 +75,7 @@ export const Paragraph = styled.p`
   font-size: 16px;
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
-  /* width: ${({ width }) => (width ? width : "476px")}; */
-  max-width: 476px;
+  width: 100%;
 
   @media only screen and (max-width: 840px) {
     width: 100%;
@@ -185,6 +185,7 @@ Container.Number = styled.div`
 `;
 
 Container.Text = styled.div`
+  max-width: 605px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
