@@ -7,7 +7,8 @@ export const Container = styled.div`
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  padding: 0 100px;
   gap: 292px;
 
   .wrapper {

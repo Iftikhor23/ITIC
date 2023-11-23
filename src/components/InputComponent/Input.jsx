@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Container } from "./styles";
 
 function Input({
@@ -24,7 +23,6 @@ function Input({
       event.preventDefault();
     }
   };
-  
 
   return (
     <Container conHeight={conHeight}>
@@ -35,10 +33,10 @@ function Input({
           type={type}
           placeholder={placeholder}
           placeholderColor={placeholderColor}
-          value={value} 
+          value={value}
           onChange={onChange}
           max={max}
-          onKeyPress={handleKeyPress} 
+          onKeyPress={handleKeyPress}
         />
       </Container.Wrap>
     </Container>

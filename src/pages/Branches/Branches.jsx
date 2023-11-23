@@ -1,5 +1,5 @@
-import { HeadingOne, Paragraph } from "../../styled/styles";
-import { Container } from "./styles";
+import { Paragraph } from "../../styled/styles";
+import { Container, HeadingBranch } from "./styles";
 import { Fade } from "react-reveal";
 import world from "../../assets/images/world.svg";
 import soon from "../../assets/images/soon.png";
@@ -11,10 +11,10 @@ function Branches() {
     <Container id="branches">
       <Container.Wrapper>
         <Container.Text>
-          <HeadingOne>
+          <HeadingBranch>
             Our branches in different
             <br /> countries
-          </HeadingOne>
+          </HeadingBranch>
           <Paragraph>
             Become a member of a freelancer's pool and work on creative projects
           </Paragraph>

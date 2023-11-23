@@ -9,8 +9,9 @@ export const Container = styled.div`
   background-size: cover;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   position: relative;
+  padding: 0 100px;
 
   @media screen and (max-width: 840px) {
     height: 905px;
@@ -243,5 +244,49 @@ Container.Text = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+`;
+
+export const HeadingBranch = styled.h1`
+  font-size: 72px;
+  font-weight: 500;
+  margin: 5px;
+  max-width: 600px;
+  background: -webkit-linear-gradient(left, black, #fff, black);
+  background-size: 1600px 200px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 2s linear infinite alternate;
+  span {
+    display: none;
+    @media only screen and (max-width: 653px) {
+      display: block;
+    }
+  }
+
+  @keyframes textShine {
+    0% {
+      background-position: 0 1600px;
+    }
+    100% {
+      background-position: 1600px 0;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    font-size: 50px;
+  }
+
+  @media only screen and (max-width: 840px) {
+    font-size: 42px;
+  }
+
+  @media only screen and (max-width: 653px) {
+    width: 288px;
+    font-size: 32px;
+    text-align: center;
   }
 `;
