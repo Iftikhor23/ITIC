@@ -11,12 +11,14 @@ import up from "../../assets/images/uptrade.svg";
 import request from "../../services";
 import { useEffect } from "react";
 import MainLoading from "../../components/Reusable/MainLoadind";
+import Swal from "sweetalert2";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
   const [callData, setCallData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  //! GET ALL THE DATA FROM SERVER
   const getCallReq = async () => {
     try {
       setLoading(true);
@@ -24,6 +26,7 @@ function Home() {
       setCallData(res?.data?.data);
       setLoading(false);
     } catch (error) {
+       Swal.fire("Serverdan xatolik yoki internetga ulanganingizni tekshiring !",error)
       console.error("Error", error);
       setLoading(false);
     }
@@ -32,6 +35,7 @@ function Home() {
     getCallReq();
   }, []);
 
+  
   return (
     <Container id="home">
       {loading ? (
