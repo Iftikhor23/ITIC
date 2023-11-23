@@ -109,6 +109,12 @@ Container.Box = styled.div`
   align-items: center;
   gap: 148px;
 
+  @media screen and (max-width: 1536px) {
+    .forImgGlobe{
+      width: 281px;
+    }
+  }
+
   @media screen and (max-width: 840px) {
     display: flex;
     align-items: center;
