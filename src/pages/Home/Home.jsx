@@ -31,10 +31,10 @@ function Home() {
       setLoading(false);
     }
   };
+  
   useEffect(() => {
     getCallReq();
   }, []);
-
   
   return (
     <Container id="home">

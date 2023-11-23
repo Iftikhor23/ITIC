@@ -99,6 +99,11 @@
     font-size: 24px;
   }
 }
+@media screen and (max-width: 553px) {
+  .visible {
+    left: -479px;
+  }
+}
 
 /*animations*/
 /*clicked*/
