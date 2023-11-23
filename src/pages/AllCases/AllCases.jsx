@@ -8,6 +8,7 @@ import request from "../../services";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/itLogo.svg";
 import MainLoading from "../../components/Reusable/MainLoadind";
+import Swal from "sweetalert2";
 
 function AllCases() {
   const [cases, setCases] = useState([]);
@@ -71,6 +72,8 @@ function AllCases() {
       setCases(res?.data?.data);
       setLoading(false);
     } catch (error) {
+      
+      Swal.fire("Serverdan xatolik yoki internetga ulanganingizni tekshiring !",error)
       console.error("Error", error);
       setLoading(false);
     }
