@@ -48,7 +48,7 @@ function AllVacancies() {
       let totalCasesWidth = null
 
       if (window.innerWidth > 1540) {
-        totalCasesWidth = testomonial?.length * 23 + 40;
+        totalCasesWidth = testomonial?.length * 24 + 40;
       }
        if (window.innerWidth < 1540) {
         totalCasesWidth = testomonial?.length * 33 + 50;
