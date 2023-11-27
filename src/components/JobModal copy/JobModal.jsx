@@ -36,8 +36,6 @@ function JobModal({ isVisible, onClose }) {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log(resData, "dvnjsfnvjhv hsbvjbdshbvhasfvhb");
-
       const { fileUrl, id } = resData?.data?.data;
       setGetData({ ...getData, userCVUrl: fileUrl, attachmentId: id });
       Toast({
@@ -49,18 +47,26 @@ function JobModal({ isVisible, onClose }) {
       console.error("Yuklashda xatolik yuz berdi:", error);
     }
   };
+
   const saveData = async () => {
-    if (getData?.fullName && getData?.phoneNumber && getData?.email) {
+    const isValidEmail = validateEmail(getData.email);
+    if (!isValidEmail) {
+      Swal.fire({
+        icon: "error",
+        title: "Noto'g'ri email formati",
+        text: "Noto'g'ri email formati kiritildi",
+      });
+      return;
+    }
+
+    if (
+      getData?.fullName &&
+      getData?.phoneNumber &&
+      getData?.email &&
+      getData?.position &&
+      getData?.comment
+    ) {
       try {
-        const isValidEmail = validateEmail(getData.email);
-        if (!isValidEmail) {
-          Swal.fire({
-            icon: "error",
-            title: "Noto'g'ri email formati",
-            text: "Noto'g'ri email formati kiritildi",
-          });
-          return;
-        }
         const res = await request.post(`public/resume`, {
           data: {
             fullName: getData.fullName,
@@ -68,26 +74,29 @@ function JobModal({ isVisible, onClose }) {
             phoneNumber: `+998${getData.phoneNumber}`,
             email: getData.email,
             position: getData.position,
+            resumeType: "APPLY",
             comment: getData.comment,
             userCVUrl: getData.userCVUrl,
             attachmentId: getData.attachmentId,
           },
         });
-        Toast({
-          type: "success",
-          message: "Saved",
-        });
-        onClose();
-        setGetData({
-          fullName: "",
-          linkedinLink: "",
-          phoneNumber: "+998",
-          email: "",
-          position: "",
-          comment: "",
-          userCVUrl: "",
-          attachmentId: "",
-        });
+        if (res.status === 200) {
+          Toast({
+            type: "success",
+            message: "Saved",
+          });
+          onClose();
+          setGetData({
+            fullName: "",
+            linkedinLink: "",
+            phoneNumber: "+998",
+            email: "",
+            position: "",
+            comment: "",
+            userCVUrl: "",
+            attachmentId: "",
+          });
+        }
       } catch (error) {
         Swal.fire("There is a problem with the Internet or with the server");
         console.error("Saqlashda xatolik yuz berdi:", error);

@@ -17,7 +17,7 @@ export const Container = styled.div`
     height: 1500px;
     width: 100vw;
     justify-content: center;
-    padding: 0;
+    padding: 0 50px;
   }
 
   @media only screen and (max-width: 653px) {

@@ -56,9 +56,9 @@ request.interceptors.response.use(
 				window.location.pathname?.search('reset') < 0 &&
 				window.location.pathname?.search('verify') < 0
 			) {
-				window.location.pathname?.search('admin') > 0
-					? (window.location.pathname = '/admin/sign-in')
-					: (window.location.pathname = '/signin');
+				if(window.location.pathname?.search('admin') > 0){
+					(window.location.pathname = '/admin/sign-in')
+				}
 			} else {
 				return Promise.reject(err);
 			}

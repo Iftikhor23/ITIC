@@ -187,8 +187,9 @@ export const Container = styled.div`
 
 Container.Wrapper = styled.div`
   display: flex;
-  gap: 50px;
   justify-content: center;
+  align-items: center;
+  gap: 50px;
 
   @media screen and (max-width: 840px) {
     flex-direction: column;
@@ -240,7 +241,9 @@ Container.Wrapper = styled.div`
   .mblRspnsv .jobBox .bottomPart {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+  }
+  .bottomPart .arrow{
+    margin-left: 20px;
   }
 
   @media screen and (max-width: 653px) {
