@@ -49,7 +49,7 @@ export const Paragraph = styled.p`
   font-size: 16px;
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
-  width: ${({ width }) => (width ? width : "476px")};
+  width: ${({ width }) => (width ? width : "100%")};
   max-width: ${({maxWidth}) => (maxWidth ? maxWidth : "354px")};
 
   @media only screen and (max-width: 840px) {

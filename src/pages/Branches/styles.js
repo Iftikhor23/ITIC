@@ -2,7 +2,7 @@ import styled from "styled-components";
 import bacground from "../../assets/images/branch.png";
 
 export const Container = styled.div`
-  width: 180vw;
+  width: 145vw;
   height: 100vh;
   background: url(${bacground});
   background-repeat: no-repeat;
@@ -12,6 +12,9 @@ export const Container = styled.div`
   /* justify-content: center; */
   position: relative;
   padding: 0 100px;
+  @media screen and (max-width: 1350px) {
+    padding: 0 50px;
+  }
 
   @media screen and (max-width: 840px) {
     height: 905px;
@@ -30,6 +33,14 @@ Container.Wrapper = styled.div`
   align-items: center;
   gap: 271px;
   z-index: 1;
+  @media screen and (max-width: 1300px) {
+    gap: 50px;
+  }
+  @media screen and (max-width: 840px) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0px;
+  }
   .image {
     position: relative;
 
@@ -210,10 +221,9 @@ Container.Wrapper = styled.div`
     }
   }
 
-  @media screen and (max-width: 840px) {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0px;
+  .worldImage {
+    width: 100%;
+    max-width: 1287.68px;
   }
 
   .worldImage {
@@ -251,7 +261,7 @@ export const HeadingBranch = styled.h1`
   font-size: 72px;
   font-weight: 500;
   margin: 5px;
-  max-width: 600px;
+  max-width: 881px;
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
   -webkit-background-clip: text;

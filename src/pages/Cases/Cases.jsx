@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import { HeadingOne, Paragraph, TextWrap } from "../../styled/styles";
+import { HeadingOne, Paragraph } from "../../styled/styles";
 import CaseComp from "../../components/PortfolioCase/CaseComp";
 import { Link } from "react-router-dom";
 import Button from "../../components/ButtonCase/Button";

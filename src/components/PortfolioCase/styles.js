@@ -7,16 +7,24 @@ export const Container = styled.div`
   width: 918px;
   height: 600px;
   align-items: center;
+  @media screen and (max-width: 1250px) {
+    height: fit-content;
+    align-items: flex-start;
+    width: 828px;
+  }
 
   @media screen and (max-width: 840px) {
     height: fit-content;
     align-items: flex-start;
     width: 728px;
+    padding: 0 30px;
   }
 
   @media screen and (max-width: 653px) {
-    width: 355px;
+    width: 100%;
+    max-width: 355px;
     gap: 16px;
+    padding: 0 15px;
   }
 
   .imageWrap {
@@ -44,15 +52,22 @@ export const Container = styled.div`
     width: 918px;
     border-radius: 50px;
     object-fit: cover;
+    @media screen and (max-width: 1250px) {
+      width: 828px;
+      height: 401px;
+      object-fit: fill;
+    }
 
     @media screen and (max-width: 840px) {
-      width: 728px;
+      width: 100%;
+      max-width: 728px;
       height: 401px;
       object-fit: fill;
     }
 
     @media screen and (max-width: 653px) {
-      width: 355px;
+      width: 100%;
+      max-width: 355px;
       height: 197px;
       object-fit: cover;
       border-radius: 20px;
@@ -66,8 +81,6 @@ Container.Desc = styled.div`
   justify-content: space-between;
   gap: 107px;
   width: 100%;
-
-  
 `;
 
 Container.Info = styled.div`
@@ -75,7 +88,7 @@ Container.Info = styled.div`
   flex-direction: column;
   gap: 9px;
 
-  @media screen and (max-width: 653px){
+  @media screen and (max-width: 653px) {
     gap: 4px;
   }
 `;

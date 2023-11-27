@@ -1,21 +1,26 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 230vw;
+  width: 190vw;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
+  padding: 0 183px;
+  @media screen and (max-width: 1300px) {
+    justify-content: center;
+    padding: 0 80px;
+  }
 
   @media screen and (max-width: 840px) {
     width: 100vw;
     height: 2100px;
     justify-content: center;
+    padding: 0 33px;
   }
 
   @media screen and (max-width: 653px) {
-    height: 1430px;
+    height: 1436px;
   }
 `;
 
@@ -49,7 +54,8 @@ Container.Images = styled.div`
   gap: 16px;
   text-align: center;
   .image-teams {
-    width: 310px;
+    width: 100%;
+    max-width: 310px;
     height: 360px;
     border-radius: 30px;
     object-fit: cover;
@@ -57,13 +63,11 @@ Container.Images = styled.div`
 
     @media screen and (max-width: 653px) {
       height: 210px;
-      width: 173px;
+      width: 100%;
+      max-width: 173px;
     }
   }
 
-  /* .image-teams:hover {
-    box-shadow: 0px 0px 10px 10px rgba(253, 254, 255, 0.2);
-  } */
 
   @media screen and (max-width: 840px) {
     display: grid;

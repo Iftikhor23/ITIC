@@ -100,7 +100,7 @@ function Careers() {
                           setShowModal(true);
                         }}
                       >
-                        <FiArrowRight size={"25px"} />
+                        <FiArrowRight className="arrowRight" size={"25px"} />
                       </div>
                     </div>
                   </div>

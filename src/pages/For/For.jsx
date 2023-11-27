@@ -11,7 +11,7 @@ const For=()=> {
           <Container.Text>
             <Container.Number>01</Container.Number>
             <HeadingOneFor>Global Customers</HeadingOneFor>
-            <Paragraph width="495px">
+            <Paragraph>
               Connect with growing workforce and companies in the field of
               software development and animation to ensure quality and
               competitive price of the final product
@@ -36,7 +36,7 @@ const For=()=> {
           <Container.Text>
             <Container.Number>03</Container.Number>
             <HeadingOneFor>Freelancers</HeadingOneFor>
-            <Paragraph width="495px">Become a member of a freelancer's pool and work on creative projects</Paragraph>
+            <Paragraph max-width="495px">Become a member of a freelancer's pool and work on creative projects</Paragraph>
           </Container.Text>
           <img className="personImg" src={freelancer} alt="for" />
         </Container.Box>

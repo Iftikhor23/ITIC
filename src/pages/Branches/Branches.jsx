@@ -35,17 +35,17 @@ function Branches() {
 
           <img className="soonBra" src={soon} alt="location" />
           <p className="positiontext2">
-            Our branch in USA NewYork will be opened in the near future
+            Our branch in Brazil Rio de Janeiro will be opened in the near future
           </p>
 
           <img className="uzbLoc" src={uzbekistan} alt="location" />
           <p className="positiontext3">
-            Our branch in USA NewYork will be opened in the near future
+          Tepamasjid, 4, Olimlar, Tashkent 100041
           </p>
 
           <img className="sinLoc" src={singapore} alt="location" />
           <p className="positiontext4">
-            Our branch in USA NewYork will be opened in the near future
+            Our branch in Bedok state of the Singapore
           </p>
         </div>
       </Container.Wrapper>
