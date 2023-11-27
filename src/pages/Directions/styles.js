@@ -17,7 +17,7 @@ export const Container = styled.div`
     justify-content: center;
     gap: 292px;
 
-    @media screen and (max-width: 1500px) {
+    @media screen and (max-width: 1536px) {
       flex-direction: column;
       align-items: flex-start;
       gap: 50px;

@@ -27,7 +27,6 @@ function AddTeam() {
     isActive: selected?.isActive || false,
   });
 
-  // console.log(location.pathname);
 
   //! UPLOAD IMAGE FUNCTION
   const handleImageChange = async (e) => {

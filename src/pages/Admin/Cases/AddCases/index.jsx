@@ -135,7 +135,6 @@ const AddCase = () => {
       }
     }
   };
-console.log(state);
   return (
     <Wrapper>
       <Wrapper.Wrap>
