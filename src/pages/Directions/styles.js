@@ -7,9 +7,9 @@ export const Container = styled.div`
   padding: 0;
   display: flex;
   align-items: center;
+  /* justify-content: center; */
   padding: 0 100px;
   gap: 292px;
-  
 
   .wrapper {
     display: flex;
@@ -17,13 +17,17 @@ export const Container = styled.div`
     justify-content: center;
     gap: 292px;
 
+    @media screen and (max-width: 1536px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 50px;
+    }
     @media screen and (max-width: 1442px) {
       gap: 50px;
     }
-    @media screen and (max-width: 1150px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  }
+
+  .textBox {
   }
   @media screen and (max-width: 840px) {
     height: 2530px;
@@ -38,16 +42,9 @@ export const Container = styled.div`
       gap: 80px;
     }
   }
-  @media screen and (max-width: 840px) {
-    height: 1900px;
-    padding: 0 33px;
-  }
 
   @media screen and (max-width: 653px) {
-    height: 1340px;
-  }
-  @media screen and (max-width: 400px) {
-    justify-content: center;
+    height: 1830px;
   }
 `;
 
@@ -56,19 +53,9 @@ Container.Categories = styled.div`
   align-items: center;
   gap: 68px;
   .catImage {
-    width: 100%;
     max-width: 499px;
-    @media screen and (max-width: 1500px) {
-      max-width: 355px;
-    }
-    @media screen and (max-width: 840px) {
-      max-width: 476px;
-    }
     @media screen and (max-width: 653px) {
-      max-width: 300px;
-    }
-    @media screen and (max-width: 353px) {
-      max-width: 250px;
+      width: 355px;
     }
   }
 

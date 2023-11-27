@@ -82,7 +82,6 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
             attachmentId: getData.attachmentId,
           },
         });
-        console.log(res.status);
         if (res.status === 200) {
           Toast({
             type: "success",

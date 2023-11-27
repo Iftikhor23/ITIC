@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 function JobModal({ isVisible, onClose, selectedJobTitle }) {
   
-  console.log(selectedJobTitle);
+
   const [getData, setGetData] = useState({
     fullName: "",
     linkedinLink: "",
@@ -124,7 +124,6 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
     return regex.test(email);
   };
 
-  console.log(getData);
 
   return (
     <Container onClick={handleClose} id="container">

@@ -14,18 +14,20 @@ export const Container = styled.div`
   /* background-repeat: no-repeat; */
   /* padding-left: 1200px; */
   overflow: hidden;
-  gap: 400px;
 
   .wrapper {
-    display: flex;
     height: 100%;
     width: 100%;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 400px;
     @media screen and (max-width: 1442px) {
       gap: 50px;
+    }
+    @media screen and (max-width: 1630px) {
+      gap: 0px;
     }
 
     @media screen and (max-width: 840px) {

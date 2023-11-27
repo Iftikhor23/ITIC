@@ -29,6 +29,7 @@ function Pages() {
 
     if (triggerElement?.offsetWidth >= 840) {
       const scrollWidth = sectionElement.offsetWidth - window.innerWidth;
+      console.log(scrollWidth, "scrollWidth");
       const duration = scrollWidth / 1000; 
       const pinX = gsap.fromTo(
         sectionElement,
@@ -64,7 +65,7 @@ function Pages() {
     const elementRef = document.getElementById(id);
     if (elementRef) {
       const element = elementRef.getBoundingClientRect();
-      console.log(element)
+     
       window.scrollTo({
         top: element.x + window.pageYOffset,
         behavior: "smooth",

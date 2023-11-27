@@ -241,9 +241,7 @@ Container.Wrapper = styled.div`
   .mblRspnsv .jobBox .bottomPart {
     display: flex;
     align-items: center;
-  }
-  .bottomPart .arrow{
-    margin-left: 20px;
+    justify-content: space-between;
   }
 
   @media screen and (max-width: 653px) {
