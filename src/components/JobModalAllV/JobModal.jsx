@@ -59,7 +59,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
       && getData?.comment
       && getData?.userCVUrl
       && getData?.attachmentId
-      && getData?.position
+      && selectedJobTitle
       && getData?.linkedinLink
       ) {
       try {
