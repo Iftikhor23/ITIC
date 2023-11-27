@@ -36,7 +36,7 @@ function Pages() {
           x: 0,
         },
         {
-          x: -scrollWidth,
+          x: -27720,
           ease: "none",
           duration: duration,
           scrollTrigger: {
