@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100vw;
+  width: 103vw;
   height: 100vh;
   padding: 100px 0px 32px 115px;
   position: relative;
@@ -182,6 +182,7 @@ Container.Bubble = styled.div`
   }
 
   @media screen and (max-width: 840px) {
+    display: none;
     position: relative;
     height: fit-content;
     width: fit-content;
