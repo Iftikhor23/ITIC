@@ -92,7 +92,7 @@ function AllVacancies() {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth >= 840, totalCasesWidth,testomonial]);
+  }, [triggerRef.current?.offsetWidth >= 840, totalCasesWidth]);
 
   return (
     <div className="scrollSectionOuter">

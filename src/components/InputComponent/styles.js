@@ -5,9 +5,10 @@ export const Container = styled.div`
 
   @media screen and (max-width: 653px) {
     width: 310px;
-    height: ${({conHeight}) => (conHeight)};
+    height: ${({ conHeight }) => conHeight || 'auto'};
   }
 `;
+
 
 Container.Wrap = styled.div`
   display: flex;

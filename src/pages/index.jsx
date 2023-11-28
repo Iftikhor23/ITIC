@@ -28,7 +28,11 @@ function Pages() {
     const sectionElement = sectionRef.current;
 
     if (triggerElement?.offsetWidth >= 840) {
-      const scrollWidth = sectionElement.offsetWidth - window.innerWidth + 915;
+      let scrollWidth=null
+      scrollWidth = sectionElement.offsetWidth - (window.innerWidth  * 0.54);
+      if(window.innerWidth<1600){
+        scrollWidth = sectionElement.offsetWidth - (window.innerWidth  * 0.68);
+      }
       const duration = scrollWidth / 1000; 
       const pinX = gsap.fromTo(
         sectionElement,
@@ -36,7 +40,7 @@ function Pages() {
           x: 0,
         },
         {
-          x: -scrollWidth ,
+          x: -scrollWidth,
           ease: "none",
           duration: duration,
           scrollTrigger: {

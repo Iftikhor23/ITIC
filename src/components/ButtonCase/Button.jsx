@@ -1,3 +1,4 @@
+import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Container } from "./styles";
 
