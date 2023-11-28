@@ -39,6 +39,9 @@
   flex-direction: column;
   justify-content: center;
   gap: 36px;
+  @media screen and (max-width:1550px){
+    gap: 15px;
+  }
 }
 
 .routes-link {
@@ -56,6 +59,9 @@
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   border-radius: 15px;
 
+  @media screen and (max-width:1550px){
+  font-size: 30px;
+  }
 }
 .routes-link:hover{
   box-shadow: inset 250px 0 0 0 #037778;
@@ -91,9 +97,7 @@
     padding-top: 50px;
   }
 
-  .routes{
-    gap: 23px;
-  }
+ 
 
   .routes li {
     font-size: 24px;
