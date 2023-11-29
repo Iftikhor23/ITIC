@@ -12,8 +12,7 @@ function Branches() {
       <Container.Wrapper>
         <Container.Text>
           <HeadingBranch>
-            Our branches in different
-            <br /> countries
+            Our branches in different countries
           </HeadingBranch>
           <Paragraph>
             Become a member of a freelancer's pool and work on creative projects
