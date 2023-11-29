@@ -1,3 +1,6 @@
+// Input.js
+
+import React from "react";
 import { Container } from "./styles";
 
 function Input({
@@ -24,8 +27,10 @@ function Input({
     }
   };
 
+  const actualHeight = window.innerWidth < 500 ?  resHeight : conHeight;
+
   return (
-    <Container conHeight={conHeight}>
+    <Container conHeight={actualHeight}>
       <Container.Label>{label}</Container.Label>
       <Container.Wrap width={width} height={height} resHeight={resHeight}>
         <Container.Prefix>{prefix}</Container.Prefix>

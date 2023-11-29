@@ -102,7 +102,7 @@ function JobModal({ isVisible, onClose }) {
         console.error("Saqlashda xatolik yuz berdi:", error);
       }
     } else {
-      Swal.fire("Fill in all the data fields");
+      Swal.fire("Barcha maydonchalarni to'ldiring");
     }
   };
 
@@ -188,8 +188,7 @@ function JobModal({ isVisible, onClose }) {
           </Container.Group>
           <div className="group">
             <Input
-              conHeight={"132px"}
-              resHeight={"110px"}
+              resHeight={"80px"}
               label={"Comment"}
               placeholder={"Add Comment"}
               type={"text"}

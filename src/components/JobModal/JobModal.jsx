@@ -110,7 +110,7 @@ function JobModal({ isVisible, onClose, selectedJobTitle }) {
         console.error("Saqlashda xatolik yuz berdi:", error);
       }
     } else {
-      Swal.fire("Fill in all the data fields");
+      Swal.fire("Barcha maydonchalarni to'ldiring");
     }
   };
 

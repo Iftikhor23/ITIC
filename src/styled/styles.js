@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const HeadingOne = styled.h1`
-  font-size: 72px;
+  font-size: calc(42px + 30 * (100vw / 1940));
   font-weight: 500;
   margin: 5px;
-  width: ${({width}) => (width ? width: "100%")} ;
-  /* max-width: ${({ width }) => (width ? width : "100%")}; */
+  width: ${({ width }) => (width ? width : "100%")};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "100%")};
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
   -webkit-background-clip: text;
@@ -50,7 +50,7 @@ export const Paragraph = styled.p`
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
   width: ${({ width }) => (width ? width : "476px")};
-  max-width: ${({maxWidth}) => (maxWidth ? maxWidth : "354px")};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "354px")};
 
   @media only screen and (max-width: 840px) {
     width: 100%;

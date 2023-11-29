@@ -10,6 +10,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 653px) {
+    top: 15px;
+    padding-bottom: 15px;
+  }
 `;
 
 Container.Wrapper = styled.div`
@@ -27,7 +31,7 @@ Container.Wrapper = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 1027px;
+    height: 715px;
     width: 355px;
   }
 `;
@@ -70,10 +74,9 @@ Container.Form = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    padding: 44px 23px 55px 23px;
+    padding: 20px 23px 20px 23px;
     .group {
       align-items: center;
-      gap: 33px;
     }
   }
 `;

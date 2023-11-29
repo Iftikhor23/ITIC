@@ -22,7 +22,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 412px;
-    width: 326px;
+    max-width: 326px;
     border-radius: 30px;
     border: 1px solid #dfdfdf;
     padding: 49px 32px 35px 37px;
@@ -339,7 +339,7 @@ Container.NoAvaivable = styled.div`
   border-color: #dfdfdf;
   border-radius: 30px;
   height: 412px;
-  width: 496px;
+  max-width: 496px;
   padding: 49px 58px 35px 37px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 

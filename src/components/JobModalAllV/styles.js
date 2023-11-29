@@ -11,6 +11,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 200;
+  @media screen and (max-width: 653px) {
+    top: 15px;
+    padding-bottom: 15px;
+  }
 `;
 
 Container.Wrapper = styled.div`
@@ -28,7 +32,6 @@ Container.Wrapper = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 1027px;
     width: 355px;
   }
 `;
@@ -52,7 +55,7 @@ Container.Text = styled.h1`
   line-height: normal;
 
   @media screen and (max-width: 653px) {
-    font-size: 24px;
+    font-size: 22px;
   }
 `;
 
@@ -72,7 +75,7 @@ Container.Form = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    padding: 44px 23px 55px 23px;
+    padding: 20px 23px 55px 23px;
     .group {
       align-items: center;
       gap: 33px;
@@ -83,6 +86,10 @@ Container.Form = styled.div`
 Container.Group = styled.div`
   display: flex;
   gap: 24px;
+  @media screen and (max-width: 653px) {
+    flex-direction: column;
+    gap: 14px;
+  }
 
   .fileInput {
     border-radius: 20px;
@@ -132,9 +139,5 @@ Container.Group = styled.div`
   input[type="file"] {
     opacity: 0;
     cursor: pointer;
-  }
-
-  @media screen and (max-width: 653px) {
-    flex-direction: column;
   }
 `;

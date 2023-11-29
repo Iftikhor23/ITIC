@@ -88,11 +88,7 @@ Container.InfoWrapper = styled.div`
   width: 451px;
   height: 128px;
   gap: 24px;
-
-  @media screen and (max-width: 840px) {
-    margin-top: 69px;
-  }
-
+  
   @media screen and (max-width: 653px) {
     flex-direction: column;
     align-items: center;

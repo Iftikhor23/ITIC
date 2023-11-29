@@ -22,7 +22,7 @@ Container.Wrap = styled.div`
 
   @media screen and (max-width: 653px) {
     width: 310px;
-    height: ${({resHeight}) => (resHeight)};
+    height: 35px;
   }
 `;
 
