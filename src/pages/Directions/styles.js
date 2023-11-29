@@ -18,19 +18,16 @@ export const Container = styled.div`
     gap: 292px;
 
     @media screen and (max-width: 1536px) {
-      flex-direction: column;
-      align-items: flex-start;
       gap: 50px;
     }
-    @media screen and (max-width: 1442px) {
-      gap: 50px;
+    @media screen and (max-width: 1450px) {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
-  .textBox {
-  }
   @media screen and (max-width: 840px) {
-    height: 2530px;
+    height: 2200px;
     width: 100vw;
     flex-direction: column;
     align-items: center;
@@ -44,7 +41,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 1830px;
+    height: 1540px;
   }
 `;
 
@@ -54,6 +51,7 @@ Container.Categories = styled.div`
   gap: 68px;
   .catImage {
     max-width: 499px;
+    height: auto; 
     @media screen and (max-width: 653px) {
       width: 355px;
     }

@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 0 50px;
 
   @media screen and (max-width: 840px) {
     width: 100vw;
@@ -16,6 +17,7 @@ export const Container = styled.div`
 
   @media screen and (max-width: 653px) {
     height: 1430px;
+  padding: 0 15px;
   }
 `;
 
@@ -49,11 +51,18 @@ Container.Images = styled.div`
   gap: 16px;
   text-align: center;
   .image-teams {
-    width: 310px;
+    max-width: 310px;
     height: 360px;
     border-radius: 30px;
     object-fit: cover;
     transition: box-shadow 0.3s ease;
+
+    @media screen and (max-width: 1300px) {
+      width: 200px;
+    }
+    @media screen and (max-width: 840px) {
+      width: 310px;
+    }
 
     @media screen and (max-width: 653px) {
       height: 210px;
@@ -61,9 +70,6 @@ Container.Images = styled.div`
     }
   }
 
-  /* .image-teams:hover {
-    box-shadow: 0px 0px 10px 10px rgba(253, 254, 255, 0.2);
-  } */
 
   @media screen and (max-width: 840px) {
     display: grid;

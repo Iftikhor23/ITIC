@@ -23,20 +23,24 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 400px;
-    @media screen and (max-width: 1442px) {
-      gap: 50px;
-    }
     @media screen and (max-width: 1630px) {
       gap: 0px;
     }
 
+    @media screen and (max-width: 1442px) {
+      gap: 50px;
+    }
+    @media screen and (max-width: 1442px) {
+      justify-content: start;
+      padding: 0 50px;
+    }
     @media screen and (max-width: 840px) {
       height: 2040px;
       width: fit-content;
       flex-direction: column;
       gap: 51px;
       align-items: flex-start;
-      padding: 0;
+      padding: 0 15px;
       flex-wrap: nowrap;
     }
 

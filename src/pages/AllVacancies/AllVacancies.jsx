@@ -105,11 +105,10 @@ function AllVacancies() {
               <img className="logo" src={logo} alt="company logo" />
             </Link>
             <TextWrap>
-              <HeadingOne>
-                Careers at IT
-                <br /> investments Center
+              <HeadingOne maxWidth={'700px'}>
+                Careers at IT investments Center
               </HeadingOne>
-              <Paragraph color="#121212">
+              <Paragraph color="#fff">
                 Become a member of a freelancer's pool and work on creative
                 projects
               </Paragraph>

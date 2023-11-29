@@ -26,9 +26,8 @@ const [loading, setLoading] = useState(true);
     <Container id="our-time">
       <Container.Wrapper>
         <div className="text">
-          <HeadingOne>
-            Join and be part of
-            <br /> IT Investments Center
+          <HeadingOne maxWidth={'881px'}>
+            Join and be part of IT Investments Center
           </HeadingOne>
           <Paragraph>
             Become a member of a freelancer's pool and work on creative projects

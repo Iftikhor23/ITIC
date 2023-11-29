@@ -9,6 +9,12 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 840px) {
+    height: 615px;
+    position: fixed;
+    top: 190px;
+    z-index: 20;
+  }
 `;
 
 Container.Wrapper = styled.div`
