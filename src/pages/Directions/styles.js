@@ -10,6 +10,9 @@ export const Container = styled.div`
   /* justify-content: center; */
   padding: 0 100px;
   gap: 292px;
+  @media screen and (max-width: 653px) {
+      padding: 0 15px;
+    }
 
   .wrapper {
     display: flex;
@@ -41,7 +44,14 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 1540px;
+    height: 1950px;
+  }
+  @media screen and (max-width: 450px) {
+    height: 1720px;
+  }
+  @media screen and (max-width: 330px) {
+    height: 1400px;
+
   }
 `;
 
@@ -49,11 +59,18 @@ Container.Categories = styled.div`
   display: flex;
   align-items: center;
   gap: 68px;
+  @media screen and (max-width: 1120px) {
+    flex-wrap: wrap;
+  }
   .catImage {
+    width: 100%;
     max-width: 499px;
-    height: auto; 
-    @media screen and (max-width: 653px) {
-      width: 355px;
+    height: auto;
+    @media screen and (max-width: 1175px) {
+      max-width: 390px;
+    }
+    @media screen and (max-width: 840px) {
+      max-width: 499px;
     }
   }
 

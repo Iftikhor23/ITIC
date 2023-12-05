@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+  import { Container } from "./styles";
 import buttonIcon from "../../assets/icons/u_angle-right.svg";
 import { Link } from "react-router-dom";
 import request from "../../services";

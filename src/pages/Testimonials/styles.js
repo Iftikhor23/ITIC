@@ -12,7 +12,9 @@ export const Container = styled.div`
   background-color: #fff;
   width: 100vw;
   height: 100vh;
-
+@media screen and (max-width: 1500px){
+  padding:  0 50px;
+}
   @media screen and (max-width: 840px) {
     width: 100vw;
     height: 860px;
@@ -21,9 +23,11 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 740px;
     width: 100vw;
+  padding:  0 15px;
+
   }
+  
 `;
 
 Container.Wrapper = styled.div`
@@ -35,6 +39,9 @@ Container.Wrapper = styled.div`
 
   @media screen and (max-width: 1441px) {
     gap: 70px;
+  }
+  @media screen and (max-width: 1000px) {
+    gap: 10px;
   }
 
   @media screen and (max-width: 840px) {
@@ -58,8 +65,7 @@ Container.TestiBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 240px;
-  width: 426px;
+  max-width: 426px;
   border-radius: 12px;
   padding: 50px 82px 65px 45px;
   background-color: #fff;
@@ -71,9 +77,11 @@ Container.TestiBox = styled.div`
     );
     background-color: #6c9f9e;
   }
+  @media screen and (max-width: 1400px) {
+    padding: 36px 31px 30px 24px;
+  }
   @media screen and (max-width: 653px) {
-    width: 355px;
-    height: 210px;
+    max-width: 355px;
     padding: 36px 31px 30px 24px;
   }
 `;
@@ -110,6 +118,9 @@ Container.Above = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  @media screen and (max-width: 1150px) {
+     margin-bottom: 12px;
+  }
 
   .testiImg {
     height: 60px;

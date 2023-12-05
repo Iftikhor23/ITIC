@@ -52,16 +52,6 @@ function Cases() {
             />
           ))}
         </Container.CasesWrapper>
-        <Link to={"/allCases"}>
-          <div className="response">
-            <Button title="See all" iconSize="30px" btnwidth="159px" />
-          </div>
-        </Link>
-        <Link to={"/allCases"}>
-          <div className="mobile">
-            <Button title="See all" iconSize="24px" btnwidth="159px" />
-          </div>
-        </Link>
       </div>
     </Container>
   );

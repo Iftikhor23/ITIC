@@ -12,9 +12,12 @@ export const Container = styled.div`
   background: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
+  @media screen and (max-width: 1050px) {
+    padding: 100px 0px 32px 60px;
+    }
 
   .headWrap {
-    width: 1048px;
+    max-width: 1048px;
     @media screen and (max-width: 840px) {
       width: 648px;
     }
@@ -34,7 +37,7 @@ export const Container = styled.div`
   }
   @media screen and (max-width: 653px) {
     padding: 0;
-    height: 862px;
+    height: 700px;
     width: 100vw;
     justify-content: space-around;
     align-items: center;
@@ -42,11 +45,10 @@ export const Container = styled.div`
 `;
 
 export const HeadingOne = styled.h1`
-  font-size: 72px;
+    font-size: calc(42px + 30 * (100vw / 1940));
   font-weight: 500;
   margin: 5px;
-  width: 100%;
-  max-width: ${({ width }) => (width ? width : "100%")};
+  max-width: 1048px;
   background: -webkit-linear-gradient(left, black, #fff, black);
   background-size: 1600px 200px;
   -webkit-background-clip: text;
@@ -62,6 +64,9 @@ export const HeadingOne = styled.h1`
     100% {
       background-position: 1600px 0;
     }
+  }
+  @media only screen and (max-width: 1050px) {
+    max-width: 748px;
   }
   @media only screen and (max-width: 840px) {
     font-size: 42px;

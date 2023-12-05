@@ -107,7 +107,7 @@ Container.Wrapper = styled.div`
 Container.Box = styled.div`
   display: flex;
   align-items: center;
-  gap: 148px;
+  gap: 106px;
 
   @media screen and (max-width: 1536px) {
     .forImgGlobe{

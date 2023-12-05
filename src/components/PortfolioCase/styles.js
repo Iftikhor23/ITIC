@@ -4,18 +4,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 28px;
-  width: 918px;
+  width: 100%;
+  max-width: 918px;
   height: 600px;
   align-items: center;
 
-  @media screen and (max-width: 840px) {
-    height: fit-content;
-    align-items: flex-start;
-    width: 728px;
+  @media screen and (max-width: 1000px) {
+    max-width: 708px;
   }
 
   @media screen and (max-width: 653px) {
-    width: 355px;
     gap: 16px;
   }
 
@@ -41,18 +39,17 @@ export const Container = styled.div`
 
   .caseImage {
     height: 501px;
-    width: 918px;
+    width: 100%;
+    max-width: 918px;
     border-radius: 50px;
     object-fit: cover;
 
     @media screen and (max-width: 840px) {
-      width: 728px;
       height: 401px;
       object-fit: fill;
     }
 
     @media screen and (max-width: 653px) {
-      width: 355px;
       height: 197px;
       object-fit: cover;
       border-radius: 20px;

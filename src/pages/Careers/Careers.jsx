@@ -47,8 +47,7 @@ function Careers() {
       <Container.Wrapper>
         <Container.Text>
           <HeadingOne>
-            Careers at
-            <br /> IT investments Center
+            Careers at  IT investments Center
           </HeadingOne>
           <Paragraph color="#fff">
             Become a member of a freelancer's pool and work on creative projects
