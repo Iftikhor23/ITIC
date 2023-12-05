@@ -21,7 +21,7 @@ export const Container = styled.div`
 
   @media screen and (max-width: 653px) {
     width: 100vw;
-    height: 560px;
+    height: 640px;
   }
 `;
 
@@ -34,7 +34,6 @@ Container.Wrapper = styled.div`
     gap: 100px;
   }
   @media screen and (max-width: 840px) {
-    align-items: flex-start;
     flex-direction: column;
     gap: 0px;
   }
@@ -218,8 +217,6 @@ Container.Wrapper = styled.div`
     }
   }
 
-  
-
   .worldImage {
     width: 100%;
     @media screen and (max-width: 840px) {
@@ -248,7 +245,17 @@ Container.Text = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+  }
+  @media screen and (max-width: 653px) {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (max-width: 350px) {
+    margin-left: 10px;
+  }
+  @media screen and (max-width: 335px) {
+    margin-left: 30px;
   }
 `;
 
@@ -281,8 +288,28 @@ export const HeadingBranch = styled.h1`
     }
   }
 
-
   @media only screen and (max-width: 653px) {
     text-align: center;
+  }
+  @media only screen and (max-width: 370px) {
+    text-align: start;
+    font-size: 42px;
+    max-width: 335px;
+  }
+  @media only screen and (max-width: 340px) {
+    text-align: start;
+    font-size: 35px;
+  }
+`;
+Container.Paragraph = styled.p`
+  max-width: 376px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  @media screen and (max-width: 370px) {
+    max-width: 270px;
+    text-align: start;
   }
 `;

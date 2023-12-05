@@ -22,6 +22,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 412px;
+    width: 100%;
     max-width: 326px;
     border-radius: 30px;
     border: 1px solid #dfdfdf;
@@ -103,6 +104,13 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+
+    @media screen and (max-width: 1220px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
   }
   @media screen and (max-width: 840px) {
     .cntnr {
@@ -344,14 +352,12 @@ Container.NoAvaivable = styled.div`
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.6);
-  transform: scale(1.05);
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-}
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
 
   @media screen and (max-width: 840px) {
-    height: 412px;
-    width: 326px;
     padding: 39px 17px 45px 37px;
   }
 `;
@@ -368,5 +374,3 @@ Container.Text = styled.h3`
     width: 301px;
   }
 `;
-
-

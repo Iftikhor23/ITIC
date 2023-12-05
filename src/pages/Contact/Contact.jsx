@@ -9,9 +9,8 @@ function Contact() {
   return (
     <Container id="contact-us" >
       <div className="headWrap">
-        <HeadingOne>
-          Let's talk about your project
-          <br /> and feel free to ask, we have
+        <HeadingOne maxWidth={'1048px'}>
+          Let's talk about your project and feel free to ask, we have
         </HeadingOne>
           <Button
             title="free consultation"
@@ -47,9 +46,9 @@ function Contact() {
         <p>©2023 all rights reserved</p>
         <p>Developed by: OOO IT Investment center</p>
       </Container.FooterWrapper>
-      <Container.Bubble>
+      {/* <Container.Bubble>
         <img className="bubble" src={bubble} alt="bubble"/>
-      </Container.Bubble>
+      </Container.Bubble> */}
       <FormModal isVisible={showModal} onClose={() => setShowModal(false)} />
     </Container>
   );

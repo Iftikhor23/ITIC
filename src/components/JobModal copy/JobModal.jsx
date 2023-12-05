@@ -118,7 +118,7 @@ function JobModal({ isVisible, onClose }) {
           <Container.Text>Apply on position </Container.Text>
           <img
             src={closeIcon}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer" , marginLeft: '-5px'}}
             onClick={() => onClose()}
             alt="close icon"
           />

@@ -16,8 +16,8 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 1430px;
-  padding: 0 15px;
+    padding: 25px 15px;
+    height: auto;
   }
 `;
 
@@ -29,7 +29,6 @@ Container.Wrapper = styled.div`
   @media screen and (max-width: 840px) {
     flex-direction: column;
     width: fit-content;
-    align-items: flex-start;
     .text {
     }
   }
@@ -70,14 +69,14 @@ Container.Images = styled.div`
     }
   }
 
-
   @media screen and (max-width: 840px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  @media screen and (max-width: 653px) {
+  @media screen and (max-width: 370px) {
     flex-wrap: wrap;
+    grid-template-columns: none;
   }
 `;
 

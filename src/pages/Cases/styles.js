@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bgImg1 from "../../assets/images/aboutBgImage.svg";
 
 export const Container = styled.div`
   display: flex;
@@ -9,11 +8,11 @@ export const Container = styled.div`
   height: 100vh;
   width: 133vw;
   background-color: #050919;
-  /* background-image:  url(${bgImg1}); */
-  /* background-position: calc(50% - 683px) calc(50% - 40px); */
-  /* background-repeat: no-repeat; */
-  /* padding-left: 1200px; */
   overflow: hidden;
+  padding: 0 200px;
+  @media screen and (max-width: 1000px) {
+    padding: 0 0 0 0;
+    }
 
   .wrapper {
     height: 100%;
@@ -29,10 +28,6 @@ export const Container = styled.div`
 
     @media screen and (max-width: 1442px) {
       gap: 50px;
-    }
-    @media screen and (max-width: 1442px) {
-      justify-content: start;
-      padding: 0 50px;
     }
     @media screen and (max-width: 840px) {
       height: 2040px;
@@ -98,9 +93,7 @@ export const Container = styled.div`
     padding: 0;
     flex-wrap: nowrap;
 
-    .respDesk {
-      display: none;
-    }
+    
   }
 
   @media screen and (max-width: 653px) {
@@ -114,7 +107,7 @@ Container.CasesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 918px;
+  max-width: 918px;
   height: 100%;
   overflow: scroll;
   overflow-y: scroll;

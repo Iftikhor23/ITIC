@@ -10,7 +10,6 @@ export const HeadingOne = styled.h1`
   background-size: 1600px 200px;
   -webkit-background-clip: text;
   background-clip: text;
-  /* text-fill-color: transparent; */
   -webkit-text-fill-color: transparent;
   background-size: 500% auto;
   animation: textShine 2s linear infinite alternate;
@@ -34,8 +33,12 @@ export const HeadingOne = styled.h1`
     font-size: 50px;
   }
 
+
   @media only screen and (max-width: 840px) {
     font-size: 42px;
+  }
+  @media screen and (max-width: 1000px) {
+    font-size: 40px;
   }
 
   @media only screen and (max-width: 653px) {
@@ -49,8 +52,8 @@ export const Paragraph = styled.p`
   font-size: 16px;
   font-weight: 400;
   color: ${({ color }) => (color ? color : "rgba(255, 255, 255, 0.6)")};
-  width: ${({ width }) => (width ? width : "476px")};
-  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "354px")};
+  width: ${({ width }) => (width ? width : "")};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "")};
 
   @media only screen and (max-width: 840px) {
     width: 100%;

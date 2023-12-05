@@ -60,6 +60,9 @@ Container.Wrapper = styled.div`
   display: flex;
   gap: 87px;
 
+  @media screen and (max-width: 1150px) {
+    gap: 25px;
+  }
   @media screen and (max-width: 840px) {
     flex-direction: column;
     align-items: flex-start;
@@ -82,18 +85,17 @@ Container.Paragraph = styled.p`
   max-width: 706px;
 
   @media screen and (max-width: 840px) {
-    width: 640px;
     font-size: 24px;
     letter-spacing: 0;
-    width: 646px;
+    max-width: 646px;
   }
 
-  @media screen and (max-width: 653px) {
+  @media screen and (max-width: 453px) {
     font-size: 14px;
     letter-spacing: 0;
     line-height: 23px;
     text-align: center;
-    width: 326px;
+    max-width: 306px;
   }
 `;
 

@@ -8,6 +8,7 @@ export const Container = styled.div`
   width: 170vw;
   height: 100vh;
   background: rgba(0, 205, 194, 0.7);
+  padding: 0 50px;
 
   @media screen and (max-width: 840px) {
     width: 100vw;
@@ -203,11 +204,12 @@ Container.Wrapper = styled.div`
     display: none;
   }
 
-  .mblRspnsv .jobBox {
+ .jobBox {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 412px;
+    width: 100%;
     max-width: 326px;
     border-radius: 30px;
     border: 1px solid #dfdfdf;
@@ -291,7 +293,7 @@ Container.SeeAll = styled.div`
   justify-content: space-between;
   flex-direction: column;
   height: 412px;
-  width: 326px;
+  max-width: 326px;
   border-radius: 30px;
   padding: 49px 32px 35px 37px;
   background-color: #00cdc2;
