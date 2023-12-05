@@ -22,7 +22,6 @@ export const Container = styled.div`
   @media screen and (max-width: 840px) {
     height: 645px;
     width: 100vw;
-    justify-content: flex-start;
     padding: 40px;
   }
 
@@ -65,7 +64,7 @@ Container.Wrapper = styled.div`
   }
   @media screen and (max-width: 840px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items:center;
     gap: 25px;
   }
 
@@ -177,5 +176,44 @@ export const HeadingAbout = styled.h1`
 
   @media only screen and (max-width: 653px) {
     font-size: 42px;
+  }
+`;
+Container.HeadingAbout = styled.h1`
+  font-size: calc(42px + 30 * (100vw / 1940));
+  font-weight: 500;
+  margin: 5px;
+  width: ${({ width }) => (width ? width : "")};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "")};
+  background: -webkit-linear-gradient(left, black, #fff, black);
+  background-size: 1600px 200px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 2s linear infinite alternate;
+ 
+
+  @keyframes textShine {
+    0% {
+      background-position: 0 1600px;
+    }
+    100% {
+      background-position: 1600px 0;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    font-size: 50px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    font-size: 40px;
+  }
+
+
+  @media only screen and (max-width: 653px) {
+    width: 288px;
+    font-size: 32px;
+    text-align: center;
   }
 `;

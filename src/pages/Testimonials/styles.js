@@ -12,9 +12,10 @@ export const Container = styled.div`
   background-color: #fff;
   width: 100vw;
   height: 100vh;
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 1600px){
   padding:  0 50px;
 }
+
   @media screen and (max-width: 840px) {
     width: 100vw;
     height: 860px;

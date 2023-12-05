@@ -12,11 +12,11 @@ export const Container = styled.div`
 
   @media screen and (max-width: 840px) {
     width: 100vw;
-    height: 1730px;
+    height: auto;
   }
 
   @media screen and (max-width: 653px) {
-    height: 890px;
+    height: 786px;
   }
   .circles {
     position: absolute;
@@ -293,7 +293,7 @@ Container.SeeAll = styled.div`
   justify-content: space-between;
   flex-direction: column;
   height: 412px;
-  max-width: 326px;
+  width: 326px;
   border-radius: 30px;
   padding: 49px 32px 35px 37px;
   background-color: #00cdc2;
@@ -302,6 +302,12 @@ Container.SeeAll = styled.div`
   &:hover {
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.6);
     transform: scale(1.05);
+  }
+  @media screen and (max-width:1270px) {
+    width: 220px;
+  }
+  @media screen and (max-width:840px) {
+    width: 326px;
   }
 `;
 

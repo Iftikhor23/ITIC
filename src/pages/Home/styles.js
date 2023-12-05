@@ -11,14 +11,16 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  overflow: hidden;
 
   @media screen and (max-width: 840px) {
-    height: 1158px;
+    height: auto;
+    padding: 0 0 60px 15px;
   }
 `;
 
 export const HeadingOneHome = styled.h1`
-  font-size: 72px;
+  font-size: calc(42px + 30 * (100vw / 1940));
   font-weight: 500;
   margin: 5px;
   background: -webkit-linear-gradient(left, black, #fff, black);
@@ -75,7 +77,7 @@ export const Paragraph = styled.p`
 `;
 
 export const Your = styled.h1`
-  font-size: 72px;
+  font-size: calc(42px + 30 * (100vw / 1940));
   font-weight: 500;
   margin: 5px;
   background: -webkit-linear-gradient(left, black, #fff, black);
@@ -158,9 +160,15 @@ Container.MidWrap = styled.div`
     bottom: 20px;
     right: 50px;
     width: 620px;
-    /* height: 100%; */
     display: flex;
     align-items: center;
+    @media screen and (max-width: 1200px) {
+      width: 520px;
+      right: -25px;
+    }
+    @media screen and (max-width: 840px) {
+      display: none;
+    }
 
     .lilChart {
       position: absolute;
@@ -170,7 +178,13 @@ Container.MidWrap = styled.div`
       height: 500px;
       bottom: 0;
       user-select: none;
-
+      @media screen and (max-width: 1050px) {
+        height: 379px;
+      }
+      @media screen and (max-width: 940px) {
+        height: 330px;
+        left: 70px;
+      }
       @media screen and (max-width: 840px) {
         left: -153px;
       }
@@ -187,6 +201,16 @@ Container.MidWrap = styled.div`
       z-index: 20;
       height: 350px;
       user-select: none;
+      @media screen and (max-width: 1050px) {
+        width: 146px;
+        height: 300px;
+        left: 193px;
+        bottom: -19px;
+      }
+      @media screen and (max-width: 940px) {
+        left: 280px;
+        width: 120px;
+      }
 
       @media screen and (max-width: 840px) {
         left: 97px;
@@ -204,6 +228,13 @@ Container.MidWrap = styled.div`
       width: 354px;
       height: 600px;
       user-select: none;
+      @media screen and (max-width: 1050px) {
+        width: 240px;
+        height: 473px;
+      }
+      @media screen and (max-width: 940px) {
+        width: 178px;
+      }
 
       @media screen and (max-width: 653px) {
         width: 228px;
@@ -213,9 +244,17 @@ Container.MidWrap = styled.div`
     .upTrade {
       position: relative;
       top: -238px;
+      width: 323px;
       left: 115px;
       z-index: 20;
       user-select: none;
+      @media screen and (max-width: 1050px) {
+        top: -160px;
+        width: 259px;
+      }
+      @media screen and (max-width: 940px) {
+        left: 192px;
+      }
 
       @media screen and (max-width: 840px) {
         top: -242px;
@@ -239,6 +278,9 @@ Container.Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 130px;
+  @media screen and (max-width: 1200px) {
+    margin-left: 100px;
+  }
 
   @media screen and (max-width: 840px) {
     margin-left: 0;
@@ -268,4 +310,27 @@ Container.ScrollIcon = styled.div`
 Container.TextWrap = styled.div`
   display: flex;
   gap: 14px;
+`;
+Container.MobileImg = styled.img`
+  max-width: 720px;
+  display: none;
+  @media screen and (max-width: 840px) {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+  }
+`;
+Container.MobileBlur = styled.div`
+  position: absolute;
+  border-radius: 720px;
+  background: #019793;
+  filter: blur(115px);
+  width: 100%;
+  max-width: 720px;
+  height: 220px;
+  top: 921px;
+  z-index: 200;
+  @media screen and (max-width: 640px) {
+  
+  }
 `;

@@ -7,9 +7,18 @@ export const Container = styled.div`
   height: 100vh;
   background-color: #fff;
   gap: 50px;
-
   background: linear-gradient(to top, #2c5364, #203a43, #0f2027);
   background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027);
+
+  @media screen and (max-width: 840px) {
+    width: 100vw;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 653px) {
+    height: 100%;
+  }
 
   .cntnr {
     position: relative;
@@ -27,6 +36,9 @@ export const Container = styled.div`
     border-radius: 30px;
     border: 1px solid #dfdfdf;
     padding: 49px 32px 35px 37px;
+    @media screen and (max-width: 370px) {
+      max-width: 296px;
+    }
   }
 
   .cntnr .text {
@@ -105,7 +117,6 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
 
-
     @media screen and (max-width: 1220px) {
       flex-direction: column;
       align-items: flex-start;
@@ -117,17 +128,6 @@ export const Container = styled.div`
       flex-wrap: wrap;
       justify-content: center;
     }
-  }
-
-  @media screen and (max-width: 840px) {
-    width: 100vw;
-    height: 100%;
-    background: #fff;
-    flex-direction: column;
-  }
-
-  @media screen and (max-width: 653px) {
-    height: 100%;
   }
 
   .wrapper {
@@ -360,6 +360,10 @@ Container.NoAvaivable = styled.div`
   @media screen and (max-width: 840px) {
     padding: 39px 17px 45px 37px;
   }
+  @media screen and (max-width: 370px) {
+    padding: 39px 17px 45px 37px;
+    max-width: 296px;
+  }
 `;
 
 Container.Text = styled.h3`
@@ -368,9 +372,9 @@ Container.Text = styled.h3`
   font-weight: 500;
   letter-spacing: 0;
   line-height: 30px;
-  width: 301px;
+  width: 100%;
 
   @media screen and (max-width: 653px) {
-    width: 301px;
+    width: 100%;
   }
 `;

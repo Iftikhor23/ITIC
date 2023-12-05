@@ -5,7 +5,7 @@ function About() {
   return (
     <Container id="about">
       <Container.Wrapper>
-        <HeadingOne width="368px">About Us</HeadingOne>
+        <Container.HeadingAbout>About Us</Container.HeadingAbout>
         <Container.Data>
           <Container.Paragraph>
             Providing intermediary services and connecting companies and

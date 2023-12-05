@@ -95,10 +95,10 @@ function AllCases() {
             <div className="wrapper">
               <div>
                 <HeadingOne>Case studies</HeadingOne>
-                <Paragraph>
+                <Container.Paragraph>
                   Become a member of a freelancer's pool and work on creative
                   projects
-                </Paragraph>
+                </Container.Paragraph>
               </div>
               <Container.Cases>
                 {cases?.map((items, index) => (

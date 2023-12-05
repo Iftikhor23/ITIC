@@ -6,6 +6,7 @@ import Button from "../../components/Reusable/ButtonComb/Button";
 import { Bounce } from "react-reveal";
 import lilChart from "../../assets/images/lilChart.svg";
 import middle from "../../assets/images/mid.svg";
+import mobileImg from '../../assets/images/homDinamik.svg'
 import bigChart from "../../assets/images/big.svg";
 import up from "../../assets/images/uptrade.svg";
 import request from "../../services";
@@ -100,6 +101,7 @@ function Home() {
                 </div>
               </>
             </Container.TeamBox>
+            <Container.MobileImg src={mobileImg}/>
           </Container.Wrapper>
           <div className="chart">
             <Bounce bottom>
@@ -115,6 +117,7 @@ function Home() {
               <img className="upTrade" src={up} alt="up arrow" />
             </Bounce>
           </div>
+          <Container.MobileBlur></Container.MobileBlur>
           <FormModal
             isVisible={showModal}
             onClose={() => setShowModal(false)}
