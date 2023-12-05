@@ -15,7 +15,7 @@ export const Container = styled.div`
 
     @media screen and (max-width: 840px) {
       flex-direction: column;
-      height: 100%;
+      height: auto;
       width: fit-content;
       align-items: flex-start;
     }
@@ -40,4 +40,16 @@ Container.Cases = styled.div`
   @media screen and (max-width: 840px) {
     flex-direction: column;
   }
+ 
 `;
+Container.Paragraph = styled.p`
+max-width: 376px;
+color: #FFF;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+@media screen and (max-width: 653px) {
+    text-align: center;
+  }
+`

@@ -40,20 +40,18 @@ function Careers() {
     getCallReq();
   }, []);
 
-
-  
   return (
     <Container ref={careerRef} id="careers">
       <Container.Wrapper>
         <Container.Text>
-          <HeadingOne>
-            Careers at  IT investments Center
+          <HeadingOne maxWidth={"695px"}>
+            Careers at IT investments Center
           </HeadingOne>
           <Paragraph color="#fff">
             Become a member of a freelancer's pool and work on creative projects
           </Paragraph>
         </Container.Text>
-        <Job/>
+        <Job />
         <div className="mblRspnsv">
           <Swiper
             grabCursor={true}
@@ -146,7 +144,13 @@ function Careers() {
         <li></li>
         <li></li>
       </ul>
-      {showModal && <JobModal isVisible={true} onClose={() => setShowModal(false)} selectedJobTitle={selectedJobTitle}/>}
+      {showModal && (
+        <JobModal
+          isVisible={true}
+          onClose={() => setShowModal(false)}
+          selectedJobTitle={selectedJobTitle}
+        />
+      )}
     </Container>
   );
 }

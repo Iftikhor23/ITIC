@@ -9,7 +9,7 @@ import Partners from "../pages/Partners/Partners";
 import Testimonials from "../pages/Testimonials/Testimonials";
 import Careers from "../pages/Careers/Careers";
 import Contact from "../pages/Contact/Contact";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import logo from "../assets/images/itLogo.svg";
@@ -18,6 +18,7 @@ import SidebarButton from "../components/SidebarButton/sidebarButton";
 import { Link } from "react-router-dom";
 
 function Pages() {
+  const [resize, setResize] = useState(0);
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
@@ -27,55 +28,73 @@ function Pages() {
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
 
-    if (triggerElement?.offsetWidth >= 840) {
-      let scrollWidth=null
-      scrollWidth = sectionElement.offsetWidth - (window.innerWidth  * 0.54);
-      if(window.innerWidth<1600){
-        scrollWidth = sectionElement.offsetWidth - (window.innerWidth  * 0.68);
-      }
-      const duration = scrollWidth / 1000; 
-      const pinX = gsap.fromTo(
-        sectionElement,
-        {
-          x: 0,
-        },
-        {
-          x: -scrollWidth,
-          ease: "none",
-          duration: duration,
-          scrollTrigger: {
-            trigger: triggerElement,
-            start: "top top",
-            end: "bottom -2999%",
-            scrub: 1,
-            pin: true,
-          },
+    const updateScrollTrigger = () => {
+      if (triggerElement?.offsetWidth >= 840) {
+        let scrollWidth = null;
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.54;
+        if (window.innerWidth < 1600) {
+          scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.68;
         }
-      );
-      return () => {
-        pinX.kill();
-        window.location.reload();
-      };
-    } else {
-      ScrollTrigger.getAll().forEach((trigger) => {
-        trigger.kill();
-      });
-    }
-  }, [triggerRef.current?.offsetWidth >= 840]);
+        const duration = scrollWidth / 1000;
+        const pinX = gsap.fromTo(
+          sectionElement,
+          {
+            x: 0,
+          },
+          {
+            x: -scrollWidth,
+            ease: "none",
+            duration: duration,
+            scrollTrigger: {
+              trigger: triggerElement,
+              start: "top top",
+              end: "bottom -2999%",
+              scrub: 1,
+              pin: true,
+            },
+          }
+        );
+        return () => {
+          pinX.kill();
+          window.location.reload();
+        };
+      } else {
+        ScrollTrigger.getAll().forEach((trigger) => {
+          trigger.kill();
+        });
+      }
+    };
+
+    // ScrollTriggerni yangilash funksiyasini chaqirish
+    updateScrollTrigger();
+
+    // Ekran o'lchami o'zgarganda ishlaydigan qism
+    const handleResize = () => {
+      setResize(window.innerWidth);
+    };
+
+    // Ekran o'lchamini o'zgarganda `handleResize` ni chaqirish
+    window.addEventListener("resize", handleResize);
+
+    // Effect tugaganda event listener-ni o'chirish
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [resize]);
+  
 
 
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);
     if (elementRef) {
       const element = elementRef.getBoundingClientRect();
-     
+
       window.scrollTo({
         top: element.x + window.pageYOffset,
         behavior: "smooth",
       });
     }
   };
-
 
   return (
     <div style={{ position: "relative" }}>
@@ -86,7 +105,7 @@ function Pages() {
         <Footer />
       </div>
       <div className="sideBtn" style={{ position: "fixed", zIndex: "19" }}>
-        <SidebarButton scrollToElement={scrollToElement } />
+        <SidebarButton scrollToElement={scrollToElement} />
       </div>
       <div className="scrollSectionOuter">
         <div ref={triggerRef}>

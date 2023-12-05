@@ -15,6 +15,8 @@ export const Container = styled.div`
 
   @media screen and (max-width: 653px) {
     gap: 16px;
+    height: auto;
+    padding: 0 30px 30px 30px;
   }
 
   .imageWrap {
@@ -33,7 +35,15 @@ export const Container = styled.div`
       background-color: #f5f5f5;
       border-radius: 100px;
       display: inline-flex;
+      color: #000;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
       padding: 8px 22px;
+      @media screen and (max-width: 653px) {
+        padding: 4px 8px;
+      }
     }
   }
 
@@ -63,8 +73,6 @@ Container.Desc = styled.div`
   justify-content: space-between;
   gap: 107px;
   width: 100%;
-
-  
 `;
 
 Container.Info = styled.div`
@@ -72,7 +80,7 @@ Container.Info = styled.div`
   flex-direction: column;
   gap: 9px;
 
-  @media screen and (max-width: 653px){
+  @media screen and (max-width: 653px) {
     gap: 4px;
   }
 `;
